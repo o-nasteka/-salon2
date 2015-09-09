@@ -1,0 +1,44 @@
+<!-- Blank section -->
+<div class="container-fluid blank-section">
+
+</div>
+<!-- Blank section end-->
+
+<!-- header-in -->
+<div class="container-fluid header-in news-header" >
+    <h2><?=$data['page']['title']?></h2>
+    <div class="calc-in">
+        <div class="w970">
+            <form class="form-inline">
+                <h4 class="white text-left pull-left">Укажите размер:</h4>
+                <!-- <h4 class="white text-left pull-right">Выберите тип:</h4> -->
+                <br><br>
+                <hr class="pull-left">
+                <div class="clr"></div>
+                <div class="form-group">
+                    <label for="InputWidth">Ширина:</label>
+                    <input type="text" class="form-control" id="InputWidth" placeholder="мм" >
+                </div>
+                <div class="form-group">
+                    <label for="InputHeight" class="lb2">Высота:</label>
+                    <input type="text" class="form-control" id="InputHeight" placeholder="мм" >
+                </div>
+                <!-- <button type="submit" class="btn btn-default">Просчитать!</button> -->
+                <!-- Single button -->
+                <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Выберите тип <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="contacts.html">- Жалюзи</a></li>
+                        <li><a href="contacts.html">- Ролеты</a></li>
+                        <li><a href="contacts.html">- Плиссе</a></li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- header-in end -->
+
+<?=$data['page']['content']?>

@@ -1,0 +1,25 @@
+
+<h3>Edit page</h3><br/>
+<form method="post" action="">
+    <input type="hidden" name="id" value="<?=$data['products']['id']?>" />
+    <div class="form-group">
+        <label for="alias">Alias</label>
+        <input type="text" id="alias" name="alias" value="<?=@$data['products']['alias']?>" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" value="<?=@$data['products']['title']?>" class="form-control"  />
+    </div>
+    <div class="form-group">
+        <label for="сontent_short">Краткое описание</label>
+         <textarea  id="сontent_short" name="сontent_short" class="form-control" ><?=$data['products']['content_short']?></textarea>
+    </div>
+    <div class="form-group">
+        <label for="cont">Основное описание</label>
+        <textarea  id="cont" name="cont" class="form-control" ><?=$data['products']['content']?></textarea>
+    </div>
+    <input type="submit" class="btn btn-success" />
+
+</form>
+
+
