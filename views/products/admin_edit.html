@@ -6,19 +6,19 @@
     <input type="hidden" name="id" value="<?=$data['products']['id']?>" />
     <div class="form-group">
         <label for="alias">Alias</label>
-        <input type="text" id="alias" name="alias" value="<?=@$data['products']['alias']?>" class="form-control" />
+        <input type="text" id="alias" name="alias" value="<?=htmlspecialchars(@$data['products']['alias'])?>" class="form-control" />
     </div>
     <div class="form-group">
         <label for="title">Title</label>
-        <input type="text" id="title" name="title" value="<?=@$data['products']['title']?>" class="form-control"  />
+        <input type="text" id="title" name="title" value="<?=htmlspecialchars(@$data['products']['title'])?>" class="form-control"  />
     </div>
     <div class="form-group">
         <label for="content_short">Краткое описание</label>
-         <textarea style="min-height: 150px;" id="content_short" name="content_short" class="form-control" ><?=$data['products']['content_short']?></textarea>
+         <textarea style="min-height: 150px;" id="content_short" name="content_short" class="form-control" ><?=htmlspecialchars($data['products']['content_short'])?></textarea>
     </div>
     <div class="form-group">
         <label for="content">Основное описание</label>
-        <textarea style="min-height: 300px;" id="content" name="content" class="form-control" ><?=$data['products']['content']?></textarea>
+        <textarea style="min-height: 300px;" id="content" name="content" class="form-control" ><?=htmlspecialchars($data['products']['content'])?></textarea>
     </div>
     <input type="submit" class="btn btn-success" />
 
