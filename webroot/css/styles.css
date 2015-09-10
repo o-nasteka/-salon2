@@ -568,6 +568,9 @@ a.menu:after, .dropdown-toggle:after {
 	min-height: 480px;
 	background-color: #fff;
 }
+.section-5 a, .section-5 a:hover {
+	color: #2c3341 !important;
+}
 .section-5 .img-bl {
 	background: url("../images/s5-img.jpg")no-repeat center;
 	width: 390px;

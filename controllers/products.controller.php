@@ -42,7 +42,7 @@ class ProductsController extends Controller {
 
         if ( isset($params[0]) ){
 
-            $this->data['sub_products'] = $this->model->getByCategorySub($params[0]);
+            $this->data['sub_products'] = $this->model->getProductsByCategorySubId($params[0]);
 
 
         }

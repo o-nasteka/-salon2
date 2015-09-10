@@ -1,17 +1,8 @@
+<!-- Blank section -->
+<div class="container-fluid blank-section">
 
-
-
-
-            <!-- Blank section -->
-            <div class="container-fluid blank-section">
-
-            </div>
-            <!-- Blank section end-->
-
-
-
-
-
+</div>
+<!-- Blank section end-->
 
 <!-- header-in -->
 <div class="container-fluid header-in horiz" >
@@ -54,12 +45,12 @@
 <div class="container-fluid h-type">
     <div class="w970">
         <h2 class="text-center">
-            Виды жалюзи:
+            Виды:
         </h2>
         <!-- -->
         <?php foreach($data['sub'] as $sub_data){ ?>
         <div class="type-in">
-            <a href="#">
+            <a href="/products/view_sub_products/<?=$sub_data['id']?>">
                 <div class="type-in-bl">
                     <div class="type-in-img">
                         <button class="btn-in">Посмотреть!</button>
