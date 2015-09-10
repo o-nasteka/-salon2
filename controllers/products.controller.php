@@ -85,5 +85,4 @@ class ProductsController extends Controller {
     }
 }
 
-// new test comments
-// new test comments 2
+// 10.09.2015 Чт 11-16 Олег
