@@ -1,5 +1,6 @@
 <br>
 <br>
+<br>
 <h3>Товары</h3><br/>
 <table class="table table-bordered table-striped" style="width: 80%; border: 1px solid #ccc;">
     <tr>
@@ -7,16 +8,16 @@
         <td>Название</td>
         <td style="padding-left: 25px;">Управление</td>
     </tr>
-<?php foreach($data['products'] as $products_data) { ?>
+    <?php foreach($data['products'] as $products_data) { ?>
     <tr>
         <td><strong><?=$products_data['id']?></strong></td>
         <td><strong><?=$products_data['title']?></strong></td>
         <td width="250" align="center">
             <a href="/admin/products/edit/<?=$products_data['id']?>"><button class="btn btn-sm btn-primary" style="padding: 5px 20px;">Редактировать</button></a>
-            <a href="/admin/products/delete/<?=$products_data['id']?>" onclick="return confirmDelete();"><button class="btn btn-sm btn-warning">Удалить</button></a>
+            <a href="/admin/products/delete/<?=$products_data['id']?>" onclick="return confirmDelete();"><button class="btn btn-sm btn-warning" style="padding: 5px 20px;">Удалить</button></a>
         </td>
     </tr>
-<?php } ?>
+    <?php } ?>
 </table>
 
 <br/>
