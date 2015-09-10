@@ -51,11 +51,14 @@
 <!-- header-in end -->
 
 
-            <?php // foreach($data['products'][0][title] as $data){?>
+            <?php
 
-            // $data['id']?> - <?=$data['title'];
+                foreach($data['sub'] as $data){
+                    echo $data;
+                }
 
-           ?>
+
+
 
 <!-- Type type -->
 <div class="container-fluid h-type">
@@ -73,7 +76,7 @@
                     </div>
                     <p class="title"><?=$data['title']?></p>
                     <p class="txt">
-                        <?=$data['description']?>
+                        <?=@$data['description']?>
                     </p>
                 </div>
             </a>
@@ -82,6 +85,10 @@
         <button type="submit" class="btn-goods center-block">ЗАКАЗАТЬ БЫСТРЫЙ ПРОСЧЕТ!</button>
     </div>
 </div><!-- Type end-->
+
+            ?>
+
+
 
 
 <!-- Reviews -->
