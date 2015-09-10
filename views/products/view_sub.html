@@ -50,16 +50,6 @@
 </div>
 <!-- header-in end -->
 
-
-            <?php
-
-                foreach($data['sub'] as $data){
-                    echo $data;
-                }
-
-
-
-
 <!-- Type type -->
 <div class="container-fluid h-type">
     <div class="w970">
@@ -67,26 +57,26 @@
             Виды жалюзи:
         </h2>
         <!-- -->
+        <?php foreach($data['sub'] as $sub_data){ ?>
         <div class="type-in">
-            <!-- -->
-            <a href="/products/view/<?=$data['alias']?>">
+            <a href="#">
                 <div class="type-in-bl">
-                    <div class="type-in-img st-in-img">
+                    <div class="type-in-img">
                         <button class="btn-in">Посмотреть!</button>
+                        <img src="<?=$sub_data['img']?>" />
                     </div>
-                    <p class="title"><?=$data['title']?></p>
+                    <p class="title"><?=$sub_data['title']?></p>
                     <p class="txt">
-                        <?=@$data['description']?>
+                        <?=@$sub_data['description']?>
                     </p>
                 </div>
             </a>
-            <!-- -->
         </div>
+        <?php } ?>
+        <!-- -->
         <button type="submit" class="btn-goods center-block">ЗАКАЗАТЬ БЫСТРЫЙ ПРОСЧЕТ!</button>
     </div>
 </div><!-- Type end-->
-
-            ?>
 
 
 

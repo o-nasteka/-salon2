@@ -1,233 +1,85 @@
-<!-- Main index-header-->
-<div class="container-fluid section-2">
-    <div class="w970">
-        <h1 class="utp">Мы приносим <span class="tt_up blue">УЮТ</span> и <span class="tt_up blue">ЗАЩИТУ</span> в ваш дом</h1>
-        <h2 class="utp">Лучшие солнцезащитные системы в Украине!</h1>
-            <div class="main-form">
-                <h4 class="text-center tt_up white">СДЕЛАТЬ МОМЕНТАЛЬНЫЙ ПРОСЧЕТ</h4>
-                <hr>
-                <form action="type.html" method="">
-                    <label for="width-inp">Ширина:</label>
-                    <input type="text" class="form-control" id="width-inp" placeholder="мм">
-                    <label for="height-inp" class="fl2">Высота:</label>
-                    <input type="text" class="form-control" id="height-inp" placeholder="мм">
-                    <a href="type.html"> <button type="submit" class="btn-mainf">ПРОСЧИТАТЬ!</button></a>
-                </form>
+
+
+
+
+            <!-- Blank section -->
+            <div class="container-fluid blank-section">
+
             </div>
-            <div class="round-bl">
-                <a href="#">
-                    <div class="round-bl-1">
-                        <p class="txt">
-                            <span>100%</span><br>
-                            качество
-                        </p>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="round-bl-2">
-                        <p class="txt">
-                            <span>1-2 дня</span><br>
-                            срок изготовления
-                        </p>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="round-bl-3">
-                        <p class="txt">
-                            <span>12</span> месяцев<br>
-                            гарантии
-                        </p>
-                    </div>
-                </a>
-            </div>
+            <!-- Blank section end-->
+
+
+
+
+
+
+<!-- header-in -->
+<div class="container-fluid header-in horiz" >
+    <h2>Жалюзи:</h2>
+    <div class="calc-in">
+        <div class="w970">
+            <form class="form-inline">
+                <h4 class="white text-left pull-left">Укажите размер:</h4>
+                <!-- <h4 class="white text-left pull-right">Выберите тип:</h4> -->
+                <br><br>
+                <hr class="pull-left">
+                <div class="clr"></div>
+                <div class="form-group">
+                    <label for="InputWidth">Ширина:</label>
+                    <input type="text" class="form-control" id="InputWidth" placeholder="мм" >
+                </div>
+                <div class="form-group">
+                    <label for="InputHeight" class="lb2">Высота:</label>
+                    <input type="text" class="form-control" id="InputHeight" placeholder="мм" >
+                </div>
+                <!-- <button type="submit" class="btn btn-default">Просчитать!</button> -->
+                <!-- Single button -->
+                <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Выберите тип <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="contacts.html">- Горизонтальные</a></li>
+                        <li><a href="contacts.html">- Вертикальные</a></li>
+                        <li><a href="contacts.html">- Деревянные и бамбуковые</a></li>
+                    </ul>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
-<!-- Main index-header end -->
+<!-- header-in end -->
 
-<!-- manufacture -->
-<div class="container-fluid section-3">
+<!-- Type type -->
+<div class="container-fluid h-type">
     <div class="w970">
-        <h2 class="title text-center">Изготовление Жалюзи, Ролетов, Плиссе.</h2>
-        <h4 class="text-center">
-            Наша компания изготавливает под заказ любые солнцезащитные системы в Киеве и <br>
-            Украине, в короткие сроки 1-2 дня с момента заказа, а также производит замер<br>
-            и установку изделий.
-        </h4>
-        <hr>
         <h2 class="text-center">
-            В нашем салоне представлен большой <br>
-            выбор изделий:
+            Виды жалюзи:
         </h2>
-        <div class="goods-bl">
-            <a href="/products/view_sub/1">
-                <div class="jal-bl" >
-                    <p class="title">Жалюзи</p>
-                    <div  class="jal-in-bl">
-                        <ul>
-                            <li>440 видов материалов</li>
-                            <li>16 видов систем</li>
-                            <li>1-2 дня срок изготовления</li>
-                            <li>от 185 грн./м2</li>
-                        </ul>
-                        <button class="btn s3-btn center-block">Посмотреть</button>
+        <!-- -->
+        <?php foreach($data['sub'] as $sub_data){ ?>
+        <div class="type-in">
+            <a href="#">
+                <div class="type-in-bl">
+                    <div class="type-in-img">
+                        <button class="btn-in">Посмотреть!</button>
+                        <img src="<?=$sub_data['img']?>" />
                     </div>
-                </div>
-            </a>
-            <a href="">
-                <div class="rol-bl">
-                    <p class="title">Ролеты</p>
-                    <div class="jal-in-bl">
-                        <ul>
-                            <li>322 вида материалов</li>
-                            <li>33 вида систем</li>
-                            <li>1-2 дня срок изготовления</li>
-                            <li>от 247 грн./1шт</li>
-                        </ul>
-                        <button class="btn s3-btn center-block">Посмотреть</button>
-                    </div>
-                </div>
-            </a>
-            <a href="">
-                <div class="plis-bl">
-                    <p class="title">Плиссе</p>
-                    <div class="jal-in-bl">
-                        <ul>
-                            <li>292 вида материалов</li>
-                            <li>51 вид системы</li>
-                            <li>1-2 дня срок изготовления</li>
-                            <li>от 793 грн./1шт</li>
-                        </ul>
-                        <button class="btn s3-btn center-block">Посмотреть</button>
-                    </div>
+                    <p class="title"><?=$sub_data['title']?></p>
+                    <p class="txt">
+                        <?=@$sub_data['description']?>
+                    </p>
                 </div>
             </a>
         </div>
+        <?php } ?>
+        <!-- -->
         <button type="submit" class="btn-goods center-block">ЗАКАЗАТЬ БЫСТРЫЙ ПРОСЧЕТ!</button>
     </div>
-</div>
-<!-- manufacture end-->
+</div><!-- Type end-->
 
-<!-- why -->
-<div class="container-fluid section-4">
-    <div class="w970">
-        <br>
-        <h2 class="text-center white">Почему стоит заказать у нас?</h2>
-        <div class="img-bl">
-            <ul>
-                <li>
-                    <span>15 лет</span><br>
-                    на рынке
-                </li>
-                <li>
-                    <span>1-2 дня</span><br>
-                    срок
-                    изготовления
-                </li>
-                <li>
-                    от <span>12 мес</span><br>
-                    гарантия
-                </li>
-                <li>
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span>12 382</span><br>
-                    довольных
-                    клиентов
-                </li>
-                <li>
-                    европейское
-                    качество
-                </li>
-                <li>
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span>1 062</span><br>
-                    видов
-                    материалов
-                </li>
-                <li>
-                    собственное
-                    производство
-                </li>
-            </ul>
-        </div>
-        <button type="submit" class="btn-why center-block">вызвать замерщика!</button>
-    </div>
-</div>
-<!-- why end-->
 
-<div class="container-fluid section-5">
-    <div class="w970">
-        <br>
-        <div class="img-bl"></div>
-        <h3 class="black">Антимоскитные сетки</h3>
-        <hr>
-        <p>
-            Просто необходимы для защиты от насекомых, тополиного пуха, падающих
-            листьев. <br><br>
-            Антимоскитные сетки можно установить, как на металлопластиковые окна
-            и двери так и на деревянные или алюминиевые евроокна. <br><br>
-            Москитная сетка может неподвижно крепиться на окно - рамочная, или
-            монтируется рулона москитная сетка, которая легко сматываются в короб извне окна.<br><br>
-            Основные отличия: рамочные сетки и роллетные сетки.
-            Цена от 175 грн. за метр квадратный готового изделия.
-        </p>
-        <button type="submit" class="btn-moskit center-block">Выбрать москитную сетку <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
-    </div>
-</div>
 
-<!-- How -->
-<div class="container-fluid section-6">
-    <div class="w970">
-        <br>
-        <h2 class="text-center black">Как сделать заказ:</h2>
-        <div class="img-bl"></div>
-        <br>
-        <h4 class="black text-center">Заказ. Замер. Установка. <strong>Все очень просто!</strong></h4>
-        <button type="submit" class="btn-how center-block">Отправить заказ в работу <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
-    </div>
-</div>
-<!-- How end-->
-
-<!-- Gallery from manufacture -->
-<div class="container-fluid section-7">
-    <!-- Page Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header text-center">Фотографии с производства:</h2>
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="images/galery/01-big.jpg"  data-gallery>
-                    <img class="img-responsive"  src="images/galery/01.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="images/galery/02-big.jpg" data-gallery>
-                    <img class="img-responsive" src="images/galery/02.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="images/galery/03-big.jpg" data-gallery>
-                    <img class="img-responsive"  src="images/galery/03.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-6 thumb" >
-                <a class="thumbnail" href="images/galery/04-big.jpg" data-gallery>
-                    <img class="img-responsive"  src="images/galery/04.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="images/galery/05-big.jpg" data-gallery>
-                    <img class="img-responsive"  src="images/galery/05.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="images/galery/06-big.jpg" data-gallery>
-                    <img class="img-responsive" src="images/galery/06.jpg" alt="">
-                </a>
-            </div>
-        </div>
-        <button type="submit" class="btn-gallery center-block">Заказать бесплатный замер <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
-    </div>
-</div>
-<!-- Galleryfrom manufacture end-->
 
 <!-- Reviews -->
 <div class="container-fluid section-8">
@@ -413,3 +265,6 @@
     </div>
 </div>
 <!-- Reviews end-->
+
+
+

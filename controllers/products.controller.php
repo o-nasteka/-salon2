@@ -24,7 +24,8 @@ class ProductsController extends Controller {
         }
     }
 
-    public function sub(){ //'жалюзи,ролеты,плиссе,ант.сетк'
+    // select from category_sub
+    public function view_sub(){
         $params = App::getRouter()->getParams();
 
         if ( isset($params[0]) ){
@@ -32,6 +33,18 @@ class ProductsController extends Controller {
             $this->data['sub'] = $this->model->getByCategorySub($params[0]);
 
             
+        }
+    }
+
+    // select products from category_sub
+    public function view_sub_products(){
+        $params = App::getRouter()->getParams();
+
+        if ( isset($params[0]) ){
+
+            $this->data['sub_products'] = $this->model->getByCategorySub($params[0]);
+
+
         }
     }
 

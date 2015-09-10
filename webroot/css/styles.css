@@ -1263,7 +1263,7 @@ a.menu:after, .dropdown-toggle:after {
 .type-in {
 	width: 838px;
 	height: auto;
-	min-height: 400px;
+	min-height: 100px;
 	border: 0px solid #000;
 	margin: 30px auto 0;
 }
@@ -1286,18 +1286,12 @@ a.menu:after, .dropdown-toggle:after {
 	float: left;
 	width: 210px;
 	height: 148px;
+	border: 0px solid #000;
+	overflow: hidden;
 }
 
-.type-in-bl .st-in-img {
-	background: url("../images/st-in.jpg")no-repeat center;
-}
-.type-in-bl .venus-in-img {
-	background: url("../images/venus-in.jpg")no-repeat center;
-}
-.type-in-bl .magnus-in-img {
-	background: url("../images/magnus-in.jpg")no-repeat center;
-}
 .type-in-bl .btn-in {
+	position: absolute;
 	display: none;
 	background-color: #23d5d4;
 	color: #fff;
@@ -1323,7 +1317,7 @@ a.menu:after, .dropdown-toggle:after {
 	color: #2c3341;
 	font-weight: 300;
 	padding: 0px 0 0 30px;
-	text-align: left;
+	text-align: justify;
 	width: 580px;
 	height: 80px;
 	overflow: hidden;
