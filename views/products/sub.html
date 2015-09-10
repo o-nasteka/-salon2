@@ -8,11 +8,10 @@
             </div>
             <!-- Blank section end-->
 
-            <?php foreach($data['products'] as $data){?>
-            <li>
-                <?=$data['id']?> - <?=$data['title']?>
-            </li>
-            <?php } ?>
+
+
+
+
 
 <!-- header-in -->
 <div class="container-fluid header-in horiz" >
@@ -40,9 +39,9 @@
                         Выберите тип <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a href="contacts.html">- Standart</a></li>
-                        <li><a href="contacts.html">- Venus</a></li>
-                        <li><a href="contacts.html">- Magnus</a></li>
+                        <li><a href="contacts.html">- Горизонтальные</a></li>
+                        <li><a href="contacts.html">- Вертикальные</a></li>
+                        <li><a href="contacts.html">- Деревянные и бамбуковые</a></li>
                     </ul>
                 </div>
             </form>
@@ -51,73 +50,39 @@
 </div>
 <!-- header-in end -->
 
-<!-- Horizonta ltype -->
+
+            <?php // foreach($data['products'][0][title] as $data){?>
+
+            // $data['id']?> - <?=$data['title'];
+
+           ?>
+
+<!-- Type type -->
 <div class="container-fluid h-type">
     <div class="w970">
         <h2 class="text-center">
-            Виды горизонтальных жалюзи:
+            Виды жалюзи:
         </h2>
         <!-- -->
         <div class="type-in">
             <!-- -->
-            <a href="order.html">
+            <a href="/products/view/<?=$data['alias']?>">
                 <div class="type-in-bl">
                     <div class="type-in-img st-in-img">
                         <button class="btn-in">Посмотреть!</button>
                     </div>
-                    <p class="title">Горизонтальные жалюзи Standart</p>
+                    <p class="title"><?=$data['title']?></p>
                     <p class="txt">
-                        Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo
-                        commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient
-                        montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis
-                        orci, sed rhoncus sapien nunc eget odio.
+                        <?=$data['description']?>
                     </p>
                 </div>
             </a>
             <!-- -->
-
-            <!-- -->
-            <a href="order.html">
-                <div class="type-in-bl">
-                    <div class="type-in-img venus-in-img">
-                        <button class="btn-in">Посмотреть!</button>
-                    </div>
-                    <p class="title">Горизонтальные жалюзи Venus</p>
-                    <p class="txt">
-                        Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo
-                        commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient
-                        montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis
-                        orci, sed rhoncus sapien nunc eget odio.
-                    </p>
-                </div>
-            </a>
-            <!-- -->
-
-            <!-- -->
-            <a href="order.html">
-                <div class="type-in-bl">
-                    <div class="type-in-img magnus-in-img">
-                        <button class="btn-in">Посмотреть!</button>
-                    </div>
-                    <p class="title">Горизонтальные жалюзи Magnus</p>
-                    <p class="txt">
-                        Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo
-                        commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient
-                        montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis
-                        orci, sed rhoncus sapien nunc eget odio.
-                    </p>
-                </div>
-            </a>
-            <!-- -->
-
         </div>
-        <!-- -->
-
-
         <button type="submit" class="btn-goods center-block">ЗАКАЗАТЬ БЫСТРЫЙ ПРОСЧЕТ!</button>
     </div>
-</div>
-<!-- Horizonta end-->
+</div><!-- Type end-->
+
 
 <!-- Reviews -->
 <div class="container-fluid section-8">

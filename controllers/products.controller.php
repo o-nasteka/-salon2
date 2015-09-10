@@ -24,7 +24,7 @@ class ProductsController extends Controller {
         }
     }
 
-    public function category(){ //'жалюзи,ролеты,плиссе,ант.сетк'
+    public function sub(){ //'жалюзи,ролеты,плиссе,ант.сетк'
         $params = App::getRouter()->getParams();
 
         if ( isset($params[0]) ){
