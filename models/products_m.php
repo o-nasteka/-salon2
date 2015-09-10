@@ -58,8 +58,9 @@ class Products_m extends Model {
                 update `products`
                    set alias = '{$alias}',
                        title = '{$title}',
-                       content = '{$content}',
-                       content_short = '{$content_short}'
+                       content_short = '{$content_short}',
+                       content = '{$content}'
+
                    where `id` = {$id}
             ";
         }
