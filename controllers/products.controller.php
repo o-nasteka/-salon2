@@ -8,10 +8,16 @@ class ProductsController extends Controller {
     
     public function index(){
         $this->data['products'] = $this->model->getList();
-    	
-    	
     }
-///
+
+    public function view(){
+        $params = App::getRouter()->getParams();
+
+        if ( isset($params[0]) ){
+            $alias = mb_strtolower($params[0], "UTF-8");
+            $this->data['products'] = $this->model->getByAlias($alias);
+        }
+    }
 
     public function category(){ //'жалюзи,ролеты,плиссе,ант.сетк'
         $params = App::getRouter()->getParams();

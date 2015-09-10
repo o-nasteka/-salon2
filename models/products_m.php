@@ -23,6 +23,14 @@ class Products_m extends Model {
         return isset($result[0]) ? $result[0] : null;
     }
 
+    // Get by Alias from table products
+    public function getByAlias($alias){
+        $alias = $this->db->escape($alias);
+        $sql = "select * from `products` where `alias` = '{$alias}' limit 1";
+        $result = $this->db->query($sql);
+        return isset($result[0]) ? $result[0] : null;
+    }
+
     // Save to table products
     public function save($data, $id = null){
         if ( !isset($data['alias']) || !isset($data['title']) || !isset($data['content']) ){
