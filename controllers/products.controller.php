@@ -72,17 +72,8 @@ class ProductsController extends Controller {
         }
     }
 
-    public function admin_delete(){
-        if ( isset($this->params[0]) ){
-            $result = $this->model->delete($this->params[0]);
-            if ( $result ){
-                Session::setFlash('Page was deleted.');
-            } else {
-                Session::setFlash('Error.');
-            }
-        }
-        Router::redirect('/admin/products/');
-    }
+    
+
 }
 
 // 10.09.2015 Чт 11-16 Олег
