@@ -40,16 +40,18 @@ class Products_m extends Model {
         $id = (int)$id;
         $alias = $this->db->escape($data['alias']);
         $title = $this->db->escape($data['title']);
-        $content = $this->db->escape($data['content']);
         $content_short = $this->db->escape($data['content_short']);
+        $content = $this->db->escape($data['content']);
+
 
         if ( !$id ){ // Add new record
             $sql = "
                 insert into `products`
                    set alias = '{$alias}',
                        title = '{$title}',
-                       content = '{$content}',
-                       content_short = '{$content_short}'
+                       content_short = '{$content_short}',
+                       content = '{$content}'
+
             ";
         } else { // Update existing record
             $sql = "
