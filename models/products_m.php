@@ -8,11 +8,10 @@ class Products_m extends Model {
     }
 
     // Get all by CategoryId from table products
-	public function  getByCategoryId($id){
+	public function  getByCategorySub($id){
         $id = (int)$id;
-        $sql = "select * from `products` where `category_id` = '{$id}' ";
+        $sql = "select * from `category_sub` where `category_id` = '{$id}' ";
         return $this->db->query($sql);
-       
     }
 
     // Get all by Id from table products
