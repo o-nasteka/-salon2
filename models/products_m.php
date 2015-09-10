@@ -43,7 +43,6 @@ class Products_m extends Model {
         $content_short = $this->db->escape($data['content_short']);
         $content = $this->db->escape($data['content']);
 
-
         if ( !$id ){ // Add new record
             $sql = "
                 insert into `products`
@@ -53,6 +52,8 @@ class Products_m extends Model {
                        content = '{$content}'
 
             ";
+            
+
         } else { // Update existing record
             $sql = "
                 update `products`
