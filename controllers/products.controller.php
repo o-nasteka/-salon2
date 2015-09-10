@@ -16,6 +16,11 @@ class ProductsController extends Controller {
         if ( isset($params[0]) ){
             $alias = mb_strtolower($params[0], "UTF-8");
             $this->data['products'] = $this->model->getByAlias($alias);
+
+            if(empty($this->data['products'])){
+                Router::redirect('/');
+            }
+
         }
     }
 
