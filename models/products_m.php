@@ -17,7 +17,7 @@ class Products_m extends Model {
     // Get SubCategory title from table sub_category by Id
     public function  getSubCategoryTitleById($id){
         $id = (int)$id;
-        $sql = "select `title` from `sub_category` where `id` = '{$id}' ";
+        $sql = "select `title` from `category_sub` where `id` = '{$id}' ";
         return $this->db->query($sql);
     }
 
@@ -28,13 +28,21 @@ class Products_m extends Model {
         return $this->db->query($sql);
     }
 
-    // Get all by CategoryId from table products
+    // Get all products by CategorySubId from table Products
     public function  getProductsByCategorySubId($id)
     {
         $id = (int)$id;
         $sql = "select * from `products` where `category_sub_id` = '{$id}' ";
         return $this->db->query($sql);
     }
+
+    // Get All SubCategory
+    public function getAllCategorySub()
+    {
+        $sql = "select * from `category_sub` ";
+        return $this->db->query($sql);
+    }
+
     // Get all by Id from table products
     public function getById($id){
         $id = (int)$id;
