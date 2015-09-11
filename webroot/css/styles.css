@@ -424,20 +424,23 @@ a.menu:after, .dropdown-toggle:after {
 	width: 970px;
 	height: 325px;
 	border: 0px solid  #23d5d4;
+
 }
 .jal-bl, .rol-bl, .plis-bl {
 	width: 293px;
-	height: 300px;
+	min-height: 320px;
+	height: auto;
+	padding: 0;
 	float: left;
 	margin-right: 30px;
 	border: 0px solid #23d5d4;
-	padding: 0 !important;
+
 }
 .jal-bl {
 	background: url("../images/jal-bl.png")no-repeat center center;
 }
 
-.jal-bl:hover .jal-in-bl, .rol-bl:hover .jal-in-bl, .plis-bl:hover .jal-in-bl{
+.jal-bl:hover .jal-in-bl{
 	display: block;
 	opacity: 1;
 	transition: 2s;
@@ -445,22 +448,16 @@ a.menu:after, .dropdown-toggle:after {
 	position: absolute;
 	z-index: 7777;
 }
-.rol-bl {
-	background: url("../images/rol-bl.png")no-repeat center center;
-}
 
-.plis-bl {
-	background: url("../images/plis-bl.png")no-repeat center center;
-}
-
-.jal-bl .title, .rol-bl .title, .plis-bl .title {
+.jal-bl .title {
 	text-align: center;
 	color: #2c3341;
 	font-size: 22px;
 	font-weight: 500;
-	margin-top: 290px;
+	/* margin: 300px 0 0px 0; */
+	border: 1px solid #000;
 }
-.jal-bl .title:hover, .rol-bl .title:hover, .plis-bl .title:hover {
+.jal-bl .title:hover {
 	color: #23d5d4;
 	text-decoration: underline;
 }

@@ -42,7 +42,13 @@
     </div>
 </div>
 <!-- header-in end -->
-<?php
+
+<div>
+    <?php // foreach($data['sub_all'] as $data){ ?>
+        <?php // =@$data['title']?>
+    <?php // } ?>
+</div>
+
 
 <!-- type -->
 <div class="container-fluid type">
@@ -53,9 +59,11 @@
         </h2>
         <!-- -->
         <div class="goods-bl">
-            <a href="h-jal.html">
+            <!-- -->
+            <?php foreach($data['sub_all'] as $data){ ?>
+            <a href="#">
                 <div class="jal-bl" >
-                    <p class="title">Жалюзи горизонтальные</p>
+                    <p class="title"><?=@$data['title']?></p>
                     <div  class="jal-in-bl">
                         <ul>
                             <li>Standart</li>
@@ -67,179 +75,12 @@
                     </div>
                 </div>
             </a>
-            <a href="">
-                <div class="rol-bl vertical-bl">
-                    <p class="title">Жалюзи вертикальные</p>
-                    <div class="jal-in-bl">
-                        <ul>
-                            <li>127 мм ламели</li>
-                            <li>89 мм ламели</li>
-                            <li>String</li>
-                            <li>от 185 грн./м2</li>
-                        </ul>
-                        <button class="btn s3-btn center-block">Посмотреть</button>
-                    </div>
-                </div>
-            </a>
-            <a href="">
-                <div class="plis-bl wood-bl">
-                    <p class="title">Деревянные и бамбуковые</p>
-                    <div class="jal-in-bl ">
-                        <ul>
-                            <li>1-2 дня срок изготовления</li>
-                            <li>25 мм ламели</li>
-                            <li>50 мм ламели</li>
-                            <li>от 185 грн./м2</li>
-                        </ul>
-                        <button class="btn s3-btn center-block">Посмотреть</button>
-                    </div>
-                </div>
-            </a>
+            <?php } ?>
+            <!-- -->
+
         </div>
         <!-- -->
 
-        <!-- -->
-        <div class="goods-bl">
-            <a href="">
-                <div class="jal-bl open-bl" >
-                    <p class="title">Ролеты открытого типа</p>
-                    <div  class="jal-in-bl">
-                        <ul>
-                            <li>440 видов материалов</li>
-                            <li>16 видов систем</li>
-                            <li>1-2 дня срок изготовления</li>
-                            <li>от 185 грн./м2</li>
-                        </ul>
-                        <button class="btn s3-btn center-block">Посмотреть</button>
-                    </div>
-                </div>
-            </a>
-            <a href="">
-                <div class="rol-bl closed-bl">
-                    <p class="title">Ролеты закрытого типа</p>
-                    <div class="jal-in-bl">
-                        <ul>
-                            <li>322 вида материалов</li>
-                            <li>33 вида систем</li>
-                            <li>1-2 дня срок изготовления</li>
-                            <li>от 247 грн./1шт</li>
-                        </ul>
-                        <button class="btn s3-btn center-block">Посмотреть</button>
-                    </div>
-                </div>
-            </a>
-            <a href="">
-                <div class="plis-bl dn-bl">
-                    <p class="title">Системы день-ночь</p>
-                    <div class="jal-in-bl">
-                        <ul>
-                            <li>292 вида материалов</li>
-                            <li>51 вид системы</li>
-                            <li>1-2 дня срок изготовления</li>
-                            <li>от 793 грн./1шт</li>
-                        </ul>
-                        <button class="btn s3-btn center-block">Посмотреть</button>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <!-- -->
-
-        <!-- -->
-        <div class="goods-bl">
-            <a href="">
-                <div class="jal-bl roman-bl" >
-                    <p class="title">Римский карниз</p>
-                    <div  class="jal-in-bl">
-                        <ul>
-                            <li>440 видов материалов</li>
-                            <li>16 видов систем</li>
-                            <li>1-2 дня срок изготовления</li>
-                            <li>от 185 грн./м2</li>
-                        </ul>
-                        <button class="btn s3-btn center-block">Посмотреть</button>
-                    </div>
-                </div>
-            </a>
-            <a href="">
-                <div class="rol-bl bamboo-bl">
-                    <p class="title">Бамбуковые ролеты</p>
-                    <div class="jal-in-bl">
-                        <ul>
-                            <li>322 вида материалов</li>
-                            <li>33 вида систем</li>
-                            <li>1-2 дня срок изготовления</li>
-                            <li>от 247 грн./1шт</li>
-                        </ul>
-                        <button class="btn s3-btn center-block">Посмотреть</button>
-                    </div>
-                </div>
-            </a>
-            <a href="">
-                <div class="plis-bl irregular-bl">
-                    <p class="title">Плиссе для окон неправильной формы</p>
-                    <div class="jal-in-bl jal-in-bl2">
-                        <ul>
-                            <li>292 вида материалов</li>
-                            <li>51 вид системы</li>
-                            <li>1-2 дня срок изготовления</li>
-                            <li>от 793 грн./1шт</li>
-                        </ul>
-                        <button class="btn s3-btn center-block">Посмотреть</button>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <!-- -->
-        <br><br>
-        <!-- -->
-        <div class="goods-bl">
-            <a href="">
-                <div class="jal-bl skylights-bl" >
-                    <p class="title">Плиссе для мансардных (наклонных) окон</p>
-                    <div  class="jal-in-bl jal-in-bl2">
-                        <ul>
-                            <li>440 видов материалов</li>
-                            <li>16 видов систем</li>
-                            <li>1-2 дня срок изготовления</li>
-                            <li>от 185 грн./м2</li>
-                        </ul>
-                        <button class="btn s3-btn center-block">Посмотреть</button>
-                    </div>
-                </div>
-            </a>
-            <a href="">
-                <div class="rol-bl rectangular-bl">
-                    <p class="title">Плиссе для прямоугольных окон</p>
-                    <div class="jal-in-bl jal-in-bl2">
-                        <ul>
-                            <li>322 вида материалов</li>
-                            <li>33 вида систем</li>
-                            <li>1-2 дня срок изготовления</li>
-                            <li>от 247 грн./1шт</li>
-                        </ul>
-                        <button class="btn s3-btn center-block">Посмотреть</button>
-                    </div>
-                </div>
-            </a>
-            <a href="">
-                <div class="plis-bl mosquito-bl">
-                    <p class="title">Антимоскитные сетки</p>
-                    <div class="jal-in-bl">
-                        <ul>
-                            <li>292 вида материалов</li>
-                            <li>51 вид системы</li>
-                            <li>1-2 дня срок изготовления</li>
-                            <li>от 793 грн./1шт</li>
-                        </ul>
-                        <button class="btn s3-btn center-block">Посмотреть</button>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <!-- -->
-
-        <br><br>
         <button type="submit" class="btn-goods center-block">ЗАКАЗАТЬ БЫСТРЫЙ ПРОСЧЕТ!</button>
     </div>
 </div>
