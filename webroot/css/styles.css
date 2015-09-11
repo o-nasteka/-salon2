@@ -497,7 +497,7 @@ a.menu:after, .dropdown-toggle:after {
 	color: #fff;
 }
 .btn-goods {
-	margin: 30px auto 0;
+	/* margin: 30px auto 0 !important; */
 	border-radius: 0 !important;
 	width: 425px;
 	height: 60px;
