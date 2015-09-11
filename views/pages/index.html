@@ -58,49 +58,37 @@
             В нашем салоне представлен большой <br>
             выбор изделий:
         </h2>
+        <!-- -->
+        <!-- -->
         <div class="goods-bl">
-            <a href="/products/view_sub/1">
+            <!-- -->
+            <?php foreach($data['cat_all'] as $data){ ?>
+            <?php  if($data['id'] == 3){break;}?> <!-- Ограничение вывода категорий по id category -->
+
+
+            <a href="/pages/view_cat_products/<?=@$data['id']?>">
                 <div class="jal-bl" >
-                    <p class="title">Жалюзи</p>
+                    <div class="img-bl">
+                        <img src="<?=$data['img_all']?>" />
+                    </div>
+                    <div class="title"><?=@$data['title']?></div>
                     <div  class="jal-in-bl">
                         <ul>
-                            <li>440 видов материалов</li>
-                            <li>16 видов систем</li>
-                            <li>1-2 дня срок изготовления</li>
+                            <li>Standart</li>
+                            <li>Venus</li>
+                            <li>Magnus</li>
                             <li>от 185 грн./м2</li>
                         </ul>
                         <button class="btn s3-btn center-block">Посмотреть</button>
                     </div>
                 </div>
             </a>
-            <a href="/products/view_sub/2">
-                <div class="rol-bl">
-                    <p class="title">Ролеты</p>
-                    <div class="jal-in-bl">
-                        <ul>
-                            <li>322 вида материалов</li>
-                            <li>33 вида систем</li>
-                            <li>1-2 дня срок изготовления</li>
-                            <li>от 247 грн./1шт</li>
-                        </ul>
-                        <button class="btn s3-btn center-block">Посмотреть</button>
-                    </div>
-                </div>
-            </a>
-            <a href="/products/view_sub/3">
-                <div class="plis-bl">
-                    <p class="title">Плиссе</p>
-                    <div class="jal-in-bl">
-                        <ul>
-                            <li>292 вида материалов</li>
-                            <li>51 вид системы</li>
-                            <li>1-2 дня срок изготовления</li>
-                            <li>от 793 грн./1шт</li>
-                        </ul>
-                        <button class="btn s3-btn center-block">Посмотреть</button>
-                    </div>
-                </div>
-            </a>
+            <?php } ?>
+            <!-- -->
+
+        </div>
+        <!-- -->
+        <!-- -->
         </div>
         <button type="submit" class="btn-goods center-block">ЗАКАЗАТЬ БЫСТРЫЙ ПРОСЧЕТ!</button>
     </div>
