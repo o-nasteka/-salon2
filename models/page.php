@@ -2,6 +2,7 @@
 
 class Page extends Model{
 
+    // GetList
     public function getList($only_published = false){
         $sql = "select * from `pages` where 1";
         if ( $only_published ){
@@ -10,6 +11,7 @@ class Page extends Model{
         return $this->db->query($sql);
     }
 
+    // GetByAlias
     public function getByAlias($alias){
         $alias = $this->db->escape($alias);
         $sql = "select * from `pages` where `alias` = '{$alias}' limit 1";
@@ -17,6 +19,7 @@ class Page extends Model{
         return isset($result[0]) ? $result[0] : null;
     }
 
+    // GetById
     public function getById($id){
         $id = (int)$id;
         $sql = "select * from `pages` where `id` = '{$id}' limit 1";
@@ -24,6 +27,13 @@ class Page extends Model{
         return isset($result[0]) ? $result[0] : null;
     }
 
+    // All Category for Index page
+    public function getAllCategory(){
+        $sql = "select * from `category` ";
+        return $this->db->query($sql);
+    }
+
+    // Save
     public function save($data, $id = null){
         if ( !isset($data['alias']) || !isset($data['title']) || !isset($data['content']) ){
             return false;

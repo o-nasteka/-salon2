@@ -28,9 +28,12 @@ class PagesController extends Controller{
         if ( isset($params[0]) ){
             $alias = mb_strtolower($params[0], "UTF-8");
             $this->data['page'] = $this->model->getByAlias($alias);
-            // $id = strtolower($params[0]);
-            // $this->data['page'] = $this->model->getById($id);
         }
+    }
+
+    // All Category for Index page
+    public function view_category(){
+        $this->data['cat_all'] = $this->model->getAllCategory();
     }
 
     public function admin_index(){
