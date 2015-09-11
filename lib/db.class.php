@@ -40,7 +40,7 @@ class DB{
     }
 
     public function trimL($data){
-        echo 111;
+        echo 11;
         echo $data;
         exit;
         return $data;
