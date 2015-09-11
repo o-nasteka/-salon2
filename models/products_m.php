@@ -44,9 +44,11 @@ class Products_m extends Model {
         }
 
 
-
-        $this->db->trimL('privet');
+        ////
+        $data = $this->db->trimAll_l($data);
+        echo $data;
         exit;
+
 
         $id = (int)$id;
         $alias = $this->db->escape($data['alias']);

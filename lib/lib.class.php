@@ -8,7 +8,8 @@ class Lib{
             $data[$key] = $value;
             $data[$key] = ltrim($data[$value]);
             echo $data[$key];
-            echo '1';
+            echo '1111';
+            exit;
         }
 
 
