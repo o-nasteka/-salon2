@@ -29,11 +29,9 @@ class ProductsController extends Controller {
         $params = App::getRouter()->getParams();
 
         if ( isset($params[0]) ){
-          
             $this->data['sub'] = $this->model->getByCategorySub($params[0]);
             $this->data['cat'] = $this->model->getCategory($params[0]);
-
-            
+            // $this->data[] = array_merge($this->data['sub'],$this->data['cat']);
         }
     }
 

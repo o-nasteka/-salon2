@@ -9,14 +9,16 @@
     <h2>
         <?php
 
-            // foreach($data['sub'] as $key=>$value){
-            //    echo $key."<br>";
-            //    echo $value."<br>";
+            // foreach($data['cat'] as $value){
+            //     echo $value."<br>";
             // }
-            echo "<pre>";
-            var_dump($data['cat']['title']);
+            // echo "<pre>";
+            // print_r($data);
+            echo $data['cat'][0]['title'];
+            // exit;
         ?>
     </h2>
+
     <div class="calc-in">
         <div class="w970">
             <form class="form-inline">
@@ -39,10 +41,14 @@
                     <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Выберите тип <span class="caret"></span>
                     </button>
-                    <ul class="dropdown-menu">
-                        <li><a href="contacts.html">- Горизонтальные</a></li>
+                    <ul class="dropdown-menu sub-type">
+                        <?php foreach($data['sub'] as $sub_data){ ?>
+                            <li><a href="#"><?=$sub_data['title']?></a></li>
+                        <?php } ?>
+                        <!-- <li><a href="contacts.html">- Горизонтальные</a></li>
                         <li><a href="contacts.html">- Вертикальные</a></li>
                         <li><a href="contacts.html">- Деревянные и бамбуковые</a></li>
+                        -->
                     </ul>
                 </div>
             </form>
@@ -55,7 +61,6 @@
 <div class="container-fluid h-type">
     <div class="w970">
         <h2 class="text-center">
-            Виды:
         </h2>
         <!-- -->
         <?php foreach($data['sub'] as $sub_data){ ?>
