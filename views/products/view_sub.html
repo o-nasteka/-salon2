@@ -7,15 +7,9 @@
 <!-- header-in -->
 <div class="container-fluid header-in horiz" >
     <h2>
-        <?php
-
-            // foreach($data['cat'] as $value){
-            //     echo $value."<br>";
-            // }
-            // echo "<pre>";
-            // print_r($data);
-            echo $data['cat'][0]['title'];
-            // exit;
+        <!-- Вывод заголовка(категории) -->
+        <?php foreach($data['cat'] as $cat_data) {
+            echo $cat_data['title'];
         ?>
     </h2>
 
@@ -45,10 +39,6 @@
                         <?php foreach($data['sub'] as $sub_data){ ?>
                             <li><a href="#"><?=$sub_data['title']?></a></li>
                         <?php } ?>
-                        <!-- <li><a href="contacts.html">- Горизонтальные</a></li>
-                        <li><a href="contacts.html">- Вертикальные</a></li>
-                        <li><a href="contacts.html">- Деревянные и бамбуковые</a></li>
-                        -->
                     </ul>
                 </div>
             </form>

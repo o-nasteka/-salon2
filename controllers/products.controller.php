@@ -31,7 +31,15 @@ class ProductsController extends Controller {
         if ( isset($params[0]) ){
             $this->data['sub'] = $this->model->getByCategorySub($params[0]);
             $this->data['cat'] = $this->model->getCategory($params[0]);
-            // $this->data[] = array_merge($this->data['sub'],$this->data['cat']);
+            echo "<pre>";
+            // print_r($this->data['sub']);
+            foreach($this->data['cat'] as $value){
+                echo $value['title']."<br>";
+            }
+            // echo $this->data['cat']['title'];
+            exit;
+
+
         }
     }
 
