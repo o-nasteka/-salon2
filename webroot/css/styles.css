@@ -228,6 +228,14 @@ a.menu:after, .dropdown-toggle:after {
 	float: right !important;
 	/* */
 }
+.sub-type {
+	width: 300px;
+}
+.sub-type li {
+	border: 1px solid #fafafa;
+	width: 280px !important;
+	margin: 0 auto;
+}
 
 .nav-pills > li > a:hover {
 	background-color: #23d5d4 !important;;
@@ -1102,7 +1110,7 @@ a.menu:after, .dropdown-toggle:after {
 	margin-left: 10px;
 }
 .header-in .btn {
-	width: 200px;
+	width: 300px;
 	height: 40px;
 	background-color: #23d5d4;
 	color: #fff;
