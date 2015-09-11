@@ -12,6 +12,7 @@ class PagesController extends Controller{
     }
 
     public function view(){
+
         $params = App::getRouter()->getParams();
 
         if ( isset($params[0]) ){
