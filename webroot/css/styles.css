@@ -216,13 +216,17 @@ a.menu:after, .dropdown-toggle:after {
 .drop-big3 {
 	width: 190px !important;
 }
+.drop-big4 {
+	width: 288px !important;
+}
 .out-syst {
 	background-color: #23d5d4;
 	color: #fff;
 	font-size: 14px;
-	width: 255px;
+	padding: 0 10px;
 	border: none;
 	float: right !important;
+	/* */
 }
 
 .nav-pills > li > a:hover {
