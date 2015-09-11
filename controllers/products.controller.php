@@ -31,27 +31,14 @@ class ProductsController extends Controller {
         if ( isset($params[0]) ){
             $this->data['sub'] = $this->model->getByCategorySub($params[0]);
             $this->data['cat'] = $this->model->getCategory($params[0]);
-            echo "<pre>";
-            // print_r($this->data['sub']);
-            foreach($this->data['cat'] as $value){
-                echo $value['title']."<br>";
-            }
-            // echo $this->data['cat']['title'];
-            exit;
-
-
         }
     }
 
     // select products from category_sub
     public function view_sub_products(){
         $params = App::getRouter()->getParams();
-
         if ( isset($params[0]) ){
-
             $this->data['sub_products'] = $this->model->getProductsByCategorySubId($params[0]);
-
-
         }
     }
 

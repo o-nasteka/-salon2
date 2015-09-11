@@ -22,12 +22,15 @@ class Products_m extends Model {
     }
 
     // Get all by CategoryId from table products
-    public function  getProductsByCategorySubId($id){
+    public function  getProductsByCategorySubId($id)
+    {
         $id = (int)$id;
         $sql = "select * from `products` where `category_sub_id` = '{$id}' ";
+        // print_r($sql);
+        // exit;
         return $this->db->query($sql);
-    }
 
+    }
     // Get all by Id from table products
     public function getById($id){
         $id = (int)$id;

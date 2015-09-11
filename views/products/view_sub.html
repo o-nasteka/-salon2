@@ -8,8 +8,9 @@
 <div class="container-fluid header-in horiz" >
     <h2>
         <!-- Вывод заголовка(категории) -->
-        <?php foreach($data['cat'] as $cat_data) {
-            echo $cat_data['title'];
+        <?php foreach($data['cat'] as $cat_data){
+                echo $cat_data['title'];
+            }
         ?>
     </h2>
 
@@ -37,7 +38,7 @@
                     </button>
                     <ul class="dropdown-menu sub-type">
                         <?php foreach($data['sub'] as $sub_data){ ?>
-                            <li><a href="#"><?=$sub_data['title']?></a></li>
+                            <li><a href="/products/view_sub_products/<?=$sub_data['id']?>"><?=$sub_data['title']?></a></li>
                         <?php } ?>
                     </ul>
                 </div>
