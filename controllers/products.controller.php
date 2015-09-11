@@ -11,7 +11,9 @@ class ProductsController extends Controller {
     }
 
     public function view(){
-        $params = App::getRouter()->getParams();
+        if(!count($params = App::getRouter()->getParams())){
+            Router::redirect('/');
+        }
 
         if ( isset($params[0]) ){
             $alias = mb_strtolower($params[0], "UTF-8");
