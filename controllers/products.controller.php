@@ -39,7 +39,7 @@ class ProductsController extends Controller {
         }
     }
 
-    // select products from category_subb
+    // select products from category_sub
     public function view_sub_products(){
         if(!count($params = App::getRouter()->getParams())){
             Router::redirect('/');

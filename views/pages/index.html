@@ -65,7 +65,7 @@
             <?php foreach($data['cat_all'] as $data){ ?>
             <?php  if($data['id'] == 4){break;}?> <!-- Ограничение вывода категорий по id category -->
 
-            <a href="#">
+            <a href="/products/view_sub/<?=@$data['id']?>">
                 <div class="jal-bl" >
                     <div class="img-bl">
                         <img src="<?=$data['img_all']?>" />
