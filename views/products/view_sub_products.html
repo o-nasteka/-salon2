@@ -6,7 +6,13 @@
 
 <!-- header-in -->
 <div class="container-fluid header-in horiz" >
-    <h2> Тип </h2>
+    <h2>
+        <!-- Вывод заголовка(категории) -->
+        <?php foreach($data['cat'] as $cat_data){
+                echo $cat_data['title'];
+            }
+        ?>
+    </h2>
     <div class="calc-in">
         <div class="w970">
             <form class="form-inline">
@@ -29,10 +35,10 @@
                     <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Выберите тип <span class="caret"></span>
                     </button>
-                    <ul class="dropdown-menu">
-                        <li><a href="contacts.html">- Горизонтальные</a></li>
-                        <li><a href="contacts.html">- Вертикальные</a></li>
-                        <li><a href="contacts.html">- Деревянные и бамбуковые</a></li>
+                    <ul class="dropdown-menu sub-type">
+                        <?php foreach($data['sub_products'] as $sub_products_data){ ?>
+                        <li><a href="/products/view/<?=$sub_products_data['alias']?>"><?=$sub_products_data['title']?></a></li>
+                        <?php } ?>
                     </ul>
                 </div>
             </form>
@@ -45,20 +51,19 @@
 <div class="container-fluid h-type">
     <div class="w970">
         <h2 class="text-center">
-            Виды :
         </h2>
         <!-- -->
-        <?php foreach($data['sub'] as $sub_data){ ?>
+        <?php foreach($data['sub_products'] as $sub_products_data){ ?>
         <div class="type-in">
             <a href="#">
                 <div class="type-in-bl">
                     <div class="type-in-img">
                         <button class="btn-in">Посмотреть!</button>
-                        <img src="<?=$sub_data['img']?>" />
+                        <img src="<?=@$sub_products_data['img']?>" />
                     </div>
-                    <p class="title"><?=$sub_data['title']?></p>
+                    <p class="title"><?=@$sub_products_data['title']?></p>
                     <p class="txt">
-                        <?=@$sub_data['description']?>
+                        <?=@$sub_products_data['description']?>
                     </p>
                 </div>
             </a>
