@@ -39,11 +39,14 @@ class DB{
         return mysqli_escape_string($this->connection, $str);
     }
 
-    public function trimL($data){
-        echo 11;
-        echo $data;
-        exit;
-        return $data;
+    public function trimAll_l($data_trim){
+        if(!is_array($data_trim)) {
+            $data_trim = ltrim($data_trim);
+        } else {
+            $data_trim = array_map('trimAll_l',$data_trim);
+        }
+        return $data_trim;
+        //////
     }
 
 
