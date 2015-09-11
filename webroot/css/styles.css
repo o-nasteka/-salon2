@@ -426,7 +426,7 @@ a.menu:after, .dropdown-toggle:after {
 	border: 0px solid  #23d5d4;
 
 }
-.jal-bl, .rol-bl, .plis-bl {
+.jal-bl {
 	width: 293px;
 	min-height: 320px;
 	height: auto;
@@ -437,7 +437,10 @@ a.menu:after, .dropdown-toggle:after {
 
 }
 .jal-bl {
-	background: url("../images/jal-bl.png")no-repeat center center;
+	/* background: url("../images/jal-bl.png")no-repeat center center; */
+}
+.jal-bl img {
+	position: absolute;
 }
 
 .jal-bl:hover .jal-in-bl{
@@ -452,14 +455,14 @@ a.menu:after, .dropdown-toggle:after {
 .jal-bl .title {
 	text-align: center;
 	color: #2c3341;
-	font-size: 22px;
+	font-size: 20px;
 	font-weight: 500;
-	/* margin: 300px 0 0px 0; */
-	border: 1px solid #000;
+	margin: 262px 0 20px 0;
+	border: 0px solid #2c3341;
 }
 .jal-bl .title:hover {
+	/* text-decoration: underline; */
 	color: #23d5d4;
-	text-decoration: underline;
 }
 .jal-in-bl {
 	display: none;
