@@ -17,7 +17,7 @@ class Products_m extends Model {
     // Get all from table category by CategorySubId
     public function  getCategory($id){
         $id = (int)$id;
-        $sql = "select * from `category` where `title` = '{$id}' ";
+        $sql = "select * from `category` where `id` = '{$id}' ";
         return $this->db->query($sql);
     }
 
