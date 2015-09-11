@@ -36,9 +36,11 @@ class ProductsController extends Controller {
 
     // select products from category_subb
     public function view_sub_products(){
-        $params = App::getRouter()->getParams();
+        if(!count($params = App::getRouter()->getParams())){
+            Router::redirect('/');
+        }
 
-        if ( isset($params[0]) && is_numeric($params[0]) ){
+        if ( isset($params[0]) && is_numeric($params[0])){
             $this->data['sub_products'] = $this->model->getProductsByCategorySubId($params[0]);
             $this->data['sub'] = $this->model->getSubCategoryTitleById($params[0]);
         }else {
