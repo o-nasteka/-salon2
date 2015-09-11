@@ -9,6 +9,8 @@ class PagesController extends Controller{
 
     public function index(){
         $this->data['pages'] = $this->model->getList();
+        // All Category for Index page
+        $this->data['cat_all'] = $this->model->getAllCategory();
     }
 
     public function view(){
@@ -28,8 +30,6 @@ class PagesController extends Controller{
         if ( isset($params[0]) ){
             $alias = mb_strtolower($params[0], "UTF-8");
             $this->data['page'] = $this->model->getByAlias($alias);
-            // $id = strtolower($params[0]);
-            // $this->data['page'] = $this->model->getById($id);
         }
     }
 
