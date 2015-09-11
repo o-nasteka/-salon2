@@ -55,6 +55,7 @@ class ProductsController extends Controller {
 
     public function admin_add(){
         if ( $_POST ){
+
             $result = $this->model->save($_POST);
             if ( $result ){
                 Session::setFlash('Page was saved.');

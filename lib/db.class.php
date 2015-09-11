@@ -39,4 +39,12 @@ class DB{
         return mysqli_escape_string($this->connection, $str);
     }
 
+    public function trimL($data){
+        echo 111;
+        echo $data;
+        exit;
+        return $data;
+    }
+
+
 }
