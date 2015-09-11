@@ -11,20 +11,14 @@ class Lib{
             echo '1111';
             exit;
         }
-
-
-
         return $data;
-        /*
-        if(!is_array($data_trim)) {
-            $data_trim = ltrim($data_trim);
-        } else {
-            $data_trim = array_map('lTrimAll',$data_trim);
-        }
-        return $data_trim;
-    }
-        */
+
     }
 
+        public static function tst($data = array()){
+
+            return $data;
+
+        }
 
 }

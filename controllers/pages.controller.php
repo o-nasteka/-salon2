@@ -12,9 +12,7 @@ class PagesController extends Controller{
     }
 
     public function view(){
-
         $params = App::getRouter()->getParams();
-
         if ( isset($params[0]) ){
             $alias = mb_strtolower($params[0], "UTF-8");
             $this->data['page'] = $this->model->getByAlias($alias);
