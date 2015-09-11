@@ -426,7 +426,7 @@ a.menu:after, .dropdown-toggle:after {
 	border: 0px solid  #23d5d4;
 
 }
-.jal-bl, .rol-bl, .plis-bl {
+.jal-bl {
 	width: 293px;
 	min-height: 320px;
 	height: auto;
@@ -437,7 +437,10 @@ a.menu:after, .dropdown-toggle:after {
 
 }
 .jal-bl {
-	background: url("../images/jal-bl.png")no-repeat center center;
+	/* background: url("../images/jal-bl.png")no-repeat center center; */
+}
+.jal-bl img {
+	position: absolute;
 }
 
 .jal-bl:hover .jal-in-bl{
@@ -452,14 +455,14 @@ a.menu:after, .dropdown-toggle:after {
 .jal-bl .title {
 	text-align: center;
 	color: #2c3341;
-	font-size: 22px;
+	font-size: 20px;
 	font-weight: 500;
-	/* margin: 300px 0 0px 0; */
-	border: 1px solid #000;
+	margin: 262px 0 20px 0;
+	border: 0px solid #2c3341;
 }
 .jal-bl .title:hover {
+	/* text-decoration: underline; */
 	color: #23d5d4;
-	text-decoration: underline;
 }
 .jal-in-bl {
 	display: none;
@@ -1237,39 +1240,7 @@ a.menu:after, .dropdown-toggle:after {
 	min-height: 920px;
 	padding-bottom: 40px;
 }
-.wood-bl {
-	background: url("../images/wood-blinds.jpg")no-repeat center;
-}
-.vertical-bl {
-	background: url("../images/vertical.jpg")no-repeat center;
-}
-.open-bl {
-	background: url("../images/open-type.jpg")no-repeat center;
-}
-.closed-bl {
-	background: url("../images/closed-type.jpg")no-repeat center;
-}
-.dn-bl {
-	background: url("../images/day-night.jpg")no-repeat center;
-}
-.roman-bl {
-	background: url("../images/romanshades.jpg")no-repeat center;
-}
-.bamboo-bl {
-	background: url("../images/bamboo.jpg")no-repeat center;
-}
-.irregular-bl {
-	background: url("../images/irregular.jpg")no-repeat center;
-}
-.skylights-bl {
-	background: url("../images/skylights.jpg")no-repeat center;
-}
-.rectangular-bl {
-	background: url("../images/rectangular.jpg")no-repeat center;
-}
-.mosquito-bl {
-	background: url("../images/mosquito.jpg")no-repeat center;
-}
+
 /* type end*/
 
 /* Horizontal */
