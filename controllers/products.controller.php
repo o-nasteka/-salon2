@@ -30,7 +30,7 @@ class ProductsController extends Controller {
 
         if ( isset($params[0]) ){
             $this->data['sub'] = $this->model->getByCategorySub($params[0]);
-            $this->data['cat'] = $this->model->getCategory($params[0]);
+            $this->data['cat'] = $this->model->getCategoryTitleById($params[0]);
         }
     }
 
@@ -39,6 +39,7 @@ class ProductsController extends Controller {
         $params = App::getRouter()->getParams();
         if ( isset($params[0]) ){
             $this->data['sub_products'] = $this->model->getProductsByCategorySubId($params[0]);
+            $this->data['sub'] = $this->model->getSubCategoryTitleById($params[0]);
         }
     }
 

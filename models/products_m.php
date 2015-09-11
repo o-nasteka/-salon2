@@ -14,8 +14,15 @@ class Products_m extends Model {
         return $this->db->query($sql);
     }
 
-    // Get all from table Category by Id
-    public function  getCategory($id){
+    // Get SubCategory title from table sub_category by Id
+    public function  getSubCategoryTitleById($id){
+        $id = (int)$id;
+        $sql = "select `title` from `sub_category` where `id` = '{$id}' ";
+        return $this->db->query($sql);
+    }
+
+    // Get Category title from table Category by Id
+    public function  getCategoryTitleById($id){
         $id = (int)$id;
         $sql = "select `title` from `category` where `id` = '{$id}' ";
         return $this->db->query($sql);
@@ -26,10 +33,7 @@ class Products_m extends Model {
     {
         $id = (int)$id;
         $sql = "select * from `products` where `category_sub_id` = '{$id}' ";
-        // print_r($sql);
-        // exit;
         return $this->db->query($sql);
-
     }
     // Get all by Id from table products
     public function getById($id){
