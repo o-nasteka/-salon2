@@ -57,14 +57,13 @@
         <h2 class="text-center">
             В нашем салоне представлен большой <br>
             выбор изделий:
-        </h2>
+        </h2><br>
         <!-- -->
         <!-- Вывести все категории -->
         <div class="goods-bl">
             <!-- -->
             <?php foreach($data['cat_all'] as $data){ ?>
-            <?php  if($data['id'] == 3){break;}?> <!-- Ограничение вывода категорий по id category -->
-
+            <?php  if($data['id'] == 4){break;}?> <!-- Ограничение вывода категорий по id category -->
 
             <a href="#">
                 <div class="jal-bl" >
@@ -85,11 +84,8 @@
             </a>
             <?php } ?>
             <!-- -->
-
         </div>
         <!-- -->
-        <!-- -->
-        </div>
         <button type="submit" class="btn-goods center-block">ЗАКАЗАТЬ БЫСТРЫЙ ПРОСЧЕТ!</button>
     </div>
 </div>
