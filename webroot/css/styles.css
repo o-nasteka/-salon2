@@ -237,6 +237,25 @@ a.menu:after, .dropdown-toggle:after {
 	text-decoration: underline;
 }
 
+.top-cat-but {
+	background-color: transparent !important;
+	position: absolute !important;
+	z-index: 8888;
+	margin: 0 ;
+	padding: 0 15px;
+	height: 40px;
+	border: 0 solid #fff;
+	color: transparent !important;
+}
+.top-cat-but:hover {
+	background-color: transparent !important;
+	color: #fff !important;
+	text-decoration: underline;
+}
+.top-cat-but:active, .top-cat-but:focus,
+.dropdown-toggle:active, .dropdown-toggle:focus{
+	border: none !important;
+}
 /* Section-2 */
 .section-2 {
 	background: url("../images/bg-03.png") no-repeat center center;
