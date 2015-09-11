@@ -50,9 +50,6 @@ class ProductsController extends Controller {
         if ( isset($params[0]) && is_numeric($params[0])){
             $this->data['sub_products'] = $this->model->getProductsByCategorySubId($params[0]);
             $this->data['sub'] = $this->model->getSubCategoryTitleById($params[0]);
-            if(empty($this->data['sub_products']) || empty($this->data['sub'])){
-                Router::redirect('/');
-            }
 
         }else {
             Router::redirect('/');
