@@ -59,6 +59,10 @@ class ProductsController extends Controller {
 
     // All SubCategory calculator
     public function view_subcategory(){
+        if(count($params = App::getRouter()->getParams())){
+            Router::redirect('/');
+        }
+
         $this->data['sub_all'] = $this->model->getAllCategorySub();
     }
 
