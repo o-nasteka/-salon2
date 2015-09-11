@@ -24,13 +24,14 @@ class ProductsController extends Controller {
         }
     }
 
-    // select from category_sub
+    // select all from category_sub
     public function view_sub(){
         $params = App::getRouter()->getParams();
 
         if ( isset($params[0]) ){
           
             $this->data['sub'] = $this->model->getByCategorySub($params[0]);
+            $this->data['cat'] = $this->model->getCategory($params[0]);
 
             
         }
