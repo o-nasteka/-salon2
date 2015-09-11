@@ -53,13 +53,8 @@ class Products_m extends Model {
             return false;
         }
 
-
-        /////
-
+        // delete 'space';
         $data = $this->db->trimAll_l($data);
-
-
-
 
         $id = (int)$id;
         $alias = $this->db->escape($data['alias']);
