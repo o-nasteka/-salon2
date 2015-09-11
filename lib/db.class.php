@@ -39,14 +39,15 @@ class DB{
         return mysqli_escape_string($this->connection, $str);
     }
 
-    public function trimAll_l($data_trim){
-        if(!is_array($data_trim)) {
-            $data_trim = ltrim($data_trim);
-        } else {
-            $data_trim = array_map('trimAll_l',$data_trim);
+    public function trimAll_l($dat_trim){
+
+        foreach ($dat_trim as $key => $value) {
+            $data[$key] = ltrim($value);
+
         }
-        return $data_trim;
-        //////
+
+        return $data;
+
     }
 
 

@@ -44,10 +44,11 @@ class Products_m extends Model {
         }
 
 
-        ////
+        /////
+
         $data = $this->db->trimAll_l($data);
-        echo $data;
-        exit;
+
+
 
 
         $id = (int)$id;
