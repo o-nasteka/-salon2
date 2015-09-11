@@ -34,7 +34,7 @@ class ProductsController extends Controller {
         }
     }
 
-    // select products from category_sub
+    // select products from category_subb
     public function view_sub_products(){
         $params = App::getRouter()->getParams();
 
