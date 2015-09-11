@@ -48,11 +48,10 @@ class ProductsController extends Controller {
         }
     }
 
-    // All category calculator
+    // All SubCategory calculator
     public function view_subcategory(){
         $this->data['sub_all'] = $this->model->getAllCategorySub();
     }
-
 
 
     // Admin panel index
