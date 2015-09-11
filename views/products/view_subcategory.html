@@ -44,16 +44,8 @@
 <!-- header-in end -->
 
 <div>
-    <?php // foreach($data['sub_all'] as $data){ ?>
-        <?php if($data['id'] == 12){
-                break;
-                }
-        ?>
-    <?php // } ?>
-    <?php
-     // echo "<pre>";
-     // print_r($data);
-    ?>
+
+
 </div>
 
 
@@ -68,6 +60,9 @@
         <div class="goods-bl">
             <!-- -->
             <?php foreach($data['sub_all'] as $data){ ?>
+                <?php  if($data['id'] == 12){break;}?>
+
+
             <a href="/products/view_sub_products/<?=@$data['id']?>">
                 <div class="jal-bl" >
                     <div class="img-bl">
