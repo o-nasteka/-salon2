@@ -10,7 +10,8 @@ class PagesController extends Controller{
     public function index(){
         $this->data['pages'] = $this->model->getList();
         // All Category for Index page
-        $this->data['cat_all'] = $this->model->getAllCategory();
+        // $this->data['cat_all'] = $this->model->getAllCategory();
+        $this->data['cat_all'] = $this->model->getAllCat();
     }
 
     public function view(){

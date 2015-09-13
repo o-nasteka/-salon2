@@ -32,6 +32,11 @@ class Page extends Model{
         $sql = "select * from `category` ";
         return $this->db->query($sql);
     }
+    // All Category for Index page
+    public function getAllCat(){
+        $sql = "select * from `cat` where parent = 0 ";
+        return $this->db->query($sql);
+    }
 
     // Save
     public function save($data, $id = null){
