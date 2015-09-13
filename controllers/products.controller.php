@@ -33,11 +33,13 @@ class ProductsController extends Controller {
         }
 
         if ( isset($params[0]) ){
-            $this->data['sub'] = $this->model->getByCategorySub($params[0]);
-            $this->data['cat'] = $this->model->getCategoryTitleById($params[0]);
-            if(empty($this->data['sub']) || empty($this->data['cat'])){
-                Router::redirect('/');
-            }
+            // $this->data['sub'] = $this->model->getByCategorySub($params[0]);
+            $this->data['sub'] = $this->model->getCatChild($params[0]);
+
+            // $this->data['cat'] = $this->model->getCategoryTitleById($params[0]);
+            // if(empty($this->data['sub']) || empty($this->data['cat'])){
+            //     Router::redirect('/');
+            // }
         }
     }
 

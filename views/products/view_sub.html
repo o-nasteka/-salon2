@@ -8,9 +8,12 @@
 <div class="container-fluid header-in horiz" >
     <h2>
         <!-- Вывод заголовка(категории) -->
-        <?php foreach($data['cat'] as $cat_data){
-                echo $cat_data['title'];
-            }
+        <?php // foreach($data['sub'] as $sub_data){
+              //  echo $sub_data['title'];
+                // }
+            // echo "<pre>";
+            // print_r($data[sub]);
+            // exit;
         ?>
     </h2>
 
@@ -59,7 +62,7 @@
         <?php foreach($data['sub'] as $sub_data){ ?>
         <div class="type-in">
             <!-- Ссылка на все товары этой подкатегории  -->
-            <a href="/products/view_sub_products/<?=$sub_data['id']?>">
+            <a href="/products/view_sub/<?=$sub_data['id']?>">
                 <div class="type-in-bl">
                     <div class="type-in-img">
                         <button class="btn-in">Посмотреть!</button>
