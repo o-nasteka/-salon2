@@ -62,13 +62,13 @@
         <!-- Вывести все категории -->
         <div class="goods-bl">
             <!-- -->
-            <?php foreach($data['cat_all'] as $data){ ?>
-            <?php  if($data['id'] == 4){break;}?> <!-- Ограничение вывода категорий по id category -->
+            <?php $i = 0; foreach($data['cat_all'] as $data){ ?>
+            <?php  $i++; if($i == 4){break;}?> <!-- Ограничение вывода категорий по id category -->
 
             <a href="/products/view_sub/<?=@$data['id']?>">
                 <div class="jal-bl" >
                     <div class="img-bl">
-                        <img src="<?=$data['img_all']?>" />
+                        <img src="<?=$data['img']?>" />
                     </div>
                     <div class="title"><?=@$data['title']?></div>
                     <div  class="jal-in-bl">
