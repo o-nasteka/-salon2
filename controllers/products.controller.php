@@ -37,6 +37,7 @@ class ProductsController extends Controller {
             $this->data['sub'] = $this->model->getCatChild($params[0]);
 
             }
+       //Все id категорий и под категорий
         $array_id = array('1','13','33','37','41','3','6','10','14','21','26','31','34','35','36','38','39','40','42','43','44','45','46','47');
 
         //var_dump($params[0]);
