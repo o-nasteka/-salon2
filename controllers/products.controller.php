@@ -40,9 +40,9 @@ class ProductsController extends Controller {
         $array_id = array(1,13,33,37,41,3,6,10,14,21,26,31,34,35,36,38,39,40,42,43,44,45,46,47);
 
         if(in_array($array_id,$params[0])){
-            $this->data['contr'] = 'view_sub';
+            $this->data['contrl'] = 'view_sub';
         }else{
-            $this->data['contr'] = 'view';
+            $this->data['contrl'] = 'view';
         }
 
             // $this->data['cat'] = $this->model->getCategoryTitleById($params[0]);
