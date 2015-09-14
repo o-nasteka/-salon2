@@ -78,6 +78,20 @@ class ProductsController extends Controller {
         }
     }
 
+    // All Sub 111
+    public function view_sub1(){
+        if(count($params = App::getRouter()->getParams())){
+            Router::redirect('/');
+        }
+
+        if ( isset($params[0]) ) {
+            $this->data['sub_all'] = $this->model->AllCat();
+        }
+
+
+    }
+
+
     // All SubCategory calculator
     public function view_subcategory(){
         if(count($params = App::getRouter()->getParams())){
@@ -143,6 +157,8 @@ class ProductsController extends Controller {
         }
         Router::redirect('/admin/products/');
     }
+
+
 
 }
 

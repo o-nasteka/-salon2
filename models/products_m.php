@@ -36,6 +36,14 @@ class Products_m extends Model {
         return $this->db->query($sql);
     }
 
+    // Get Category All Cat 111
+    public function AllCat($id){
+        $id = (int)$id;
+        $sql = "select * from `cat` where `parent` = '{$id}' ";
+        return $this->db->query($sql);
+    }
+
+
     // Get all products by CategorySubId from table Products
     public function  getProductsByCategoryCatId($id)
     {
