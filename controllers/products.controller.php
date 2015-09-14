@@ -34,6 +34,21 @@ class ProductsController extends Controller {
 
     // select all from category_sub
     public function view_sub(){
+
+        $data1 = $this->model->getByCategorySub(0);
+        $data2 = $this->model->getList();
+
+        foreach($data1 as $dat1){
+           $id[] = $dat1['id'];
+            foreach($data2 as $dat2){
+                if($dat1['id'] == $dat2['parent']){
+                    $res[] = $dat2['id'];
+                }
+            }
+        }
+        $array_id = array_merge($id, $res);
+        echo '<pre>';
+       
         if(!count($params = App::getRouter()->getParams())){
             Router::redirect('/');
         }
@@ -41,16 +56,10 @@ class ProductsController extends Controller {
         if ( isset($params[0]) ) {
             // $this->data['sub'] = $this->model->getByCategorySub($params[0]);
 
-            //Все id категорий и под категорий
-            $array_id = array('1', '13', '33', '37', '41', '3', '6', '10', '14', '21', '26', '31', '34', '35', '36', '38', '39', '40', '42', '43', '44', '45', '46', '47');
-
-
             //Если такой id в массиве то true
             if (in_array($params[0], $array_id)) {
                 $this->data['sub'] = $this->model->getCatChild($params[0]);
                 $this->data['contrl'] = 'view_sub';
-
-
             } else {
 
                 $this->data['contrl'] = 'view';

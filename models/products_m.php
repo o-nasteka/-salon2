@@ -3,7 +3,7 @@ class Products_m extends Model {
 
     // Get all from table products
     public function getList(){
-        $sql = "select * from `products`";
+        $sql = "select * from `cat`";
         return $this->db->query($sql);
     }
 
@@ -24,7 +24,7 @@ class Products_m extends Model {
 
     public function  getByCategorySub($id){
         $id = (int)$id;
-        $sql = "select * from `category_sub` where `category_id` = '{$id}' ";
+        $sql = "select * from `cat` where `parent` = '{$id}' ";
         return $this->db->query($sql);
     }
 
