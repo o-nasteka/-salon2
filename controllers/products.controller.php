@@ -89,7 +89,7 @@ class ProductsController extends Controller {
         }
 
         if ( isset($params[0]) ) {
-            $this->data['sub_all'] = $this->model->AllCat();
+            $this->data['cat'] = $this->model->AllCat($params[0]);
         }
 
 
