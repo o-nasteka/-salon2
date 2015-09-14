@@ -31,15 +31,15 @@ class Products_m extends Model {
     // Get Category title from table Category by Id
     public function  getCategoryTitleById($id){
         $id = (int)$id;
-        $sql = "select `title` from `category` where `id` = '{$id}' ";
+        $sql = "select `title` from `goods` where `id` = '{$id}' ";
         return $this->db->query($sql);
     }
 
     // Get all products by CategorySubId from table Products
-    public function  getProductsByCategorySubId($id)
+    public function  getProductsByCategoryCatId($id)
     {
         $id = (int)$id;
-        $sql = "select * from `products` where `category_sub_id` = '{$id}' ";
+        $sql = "select * from `goods` where `cat_id` = '{$id}' ";
         return $this->db->query($sql);
     }
 

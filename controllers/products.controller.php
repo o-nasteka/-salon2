@@ -15,13 +15,15 @@ class ProductsController extends Controller {
             Router::redirect('/');
         }
 
-        if ( isset($params[0]) ){
+        if ( isset($params[0]) && !is_numeric($params[0]) ){
+
             $alias = mb_strtolower($params[0], "UTF-8");
             $this->data['products'] = $this->model->getByAlias($alias);
 
             if(empty($this->data['products'])){
                 Router::redirect('/');
             }
+
 
         }
     }
@@ -48,7 +50,9 @@ class ProductsController extends Controller {
             } else {
 
                 $this->data['contrl'] = 'view';
-                $this->data['sub'] = $this->model->getCatChild($params[0]);
+
+
+                $this->data['sub'] = $this->model-> getProductsByCategoryCatId($params[0]);
                 //дописать модель для выполнения
             }
         }
