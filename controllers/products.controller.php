@@ -43,10 +43,15 @@ class ProductsController extends Controller {
         //var_dump($params[0]);
         //exit;
 
+        //Если такой id в массиве то true
         if(in_array($params[0],$array_id )){
             $this->data['contrl'] = 'view_sub';
+            //дописать модель для выполнения
+
         }else{
+
             $this->data['contrl'] = 'view';
+            //дописать модель для выполнения
         }
 //
             // $this->data['cat'] = $this->model->getCategoryTitleById($params[0]);
