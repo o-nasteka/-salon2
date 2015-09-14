@@ -25,7 +25,11 @@ class ProductsController extends Controller {
             }
 
 
+        }else {
+            $this->data['products'] = $this->model->getGoodsById($params[0]);
         }
+
+
     }
 
     // select all from category_sub
