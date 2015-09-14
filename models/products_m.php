@@ -8,7 +8,21 @@ class Products_m extends Model {
     }
 
     // Get all from table products by CategoryId
-	public function  getByCategorySub($id){
+    public function  getGoodsById($id){
+        $id = (int)$id;
+        $sql = "select * from `goods` where `id` = '{$id}' ";
+        return $this->db->query($sql);
+    }
+
+    // Get by Alias from table products
+    public function getByAlias($alias){
+        $alias = $this->db->escape($alias);
+        $sql = "select * from `goods` where `alias` = '{$alias}' limit 1";
+        $result = $this->db->query($sql);
+        return isset($result[0]) ? $result[0] : null;
+    }
+
+    public function  getByCategorySub($id){
         $id = (int)$id;
         $sql = "select * from `category_sub` where `category_id` = '{$id}' ";
         return $this->db->query($sql);
@@ -48,7 +62,7 @@ class Products_m extends Model {
     public function  getProductsByCategoryCatId($id)
     {
         $id = (int)$id;
-        $sql = "select * from `goods` where `cat_id` = '{$id}' ";
+        $sql = "select * from `cat` where `parent` = '{$id}' ";
         return $this->db->query($sql);
     }
 
@@ -66,13 +80,7 @@ class Products_m extends Model {
         return isset($result[0]) ? $result[0] : null;
     }
 
-    // Get by Alias from table products
-    public function getByAlias($alias){
-        $alias = $this->db->escape($alias);
-        $sql = "select * from `products` where `alias` = '{$alias}' limit 1";
-        $result = $this->db->query($sql);
-        return isset($result[0]) ? $result[0] : null;
-    }
+
 
     // Save to table products
     public function save($data, $id = null){
