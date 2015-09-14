@@ -47,8 +47,7 @@ class ProductsController extends Controller {
             }
         }
         $array_id = array_merge($id, $res);
-        echo '<pre>';
-       
+
         if(!count($params = App::getRouter()->getParams())){
             Router::redirect('/');
         }
