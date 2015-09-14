@@ -39,14 +39,14 @@ class ProductsController extends Controller {
             if(!isset($i)){
                 $i = 0;
             }else{
-                if($i == 3){
+                if($i == 2){
                     unset($i);
                 }
                 $i++;
 
             }
             $this->data['i'] = $i;
-
+///
 
             // $this->data['cat'] = $this->model->getCategoryTitleById($params[0]);
             // if(empty($this->data['sub']) || empty($this->data['cat'])){
