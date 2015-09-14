@@ -48,6 +48,7 @@ class ProductsController extends Controller {
             } else {
 
                 $this->data['contrl'] = 'view';
+                $this->data['sub'] = $this->model->getCatChild($params[0]);
                 //дописать модель для выполнения
             }
         }
