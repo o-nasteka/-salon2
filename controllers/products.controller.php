@@ -32,33 +32,30 @@ class ProductsController extends Controller {
             Router::redirect('/');
         }
 
-        if ( isset($params[0]) ){
+        if ( isset($params[0]) ) {
             // $this->data['sub'] = $this->model->getByCategorySub($params[0]);
-            $this->data['sub'] = $this->model->getCatChild($params[0]);
 
+            //Все id категорий и под категорий
+            $array_id = array('1', '13', '33', '37', '41', '3', '6', '10', '14', '21', '26', '31', '34', '35', '36', '38', '39', '40', '42', '43', '44', '45', '46', '47');
+
+
+            //Если такой id в массиве то true
+            if (in_array($params[0], $array_id)) {
+                $this->data['sub'] = $this->model->getCatChild($params[0]);
+                $this->data['contrl'] = 'view_sub';
+
+
+            } else {
+
+                $this->data['contrl'] = 'view';
+                //дописать модель для выполнения
             }
-       //Все id категорий и под категорий
-        $array_id = array('1','13','33','37','41','3','6','10','14','21','26','31','34','35','36','38','39','40','42','43','44','45','46','47');
-
-        //var_dump($params[0]);
-        //exit;
-
-        //Если такой id в массиве то true
-        if(in_array($params[0],$array_id )){
-            $this->data['contrl'] = 'view_sub';
-            //дописать модель для выполнения
-
-        }else{
-
-            $this->data['contrl'] = 'view';
-            //дописать модель для выполнения
         }
-//
             // $this->data['cat'] = $this->model->getCategoryTitleById($params[0]);
             // if(empty($this->data['sub']) || empty($this->data['cat'])){
             //     Router::redirect('/');
             // }
-        }
+    }
 
 
     // select products from category_sub
