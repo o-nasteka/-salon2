@@ -18,6 +18,7 @@ class Products_m extends Model {
     public function  getCatChild($id){
         $id = (int)$id;
         $sql = "select * from `cat` where `parent` = '{$id}' ";
+        // $sql = "select * from `cat` ";
         return $this->db->query($sql);
     }
 
