@@ -62,7 +62,7 @@
         <?php foreach($data['sub'] as $sub_data){ ?>
         <div class="type-in">
             <!-- Ссылка на все товары этой подкатегории  -->
-            <a href="/products/<?php if($data['i'] == 2){echo 'view';}else{echo 'view_sub';} ?>/view_sub/<?=$sub_data['id']?>">
+            <a href="/products/view_sub/<?=$sub_data['id']?>">
                 <div class="type-in-bl">
                     <div class="type-in-img">
                         <button class="btn-in">Посмотреть!</button>

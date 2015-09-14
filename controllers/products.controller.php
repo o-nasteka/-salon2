@@ -36,16 +36,7 @@ class ProductsController extends Controller {
             // $this->data['sub'] = $this->model->getByCategorySub($params[0]);
             $this->data['sub'] = $this->model->getCatChild($params[0]);
 
-            if(!isset($i)){
-                $i = 0;
-            }else{
-                if($i == 2){
-                    unset($i);
-                }
-                $i++;
-
             }
-            $this->data['i'] = $i;
 
 
             // $this->data['cat'] = $this->model->getCategoryTitleById($params[0]);
@@ -53,7 +44,7 @@ class ProductsController extends Controller {
             //     Router::redirect('/');
             // }
         }
-    }
+
 
     // select products from category_sub
     public function view_sub_products(){
