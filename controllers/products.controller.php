@@ -35,27 +35,45 @@ class ProductsController extends Controller {
     // select all from category_sub
     public function view_sub(){
 
-        if(!isset($_SESSION['click'])){
-            $_SESSION['click'] = 0;
+
+        $data1 = $this->model->getByCategorySub(0);
+        $data2 = $this->model->getList();
+        foreach($data2 as $dat_id){
+            $id2[] = $dat_id['id'];
         }
-        $_SESSION['click']++;
+
+        foreach($data1 as $dat1){
+            $id[] = $dat1['id'];
+            foreach($data2 as $dat2){
+                if($dat1['id'] == $dat2['parent']){
+                    $res[] = $dat2['id'];
+                }
+            }
+        }
+        $res = array_merge($id, $res);
+
+        $array_id = array_diff($id2,$res);
 
 
         if(!count($params = App::getRouter()->getParams())){
             Router::redirect('/');
         }
 
-        if($_SESSION['click'] == 2){
-            $this->data['contrl'] = 'view';
-            unset($_SESSION['click']);
-        }else{
-            $this->data['contrl'] = 'view_sub';
-        }
 
         if ( isset($params[0]) ) {
             // $this->data['sub'] = $this->model->getByCategorySub($params[0]);
 
                 $this->data['sub'] = $this->model->getCatChild($params[0]);
+
+                foreach($this->data['sub'] as $sub_id ){
+
+                    if(in_array($sub_id['id'],$array_id)){
+                        $this->data['contrl'] = 'view';
+                    }else{
+                        $this->data['contrl'] = 'view_sub';
+                    }
+
+                }
 
         }
 
