@@ -15,12 +15,17 @@ class Products_m extends Model {
     }
 
     // Get by Alias from table products
-    public function getByAlias($alias){
-        $alias = $this->db->escape($alias);
-        $sql = "select * from `goods` where `alias` = '{$alias}' limit 1";
-        $result = $this->db->query($sql);
-        return isset($result[0]) ? $result[0] : null;
+    public function getByAlias($id){
+        //$alias = $this->db->escape($alias);
+        //$sql = "select * from `goods` where `alias` = '{$alias}' limit 1";
+        $sql = "select * from `goods` JOIN `cat` ON goods.cat_id = `cat`.id WHERE cat.parent = '{$id}' ";
+
+        return $result = $this->db->query($sql);
+
     }
+
+
+
 
     public function  getByCategorySub($id){
         $id = (int)$id;

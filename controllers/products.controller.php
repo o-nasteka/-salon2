@@ -11,22 +11,31 @@ class ProductsController extends Controller {
     }
 
     public function view(){
+       //Если нет параметра то редирект
         if(!count($params = App::getRouter()->getParams())){
             Router::redirect('/');
         }
-
+        //Выборка по alias
+        //Если есть параметр и если он не число то true иначе смотрим else
         if ( isset($params[0]) && !is_numeric($params[0]) ){
 
             $alias = mb_strtolower($params[0], "UTF-8");
             $this->data['products'] = $this->model->getByAlias($alias);
-
+            //Если выборка из базы фолс то редирект
             if(empty($this->data['products'])){
                 Router::redirect('/');
             }
 
 
         }else {
+            //Выборка по id
             $this->data['products'] = $this->model->getGoodsById($params[0]);
+            //Если выборка из базы многомерный массив то true/
+            if(isset($this->data['products'][0])){
+                foreach($this->data['products'] as $data){
+                }
+                $this->data['products'] = $data;
+            }
         }
 
 
@@ -59,23 +68,34 @@ class ProductsController extends Controller {
             Router::redirect('/');
         }
 
-
         if ( isset($params[0]) ) {
-            // $this->data['sub'] = $this->model->getByCategorySub($params[0]);
-
-                $this->data['sub'] = $this->model->getCatChild($params[0]);
-
-                foreach($this->data['sub'] as $sub_id ){
+            $this->data['id'] = $this->model->getCatChild($params[0]);
+             foreach($this->data['id'] as $sub_id ){
 
                     if(in_array($sub_id['id'],$array_id)){
                         $this->data['contrl'] = 'view';
+
                     }else{
+
                         $this->data['contrl'] = 'view_sub';
                     }
 
                 }
-
+            unset($this->data['id']);
         }
+
+
+            if($this->data['contrl'] == 'view'){
+                $this->data['sub']=$this->model->getByAlias($params[0]);
+            }else{
+                $this->data['sub'] = $this->model->getCatChild($params[0]);
+            }
+
+
+            // echo '<pre>';
+            //echo $this->data['contrl'];
+            //print_r($this->data['sub']);
+             //exit;
 
             // $this->data['cat'] = $this->model->getCategoryTitleById($params[0]);
             // if(empty($this->data['sub']) || empty($this->data['cat'])){
