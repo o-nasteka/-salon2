@@ -47,6 +47,7 @@ class ProductsController extends Controller {
 
         if($_SESSION['click'] == 2){
             $this->data['contrl'] = 'view';
+            unset($_SESSION['click']);
         }else{
             $this->data['contrl'] = 'view_sub';
         }
