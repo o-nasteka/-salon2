@@ -60,10 +60,11 @@
         <h2 class="text-center">
         </h2>
         <!-- -->
+
+        <?php if($_SESSION['click'] == 2){unset($_SESSION['click']);} ?>
         <!-- Вывод блоков подкатегорий  -->
         <?php foreach($data['sub'] as $sub_data){ ?>
         <div class="type-in">
-            <?php if($click == 2){unset($click)}; ?>
             <!-- Ссылка на все товары этой подкатегории  -->
             <a href="/products/<?=$data['contrl']?>/<?=$sub_data['id']?>">
                 <div class="type-in-bl">
@@ -75,6 +76,7 @@
                     <p class="title"><?=$sub_data['title']?></p>
                     <!-- Описание подкатегории -->
                     <p class="txt">
+                        <?php //echo data['click']; ?>
                         <?=@$sub_data['description']?>
                     </p>
                 </div>

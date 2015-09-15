@@ -34,19 +34,21 @@ class ProductsController extends Controller {
 
     // select all from category_sub
     public function view_sub(){
-        if(!isset($click)){
-            $click = 0;
+
+        if(!isset($_SESSION['click'])){
+            $_SESSION['click'] = 0;
         }
-        $click++;
+        $_SESSION['click']++;
+
 
         if(!count($params = App::getRouter()->getParams())){
             Router::redirect('/');
         }
 
-        if($click == 2){
-            $data['contrl'] = 'view';
+        if($_SESSION['click'] == 2){
+            $this->data['contrl'] = 'view';
         }else{
-            $data['contrl'] = 'view_sub';
+            $this->data['contrl'] = 'view_sub';
         }
 
         if ( isset($params[0]) ) {
