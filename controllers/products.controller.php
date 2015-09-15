@@ -99,20 +99,6 @@ class ProductsController extends Controller {
         }
     }
 
-    // All Sub 111
-    public function view_sub1(){
-        if(count($params = App::getRouter()->getParams())){
-            Router::redirect('/');
-        }
-
-        if ( isset($params[0]) ) {
-            $this->data['cat'] = $this->model->AllCat($params[0]);
-        }
-
-
-    }
-
-
     // All SubCategory calculator
     public function view_subcategory(){
         if(count($params = App::getRouter()->getParams())){
