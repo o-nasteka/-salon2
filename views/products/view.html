@@ -55,16 +55,25 @@
         <!-- Gallery end -->
         <?php
         echo "<pre>";
-        print_r($data['products']);
-        exit;
+
+
+        if(isset($data['products'][0])){
+            foreach($data['products'] as $data){
+
+            }
+            $data['products'] = $data;
+        }
+
+       // print_r($data['products']);
+        //exit;
 
         ?>
 
         <!-- Short Text Bl -->
         <div class="order-txt-bl pull-left">
-            <h3 class="text-center"><?=$data['products'][0]['title']?></h3>
+            <h3 class="text-center"><?=$data['products']['title']?></h3>
             <p class="order-short-txt">
-                <?=$data['products'][0]['content_short']?>
+                <?=$data['products']['content_short']?>
             </p>
             <form class="order-form" action="">
                 <p class="title">ОФОРМИТЬ ЗАКАЗ:</p>
