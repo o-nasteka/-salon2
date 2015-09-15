@@ -34,9 +34,19 @@ class ProductsController extends Controller {
 
     // select all from category_sub
     public function view_sub(){
+        if(!isset($click)){
+            $click = 0;
+        }
+        $click++;
 
         if(!count($params = App::getRouter()->getParams())){
             Router::redirect('/');
+        }
+
+        if($click == 2){
+            $data['contrl'] = 'view';
+        }else{
+            $data['contrl'] = 'view_sub';
         }
 
         if ( isset($params[0]) ) {
@@ -45,6 +55,7 @@ class ProductsController extends Controller {
                 $this->data['sub'] = $this->model->getCatChild($params[0]);
 
         }
+
             // $this->data['cat'] = $this->model->getCategoryTitleById($params[0]);
             // if(empty($this->data['sub']) || empty($this->data['cat'])){
             //     Router::redirect('/');
