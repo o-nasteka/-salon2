@@ -21,7 +21,14 @@ class ProductsController extends Controller {
 
             $alias = mb_strtolower($params[0], "UTF-8");
             $this->data['products'] = $this->model->getByAlias($alias);
-            //Если выборка из базы фолс то редирект
+
+            if(isset($this->data['products'][0])){
+                foreach($this->data['products'] as $data){
+                }
+                $this->data['products'] = $data;
+            }
+
+            //Если выборка из базы false то редирект
             if(empty($this->data['products'])){
                 Router::redirect('/');
             }
@@ -44,8 +51,7 @@ class ProductsController extends Controller {
     // select all from category_sub
     public function view_sub(){
 
-
-        $data1 = $this->model->getByCategorySub(0);
+        $data1 = $this->model->getCategoryByParentId(0);
         $data2 = $this->model->getList();
         foreach($data2 as $dat_id){
             $id2[] = $dat_id['id'];
@@ -69,15 +75,16 @@ class ProductsController extends Controller {
         }
 
         if ( isset($params[0]) ) {
-            $this->data['id'] = $this->model->getCatChild($params[0]);
+            $this->data['id'] = $this->model->getCategoryByParentId($params[0]);
              foreach($this->data['id'] as $sub_id ){
 
                     if(in_array($sub_id['id'],$array_id)){
                         $this->data['contrl'] = 'view';
-
+                        break;
                     }else{
 
                         $this->data['contrl'] = 'view_sub';
+
                     }
 
                 }
@@ -86,21 +93,11 @@ class ProductsController extends Controller {
 
 
             if($this->data['contrl'] == 'view'){
-                $this->data['sub']=$this->model->getByAlias($params[0]);
+                $this->data['sub']=$this->model->getCatById($params[0]);
             }else{
-                $this->data['sub'] = $this->model->getCatChild($params[0]);
+                $this->data['sub'] = $this->model->getCategoryByParentId($params[0]);
             }
 
-
-            // echo '<pre>';
-            //echo $this->data['contrl'];
-            //print_r($this->data['sub']);
-             //exit;
-
-            // $this->data['cat'] = $this->model->getCategoryTitleById($params[0]);
-            // if(empty($this->data['sub']) || empty($this->data['cat'])){
-            //     Router::redirect('/');
-            // }
     }
 
 

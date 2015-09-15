@@ -6,18 +6,18 @@
 
 <!-- header-in -->
 <div class="container-fluid header-in horiz" >
-    <h2>
+    <!-- <h2> -->
         <!-- Вывод заголовка(категории) -->
-        <?php // foreach($data['sub'] as $sub_data){
-              //  echo $sub_data['title'];
-                // }
+        <?php foreach($data['sub'] as $sub_data){
+                echo $sub_data['title'];
+                 }
             // echo "<pre>";
-            // print_r($data[sub]);
-            // exit;
+            //  print_r($data[sub]);
+            //  exit;
         ?>
 
 
-    </h2>
+   <!--  </h2> -->
 
     <div class="calc-in">
         <div class="w970">
@@ -65,7 +65,7 @@
         <?php foreach($data['sub'] as $sub_data){ ?>
         <div class="type-in">
             <!-- Ссылка на все товары этой подкатегории  -->
-            <a href="/products/<?=$data['contrl']?>/<?php if($data['contrl'] == 'view'){echo $sub_data['id'];}else{echo $sub_data['id'];} ?>" >
+            <a href="/products/<?=$data['contrl']?>/<?php if($data['contrl'] == 'view'){echo $sub_data['alias'];}else{echo $sub_data['id'];} ?>" >
                 <div class="type-in-bl">
                     <div class="type-in-img">
                         <button class="btn-in">Посмотреть!</button>

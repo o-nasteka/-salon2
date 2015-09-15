@@ -3,7 +3,7 @@ class Products_m extends Model {
 
     // Get all from table products
     public function getList(){
-        $sql = "select * from `cat`";
+        $sql = "select * from `categories`";
         return $this->db->query($sql);
     }
 
@@ -15,31 +15,28 @@ class Products_m extends Model {
     }
 
     // Get by Alias from table products
-    public function getByAlias($id){
-        //$alias = $this->db->escape($alias);
-        //$sql = "select * from `goods` where `alias` = '{$alias}' limit 1";
-        $sql = "select * from `goods` JOIN `cat` ON goods.cat_id = `cat`.id WHERE cat.parent = '{$id}' ";
+    public function getByAlias($alias){
+        $alias = $this->db->escape($alias);
+        $sql = "select * from `goods` where `alias` = '{$alias}' limit 1";
 
         return $result = $this->db->query($sql);
 
     }
 
+    // Get getCatById from table goods & categories
+    public function getCatById($id){
+        $sql = "select * from `goods` JOIN `categories` ON goods.cat_id = `categories`.id WHERE categories.parent = '{$id}' ";
 
+        return $result = $this->db->query($sql);
 
+    }
 
-    public function  getByCategorySub($id){
+    public function  getCategoryByParentId($id){
         $id = (int)$id;
-        $sql = "select * from `cat` where `parent` = '{$id}' ";
+        $sql = "select * from `categories` where `parent` = '{$id}' ";
         return $this->db->query($sql);
     }
 
-    // Get all from table cat by CategoryId
-    public function  getCatChild($id){
-        $id = (int)$id;
-        $sql = "select * from `cat` where `parent` = '{$id}' ";
-        // $sql = "select * from `cat` ";
-        return $this->db->query($sql);
-    }
 
     // Get SubCategory title from table sub_category by Id
     public function  getSubCategoryTitleById($id){
@@ -55,14 +52,6 @@ class Products_m extends Model {
         return $this->db->query($sql);
     }
 
-
-    // Get all products by CategorySubId from table Products
-    public function  getProductsByCategoryCatId($id)
-    {
-        $id = (int)$id;
-        $sql = "select * from `cat` where `parent` = '{$id}' ";
-        return $this->db->query($sql);
-    }
 
     // Get All SubCategory
     public function getAllCategorySub(){
