@@ -18,7 +18,7 @@ class Products_m extends Model {
     public function getByAlias($id){
         //$alias = $this->db->escape($alias);
         //$sql = "select * from `goods` where `alias` = '{$alias}' limit 1";
-        $sql = "select * from `goods` JOIN `cat` ON goods.cat_id = `cat`.id WHERE cat.parent = '{$id}' ";
+        $sql = "select * from `goods` JOIN `cat` ON goods.cat_id = `cat`.id WHERE cat.parent = '{$id}' ";
 
         return $result = $this->db->query($sql);
 
