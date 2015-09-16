@@ -63,10 +63,10 @@
             <?php  if($data['id'] == 15){break;}?> <!-- Ограничение вывода подкатегорий по id category_sub -->
 
 
-            <a href="/products/view_sub_products/<?=@$data['id']?>">
+            <a href="/products/view_sub/<?=@$data['id']?>">
                 <div class="jal-bl" >
                     <div class="img-bl">
-                        <img src="<?=$data['img_all']?>" />
+                        <img src="<?=$data['img_parent']?>" />
                     </div>
                     <div class="title"><?=@$data['title']?></div>
                     <div  class="jal-in-bl">
