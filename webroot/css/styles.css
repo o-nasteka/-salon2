@@ -445,7 +445,7 @@ a.menu:after, .dropdown-toggle:after {
 	position: absolute;
 }
 
-.jal-bl:hover .s3-btn{
+.jal-bl:hover .s3{
 	display: block;
 	opacity: 1;
 	transition: 2s;

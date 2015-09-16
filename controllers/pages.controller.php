@@ -35,8 +35,16 @@ class PagesController extends Controller{
         if ( isset($params[0]) ){
             $alias = mb_strtolower($params[0], "UTF-8");
             $this->data['page'] = $this->model->getByAlias($alias);
+            $this->data['cat'] = $this->model->getAllParentCategories();
+
+            // echo "<pre>";
+            // print_r($this->data['cat']);
+            // exit;
+
+
             // $id = strtolower($params[0]);
             // $this->data['page'] = $this->model->getById($id);
+            // $this->data['cat'] = $this->model->getAllParentCategories();
         }
     }
 

@@ -56,6 +56,7 @@ class Page extends Model{
         $alias = $this->db->escape($data['alias']);
         $title = $this->db->escape($data['title']);
         $content = $this->db->escape($data['content']);
+        // $content = $data['content'];
         $is_published = isset($data['is_published']) ? 1 : 0;
 
         if ( !$id ){ // Add new record
