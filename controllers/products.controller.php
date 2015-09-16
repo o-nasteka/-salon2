@@ -68,7 +68,7 @@ class ProductsController extends Controller {
         }
        // echo '<pre>';
        //print_r($this->data['sub']);
-        //exit;
+        //exit;//
 
     }
 

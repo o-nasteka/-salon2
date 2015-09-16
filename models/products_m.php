@@ -24,14 +24,14 @@ class Products_m extends Model {
     // Get all from table products by CategoryId
     public function  getGoodsById($id){
         $id = (int)$id;
-        $sql = "select * from `goods` where `id` = '{$id}' ";
+        $sql = "select * from `products` where `id` = '{$id}' ";
         return $this->db->query($sql);
     }
 
     // Get by Alias from table products
     public function getByAlias($alias){
         $alias = $this->db->escape($alias);
-        $sql = "select * from `goods` where `alias` = '{$alias}' limit 1";
+        $sql = "select * from `products` where `alias` = '{$alias}' limit 1";
 
         return $result = $this->db->query($sql);
 
