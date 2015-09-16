@@ -45,7 +45,12 @@
                     <ul class="dropdown-menu sub-type">
                         <!-- Вывод подкатегорий  -->
                         <?php foreach($data['sub'] as $sub_data){ ?>
-                        <li><a href="/products/<?=$data['contrl']?>/<?php if($data['contrl'] == 'view'){echo $sub_data['alias'];}else{echo $sub_data['id'];} ?>" > </li>
+                        <li>
+                            <a href="/products/<?=$data['contrl']?>/<?php if($data['contrl'] == 'view'){echo $sub_data['alias'];}else{echo $sub_data['id'];} ?>">
+                                <?=$sub_data['title']?>
+                            </a>
+
+                        </li>
                         <?php } ?>
                     </ul>
                 </div>
