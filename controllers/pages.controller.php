@@ -9,8 +9,25 @@ class PagesController extends Controller{
 
     public function index(){
         $this->data['pages'] = $this->model->getList();
-        // All Category for Index page
-        $this->data['cat_all'] = $this->model->getAllCat();
+
+        // Get All parent Category
+        $this->data['cat'] = $this->model->getAllParentCategories();
+
+        // echo "<pre>";
+        // print_r($this->data['cat']);
+        // exit;
+
+        /*
+        foreach($this->data['cat'] as $value) {
+            if($value['level'] == 1){
+                $this->data['child'] = $this->model->getAllChildCategories($this->data['id']);
+
+            } else if($value['level'] == 0){
+                $this->data['products'] = $this->model->getAllProducts($this->data['id']);
+            }
+        }
+        */
+
     }
 
     public function view(){

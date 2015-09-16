@@ -27,11 +27,24 @@ class Page extends Model{
         return isset($result[0]) ? $result[0] : null;
     }
 
-    // All Category for Index page
-    public function getAllCat(){
-        $sql = "select * from `categories` where parent = 0 ";
+    // Get Level for Category Index page
+    public function getAllParentCategories(){
+        $sql = "select * from `categories` where `parent` = 0 ";
         return $this->db->query($sql);
     }
+
+    //  getAllChildCategories
+    public function getAllChildCategories($id){
+        $sql = "select * from `categories` where `parent` = '{$id}' ";
+        return $this->db->query($sql);
+    }
+
+    // getAllProducts
+    public function getAllProducts($id){
+        $sql = "select * from `products` where `parent_id` = '{$id}' ";
+        return $this->db->query($sql);
+    }
+
 
     // Save
     public function save($data, $id = null){
