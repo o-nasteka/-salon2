@@ -28,20 +28,20 @@ class Page extends Model{
     }
 
     // Get Level for Category Index page
-    public function getLevelCategories(){
-        $sql = "select `level` from `categories` where parent_id = 0 ";
+    public function getAllParentCategories(){
+        $sql = "select * from `categories` where `parent` = 0 ";
         return $this->db->query($sql);
     }
 
-    //  getAllParentCategories
-    public function getAllChildCategories(){
-        $sql = "select * from `categories` where parent_id = 0 ";
+    //  getAllChildCategories
+    public function getAllChildCategories($id){
+        $sql = "select * from `categories` where `parent` = '{$id}' ";
         return $this->db->query($sql);
     }
 
     // getAllProducts
-    public function getAllProducts(){
-        $sql = "select * from `products` where parent_id = id ";
+    public function getAllProducts($id){
+        $sql = "select * from `products` where `parent_id` = '{$id}' ";
         return $this->db->query($sql);
     }
 

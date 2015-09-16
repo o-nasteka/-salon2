@@ -445,7 +445,7 @@ a.menu:after, .dropdown-toggle:after {
 	position: absolute;
 }
 
-.jal-bl:hover .jal-in-bl{
+.jal-bl:hover .s3-btn{
 	display: block;
 	opacity: 1;
 	transition: 2s;
@@ -484,6 +484,7 @@ a.menu:after, .dropdown-toggle:after {
 	color: #2c3341;
 	font-size: 16px;
 }
+
 .s3-btn {
 	width: 190px;
 	height: 45px;
@@ -493,10 +494,17 @@ a.menu:after, .dropdown-toggle:after {
 	font-size: 16px;
 	font-weight: 600;
 	border-radius: 0 !important;
+	margin: 100px 0 0 50px;
+	position: absolute;
+	z-index: 8888;
+	display: none;
 }
 .s3-btn:hover {
-	text-decoration: underline;
 	color: #fff;
+	text-decoration: underline;
+}
+.jal-bl .img-bl:hover .s3-btn, .jal-bl .title:hover .s3-btn{
+	display: block;
 }
 .btn-goods {
 	/* margin: 30px auto 0 !important; */
