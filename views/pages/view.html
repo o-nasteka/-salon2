@@ -43,5 +43,15 @@
 </div>
 <!-- header-in end -->
 
-<?php eval($data['page']['content']);?>
+<?php ($data['page']['content']);?>
+
+<?php
+    echo "<pre>";
+    print_r($data['cat']);
+    exit;
+?>
+
+<?php include(ROOT.DS.'view'.DS.'all_categories.php'); ?>
+
+
 

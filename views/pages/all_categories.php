@@ -2,10 +2,9 @@
 <div class="goods-bl">
     <!-- -->
     <?php
-    echo 1111;
-    // echo "<pre>";
-    // print_r($data['cat']);
-    // exit;
+    echo "<pre>";
+    print_r($data['cat']);
+    exit;
     ?>
     <?php $i = 0; foreach($data['cat'] as $data){ ?>
         <?php   $i++; if($i == 4){break;}?> <!-- Ограничение вывода категорий по id category -->
