@@ -69,7 +69,7 @@ class Products_m extends Model {
 
     // Get All SubCategory
     public function getAllCategorySub(){
-        $sql = "select * from `category_sub` ";
+        $sql = "select * from `categories` ";
         return $this->db->query($sql);
     }
 
