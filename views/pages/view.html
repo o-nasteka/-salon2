@@ -43,15 +43,16 @@
 </div>
 <!-- header-in end -->
 
-<?php ($data['page']['content']);?>
+<?=($data['page']['content'])?>
 
 <?php
-    echo "<pre>";
-    print_r($data['cat']);
-    exit;
+   if(($data['page']['id']) == 13){
+    include('all_categories.php');
+    ?>
+    <button type="submit" class="btn-gallery center-block">Заказать бесплатный замер <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+   <?php }
 ?>
 
-<?php include(ROOT.DS.'view'.DS.'all_categories.php'); ?>
 
 
 
