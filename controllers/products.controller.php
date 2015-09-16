@@ -51,58 +51,19 @@ class ProductsController extends Controller {
     // select all from category_sub
     public function view_sub(){
 
-        $data1 = $this->model->getCategoryByParentId(0);
-        $data2 = $this->model->getList();
-        foreach($data2 as $dat_id){
-            $id2[] = $dat_id['id'];
-        }
-
-        foreach($data1 as $dat1){
-            $id[] = $dat1['id'];
-            foreach($data2 as $dat2){
-                if($dat1['id'] == $dat2['parent']){
-                    $res[] = $dat2['id'];
-                }
-            }
-        }
-        $res = array_merge($id, $res);
-
-        $array_id = array_diff($id2,$res);
-
-
         if(!count($params = App::getRouter()->getParams())){
             Router::redirect('/');
         }
 
-        if ( isset($params[0]) ) {
-            $this->data['id'] = $this->model->getCategoryByParentId($params[0]);
-             foreach($this->data['id'] as $sub_id ){
-
-                    if(in_array($sub_id['id'],$array_id)){
-                        $this->data['contrl'] = 'view';
-                        break;
-                    }else{
-
-                        $this->data['contrl'] = 'view_sub';
-
-                    }
-
-                }
-            unset($this->data['id']);
-        }
-
-
-            if($this->data['contrl'] == 'view'){
-                $this->data['sub']=$this->model->getCatById($params[0]);
-            }else{
-                $this->data['sub'] = $this->model->getCategoryByParentId($params[0]);
-            }
+        $this->data['sub'] = $this->model-> list_sub_cat($params[0]);
+            exit;
 
     }
 
 
     // select products from category_sub
     public function view_sub_products(){
+
         if(!count($params = App::getRouter()->getParams())){
             Router::redirect('/');
         }
@@ -124,6 +85,21 @@ class ProductsController extends Controller {
 
         $this->data['sub_all'] = $this->model->getAllCategorySub();
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     // Admin panel index

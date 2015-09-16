@@ -3,10 +3,15 @@ class Products_m extends Model {
 
     // Get all from table products
     public function getList(){
-        $sql = "select * from `categories`";
+        $sql = "SELECT * FROM `categories`";
+        $id = (int)$id;
         return $this->db->query($sql);
     }
 
+    public function list_sub_cat($id){
+        $sql = "SELECT * FROM `categories` WHERE `parent` = '{$id}' ";
+        return $this->db->query($sql);
+    }
     // Get all from table products by CategoryId
     public function  getGoodsById($id){
         $id = (int)$id;
