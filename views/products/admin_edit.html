@@ -16,10 +16,18 @@
         <label for="content_short">Краткое описание</label>
          <textarea style="min-height: 150px;" id="content_short" name="content_short" class="form-control" ><?=htmlspecialchars($data['products']['content_short'])?></textarea>
     </div>
+
     <div class="form-group">
         <label for="content">Основное описание</label>
         <textarea style="min-height: 300px;" id="content" name="content" class="form-control" ><?=htmlspecialchars($data['products']['content'])?></textarea>
     </div>
+
+    <div class="form-group">
+        <label for="img_content">Графический контент</label>
+        <textarea style="min-height: 300px;" id="img_content" name="img_content" class="form-control" ><?=htmlspecialchars($data['products']['img_content'])?></textarea>
+    </div>
+
+
     <input type="submit" class="btn btn-success" />
 
 </form>
