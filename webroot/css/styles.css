@@ -1193,6 +1193,11 @@ a.menu:after, .dropdown-toggle:after {
 	background-color: #fff;
 	padding-bottom: 60px;
 }
+.our-work .item {
+	border: 1px solid #000;
+}
+.our-work img {
+}
 .our-work .thumbnail {
 	border: none !important;
 }
