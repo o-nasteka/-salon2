@@ -1188,7 +1188,7 @@ a.menu:after, .dropdown-toggle:after {
 /* our-work */
 .our-work {
 	width: 100%;
-	min-height: 1150px;
+	min-height: 500px;
 	height: auto;
 	background-color: #fff;
 	padding-bottom: 20px;
