@@ -6,7 +6,7 @@ class Products_m extends Model {
         // $sql = "SELECT * FROM `categories`";
          $sql = "SELECT * FROM `products`";
 
-        $id = (int)$id;
+        // $id = (int)$id;
         return $this->db->query($sql);
     }
 
