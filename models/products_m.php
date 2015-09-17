@@ -45,21 +45,6 @@ class Products_m extends Model {
     }
 
 
-    // Get SubCategory title from table sub_category by Id
-    public function  getSubCategoryTitleById($id){
-        $id = (int)$id;
-        $sql = "select `title` from `category_sub` where `id` = '{$id}' ";
-        return $this->db->query($sql);
-    }
-
-    // Get Category title from table Category by Id
-    public function  getCategoryTitleById($id){
-        $id = (int)$id;
-        $sql = "select `title` from `goods` where `id` = '{$id}' ";
-        return $this->db->query($sql);
-    }
-
-
     // Get All SubCategory
     public function getAllCategorySub(){
         $sql = "select * from `categories` ";
