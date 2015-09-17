@@ -41,8 +41,8 @@ class News_m extends Model {
             $sql = "
 		INSERT INTO `news` SET
 		`title`       = '".($_POST['title'])."',
-		`text`        = '".($_POST['content_min'])."',
-		`description` = '".($_POST['content'])."',
+		`content_min` = '".($_POST['content_min'])."',
+		`content`     = '".($_POST['content'])."',
 		`date`        = NOW()
 	";
 
