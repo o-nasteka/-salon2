@@ -8,6 +8,13 @@ class NewsController extends Controller{
     }
 
     public function index(){
+        //Выборка новостей
+        $this->data['news'] = $this->model->list_news();
+
+
+    }
+
+    public function admin_index(){
         $params = App::getRouter()->getParams();
 
         //Удаление отмеченных чекбоксов
@@ -17,44 +24,15 @@ class NewsController extends Controller{
 
         //Удаление одиночных по ссылке
         if(isset($_GET['key1'],$_GET['key2']) && $_GET['key1'] == 'delete') {
-            q("
-		DELETE FROM `news`
-		WHERE `id` = ".(int)$_GET['key2']."
-	");
 
-            $_SESSION['info'] = 'Новость была удалена';
-            header("Location: /news");
-            exit();
+            Session::setFlash('News by delete');
+
+            //header("Location: /admin/news");
+            //exit();
         }
 
         //Выборка новостей
-
-
-
-
-
-
-        if ( $_POST ){
-            if ( $this->model->save($_POST) ){
-
-                Session::setFlash('Thank you! Your message was sent successfully!');
-            }
-        }
-
-
-        $news = q("
-	SELECT *
-	FROM `news`
-	ORDER BY `id` DESC
-");
-
-
-
-
-    }
-
-    public function admin_index(){
-        $this->data = $this->model->getList();
+        $this->data['news'] = $this->model->list_news();
 
     }
 

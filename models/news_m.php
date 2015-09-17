@@ -26,7 +26,7 @@ class News_m extends Model {
         $sql = "SELECT * FROM `news` ORDER BY `id` DESC";
         return $this->db->query($sql);
     }
-//
+
 
 
 
