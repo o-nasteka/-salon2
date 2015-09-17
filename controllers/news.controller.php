@@ -15,8 +15,6 @@ class NewsController extends Controller{
             $this->model-> del_news_checkbox();
         }
 
-
-
         //Удаление одиночных по ссылке
         if(isset($_GET['key1'],$_GET['key2']) && $_GET['key1'] == 'delete') {
 

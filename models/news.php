@@ -20,6 +20,7 @@ class Message extends Model {
     public function del_news_id($id){
 
     }
+    //
 
 
 
