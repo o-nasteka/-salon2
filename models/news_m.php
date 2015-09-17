@@ -17,8 +17,8 @@ class News_m extends Model {
 
 
 
-    public function del_news_id($id){
-        $id = (int)$id;
+    public function del_news_id($id = array()){
+       $id = (int)$id[0];
 
         $sql = " DELETE FROM `news` WHERE `id` = '{$id}' ";
 
