@@ -36,16 +36,11 @@ class NewsController extends Controller{
             //echo '<pre>';
             //print_r($params);
             //exit;
+            $this->model->del_news_id([$params[1]])
 
-           if( $this->model->del_news_id([$params[1]]) ){
-               Session::setFlash('News by delete');
-           }else{
-               Session::setFlash('News not delete');
-           }
-            Router::redirect('/admin/news');
 
         }
-//
+
         //Выборка новостей
         $this->data['news'] = $this->model->list_news();
 
