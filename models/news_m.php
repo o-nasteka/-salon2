@@ -16,7 +16,7 @@ class News_m extends Model {
     }
 
 
-
+    // Удаление по id
     public function del_news_id($id = array()){
        $id = (int)$id[0];
 
@@ -26,12 +26,29 @@ class News_m extends Model {
 
     }
 
-
+    //Выборка всех новостей
     public function list_news(){
         $sql = "SELECT * FROM `news` ORDER BY `id` ASC";
         return $this->db->query($sql);
     }
-    //
+
+    public function add_news(){
+
+            foreach($_POST as $k=>$v) {
+                $_POST[$k] = $this->db->escape(trim($v));
+            }
+
+            $sql = "
+		INSERT INTO `news` SET
+		`title`       = '".($_POST['title'])."',
+		`text`        = '".($_POST['content_min'])."',
+		`description` = '".($_POST['content'])."',
+		`date`        = NOW()
+	";
+
+        return $this->db->query($sql);
+    }
+
 
 
 
