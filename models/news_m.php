@@ -49,6 +49,27 @@ class News_m extends Model {
         return $this->db->query($sql);
     }
 
+    public function edit_news($id = array()){
+        $id = (int)$id[0];
+
+        foreach($_POST as $k=>$v) {
+            $_POST[$k] = $this->db->escape(trim($v));
+        }
+
+        $sql = "
+		UPDATE `news` SET
+		`title`       = '".($_POST['title'])."',
+		`content_min` = '".($_POST['content_min'])."',
+		`content`     = '".($_POST['content'])."',
+		`date`        = NOW()
+		WHERE `id` = ".$id."
+	";
+
+
+        return $this->db->query($sql);
+    }
+
+
 
 
 

@@ -65,4 +65,20 @@ class NewsController extends Controller{
 
     }
 
+
+    public function admin_edit(){
+        $params = App::getRouter()->getParams();
+
+        if(isset($_POST['submit'],$params[0])){
+
+            if($this->model->edit_news($params[0])){
+
+            }else{
+
+            }
+            Router::redirect('/admin/news');
+        }
+
+    }
+
 }
