@@ -39,8 +39,8 @@ class NewsController extends Controller{
            }else{
                Session::setFlash('News not delete');
            }
+            Router::redirect('/admin/news');
 
-            //header("Location: /admin/news"); //
             //exit();
         }
 
