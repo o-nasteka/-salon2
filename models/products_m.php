@@ -19,8 +19,6 @@ class Products_m extends Model {
     }
 
 
-
-
     // Get all from table products by CategoryId
     public function  getGoodsById($id){
         $id = (int)$id;
@@ -37,7 +35,7 @@ class Products_m extends Model {
 
     }
 
-
+    // getCategoryByParentId
     public function  getCategoryByParentId($id){
         $id = (int)$id;
         $sql = "select * from `categories` where `parent` = '{$id}' ";
