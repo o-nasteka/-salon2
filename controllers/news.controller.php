@@ -36,7 +36,7 @@ class NewsController extends Controller{
             //echo '<pre>';
             //print_r($params);
             //exit;
-            $this->model->del_news_id([$params[1]])
+            $this->model->del_news_id([$params[1]]);
 
 
         }
