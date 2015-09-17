@@ -17,7 +17,6 @@ class NewsController extends Controller{
 
         //Удаление одиночных по ссылке
         if(isset($_GET['key1'],$_GET['key2']) && $_GET['key1'] == 'delete') {
-
             q("
 		DELETE FROM `news`
 		WHERE `id` = ".(int)$_GET['key2']."
@@ -27,7 +26,10 @@ class NewsController extends Controller{
             header("Location: /news");
             exit();
         }
-//Удаление одиночных по ссылке - конец
+
+        //Выборка новостей
+
+
 
 
 

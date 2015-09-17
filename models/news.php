@@ -20,7 +20,13 @@ class Message extends Model {
     public function del_news_id($id){
 
     }
-    //
+
+
+    public function list_news(){
+        $sql = "SELECT * FROM `news` ORDER BY `id` DESC";
+        return $this->db->query($sql);
+    }
+
 
 
 
