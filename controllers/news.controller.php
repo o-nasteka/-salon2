@@ -33,8 +33,8 @@ class NewsController extends Controller{
         //Удаление одиночных по ссылке
         if(isset($params[0],$params[1]) && $params[0] == 'delete') {
 
-            //echo '<pre>';
-            //print_r($params);
+           // echo '<pre>';
+            //var_dump($params);
             //exit;
             $this->model->del_news_id([$params[1]]);
             Router::redirect('/admin/news');
