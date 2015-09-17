@@ -29,6 +29,7 @@ class NewsController extends Controller{
 
         }
 
+
         //Удаление одиночных по ссылке
         if(isset($params[0],$params[1]) && $params[0] == 'delete') {
 
