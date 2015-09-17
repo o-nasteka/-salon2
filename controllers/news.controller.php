@@ -18,11 +18,11 @@ class NewsController extends Controller{
 
 
 
-
+                                // Вывод всех новостей в меню управлением новостями
     public function admin_index(){
         $params = App::getRouter()->getParams();
 
-        //Удаление отмеченных чекбоксов
+        // Удаление отмеченных чекбоксов
         if(isset($_POST['delete'])) {
 
             if( $this->model-> del_news_checkbox() ){
@@ -35,22 +35,28 @@ class NewsController extends Controller{
         }
 
 
-        //Удаление одиночных по ссылке
+        // Удаление одиночных по ссылке
         if(isset($params[0],$params[1]) && $params[0] == 'delete') {
 
-           // echo '<pre>';
-            //var_dump($params);
-            //exit;
+
             $this->model->del_news_id([$params[1]]);
             Router::redirect('/admin/news');
 
         }
 
-        //Выборка новостей
+        // Выборка новостей
         $this->data['news'] = $this->model->list_news();
+
+
+
+
 
     }
 
+
+
+
+                                // Добавление новости
     public function admin_add(){
 
         if(isset($_POST['submit'],$_POST['title'],$_POST['content_min'],$_POST['content'])){
@@ -66,15 +72,13 @@ class NewsController extends Controller{
     }
 
 
+
+                                // Редактирование новости
     public function admin_edit(){
         $params = App::getRouter()->getParams();
 
         $this->data['news'] = $this->model->list_news_id($params[0]);
         $this->data['news'] = $this->data['news'][0];
-       // echo '<pre>';
-        //print_r($this->data['news']);
-        //exit;
-
 
         if(isset($_POST['submit'],$_POST['title'],$_POST['content_min'],$_POST['content'])){
 
