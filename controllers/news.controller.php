@@ -51,4 +51,11 @@ class NewsController extends Controller{
 
     }
 
+    public function admin_add(){
+        $params = App::getRouter()->getParams();
+
+
+
+    }
+
 }
