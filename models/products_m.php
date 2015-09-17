@@ -37,13 +37,6 @@ class Products_m extends Model {
 
     }
 
-    // Get getCatById from table goods & categories
-    public function getCatById($id){
-        $sql = "select * from `goods` JOIN `categories` ON goods.cat_id = `categories`.id WHERE categories.parent = '{$id}' ";
-
-        return $result = $this->db->query($sql);
-
-    }
 
     public function  getCategoryByParentId($id){
         $id = (int)$id;
