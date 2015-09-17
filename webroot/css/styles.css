@@ -1463,7 +1463,7 @@ a.menu:after, .dropdown-toggle:after {
 	margin: 170px 0 0 0px;
 	text-align: center;
 }
-.products-type img {
+.products-type img , .products-colors img{
 	width: 148px;
 	height: 164px;
 }
