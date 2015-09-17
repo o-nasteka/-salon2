@@ -59,7 +59,7 @@ class Products_m extends Model {
 
 
 
-    // Save to table products
+    // Save to table products - Карточка товара
     public function save($data, $id = null){
         if ( !isset($data['alias']) || !isset($data['title']) || !isset($data['content']) ){
             return false;
@@ -71,8 +71,9 @@ class Products_m extends Model {
         $id = (int)$id;
         $alias = $this->db->escape($data['alias']);
         $title = $this->db->escape($data['title']);
-        $content_short = $this->db->escape($data['content_short']);
-        $content = $this->db->escape($data['content']);
+        $content_short = $this->db->escape($data['content_short']); // Краткое описание
+        $content = $this->db->escape($data['content']); // Основное описание
+        $params = $this->db->escape($data['params']); // Характеристики
 
         if ( !$id ){ // Add new record
             $sql = "
@@ -80,7 +81,8 @@ class Products_m extends Model {
                    set alias = '{$alias}',
                        title = '{$title}',
                        content_short = '{$content_short}',
-                       content = '{$content}'
+                       content = '{$content}',
+                       params = '{$params}'
 
             ";
             
@@ -91,7 +93,8 @@ class Products_m extends Model {
                    set alias = '{$alias}',
                        title = '{$title}',
                        content_short = '{$content_short}',
-                       content = '{$content}'
+                       content = '{$content}',
+                       params = '{$params}'
 
                    where `id` = {$id}
             ";
