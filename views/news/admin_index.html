@@ -8,10 +8,10 @@
     Все существующие новости:
     <form action="" method="post">
 
-        <?php while($row = $news->fetch_assoc()) { ?>
+        <?php foreach($data['news'] as $news ) { ?>
 
         <div>
-            <div><input type="checkbox" name="ids[]" value="<?php echo $row['id']; ?>"> <a href="/news/edit?id=<?php echo $row['id']; ?>">ОТРЕДАКТИРОВАТЬ</a> <a href="/news/main/delete/<?php echo $row['id']; ?>">УДАЛИТЬ</a> <b><?php echo $row['title']; ?></b> <span style="color:#777777; font-size:10px;"><?php echo $row['date']; ?></span></div>
+            <div><input type="checkbox" name="ids[]" value="<?php echo $news['id']; ?>"> <a href="/news/edit?id=<?php echo $news['id']; ?>">ОТРЕДАКТИРОВАТЬ</a> <a href="/admin/news/index/delete/<?php echo $news['id']; ?>">УДАЛИТЬ</a> <b><?php echo $news['title']; ?></b> <span style="color:#777777; font-size:10px;"><?php echo $news['date']; ?></span></div>
         </div>
         <hr>
 

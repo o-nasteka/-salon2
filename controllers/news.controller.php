@@ -39,7 +39,7 @@ class NewsController extends Controller{
                Session::setFlash('News not delete');
            }
 
-            //header("Location: /admin/news");
+            //header("Location: /admin/news"); //
             //exit();
         }
 
