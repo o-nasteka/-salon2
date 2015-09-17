@@ -15,6 +15,10 @@ class NewsController extends Controller{
 
     }
 
+
+
+
+
     public function admin_index(){
         $params = App::getRouter()->getParams();
 
@@ -27,6 +31,7 @@ class NewsController extends Controller{
                 Session::setFlash('News not delete');
             }
 
+            Router::redirect('/admin/news');
         }
 
 
