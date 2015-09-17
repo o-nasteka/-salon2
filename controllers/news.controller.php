@@ -37,7 +37,7 @@ class NewsController extends Controller{
             //print_r($params);
             //exit;
             $this->model->del_news_id([$params[1]]);
-
+            Router::redirect('/admin/news');
 
         }
 
