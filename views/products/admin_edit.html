@@ -9,24 +9,33 @@
         <input type="text" id="alias" name="alias" value="<?=htmlspecialchars(@$data['products']['alias'])?>" class="form-control" />
     </div>
     <div class="form-group">
-        <label for="title">Title</label>
+        <label for="title">Заголовок</label>
         <input type="text" id="title" name="title" value="<?=htmlspecialchars(@$data['products']['title'])?>" class="form-control"  />
     </div>
     <div class="form-group">
-        <label for="content_short">Краткое описание</label>
+        <label for="content_short">Краткое описание:</label>
          <textarea style="min-height: 150px;" id="content_short" name="content_short" class="form-control" ><?=htmlspecialchars($data['products']['content_short'])?></textarea>
     </div>
 
     <div class="form-group">
-        <label for="content">Основное описание</label>
+        <label for="content">Основное описание:</label>
         <textarea style="min-height: 300px;" id="content" name="content" class="form-control" ><?=htmlspecialchars($data['products']['content'])?></textarea>
     </div>
 
     <div class="form-group">
-        <label for="img_content">Графический контент</label>
-        <textarea style="min-height: 300px;" id="img_content" name="img_content" class="form-control" ><?=$data['products']['img_content']?></textarea>
+        <label for="params">Характеристики:</label>
+        <textarea style="min-height: 300px;" id="params" name="params" class="form-control" ><?=$data['products']['params']?></textarea>
     </div>
 
+    <div class="form-group">
+        <label for="colors">Доступные цвета:</label>
+        <textarea style="min-height: 300px;" id="colors" name="colors" class="form-control" ><?=$data['products']['colors']?></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="type_id">Варианты систем:</label>
+        <textarea style="min-height: 300px;" id="type_id" name="type_id" class="form-control" ><?=$data['products']['type_id']?></textarea>
+    </div>
 
     <input type="submit" class="btn btn-success" />
 

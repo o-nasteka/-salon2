@@ -19,8 +19,6 @@ class Products_m extends Model {
     }
 
 
-
-
     // Get all from table products by CategoryId
     public function  getGoodsById($id){
         $id = (int)$id;
@@ -37,25 +35,10 @@ class Products_m extends Model {
 
     }
 
-
+    // getCategoryByParentId
     public function  getCategoryByParentId($id){
         $id = (int)$id;
         $sql = "select * from `categories` where `parent` = '{$id}' ";
-        return $this->db->query($sql);
-    }
-
-
-    // Get SubCategory title from table sub_category by Id
-    public function  getSubCategoryTitleById($id){
-        $id = (int)$id;
-        $sql = "select `title` from `category_sub` where `id` = '{$id}' ";
-        return $this->db->query($sql);
-    }
-
-    // Get Category title from table Category by Id
-    public function  getCategoryTitleById($id){
-        $id = (int)$id;
-        $sql = "select `title` from `goods` where `id` = '{$id}' ";
         return $this->db->query($sql);
     }
 
@@ -76,7 +59,7 @@ class Products_m extends Model {
 
 
 
-    // Save to table products
+    // Save to table products - Карточка товара
     public function save($data, $id = null){
         if ( !isset($data['alias']) || !isset($data['title']) || !isset($data['content']) ){
             return false;
@@ -88,8 +71,11 @@ class Products_m extends Model {
         $id = (int)$id;
         $alias = $this->db->escape($data['alias']);
         $title = $this->db->escape($data['title']);
-        $content_short = $this->db->escape($data['content_short']);
-        $content = $this->db->escape($data['content']);
+        $content_short = $this->db->escape($data['content_short']); // Краткое описание
+        $content = $this->db->escape($data['content']); // Основное описание
+        $params = $this->db->escape($data['params']); // Характеристики
+        $colors = $this->db->escape($data['colors']); // Цвета
+        $type_id = $this->db->escape($data['type_id']); // Тип системы
 
         if ( !$id ){ // Add new record
             $sql = "
@@ -97,7 +83,10 @@ class Products_m extends Model {
                    set alias = '{$alias}',
                        title = '{$title}',
                        content_short = '{$content_short}',
-                       content = '{$content}'
+                       content = '{$content}',
+                       params = '{$params}',
+                       colors = '{$colors}',
+                       type_id = '{$type_id}'
 
             ";
             
@@ -108,7 +97,10 @@ class Products_m extends Model {
                    set alias = '{$alias}',
                        title = '{$title}',
                        content_short = '{$content_short}',
-                       content = '{$content}'
+                       content = '{$content}',
+                       params = '{$params}',
+                       colors = '{$colors}',
+                       type_id = '{$type_id}'
 
                    where `id` = {$id}
             ";
