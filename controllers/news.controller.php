@@ -54,7 +54,13 @@ class NewsController extends Controller{
     public function admin_add(){
         $params = App::getRouter()->getParams();
 
+        if(isset($_POST['submit'],$_POST['title'],$_POST['content_min'],$_POST['content'])){
 
+            if($this->model->add_news()){
+
+            }
+            Router::redirect('/admin/news');
+        }
 
     }
 
