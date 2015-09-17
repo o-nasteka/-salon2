@@ -74,6 +74,8 @@ class Products_m extends Model {
         $content_short = $this->db->escape($data['content_short']); // Краткое описание
         $content = $this->db->escape($data['content']); // Основное описание
         $params = $this->db->escape($data['params']); // Характеристики
+        $colors = $this->db->escape($data['colors']); // Цвета
+        $type_id = $this->db->escape($data['type_id']); // Тип системы
 
         if ( !$id ){ // Add new record
             $sql = "
@@ -82,7 +84,9 @@ class Products_m extends Model {
                        title = '{$title}',
                        content_short = '{$content_short}',
                        content = '{$content}',
-                       params = '{$params}'
+                       params = '{$params}',
+                       colors = '{$colors}',
+                       type_id = '{$type_id}'
 
             ";
             
@@ -94,7 +98,9 @@ class Products_m extends Model {
                        title = '{$title}',
                        content_short = '{$content_short}',
                        content = '{$content}',
-                       params = '{$params}'
+                       params = '{$params}',
+                       colors = '{$colors}',
+                       type_id = '{$type_id}'
 
                    where `id` = {$id}
             ";
