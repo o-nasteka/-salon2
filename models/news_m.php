@@ -18,6 +18,11 @@ class News_m extends Model {
 
 
     public function del_news_id($id){
+        $id = (int)$id;
+
+        $sql = " DELETE FROM `news` WHERE `id` = '{$id}' ";
+
+        return $this->db->query($sql);
 
     }
 
