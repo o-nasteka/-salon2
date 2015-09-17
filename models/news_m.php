@@ -32,6 +32,14 @@ class News_m extends Model {
         return $this->db->query($sql);
     }
 
+    // Выборка одной новости по id
+    public function list_news_id($id = array()){
+        $id = (int)$id[0];
+        $sql = "SELECT * FROM `news` WHERE `id` = '{$id}' ";
+        return $this->db->query($sql);
+    }
+
+    // Добавление новости
     public function add_news(){
 
             foreach($_POST as $k=>$v) {
@@ -41,13 +49,36 @@ class News_m extends Model {
             $sql = "
 		INSERT INTO `news` SET
 		`title`       = '".($_POST['title'])."',
-		`text`        = '".($_POST['content_min'])."',
-		`description` = '".($_POST['content'])."',
+		`content_min` = '".($_POST['content_min'])."',
+		`content`     = '".($_POST['content'])."',
 		`date`        = NOW()
 	";
 
         return $this->db->query($sql);
     }
+
+
+    // Редактирование новости
+    public function edit_news($id = array()){
+        $id = (int)$id[0];
+
+        foreach($_POST as $k=>$v) {
+            $_POST[$k] = $this->db->escape(trim($v));
+        }
+
+        $sql = "
+		UPDATE `news` SET
+		`title`       = '".($_POST['title'])."',
+		`content_min` = '".($_POST['content_min'])."',
+		`content`     = '".($_POST['content'])."',
+		`date`        = NOW()
+		WHERE `id` = ".$id."
+	";
+
+
+        return $this->db->query($sql);
+    }
+
 
 
 
