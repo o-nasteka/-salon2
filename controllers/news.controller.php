@@ -33,6 +33,9 @@ class NewsController extends Controller{
         //Удаление одиночных по ссылке
         if(isset($params[0],$params[1]) && $params[0] == 'delete') {
 
+            //echo '<pre>';
+            //print_r($params);
+            //exit;
 
            if( $this->model->del_news_id([$params[1]]) ){
                Session::setFlash('News by delete');
@@ -41,9 +44,8 @@ class NewsController extends Controller{
            }
             Router::redirect('/admin/news');
 
-            //exit();
         }
-
+//
         //Выборка новостей
         $this->data['news'] = $this->model->list_news();
 
