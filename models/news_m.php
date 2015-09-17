@@ -28,7 +28,7 @@ class News_m extends Model {
 
 
     public function list_news(){
-        $sql = "SELECT * FROM `news` ORDER BY `id` DESC";
+        $sql = "SELECT * FROM `news` ORDER BY `id` ASC";
         return $this->db->query($sql);
     }
 
