@@ -7,16 +7,16 @@
 
     <div class="form-group">
         <label for="title">Название</label>
-        <input type="text" id="title" name="title" value="<?=htmlspecialchars(@$data['products']['title'])?>" class="form-control"  />
+        <input type="text" id="title" name="title" value="<?=htmlspecialchars(@$data['news']['title'])?>" class="form-control"  />
     </div>
     <div class="form-group">
         <label for="content_min">Краткое описание:</label>
-        <textarea style="min-height: 150px;" id="content_min" name="content_min" class="form-control" ><?=htmlspecialchars($data['products']['content_min'])?></textarea>
+        <textarea style="min-height: 150px;" id="content_min" name="content_min" class="form-control" ><?=htmlspecialchars(@$data['news']['content_min'])?></textarea>
     </div>
 
     <div class="form-group">
         <label for="content">Основное описание:</label>
-        <textarea style="min-height: 300px;" id="content" name="content" class="form-control" ><?=htmlspecialchars($data['products']['content'])?></textarea>
+        <textarea style="min-height: 300px;" id="content" name="content" class="form-control" ><?=htmlspecialchars(@$data['news']['content'])?></textarea>
     </div>
 
 

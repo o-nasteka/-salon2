@@ -32,6 +32,12 @@ class News_m extends Model {
         return $this->db->query($sql);
     }
 
+    public function list_news_id($id = array()){
+        $id = (int)$id[0];
+        $sql = "SELECT * FROM `news` WHERE `id` = '{$id}' ";
+        return $this->db->query($sql);
+    }
+
     public function add_news(){
 
             foreach($_POST as $k=>$v) {

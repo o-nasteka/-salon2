@@ -69,11 +69,16 @@ class NewsController extends Controller{
     public function admin_edit(){
         $params = App::getRouter()->getParams();
 
-        if(isset($_POST['submit'],$params[0])){
+        $this->data['news'] = $this->model->list_news_id($params[0]);
+        $this->data['news'] = $this->data['news'][0];
+       // echo '<pre>';
+        //print_r($this->data['news']);
+        //exit;
+
+
+        if(isset($_POST['submit'],$_POST['title'],$_POST['content_min'],$_POST['content'])){
 
             if($this->model->edit_news($params[0])){
-
-            }else{
 
             }
             Router::redirect('/admin/news');
