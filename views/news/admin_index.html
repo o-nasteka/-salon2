@@ -19,7 +19,7 @@
         <td><strong><?=$news['title']?></strong></td>
         <td width="250" align="center">
             <a href="/admin/news/edit/<?=$news['id']?>"><button class="btn btn-sm btn-primary" style="padding: 5px 20px;">Редактировать</button></a>
-            <a href="/admin/news/index/delete/<?=$news['id']?>"><button class="btn btn-sm btn-warning" style="padding: 5px 20px;">Удалить</button></a>
+            <a href="/admin/news/index/delete/<?=$news['id']?>" onclick="return confirmDelete();"><button class="btn btn-sm btn-warning" style="padding: 5px 20px;">Удалить</button></a>
         </td>
 
     </tr>
