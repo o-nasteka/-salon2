@@ -1,6 +1,6 @@
 <?php
 
-class Message extends Model {
+class News_m extends Model {
 
     //Удаление отмеченных чекбоксов
     public function del_news_checkbox(){
@@ -26,7 +26,7 @@ class Message extends Model {
         $sql = "SELECT * FROM `news` ORDER BY `id` DESC";
         return $this->db->query($sql);
     }
-
+//
 
 
 

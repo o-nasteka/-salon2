@@ -4,7 +4,7 @@ class NewsController extends Controller{
 
     public function __construct($data = array()){
         parent::__construct($data);
-        $this->model = new news();
+        $this->model = new news_m();
     }
 
     public function index(){
