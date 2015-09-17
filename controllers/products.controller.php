@@ -88,22 +88,13 @@ class ProductsController extends Controller {
 
 
 
-
-
-
-
-
-
-
-
-
-
     // Admin panel index
     public function admin_index(){
         $this->data['products'] = $this->model->getList();
     }
 
 
+    // Admin add product
     public function admin_add(){
         if ( $_POST ){
 
@@ -117,6 +108,7 @@ class ProductsController extends Controller {
         }
     }
 
+    // Admin edit product
     public function admin_edit(){
 
         if ( $_POST ){
@@ -132,7 +124,6 @@ class ProductsController extends Controller {
         }
 
 
-
         if ( isset($this->params[0]) ){
             $this->data['products'] = $this->model->getById($this->params[0]);
 
@@ -142,6 +133,7 @@ class ProductsController extends Controller {
         }
     }
 
+    // Admin delete product
     public function admin_delete(){
         if ( isset($this->params[0]) ){
             $result = $this->model->delete($this->params[0]);
