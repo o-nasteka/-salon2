@@ -12,7 +12,7 @@ class News_m extends Model {
         $ids = implode(',',$_POST['ids']);
         $sql = "DELETE FROM `news` WHERE `id` IN (".$ids.") ";
 
-        $this->db->query($sql);
+       return $this->db->query($sql);
     }
 
 
