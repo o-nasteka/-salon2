@@ -1525,5 +1525,9 @@ a.menu:after, .dropdown-toggle:after {
 	background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #E3E3E3 100%);
 	background-image: linear-gradient(to bottom, #FFFFFF 0%, #E3E3E3 100%);
 }
-
+.bg-none img{
+	background-color: transparent !important;
+	background-image: none !important;
+	box-shadow: none !important;
+}
 /* Order Bl end */
