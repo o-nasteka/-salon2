@@ -23,12 +23,30 @@ class App{
         $controller_class = ucfirst(self::$router->getController()).'Controller';
         $controller_method = strtolower(self::$router->getMethodPrefix().self::$router->getAction());
 
+        // Запрещает выводить методы на прямую с префиксом admin
+        /*
+        $pref = self::$router->getMethodPrefix();
+        if(empty($pref)){
+            if($pos = strpos($controller_method, '_')){
+                $pref_action = substr($controller_method, 0, 5);
+                if($pref_action == 'admin'){
+                    self::$router->redirect('/');
+
+                }
+            }
+        }
+
+        */
+        // Запрещает выводить методы на прямую с префиксом admin -- Конец
+
         $layout = self::$router->getRoute();
         if ( $layout == 'admin' && Session::get('role') != 'admin' ){
             if ( $controller_method != 'admin_login' ){
                 Router::redirect('/admin/users/login');
             }
         }
+
+
 
         // Calling controller's method
         $controller_object = new $controller_class();
