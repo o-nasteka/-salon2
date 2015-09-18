@@ -56,7 +56,19 @@
 
     <!-- include summernote css/js-->
     <link href="/css/summernote.css" rel="stylesheet">
-    <script src="/css/summernote.min.js"></script>
+    <script src="/js/summernote.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.summernote').summernote({
+                height: 300,                 // set editor height
+
+                minHeight: null,             // set minimum height of editor
+                maxHeight: null,             // set maximum height of editor
+
+                focus: true,                 // set focus to editable area after initializing summernote
+            });
+    </script>
 
 </head>
 <body>
