@@ -36,7 +36,13 @@ body {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	 border-radius: 3px;
-} 
+}
+
+.b5r {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
 
 .blue {
 	color: #23d5d4;
@@ -1370,71 +1376,34 @@ a.menu:after, .dropdown-toggle:after {
 	font-size: 14px;
 	text-align: justify;
 	padding: 0 0 0 20px;
-	margin: -5px 0 0 0;
+	margin: 20px 0 0 0;
 	width: 100%;
 	height: 140px;
 	border: 0px solid #000;
 	overflow: hidden;
 }
 .order-form {
-	background-color: #23d5d4;
-	width: 320px;
-	height: 216px;
-	padding: 15px;
-	margin: 13px 0 0 20px;
+	margin: 10px auto 0;
 }
-.order-form .title {
-	text-align: center;
-	color: #fff;
-	text-transform: uppercase;
-	font-size: 15px;
-	font-weight: 500;
-	padding-top: 10px;
-}
-.order-form hr {
-	width: 120px;
-	background-color: #7be6e5;
-	margin-top: 10px;
-	height: 1px;
-	border: none;
-}
-.order-form input {
-	width: 196px;
-	height: 25px;
-	margin: 0;
-	border: none !important;
-	padding-left: 10px;
+.order-form #name{
 	text-align: left;
-	color: #2c3341;
+	margin: 35px auto 0;
 }
-.order-form label {
-	font-size: 14px;
-	font-weight: 300;
-	color: #2c3341;
+.order-form #phone{
+	text-align: left;
+	margin: 10px auto 0;
 }
-.order-form #name-inp {
-	margin-left: 40px;
+.order-form .btn-mainf {
+	margin: 20px 0 0 75px;
+	float: none;
+	font-size: 18px;
 }
-.order-form #phone-inp {
-	margin: 10px 0 0 11px;
-}
-.order-form button {
-	border: none;
-	background-color: #2c3341;
-	color: #fff;
-	text-transform: uppercase;
-	text-align: center;
-	margin: 15px 0 0 74px;
-	width: 196px;
-	height: 35px;
-}
-
 .order-main-txt {
 	min-height: 300px;
 	height: auto;
 	padding-bottom: 30px;
 	border: 0px solid #000;
-	margin: 0 !important;
+	margin: 20px 0 0 0 !important;
 	width: 970px;
 	overflow: hidden;
 
@@ -1456,6 +1425,24 @@ a.menu:after, .dropdown-toggle:after {
 .order-main-txt .products-colors {
 	margin: 0 0 0 -25px;
 }
+.order-bl-in {
+	background-color: #fff;
+	border: 1px solid #ccc;
+	padding: 20px 20px 60px 20px;
+	margin-top: 30px;
+	min-height: 400px;
+	height: auto;
+}
+.order-bl-in .nav-tabs {
+	border-bottom: none !important;
+}
+.order-bl-in .nav-tabs > li > a {
+	border-radius: 0 !important;
+	color: #23d5d4 !important;
+}
+.order-bl-in .nav-tabs > .active a{
+	color: #000 !important;
+}
 .products-colors .type-name {
 	position: absolute;
 	font-size: 13px;
@@ -1463,20 +1450,63 @@ a.menu:after, .dropdown-toggle:after {
 	margin: 170px 0 0 0px;
 	text-align: center;
 }
-.products-type img , .products-colors img{
+/*
+.type-bl img , .colors-bl img{
 	width: 148px;
 	height: 164px;
 }
+*/
 .products-type .type-name {
 	margin: 5px 0 0 0 !important;
 }
-.order-main-txt .products-colors  li {
-	display: inline-block;
+.params-bl, .colors-bl, .type-bl {
+	margin-top: 50px;
+}
+.colors-bl .table th, .colors-bl .table td,
+.type-bl .table th, .type-bl .table td {
+	border-top: none !important;
+	border-left: none !important;
+	font-size: 13px;
+	text-align: center;
+}
+.colors-bl .fixed-table-container {
+	border:0px;
+}
+.colors-bl .table th {
+	border-bottom: none !important;
+}
+.colors-bl .table:last-child{
+	border:none !important;
+}
+.colors-bl img {
 	background-color: #fafafa;
-	border: 1px solid #ccc;
+	border: 0px solid #ccc;
 	width: 148px;
 	height: 164px;
-	margin: 0 0 40px 30px;
+
+	-webkit-box-shadow: 3px 3px 3px 0px rgba(50, 50, 50, 0.5);
+	-moz-box-shadow:    3px 3px 3px 0px rgba(50, 50, 50, 0.5);
+	box-shadow:         3px 3px 3px 0px rgba(50, 50, 50, 0.5);
+
+	background-image: -webkit-gradient(
+			linear,
+			left top,
+			left bottom,
+			color-stop(0, #FFFFFF),
+			color-stop(1, #E3E3E3)
+	);
+	background-image: -o-linear-gradient(bottom, #FFFFFF 0%, #E3E3E3 100%);
+	background-image: -moz-linear-gradient(bottom, #FFFFFF 0%, #E3E3E3 100%);
+	background-image: -webkit-linear-gradient(bottom, #FFFFFF 0%, #E3E3E3 100%);
+	background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #E3E3E3 100%);
+	background-image: linear-gradient(to bottom, #FFFFFF 0%, #E3E3E3 100%);
+
+}
+.type-bl img {
+	background-color: #fafafa;
+	border: 0px solid #ccc;
+	width: 148px;
+	height: 164px;
 
 	-webkit-box-shadow: 3px 3px 3px 0px rgba(50, 50, 50, 0.5);
 	-moz-box-shadow:    3px 3px 3px 0px rgba(50, 50, 50, 0.5);
