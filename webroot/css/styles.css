@@ -1478,7 +1478,14 @@ a.menu:after, .dropdown-toggle:after {
 .colors-bl .table:last-child{
 	border:none !important;
 }
+.b_txt td {
+	/*
+	color: red !important;
+	vertical-align: top !important;
+	*/
+}
 .colors-bl img {
+	padding: 4px 2px;
 	background-color: #fafafa;
 	border: 0px solid #ccc;
 	width: 148px;
@@ -1524,6 +1531,14 @@ a.menu:after, .dropdown-toggle:after {
 	background-image: -webkit-linear-gradient(bottom, #FFFFFF 0%, #E3E3E3 100%);
 	background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #E3E3E3 100%);
 	background-image: linear-gradient(to bottom, #FFFFFF 0%, #E3E3E3 100%);
+}
+.colors-bl img:hover {
+	/*
+	border: 1px solid #ccc;
+	border-radius: 3px
+	 transition: 0.5s;
+	border-radius: 3px;
+	padding: 1px; */
 }
 .bg-none img{
 	background-color: transparent !important;
