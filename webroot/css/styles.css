@@ -1531,7 +1531,8 @@ a.menu:after, .dropdown-toggle:after {
 	background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #E3E3E3 100%);
 	background-image: linear-gradient(to bottom, #FFFFFF 0%, #E3E3E3 100%);
 }
-.colors-bl img:hover {
+.colors-bl img:hover, .type-bl img:hover {
+	cursor: pointer;
 	/*
 	border: 1px solid #ccc;
 	border-radius: 3px
@@ -1539,9 +1540,29 @@ a.menu:after, .dropdown-toggle:after {
 	border-radius: 3px;
 	padding: 1px; */
 }
-.bg-none img{
-	background-color: transparent !important;
+.bg-none {
+	background-color: #fff !important;
 	background-image: none !important;
 	box-shadow: none !important;
+	border: 0px !important;
+	border-image: none
+}
+.colors-bl .bg-none img, .type-bl .bg-none img{
+	background-color: #fff !important;
+	background-image: none !important;
+	box-shadow: none !important;
+	border: 0px !important;
+	border-image: none
+}
+.type-bl .thumbnail, .colors-bl .thumbnail {
+	border-radius: 0 !important;
+	border : 1px solid #fff;
+	padding: 4px 2px 6px 0;
+}
+.type-bl .thumbnail:hover, .colors-bl .thumbnail:hover {
+	border-color: #ccc;
+}
+.type-bl a, .colors-bl a {
+	color: #2c3341;
 }
 /* Order Bl end */
