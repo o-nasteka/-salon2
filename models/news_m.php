@@ -2,23 +2,22 @@
 
 class News_m extends Model {
 
-    //Удаление отмеченных чекбоксов
-    public function del_news_checkbox(){
 
-        foreach($_POST['ids'] as $k=>$v) {
-            $_POST['ids'][$k] = (int)$v;
-        }
 
-        $ids = implode(',',$_POST['ids']);
-        $sql = "DELETE FROM `news` WHERE `id` IN (".$ids.") ";
+public function view_id($id){
+    $id = (int)$id;
+    $sql = " SELECT * FROM `news` WHERE `id` = '{$id}' LIMIT 1 ";
 
-       return $this->db->query($sql);
-    }
+    return $this->db->query($sql);
+
+}
+
+
 
 
     // Удаление по id
-    public function del_news_id($id = array()){
-       $id = (int)$id[0];
+    public function del_news_id($id){
+       $id = (int)$id;
 
         $sql = " DELETE FROM `news` WHERE `id` = '{$id}' ";
 
@@ -33,18 +32,20 @@ class News_m extends Model {
     }
 
     // Выборка одной новости по id
-    public function list_news_id($id = array()){
-        $id = (int)$id[0];
+    public function list_news_id($id){
+        $id = (int)$id;
+
         $sql = "SELECT * FROM `news` WHERE `id` = '{$id}' ";
         return $this->db->query($sql);
     }
 
     // Добавление новости
     public function add_news(){
+        // Удаляет пробелы справа и слева, и применяет mysqli_escape_string
+        foreach($_POST as $k=>$v) {
+            $_POST[$k] = $this->db->escape(trim($v));
+        }
 
-            foreach($_POST as $k=>$v) {
-                $_POST[$k] = $this->db->escape(trim($v));
-            }
 
             $sql = "
 		INSERT INTO `news` SET
@@ -59,9 +60,11 @@ class News_m extends Model {
 
 
     // Редактирование новости
-    public function edit_news($id = array()){
-        $id = (int)$id[0];
+    public function edit_news($id){
 
+        $id = (int)$id;
+
+        // Удаляет пробелы справа и слева, и применяет mysqli_escape_string к массиву POST
         foreach($_POST as $k=>$v) {
             $_POST[$k] = $this->db->escape(trim($v));
         }
@@ -74,8 +77,6 @@ class News_m extends Model {
 		`date`        = NOW()
 		WHERE `id` = ".$id."
 	";
-
-
         return $this->db->query($sql);
     }
 

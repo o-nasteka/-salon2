@@ -4,13 +4,13 @@
 <br>
 <br>
 <br>
-<form action="" method="post">
+
 <table class="table table-bordered table-striped" style="width: 80%; border: 1px solid #ccc;">
     <tr>
         <td>ID</td>
         <td>Название</td>
         <td style="padding-left: 15px;">Управление</td>
-        <td style="padding-left: 15px;">Отметить</td>
+
 
     </tr>
     <?php foreach($data['news'] as $news) { ?>
@@ -19,16 +19,13 @@
         <td><strong><?=$news['title']?></strong></td>
         <td width="250" align="center">
             <a href="/admin/news/edit/<?=$news['id']?>"><button class="btn btn-sm btn-primary" style="padding: 5px 20px;">Редактировать</button></a>
-            <a href="/admin/news/index/delete/<?=$news['id']?>"><button class="btn btn-sm btn-warning" style="padding: 5px 20px;">Удалить</button></a>
+            <a href="/admin/news/index/delete/<?=$news['id']?>" onclick="return confirmDelete();"><button class="btn btn-sm btn-warning" style="padding: 5px 20px;">Удалить</button></a>
         </td>
-        <td width="50" align="center">
-            <input type="checkbox" name="ids[]" value="<?php echo $news['id']; ?>">
-        </td>
+
     </tr>
     <?php } ?>
 </table>
-    <input type="submit" class="btn btn-success" name="delete" value="Удалить отмеченные записи">
-</form>
+
 <br/>
 
 <div>

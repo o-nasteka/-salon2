@@ -2,9 +2,15 @@
 <br>
 <br>
 <h3>Редактировать новость</h3><br/>
+
+
+    <div class="form-group">
+        <label for="title">Картинка малого контента </label>
+        <img src="<?=$news['img_min']?>" class="img-responsive" alt="Responsive image">
+    </div>
+
+
 <form method="post" action="">
-
-
     <div class="form-group">
         <label for="title">Название</label>
         <input type="text" id="title" name="title" value="<?=htmlspecialchars(@$data['news']['title'])?>" class="form-control"  />
@@ -18,6 +24,7 @@
         <label for="content">Основное описание:</label>
         <textarea style="min-height: 300px;" id="content" name="content" class="form-control" ><?=htmlspecialchars(@$data['news']['content'])?></textarea>
     </div>
+
 
 
 

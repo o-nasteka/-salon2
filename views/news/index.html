@@ -1,0 +1,128 @@
+<!-- Blank section -->
+<div class="container-fluid blank-section">
+
+</div>
+<!-- Blank section end-->
+
+<!-- header-in -->
+<div class="container-fluid header-in news-header" >
+    <h2><?=$data['page']['title']?></h2>
+    <div class="calc-in">
+        <div class="w970">
+            <form class="form-inline">
+                <h4 class="white text-left pull-left">Укажите размер:</h4>
+                <!-- <h4 class="white text-left pull-right">Выберите тип:</h4> -->
+                <br><br>
+                <hr class="pull-left">
+                <div class="clr"></div>
+                <div class="form-group">
+                    <label for="InputWidth">Ширина:</label>
+                    <input type="text" class="form-control" id="InputWidth" placeholder="мм" >
+                </div>
+                <div class="form-group">
+                    <label for="InputHeight" class="lb2">Высота:</label>
+                    <input type="text" class="form-control" id="InputHeight" placeholder="мм" >
+                </div>
+                <!-- <button type="submit" class="btn btn-default">Просчитать!</button> -->
+                <!-- Single button -->
+                <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Выберите тип <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu sub-type">
+                        <li><a href="/products/view_sub/1">- Жалюзи</a></li>
+                        <li><a href="/products/view_sub/13">- Ролеты</a></li>
+                        <li><a href="/products/view_sub/33">- Плиссе</a></li>
+                        <li><a href="/products/view_sub/38">- Антимоскитные сетки</a></li>
+                        <li><a href="/products/view_sub/42">- Внешние системы солнцезащиты</a></li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- header-in end -->
+
+
+
+<!-- News bl -->
+<div class="container-fluid news-bl">
+    <div class="w970">
+
+
+       <?php foreach($data['news'] as $news) { ?>
+        <!-- -->
+        <div class="row news-in">
+            <div class="col-md-6 col-xs-6">
+                <img src="<?=$news['img_min']?>" class="img-responsive" alt="Responsive image">
+            </div>
+            <div class="col-md-6 col-xs-6">
+                <h3><a href="news/view/<?=$news['id']?>"><?=$news['title']?></a></h3>
+                <hr>
+                <p class="text-justify">
+                    <?=$news['content_min']?>
+
+                </p>
+                <p>
+                    <?=$news['date']?>
+                </p>
+            </div>
+        </div>
+       <br>
+        <!-- -->
+        <?php } ?>
+
+
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <!-- Pagination -->
+                <nav>
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- Pagination end -->
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<!-- News bl end-->
+
+<!-- How -->
+<div class="container-fluid section-6 how-news">
+    <div class="w970">
+        <br>
+        <h2 class="text-center black">Как сделать заказ:</h2>
+        <div class="img-bl"></div>
+        <br>
+        <h4 class="black text-center">Заказ. Замер. Установка. <strong>Все очень просто!</strong></h4>
+        <button type="submit" class="btn-how center-block">Отправить заказ в работу <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+    </div>
+</div>
+<!-- How end-->
+
+
+
+
+
+
+
