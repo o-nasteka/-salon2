@@ -3,7 +3,6 @@
 class News_m extends Model {
 
 
-
 public function view_id($id){
     $id = (int)$id;
     $sql = " SELECT * FROM `news` WHERE `id` = '{$id}' LIMIT 1 ";
@@ -75,6 +74,7 @@ public function view_id($id){
 		`content_min` = '".($_POST['content_min'])."',
 		`content`     = '".($_POST['content'])."',
 		`date`        = NOW()
+
 		WHERE `id` = ".$id."
 	";
         return $this->db->query($sql);
