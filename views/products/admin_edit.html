@@ -1,8 +1,8 @@
 <br>
 <br>
 <br>
+<script src="//cdn.ckeditor.com/4.5.3/standard/ckeditor.js"></script>
 
-<div id="summernote">
 
 <h3>Редактировать товар</h3><br/>
 <form method="post" action="">
@@ -27,7 +27,7 @@
 
     <div class="form-group">
         <label for="gallery_img">Картинки слайдера:</label>
-        <textarea style="min-height: 300px;" id="gallery_img" name="gallery_img" class="form-control" ><?=$data['products']['gallery_img']?></textarea>
+        <textarea style="min-height: 500px;" id="gallery_img" name="gallery_img" class="form-control" ><?=$data['products']['gallery_img']?></textarea>
     </div>
 
     <div class="form-group">
@@ -47,7 +47,12 @@
 
     <input type="submit" class="btn btn-success" value="Сохранить">
 
+    <script>
+        // CKEDITOR.replace( 'content_short' );
+        // CKEDITOR.replace( 'gallery_img' );
+        // config.height = '500px';
+    </script>
+
 </form>
 
-</div>
 
