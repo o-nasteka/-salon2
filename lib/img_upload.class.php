@@ -72,7 +72,7 @@ private function upload(){
 	if(!$this->file_ext_dot){
 		echo 'Not correct file';
 		exit;
-		//header('Location: /');		
+
 	}
 	    
 	mb_internal_encoding("UTF-8");
@@ -111,7 +111,8 @@ private function upload(){
 					
 	            }else{
 	             	echo 'Upload in correct';
-	             	exit;
+
+					exit;
 	             }
 
 			}else{

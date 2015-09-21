@@ -85,7 +85,9 @@ public function view_id($id){
         $id = (int)$id;
 
         $sql = "SELECT `img_min` FROM `news` WHERE `id` = '{$id}' ";
-       if($sql_tmp = $this->db->query($sql)) {
+
+        $sql_tmp = $this->db->query($sql);
+        if($sql_tmp){
            // Указываем полный путь
            $sql_tmp = ROOT . DS . $sql_tmp[0]['img_min'];
            // Удаляем предыдущий файл картинки
