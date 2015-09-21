@@ -5,7 +5,7 @@
 
 
     <div class="form-group">
-        <label for="title">Картинка малого контента </label>
+        <label for="title">Картинка <!-- малого --> контента </label>
         <img src="<?=$data['news']['img_min']?>" class="img-responsive" alt="Responsive image">
     </div>
 
@@ -15,9 +15,8 @@
         <input type="submit" name="img_min_upld" value="Загрузить картинку" class="btn btn-success" >
     </form>
 
-<br>
-<br>
 
+<!--
 <div class="form-group">
     <label for="title">Картинка основного контента </label>
     <img src="<?=$data['news']['img_content']?>" class="img-responsive" alt="Responsive image">
@@ -28,7 +27,7 @@
     <input type="file" name="files"  >
     <input type="submit" name="img_content_upld" value="Загрузить картинку" class="btn btn-success" >
 </form>
-
+-->
 <br>
 <br>
 
@@ -41,12 +40,12 @@
         <label for="content_min">Краткое описание:</label>
         <textarea style="min-height: 150px;" id="content_min" name="content_min" class="form-control" ><?=htmlspecialchars(@$data['news']['content_min'])?></textarea>
     </div>
-
+<!--
     <div class="form-group">
         <label for="content">Основное описание:</label>
         <textarea style="min-height: 300px;" id="content" name="content" class="form-control" ><?=htmlspecialchars(@$data['news']['content'])?></textarea>
     </div>
-
+-->
 
 
 
