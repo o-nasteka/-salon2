@@ -107,7 +107,7 @@ private function upload(){
 	        	// Выгрузить временной файл по сформировавщемуся пути $this->path_full 
 	        	if(move_uploaded_file($_FILES['files']['tmp_name'],$this->path_full)){
 	            	echo 'Upload comlate';
-					
+					Session::setFlash('Upload comlate!!!');
 					
 	            }else{
 	             	echo 'Upload in correct';
