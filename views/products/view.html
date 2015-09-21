@@ -34,17 +34,6 @@
             <p class="order-short-txt">
                 <?=$data['products']['content_short']?>
             </p>
-            <!--
-            <form class="order-form" action="">
-                <p class="title">ОФОРМИТЬ ЗАКАЗ:</p>
-                <hr class="center-block">
-                <label for="name-inp">Имя:</label>
-                <input type="text" class="" id="name-inp" placeholder="Имя" required /><br>
-                <label for="phone-inp" class="">Телефон:</label>
-                <input type="phone" class="" id="phone-inp" placeholder="Телефон" required />
-                <button type="submit" class="">Заказать просчет!</button>
-            </form>
-            -->
 
             <div class="main-form order-form">
                 <h4 class="text-center tt_up white">БЫСТРЫЙ ЗАКАЗ</h4>
@@ -65,7 +54,7 @@
 
         <!-- -->
         <div class="order-main-txt">
-            <h3>Описание данного продукта</h3>
+            <h3>Описание</h3>
             <!-- Content -->
             <p class="description">
                 <?=$data['products']['content']?>
@@ -74,19 +63,19 @@
             <!-- Характеристики, Цвет, Тип системы -->
             <div class="order-bl-in">
                 <ul class="nav nav-tabs">
-                    <li class=""><a data-toggle="tab" href="#panel1">Характеристики</a></li>
-                    <li class="active"><a data-toggle="tab" href="#panel2">Цвета</a></li>
+                    <li class="active"><a data-toggle="tab" href="#panel1">Характеристики</a></li>
+                    <li><a data-toggle="tab" href="#panel2">Цвета</a></li>
                     <li><a data-toggle="tab" href="#panel3">Системы</a></li>
 
                 </ul>
 
                 <div class="tab-content">
-                    <div id="panel1" class="tab-pane fade ">
+                    <div id="panel1" class="tab-pane fade in active">
                         <div class="params-bl">
                             <?=$data['products']['params']?>
                         </div>
                     </div>
-                    <div id="panel2" class="tab-pane fade in active">
+                    <div id="panel2" class="tab-pane fade">
                         <div class="colors-bl">
                             <?=$data['products']['colors']?>
                         </div>
