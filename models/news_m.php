@@ -101,7 +101,7 @@ public function view_id($id){
         return $this->db->query($sql);
 
     }
-
+//
     public function img_content_upld($id){
         $id = (int)$id;
         // Путь для загрузки файла
