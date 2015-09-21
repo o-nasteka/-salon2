@@ -20,7 +20,7 @@ In (.htaccess)
 
 */
 
-class img_upload{
+class Img_upload{
 // Допустимый mime тип	
 private $array_mime = array('image/gif', 'image/jpg', 'image/jpeg', 'image/png'); 
 // Допустимые расширения файлов
@@ -99,8 +99,10 @@ private function upload(){
 					
 			     	
 				// Формирование пути и имени файла
-	        	$this->path_full = $this->path . '/' . $_FILES['files']['name'];
-	        	
+	        	$this->path_full = $this->path . $_FILES['files']['name'];
+	        	echo $this->path_full;
+				//var_dump(is_writable('/home/nasteka/nasteka.pp.ua/www/upld'));
+
 	       
 	        	// Выгрузить временной файл по сформировавщемуся пути $this->path_full 
 	        	if(move_uploaded_file($_FILES['files']['tmp_name'],$this->path_full)){

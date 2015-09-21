@@ -84,14 +84,20 @@ public function view_id($id){
     public function img_min_upld($id){
         $id = (int)$id;
         // Путь для загрузки файла
-        $path = '';
+       $path = ROOT.DS.'upld'.DS.'news'.DS.'img_min'.DS;
 
-        // создаем обькт передаем путь в конструктор, и загружаем файл по указоному пути
+
+
+        // Создаем обькт передаем путь в конструктор, и загружаем файл по указоному пути
         $img_upl_obj = new img_upload($path);
         // Получаем полный путь и имя файла
         $path_full = $img_upl_obj->get_path_full();
 
         unset($img_upl_obj);
+        // Обрезаем до /upld
+       $path_full = stristr($path_full, "/upld");
+
+
 
         $sql = "
     	UPDATE `news` SET
