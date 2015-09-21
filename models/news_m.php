@@ -81,13 +81,47 @@ public function view_id($id){
     }
 
 
+    public function img_min_upld($id){
+        $id = (int)$id;
+        // Путь для загрузки файла
+        $path = '';
 
+        // создаем обькт передаем путь в конструктор, и загружаем файл по указоному пути
+        $img_upl_obj = new img_upload($path);
+        // Получаем полный путь и имя файла
+        $path_full = $img_upl_obj->get_path_full();
 
+        unset($img_upl_obj);
 
+        $sql = "
+    	UPDATE `news` SET
+    	`img_min`	= '".($path_full)."'
+    	WHERE `id`  =  ".$id." ";
 
+        return $this->db->query($sql);
 
+    }
 
+    public function img_content_upld($id){
+        $id = (int)$id;
+        // Путь для загрузки файла
+        $path = '';
 
+        // создаем обькт передаем путь в конструктор, и загружаем файл по указоному пути
+        $img_upl_obj = new img_upload($path);
+        // Получаем полный путь и имя файла
+        $path_full = $img_upl_obj->get_path_full();
+
+        unset($img_upl_obj);
+
+        $sql = "
+    	UPDATE `news` SET
+    	`img_min`	= '".($path_full)."'
+    	WHERE `id`  =  ".$id." ";
+
+        return $this->db->query($sql);
+
+    }
 
 
 
