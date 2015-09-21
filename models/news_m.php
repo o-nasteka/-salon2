@@ -83,10 +83,17 @@ public function view_id($id){
 
     public function img_min_upld($id){
         $id = (int)$id;
+
+        $sql = "SELECT `img_min` FROM `news` WHERE `id` = '{$id}' ";
+       if($sql_tmp = $this->db->query($sql)) {
+           // Указываем полный путь
+           $sql_tmp = ROOT . DS . $sql_tmp[0]['img_min'];
+           // Удаляем предыдущий файл картинки
+           unlink($sql_tmp);
+       }
+
         // Путь для загрузки файла
        $path = ROOT.DS.'upld'.DS.'news'.DS.'img_min'.DS;
-
-
 
         // Создаем обькт передаем путь в конструктор, и загружаем файл по указоному пути
         $img_upl_obj = new img_upload($path);
@@ -97,8 +104,7 @@ public function view_id($id){
         // Обрезаем до /upld
        $path_full = stristr($path_full, "/upld");
 
-
-
+        // Обновляем базу с новой картинкой
         $sql = "
     	UPDATE `news` SET
     	`img_min`	= '".($path_full)."'
