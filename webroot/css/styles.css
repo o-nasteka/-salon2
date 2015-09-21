@@ -1442,6 +1442,7 @@ a.menu:after, .dropdown-toggle:after {
 	min-height: 400px;
 	height: auto;
 }
+
 .order-bl-in .nav-tabs {
 	border-bottom: none !important;
 }
@@ -1452,6 +1453,8 @@ a.menu:after, .dropdown-toggle:after {
 .order-bl-in .nav-tabs > .active a{
 	color: #000 !important;
 }
+
+
 .products-colors .type-name {
 	position: absolute;
 	font-size: 13px;
@@ -1575,3 +1578,12 @@ a.menu:after, .dropdown-toggle:after {
 	color: #2c3341;
 }
 /* Order Bl end */
+
+
+.order-bl-in2 {
+	border: none !important;
+	margin-top: -50px !important;
+}
+.order-bl-in2 .nav-tabs > li > a {
+	color: red;
+}
