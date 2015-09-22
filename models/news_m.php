@@ -16,7 +16,14 @@ public function view_id($id){
 
     // Удаление по id
     public function del_news_id($id){
-       $id = (int)$id;
+        $id = (int)$id;
+
+        $sql = " SELECT `img_min` FROM `news` WHERE `id` = '{$id}' ";
+        $sql_tmp = $this->db->query($sql);
+        // Указываем полный путь
+        $sql_tmp = ROOT . DS . $sql_tmp[0]['img_min'];
+        // Удаляем предыдущий файл картинки
+        unlink($sql_tmp);
 
         $sql = " DELETE FROM `news` WHERE `id` = '{$id}' ";
 
@@ -102,7 +109,16 @@ public function view_id($id){
 		`date`        = NOW()
 	";
 
-        return $this->db->query($sql);
+        if($this->db->query($sql)){
+            // Узнать последний id
+            $sql = "SELECT MAX(id) FROM `news`";
+            $tmp_sql =$this->db->query($sql);
+            $max_id = $tmp_sql[0]['MAX(id)'];
+
+            return $max_id;
+        }
+
+
     }
 
 
