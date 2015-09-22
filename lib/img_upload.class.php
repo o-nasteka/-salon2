@@ -99,7 +99,7 @@ private function upload(){
 					
 			     	
 				// Формирование пути и имени файла
-	        	$this->path_full = $this->path . '_' . rand(10000,99999) . '_' . $_FILES['files']['name'];
+	        	$this->path_full = $this->path . rand(10000,99999) . '_' . $_FILES['files']['name'];
 
 
 	        	// Выгрузить временной файл по сформировавщемуся пути $this->path_full 
