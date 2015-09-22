@@ -2,7 +2,7 @@
 
 class News_m extends Model {
 
-
+// Выборка одной новости по id
 public function view_id($id){
     $id = (int)$id;
     $sql = " SELECT * FROM `news` WHERE `id` = '{$id}' LIMIT 1 ";
@@ -10,9 +10,6 @@ public function view_id($id){
     return $this->db->query($sql);
 
 }
-
-
-
 
     // Удаление по id
     public function del_news_id($id){
@@ -37,13 +34,7 @@ public function view_id($id){
         return $this->db->query($sql);
     }
 
-    // Выборка одной новости по id
-    public function list_news_id($id){
-        $id = (int)$id;
 
-        $sql = "SELECT * FROM `news` WHERE `id` = '{$id}' ";
-        return $this->db->query($sql);
-    }
 
     // Добавление новости
     public function add_news(){
@@ -63,31 +54,7 @@ public function view_id($id){
 
     return $this->db->query($sql);
 }
-
-
-
-    // Редактирование новости
-    public function edit_news($id){
-
-        $id = (int)$id;
-
-        // Удаляет пробелы справа и слева, и применяет mysqli_escape_string к массиву POST
-        foreach($_POST as $k=>$v) {
-            $_POST[$k] = $this->db->escape(trim($v));
-        }
-
-        $sql = "
-		UPDATE `news` SET
-		`title`       = '".($_POST['title'])."',
-		`content_min` = '".($_POST['content_min'])."',
-		`content`     = '".($_POST['content'])."',
-		`date`        = NOW()
-
-		WHERE `id` = ".$id."
-	";
-        return $this->db->query($sql);
-    }
-
+    // Добавление отдельно картинки (создание новости)
     public function add_news_image(){
 
         // Путь для загрузки файла
@@ -120,6 +87,30 @@ public function view_id($id){
 
 
     }
+
+    // Редактирование новости
+    public function edit_news($id){
+
+        $id = (int)$id;
+
+        // Удаляет пробелы справа и слева, и применяет mysqli_escape_string к массиву POST
+        foreach($_POST as $k=>$v) {
+            $_POST[$k] = $this->db->escape(trim($v));
+        }
+
+        $sql = "
+		UPDATE `news` SET
+		`title`       = '".($_POST['title'])."',
+		`content_min` = '".($_POST['content_min'])."',
+		`content`     = '".($_POST['content'])."',
+		`date`        = NOW()
+
+		WHERE `id` = ".$id."
+	";
+        return $this->db->query($sql);
+    }
+
+
 
 
     public function img_min_upld($id){
