@@ -70,8 +70,7 @@ private function upload(){
 	$this->file_ext_dot  = strrchr($_FILES['files']['name'],".");
 	   	
 	if(!$this->file_ext_dot){
-		echo 'Not correct file';
-		exit;
+		exit('Not correct file');
 
 	}
 	    
@@ -83,8 +82,7 @@ private function upload(){
 	   
 	// Проверяем на допустимые разширения 
 	if(!in_array($this->file_ext,$this->array_ext)){
-		echo 'Not support file!';
-	    exit;
+	    exit('Not support file!');
 	}
 
 	// Если ошибок нет
@@ -100,35 +98,29 @@ private function upload(){
 			     	
 				// Формирование пути и имени файла
 	        	$this->path_full = $this->path . $_FILES['files']['name'];
-	        	echo $this->path_full;
-				//var_dump(is_writable('/home/nasteka/nasteka.pp.ua/www/upld'));
 
-	       
+
 	        	// Выгрузить временной файл по сформировавщемуся пути $this->path_full 
 	        	if(move_uploaded_file($_FILES['files']['tmp_name'],$this->path_full)){
 	            	echo 'Upload comlate';
 					Session::setFlash('Upload comlate!!!');
 					
 	            }else{
-	             	echo 'Upload in correct';
-
-					exit;
+					exit('Upload in correct');
 	             }
 
 			}else{
-			 	exit('mime not correct');
-			 	 exit;
+				exit('mime not correct');
+
 			 }
 	    }else{
 	    	// size byte/1024 = size kbyte;
-	    	echo 'size file not correct';
-	        exit;
+	        exit('size file not correct');
 	    }
 	        
 	      
 	 }else{
-		echo 'errors upload files';
-	    exit;
+	    exit('errors upload files');
 	 }
 
 }
