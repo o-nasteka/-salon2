@@ -40,13 +40,13 @@ public function view_id($id){
 
     // Добавление новости
     public function add_news(){
-        // Удаляет пробелы справа и слева, и применяет mysqli_escape_string
-        foreach($_POST as $k=>$v) {
-            $_POST[$k] = $this->db->escape(trim($v));
-        }
+    // Удаляет пробелы справа и слева, и применяет mysqli_escape_string
+    foreach($_POST as $k=>$v) {
+        $_POST[$k] = $this->db->escape(trim($v));
+    }
 
 
-            $sql = "
+    $sql = "
 		INSERT INTO `news` SET
 		`title`       = '".($_POST['title'])."',
 		`content_min` = '".($_POST['content_min'])."',
@@ -54,8 +54,9 @@ public function view_id($id){
 		`date`        = NOW()
 	";
 
-        return $this->db->query($sql);
-    }
+    return $this->db->query($sql);
+}
+
 
 
     // Редактирование новости
@@ -80,12 +81,35 @@ public function view_id($id){
         return $this->db->query($sql);
     }
 
+    public function add_news_image(){
+
+        // Путь для загрузки файла
+        $path = ROOT.DS.'upld'.DS.'news'.DS.'img_min'.DS;
+
+        // Создаем обькт передаем путь в конструктор, и загружаем файл по указоному пути
+        $img_upl_obj = new img_upload($path);
+        // Получаем полный путь и имя файла
+        $path_full = $img_upl_obj->get_path_full();
+
+        unset($img_upl_obj);
+        // Обрезаем до /upld
+        $path_full = stristr($path_full, "/upld");
+
+
+        $sql = "
+		INSERT INTO `news` SET
+		`img_min`       = '".($path_full)."',
+		`date`        = NOW()
+	";
+
+        return $this->db->query($sql);
+    }
+
 
     public function img_min_upld($id){
         $id = (int)$id;
 
         $sql = "SELECT `img_min` FROM `news` WHERE `id` = '{$id}' ";
-
         $sql_tmp = $this->db->query($sql);
         if($sql_tmp){
            // Указываем полный путь
