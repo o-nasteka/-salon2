@@ -1,13 +1,13 @@
 <?php
 class gallery_m extends Model{
 
-    // Get all from table products
-    public function getList()
-    {
-        // $sql = "SELECT * FROM `categories`";
-        $sql = "SELECT * FROM `products`";
 
-        // $id = (int)$id;
+    public function list_gallery()
+    {
+
+        $sql = "SELECT * FROM `gallery`";
+
+
         return $this->db->query($sql);
     }
 }
