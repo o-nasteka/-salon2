@@ -24,11 +24,12 @@ class App{
         $controller_method = strtolower(self::$router->getMethodPrefix().self::$router->getAction());
 
         // Запрещает выводить методы на прямую с префиксом admin
-        /*
+
+
         $pref = self::$router->getMethodPrefix();
         if(empty($pref)){
             if($pos = strpos($controller_method, '_')){
-                $pref_action = substr($controller_method, 0, 5);
+                $pref_action = substr($controller_method, 0, $pos);
                 if($pref_action == 'admin'){
                     self::$router->redirect('/');
 
@@ -36,7 +37,7 @@ class App{
             }
         }
 
-        */
+
         // Запрещает выводить методы на прямую с префиксом admin -- Конец
 
         $layout = self::$router->getRoute();

@@ -2,7 +2,7 @@
 
 class News_m extends Model {
 
-
+// Выборка одной новости по id
 public function view_id($id){
     $id = (int)$id;
     $sql = " SELECT * FROM `news` WHERE `id` = '{$id}' LIMIT 1 ";
@@ -11,12 +11,16 @@ public function view_id($id){
 
 }
 
-
-
-
     // Удаление по id
     public function del_news_id($id){
-       $id = (int)$id;
+        $id = (int)$id;
+
+        $sql = " SELECT `img_min` FROM `news` WHERE `id` = '{$id}' ";
+        $sql_tmp = $this->db->query($sql);
+        // Указываем полный путь
+        $sql_tmp = ROOT . DS . $sql_tmp[0]['img_min'];
+        // Удаляем предыдущий файл картинки
+        unlink($sql_tmp);
 
         $sql = " DELETE FROM `news` WHERE `id` = '{$id}' ";
 
@@ -30,23 +34,17 @@ public function view_id($id){
         return $this->db->query($sql);
     }
 
-    // Выборка одной новости по id
-    public function list_news_id($id){
-        $id = (int)$id;
 
-        $sql = "SELECT * FROM `news` WHERE `id` = '{$id}' ";
-        return $this->db->query($sql);
-    }
 
     // Добавление новости
     public function add_news(){
-        // Удаляет пробелы справа и слева, и применяет mysqli_escape_string
-        foreach($_POST as $k=>$v) {
-            $_POST[$k] = $this->db->escape(trim($v));
-        }
+    // Удаляет пробелы справа и слева, и применяет mysqli_escape_string
+    foreach($_POST as $k=>$v) {
+        $_POST[$k] = $this->db->escape(trim($v));
+    }
 
 
-            $sql = "
+    $sql = "
 		INSERT INTO `news` SET
 		`title`       = '".($_POST['title'])."',
 		`content_min` = '".($_POST['content_min'])."',
@@ -54,9 +52,41 @@ public function view_id($id){
 		`date`        = NOW()
 	";
 
-        return $this->db->query($sql);
-    }
+    return $this->db->query($sql);
+}
+    // Добавление отдельно картинки (создание новости)
+    public function add_news_image(){
 
+        // Путь для загрузки файла
+        $path = ROOT.DS.'upld'.DS.'news'.DS.'img_min'.DS;
+
+        // Создаем обькт передаем путь в конструктор, и загружаем файл по указоному пути
+        $img_upl_obj = new img_upload($path);
+        // Получаем полный путь и имя файла
+        $path_full = $img_upl_obj->get_path_full();
+
+        unset($img_upl_obj);
+        // Обрезаем до /upld
+        $path_full = stristr($path_full, "/upld");
+
+
+        $sql = "
+		INSERT INTO `news` SET
+		`img_min`       = '".($path_full)."',
+		`date`        = NOW()
+	";
+
+        if($this->db->query($sql)){
+            // Узнать последний id
+            $sql = "SELECT MAX(id) FROM `news`";
+            $tmp_sql =$this->db->query($sql);
+            $max_id = $tmp_sql[0]['MAX(id)'];
+
+            return $max_id;
+        }
+
+
+    }
 
     // Редактирование новости
     public function edit_news($id){
@@ -81,11 +111,14 @@ public function view_id($id){
     }
 
 
+
+
     public function img_min_upld($id){
         $id = (int)$id;
 
         $sql = "SELECT `img_min` FROM `news` WHERE `id` = '{$id}' ";
-       if($sql_tmp = $this->db->query($sql)) {
+        $sql_tmp = $this->db->query($sql);
+        if($sql_tmp){
            // Указываем полный путь
            $sql_tmp = ROOT . DS . $sql_tmp[0]['img_min'];
            // Удаляем предыдущий файл картинки
@@ -117,21 +150,7 @@ public function view_id($id){
     public function img_content_upld($id){
         $id = (int)$id;
         // Путь для загрузки файла
-        $path = '';
 
-        // создаем обькт передаем путь в конструктор, и загружаем файл по указоному пути
-        $img_upl_obj = new img_upload($path);
-        // Получаем полный путь и имя файла
-        $path_full = $img_upl_obj->get_path_full();
-
-        unset($img_upl_obj);
-
-        $sql = "
-    	UPDATE `news` SET
-    	`img_min`	= '".($path_full)."'
-    	WHERE `id`  =  ".$id." ";
-
-        return $this->db->query($sql);
 
     }
 

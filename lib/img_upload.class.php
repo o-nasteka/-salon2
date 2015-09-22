@@ -21,7 +21,8 @@ In (.htaccess)
 */
 
 class Img_upload{
-// Допустимый mime тип	
+
+// Допустимый mime тип
 private $array_mime = array('image/gif', 'image/jpg', 'image/jpeg', 'image/png'); 
 // Допустимые расширения файлов
 private $array_ext = array('jpeg','jpg','gif','png');
@@ -29,12 +30,13 @@ private $array_ext = array('jpeg','jpg','gif','png');
 private $file_ext_dot;
 // Разширение без точи входящего файла
 private $file_ext;
-// private $size_down = 5000; // Не меньше чем байт (допимать)
+// Не меньше чем байт
+// private $size_down = 5000;
 // Не больше чем байт
 private $size_up = 5000000; 
 //Путь куда будет загружен файл
 private $path; 
-// $path + $_FILES['files']['name']
+// $path + $_FILES['files']['name'] + rand
 private $path_full; 
 
 // Имя файла
@@ -70,9 +72,8 @@ private function upload(){
 	$this->file_ext_dot  = strrchr($_FILES['files']['name'],".");
 	   	
 	if(!$this->file_ext_dot){
-		echo 'Not correct file';
-		exit;
-		//header('Location: /');		
+		exit('Not correct file');
+
 	}
 	    
 	mb_internal_encoding("UTF-8");
@@ -83,8 +84,7 @@ private function upload(){
 	   
 	// Проверяем на допустимые разширения 
 	if(!in_array($this->file_ext,$this->array_ext)){
-		echo 'Not support file!';
-	    exit;
+	    exit('Not support file!');
 	}
 
 	// Если ошибок нет
@@ -99,35 +99,30 @@ private function upload(){
 					
 			     	
 				// Формирование пути и имени файла
-	        	$this->path_full = $this->path . $_FILES['files']['name'];
-	        	echo $this->path_full;
-				//var_dump(is_writable('/home/nasteka/nasteka.pp.ua/www/upld'));
+	        	$this->path_full = $this->path . rand(10000,99999) . '_' . $_FILES['files']['name'];
 
-	       
+
 	        	// Выгрузить временной файл по сформировавщемуся пути $this->path_full 
 	        	if(move_uploaded_file($_FILES['files']['tmp_name'],$this->path_full)){
 	            	echo 'Upload comlate';
 					Session::setFlash('Upload comlate!!!');
 					
 	            }else{
-	             	echo 'Upload in correct';
-	             	exit;
+					exit('Upload in correct');
 	             }
 
 			}else{
-			 	exit('mime not correct');
-			 	 exit;
+				exit('mime not correct');
+
 			 }
 	    }else{
 	    	// size byte/1024 = size kbyte;
-	    	echo 'size file not correct';
-	        exit;
+	        exit('size file not correct');
 	    }
 	        
 	      
 	 }else{
-		echo 'errors upload files';
-	    exit;
+	    exit('errors upload files');
 	 }
 
 }

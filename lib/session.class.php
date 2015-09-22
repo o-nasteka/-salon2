@@ -18,18 +18,19 @@ class Session{
     }
 
     public static function flash_redir(){
-       // unset($_SESSION['i']);
-        if(isset($_POST)){
-            if (!isset($_SESSION['i'])) {
-                $_SESSION['i'] = 0;
+
+
+        if(count($_POST)){
+            if (!isset($_SESSION['b'])) {
+                $_SESSION['b'] = 0;
             }
-            //unset($_SESSION['i']);
-            $_SESSION['i']++;
-            echo $_SESSION['i'];
-            if ($_SESSION['i'] == 2) {
+
+            $_SESSION['b']++;
+            echo $_SESSION['b'];
+            if ($_SESSION['b'] == 2) {
                 echo self::$flash_message;
                 self::$flash_message = null;
-                unset($_SESSION['i']);
+                unset($_SESSION['b']);
             }
         }
     }
