@@ -21,7 +21,8 @@ In (.htaccess)
 */
 
 class Img_upload{
-// Допустимый mime тип	
+
+// Допустимый mime тип
 private $array_mime = array('image/gif', 'image/jpg', 'image/jpeg', 'image/png'); 
 // Допустимые расширения файлов
 private $array_ext = array('jpeg','jpg','gif','png');
@@ -29,12 +30,13 @@ private $array_ext = array('jpeg','jpg','gif','png');
 private $file_ext_dot;
 // Разширение без точи входящего файла
 private $file_ext;
-// private $size_down = 5000; // Не меньше чем байт (допимать)
+// Не меньше чем байт
+// private $size_down = 5000;
 // Не больше чем байт
 private $size_up = 5000000; 
 //Путь куда будет загружен файл
 private $path; 
-// $path + $_FILES['files']['name']
+// $path + $_FILES['files']['name'] + hash
 private $path_full; 
 
 // Имя файла
@@ -97,7 +99,7 @@ private function upload(){
 					
 			     	
 				// Формирование пути и имени файла
-	        	$this->path_full = $this->path . $_FILES['files']['name'];
+	        	$this->path_full = $this->path . '_' . rand(10000,99999) . '_' . $_FILES['files']['name'];
 
 
 	        	// Выгрузить временной файл по сформировавщемуся пути $this->path_full 
