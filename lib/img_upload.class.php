@@ -36,7 +36,7 @@ private $file_ext;
 private $size_up = 5000000; 
 //Путь куда будет загружен файл
 private $path; 
-// $path + $_FILES['files']['name'] + hash
+// $path + $_FILES['files']['name'] + rand
 private $path_full; 
 
 // Имя файла
