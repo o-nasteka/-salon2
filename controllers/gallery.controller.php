@@ -16,6 +16,10 @@ class GalleryController extends Controller{
         $params = App::getRouter()->getParams();
         @$id = $params[1];
 
+        if(@$params[0] == 'start'){
+            $id_start = $params[1];
+        }
+
         if(isset($params[0],$params[1]) && $params[0] == 'delete') {
 
             $this->model->del_gallery_id($id);
@@ -24,7 +28,7 @@ class GalleryController extends Controller{
         }
 
 
-        $this->data['gallery'] = $this->model->list_gallery();
+        $this->data['gallery'] = $this->model->list_gallery(@$id_start);
 
 
     }

@@ -9,82 +9,99 @@ class NewsController extends Controller{
 
     public function index(){
         $params = App::getRouter()->getParams();
-        //Âûáîğêà íîâîñòåé
+        // Ğ²Ñ‹Ğ±Ğ¾Ñ€ĞºĞ° Ğ²ÑĞµÑ… Ğ½Ğ¾Ğ²Ğ¾ÑÑ‚ĞµĞ¹
         $this->data['news'] = $this->model->list_news();
 
 
     }
-
-
-
-
-                                // Âûâîä âñåõ íîâîñòåé â ìåíş óïğàâëåíèåì íîâîñòÿìè
-    public function admin_index(){
+        // Ğ²Ñ‹Ğ±Ğ¾Ñ€ĞºĞ° Ğ¾Ğ´Ğ½Ğ¾Ğ¹ Ğ½Ğ¾Ğ²Ğ¾ÑÑ‚Ğ¸ Ğ¿Ğ¾ id
+    public function view(){
         $params = App::getRouter()->getParams();
 
-        // Óäàëåíèå îòìå÷åííûõ ÷åêáîêñîâ
-        if(isset($_POST['delete'])) {
-
-            if( $this->model-> del_news_checkbox() ){
-                Session::setFlash('News by delete');
-            }else{
-                Session::setFlash('News not delete');
-            }
-
-            Router::redirect('/admin/news');
+        if(!count($params) && !is_numeric($params[0]) ){
+            Router::redirect('/');
         }
 
-
-        // Óäàëåíèå îäèíî÷íûõ ïî ññûëêå
-        if(isset($params[0],$params[1]) && $params[0] == 'delete') {
-
-
-            $this->model->del_news_id([$params[1]]);
-            Router::redirect('/admin/news');
-
-        }
-
-        // Âûáîğêà íîâîñòåé
-        $this->data['news'] = $this->model->list_news();
-
-
-
-
-
-    }
-
-
-
-
-                                // Äîáàâëåíèå íîâîñòè
-    public function admin_add(){
-
-        if(isset($_POST['submit'],$_POST['title'],$_POST['content_min'],$_POST['content'])){
-
-            if($this->model->add_news()){
-
-            }else{
-
-            }
-            Router::redirect('/admin/news');
-        }
-
-    }
-
-
-
-                                // Ğåäàêòèğîâàíèå íîâîñòè
-    public function admin_edit(){
-        $params = App::getRouter()->getParams();
-
-        $this->data['news'] = $this->model->list_news_id($params[0]);
+        $id = $params[0];
+        $this->data['news'] = $this->model->view_id($id);
         $this->data['news'] = $this->data['news'][0];
 
+
+    }
+
+
+    public function admin_index(){
+        $params = App::getRouter()->getParams();
+        $id = $params[1];
+
+        if(isset($params[0],$params[1]) && $params[0] == 'delete') {
+
+            $this->model->del_news_id($id);
+            Router::redirect('/admin/news');
+
+        }
+
+
+        $this->data['news'] = $this->model->list_news();
+
+
+    }
+
+
+    public function admin_add(){
+
+        // Ğ”Ğ¾Ğ±Ğ°Ğ²Ğ»ĞµĞ½Ğ¸Ğµ ĞºĞ°Ñ€Ñ‚Ğ¸Ğ½ĞºĞ¸ Ğ² Ğ½Ğ¾Ğ²Ğ¾ÑÑ‚ÑŒ
+        if(isset($_POST['img_min_upld'])){
+            $max_id = $this->model->add_news_image();
+
+            Router::redirect('/admin/news/edit/'. $max_id);
+        }
+
         if(isset($_POST['submit'],$_POST['title'],$_POST['content_min'],$_POST['content'])){
 
-            if($this->model->edit_news($params[0])){
+            $this->model->add_news();
+
+            Router::redirect('/admin/news');
+        }
+
+    }
+
+
+
+
+    public function admin_edit(){
+        $params = App::getRouter()->getParams();
+        $id = $params[0];
+        $this->data['news'] = $this->model->view_id($id);
+        $this->data['news'] = $this->data['news'][0];
+
+
+        //Ğ’Ñ‹Ğ³Ñ€ÑƒĞ·Ğ¸Ñ‚ÑŒ ĞºĞ°Ñ€Ñ‚Ğ¸Ğ½ĞºÑƒ img_min
+        if(isset($_POST['img_min_upld'])){
+
+            if(!$this->model-> img_min_upld($id)){
+                Session::setFlash('Db not update!');
 
             }
+            Router::redirect($_SERVER['HTTP_REFERER']);
+            exit;
+        }
+        /*
+        //Ğ’Ñ‹Ğ³Ñ€ÑƒĞ·Ğ¸Ñ‚ÑŒ ĞºĞ°Ñ€Ñ‚Ğ¸Ğ½ĞºÑƒ img_content
+        if(isset($_POST['img_content_upld'])){
+
+            if(!$this->model-> img_content_upld($id)){
+
+                Session::setFlash('Db not update!');
+
+            }
+
+        }
+        */
+
+        // Ğ’Ñ‹Ğ¿Ğ¾Ğ»Ğ½Ğ¸Ñ‚ÑŒ update
+        if(isset($_POST['submit'])){
+            $this->model->edit_news($params[0]);
             Router::redirect('/admin/news');
         }
 
