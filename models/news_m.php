@@ -181,7 +181,7 @@ public function view_id($id){
 		`title`       = '".($_POST['title'])."',
 		`content_min` = '".($_POST['content_min'])."',
 		`content`     = '".($_POST['content'])."',
-		`date`        = NOW()
+		`date`        = CURDATE()
 	";
 
     return $this->db->query($sql);
