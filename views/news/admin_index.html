@@ -35,7 +35,7 @@
 
 
 
-
+<?php if($data['count'] > $data['limit']) { ?>
 <nav>
     <ul class="pagination">
         <?php $prev = $data['start'] - $data['limit'];
@@ -49,7 +49,7 @@
         <?php echo @$data[html]; ?>
 
         <?php $next = ($data['count'] - $data['start']) - 5;
-                         if($next != 0 || $next < 0 ){ ?>
+                         if($next > 0 ){ ?>
         <li>
             <a href="/admin/news/index/start/<?php echo ($data['start'] + $data['limit']); ?>" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
@@ -58,3 +58,4 @@
         <?php } ?>
     </ul>
 </nav>
+<?php } ?>
