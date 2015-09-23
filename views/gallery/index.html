@@ -74,10 +74,9 @@
 
             <div class="slider-wrapper theme-default">
                 <div id="slider" class="nivoSlider">
-                    <img src="/images/our/101.jpg" data-thumb="/images/our/101.jpg" alt="" />
-                    <img src="/images/our/01.jpg" data-thumb="/images/our/01.jpg" alt="" />
-                    <img src="/images/our/02.jpg" data-thumb="/images/our/02.jpg" alt="" />
-
+                  <?php foreach($data['gallery'] as $gallery) { ?>
+                    <img src="<?=$gallery['img']?>" data-thumb="<?=$gallery['img']?>" alt="" />
+                  <?php } ?>
 
                     <!-- <a href="http://dev7studios.com"><img src="/images/nivo/images/up.jpg" data-thumb="/images/nivo/images/up.jpg" alt=""
                          title="This is an example of a caption" /></a> -->

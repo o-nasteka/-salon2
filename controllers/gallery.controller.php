@@ -8,7 +8,7 @@ class GalleryController extends Controller{
     }
 
     public function index(){
-       // $this->data['products'] = $this->model->getList();
+       $this->data['gallery'] = $this->model->list_gallery();
     }
 
 
