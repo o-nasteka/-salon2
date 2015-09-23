@@ -59,35 +59,57 @@
 <!-- header-in end -->
      <?php  //echo $data['page']['content'];?>
 
-<div id="wrapper">
-    <!-- <a href="http://dev7studios.com" id="dev7link" title="Go to dev7studios">dev7studios</a>-->
 
-    <div class="slider-wrapper theme-default">
-        <div id="slider" class="nivoSlider">
-            <img src="/images/our/101.jpg" data-thumb="/images/our/101.jpg" alt="" />
-            <img src="/images/our/01.jpg" data-thumb="/images/our/01.jpg" alt="" />
-            <img src="/images/our/02.jpg" data-thumb="/images/our/02.jpg" alt="" />
-
-
-           <!-- <a href="http://dev7studios.com"><img src="/images/nivo/images/up.jpg" data-thumb="/images/nivo/images/up.jpg" alt=""
-                title="This is an example of a caption" /></a> -->
-          <!--  <img src="/images/nivo/images/walle.jpg" data-thumb="/images/nivo/images/walle.jpg" alt="" data-transition="slideInLeft" />
-            <img src="/images/nivo/images/nemo.jpg" data-thumb="/images/nivo/images/nemo.jpg" alt="" title="#htmlcaption" /> -->
+<!-- Our-Work  -->
+<div class="container-fluid our-work">
+    <div class="w970">
+        <div class="col-lg-12">
+            <h2 class="page-header text-center">Работы, сделанные нашей компанией:</h2>
         </div>
-        <!-- <div id="htmlcaption" class="nivo-html-caption">
-             <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>.
-         </div> -->
+
+<!-- -->
+
+        <div id="wrapper">
+            <!-- <a href="http://dev7studios.com" id="dev7link" title="Go to dev7studios">dev7studios</a>-->
+
+            <div class="slider-wrapper theme-default">
+                <div id="slider" class="nivoSlider">
+                  <?php foreach($data['gallery'] as $gallery) { ?>
+                    <img src="<?=$gallery['img']?>" data-thumb="<?=$gallery['img']?>" alt="" />
+                  <?php } ?>
+
+                    <!-- <a href="http://dev7studios.com"><img src="/images/nivo/images/up.jpg" data-thumb="/images/nivo/images/up.jpg" alt=""
+                         title="This is an example of a caption" /></a> -->
+                    <!--  <img src="/images/nivo/images/walle.jpg" data-thumb="/images/nivo/images/walle.jpg" alt="" data-transition="slideInLeft" />
+                      <img src="/images/nivo/images/nemo.jpg" data-thumb="/images/nivo/images/nemo.jpg" alt="" title="#htmlcaption" /> -->
+                </div>
+                <!-- <div id="htmlcaption" class="nivo-html-caption">
+                     <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>.
+                 </div> -->
+            </div>
+
+        </div>
+        <script type="text/javascript" src="/js/nivo/scripts/jquery-1.9.0.min.js"></script>
+        <script type="text/javascript" src="/js/nivo/jquery.nivo.slider.js"></script>
+        <script type="text/javascript">
+            $(window).load(function() {
+                $('#slider').nivoSlider();
+            });
+        </script>
+
+
+
+
+
+
+
+
+
+         </div>
+        <!-- -->
     </div>
-
 </div>
-<script type="text/javascript" src="/js/nivo/scripts/jquery-1.9.0.min.js"></script>
-<script type="text/javascript" src="/js/nivo/jquery.nivo.slider.js"></script>
-<script type="text/javascript">
-    $(window).load(function() {
-        $('#slider').nivoSlider();
-    });
-</script>
-
+<!-- Our-Work end -->
 
 
 

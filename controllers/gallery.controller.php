@@ -8,7 +8,7 @@ class GalleryController extends Controller{
     }
 
     public function index(){
-       // $this->data['products'] = $this->model->getList();
+       $this->data['gallery'] = $this->model->list_gallery();
     }
 
 
@@ -18,7 +18,7 @@ class GalleryController extends Controller{
 
         if(isset($params[0],$params[1]) && $params[0] == 'delete') {
 
-            $this->model->del_news_id($id);
+            $this->model->del_gallery_id($id);
             Router::redirect('/admin/gallery');
 
         }
@@ -28,5 +28,49 @@ class GalleryController extends Controller{
 
 
     }
+//
+    public function admin_edit(){
+        $params = App::getRouter()->getParams();
+        $id = $params[0];
+        $this->data['gallery'] = $this->model->view_id($id);
+        $this->data['gallery'] = $this->data['gallery'][0];
+
+        //print_r($this->data['gallery']);
+        //exit;
+
+        //Выгрузить картинку img_min
+        if(isset($_POST['img_min_upld'])){
+
+            if(!$this->model-> img_min_upld($id)){
+                Session::setFlash('Db not update!');
+
+            }
+            Router::redirect($_SERVER['HTTP_REFERER']);
+            exit;
+        }
+
+
+        // Выполнить update
+        if(isset($_POST['submit'])){
+            $this->model->edit_gallery($id);
+            Router::redirect('/admin/gallery');
+        }
+
+    }
+
+    public function admin_add(){
+
+        // Добавление картинки в галерею
+        if(isset($_POST['img_min_upld'])){
+            $max_id = $this->model->add_gallery_image();
+
+            // Router::redirect('/admin/gallery/edit/'. $max_id);
+            Router::redirect('/admin/gallery');
+        }
+
+
+    }
+
+
 
 }
