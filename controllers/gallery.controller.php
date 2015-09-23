@@ -58,6 +58,23 @@ class GalleryController extends Controller{
 
     }
 
+    public function admin_add(){
+
+        // Добавление картинки в галерею
+        if(isset($_POST['img_min_upld'])){
+            $max_id = $this->model->add_gallery_image();
+
+            Router::redirect('/admin/gallery/edit/'. $max_id);
+        }
+
+        if(isset($_POST['submit'],$_POST['title'])){
+
+            $this->model->add_gallery();
+
+            Router::redirect('/admin/gallery');
+        }
+
+    }
 
 
 
