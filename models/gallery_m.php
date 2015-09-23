@@ -70,23 +70,24 @@ class gallery_m extends Model{
 
     }
 
-    // Добавление нового эллемента галереи
-    public function add_gallery(){
-        // Удаляет пробелы справа и слева, и применяет mysqli_escape_string
-        foreach($_POST as $k=>$v) {
-            $_POST[$k] = $this->db->escape(trim($v));
-        }
 
 
-        $sql = "
-		INSERT INTO `gallery` SET
-		`title`       = '".($_POST['title'])."'
-	";
+    // Удаление по id
+    public function del_gallery_id($id){
+        $id = (int)$id;
+
+        $sql = " SELECT `img` FROM `gallery` WHERE `id` = '{$id}' ";
+        $sql_tmp = $this->db->query($sql);
+        // Указываем полный путь
+        $sql_tmp = ROOT . DS . $sql_tmp[0]['img'];
+        // Удаляем файл картинки
+        unlink($sql_tmp);
+
+        $sql = " DELETE FROM `gallery` WHERE `id` = '{$id}' ";
 
         return $this->db->query($sql);
+
     }
-
-
 
 }
 
