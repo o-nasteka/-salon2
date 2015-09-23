@@ -28,7 +28,7 @@ class GalleryController extends Controller{
 
 
     }
-
+//
     public function admin_edit(){
         $params = App::getRouter()->getParams();
         $id = $params[0];
@@ -38,7 +38,7 @@ class GalleryController extends Controller{
         //print_r($this->data['gallery']);
         //exit;
 
-        //Выгрузить картинку img_min
+        //Р’С‹РіСЂСѓР·РёС‚СЊ РєР°СЂС‚РёРЅРєСѓ img_min
         if(isset($_POST['img_min_upld'])){
 
             if(!$this->model-> img_min_upld($id)){
@@ -48,20 +48,9 @@ class GalleryController extends Controller{
             Router::redirect($_SERVER['HTTP_REFERER']);
             exit;
         }
-        /*
-        //Выгрузить картинку img_content
-        if(isset($_POST['img_content_upld'])){
 
-            if(!$this->model-> img_content_upld($id)){
 
-                Session::setFlash('Db not update!');
-
-            }
-
-        }
-        */
-
-        // Выполнить update
+        // Р’С‹РїРѕР»РЅРёС‚СЊ update
         if(isset($_POST['submit'])){
             $this->model->edit_gallery($id);
             Router::redirect('/admin/gallery');

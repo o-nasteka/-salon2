@@ -1,6 +1,6 @@
 <?php
 class gallery_m extends Model{
-
+//
 
     public function list_gallery()
     {
@@ -11,7 +11,7 @@ class gallery_m extends Model{
         return $this->db->query($sql);
     }
 
-    // Выборка по id
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ id
     public function view_id($id){
         $id = (int)$id;
         $sql = " SELECT * FROM `gallery` WHERE `id` = '{$id}' LIMIT 1 ";
@@ -19,12 +19,12 @@ class gallery_m extends Model{
         return $this->db->query($sql);
     }
 
-    // Редактирование эллемента галереи
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     public function edit_gallery($id){
 
         $id = (int)$id;
 
-        // Удаляет пробелы справа и слева, и применяет mysqli_escape_string к массиву POST
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ mysqli_escape_string пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ POST
         foreach($_POST as $k=>$v) {
             $_POST[$k] = $this->db->escape(trim($v));
         }
