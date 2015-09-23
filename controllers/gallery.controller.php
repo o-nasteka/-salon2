@@ -28,7 +28,11 @@ class GalleryController extends Controller{
         }
 
 
-        $this->data['gallery'] = $this->model->list_gallery(@$id_start);
+        $this->data = $this->model->list_gallery(@$id_start);
+
+       // echo '<pre>';
+       // print_r($this->data);
+       // exit;
 
 
     }

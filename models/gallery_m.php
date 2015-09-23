@@ -20,14 +20,14 @@ class gallery_m extends Model{
 // Количество элементов на странице.
 // В системе оно может определяться например конфигурацией пользователя:
         $limit    = 5;
-
+        $res['limit'] = $limit;
 // Количество страничек, нужное для отображения полученного числа элементов:
         $pageCount = 0;
 
 // Содержит наш GET-параметр из строки запроса.
 // У первой страницы его не будет, и нужно будет вместо него подставить 0!!!
         $start    = isset($id_start)  ? intval( $id_start )   : 0 ;
-
+        $res['start'] = $start;
 
 
 // Запрос для выборки целевых элементов:
@@ -41,7 +41,8 @@ class gallery_m extends Model{
 
              ';
 
-        $res['db']  = $this->db->query($sql);
+        $res['gallery']  = $this->db->query($sql);
+
 
 
 
@@ -67,12 +68,13 @@ class gallery_m extends Model{
         for( $i = 0; $i < $pageCount; $i++ ) {
             // Здесь ($i * $limit) - вычисляет нужное для каждой страницы  смещение,
             // а ($i + 1) - для того что бы нумерация страниц начиналась с 1, а не с 0
-            $res['html'] .= '<li><a href="admin/gallery/index/start/' . ($i * $limit)  . '">' . ($i + 1)  . '</a></li>';
+            @$res['html'] .= '<li><a href="/admin/gallery/index/start/' . ($i * $limit)  . '">' . ($i + 1)  . '</a></li>';
             // $html .= '<li><a href="index.php?start=' . ($i * $limit)  . '">' . ($i + 1)  . '</a></li>';
         }
+        return $res;
 
 // Собственно выводим на экран:
-        echo '<ul class="pagination">' . $html . '</ul>';
+        // echo '<ul class="pagination">' . $html . '</ul>';
 
 
 
