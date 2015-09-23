@@ -9,8 +9,13 @@ class NewsController extends Controller{
 
     public function index(){
         $params = App::getRouter()->getParams();
+
+
+        if(@$params[0] == 'start'){
+            $id_start = $params[1];
+        }
         // выборка всех новостей
-        $this->data['news'] = $this->model->list_news();
+        $this->data = $this->model->list_news($id_start);
 
 
     }
@@ -34,6 +39,11 @@ class NewsController extends Controller{
         $params = App::getRouter()->getParams();
         $id = $params[1];
 
+        if(@$params[0] == 'start'){
+            $id_start = $params[1];
+        }
+
+
         if(isset($params[0],$params[1]) && $params[0] == 'delete') {
 
             $this->model->del_news_id($id);
@@ -42,7 +52,7 @@ class NewsController extends Controller{
         }
 
 
-        $this->data['news'] = $this->model->list_news();
+        $this->data = $this->model->list_news_admin(@$id_start);
 
 
     }
@@ -57,7 +67,7 @@ class NewsController extends Controller{
             Router::redirect('/admin/news/edit/'. $max_id);
         }
 
-        if(isset($_POST['submit'],$_POST['title'],$_POST['content_min'],$_POST['content'])){
+        if(isset($_POST['submit'],$_POST['title'],$_POST['content_min'])){
 
             $this->model->add_news();
 
