@@ -1,13 +1,16 @@
 <?php
 class gallery_m extends Model{
 
-    public function pagination(){
+    public function list_gallery(){
+
+        $sql = "SELECT * FROM `gallery`";
+        return $this->db->query($sql);
 
     }
 
 
 
-    public function list_gallery($id_start = null){
+    public function list_gallery_admin($id_start = null){
 
     // Результирующий массив с элементами, выбранными с учётом LIMIT:
         $items    = array();
