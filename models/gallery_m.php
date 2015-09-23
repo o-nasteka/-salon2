@@ -55,7 +55,7 @@ class gallery_m extends Model{
         ;
         $stmt  = $this->db->query($sql);
         $allItems = $stmt[0]['count'];
-
+        $res['count'] =$allItems;
 
 
 
