@@ -15,7 +15,7 @@ class NewsController extends Controller{
             $id_start = $params[1];
         }
         // выборка всех новостей
-        $this->data = $this->model->list_news($id_start);
+        $this->data = $this->model->list_news(@$id_start);
 
 
     }

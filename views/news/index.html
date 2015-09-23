@@ -87,24 +87,27 @@
 
 
 
-
+                <!-- Pagination -->
                 <nav>
                     <ul class="pagination">
+                        <?php $prev = $data['start'] - $data['limit'];
+                            if($prev >= 0){ ?>
                         <li>
-                            <a href="#" aria-label="Previous">
+                            <a href="/news/index/start/<?php echo ($data['start'] - $data['limit']); ?>" aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
+                        <?php } ?>
+                        <?php echo @$data[html]; ?>
+
+                        <?php $next = ($data['count'] - $data['start']) - 5;
+                         if($next != 0 || $next < 0 ){ ?>
                         <li>
-                            <a href="#" aria-label="Next">
+                            <a href="/news/index/start/<?php echo ($data['start'] + $data['limit']); ?>" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                             </a>
                         </li>
+                        <?php } ?>
                     </ul>
                 </nav>
                 <!-- Pagination end -->
