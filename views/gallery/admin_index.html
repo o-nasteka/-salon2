@@ -35,3 +35,29 @@
 <div>
     <a href="/admin/gallery/add/"><button class="btn btn-sm btn-success">Добавить новую картинку</button></a>
 </div>
+
+
+<?php if($data['count'] > $data['limit']) { ?>
+<nav>
+    <ul class="pagination">
+        <?php $prev = $data['start'] - $data['limit'];
+                            if($prev >= 0){ ?>
+        <li>
+            <a href="/admin/gallery/index/start/<?php echo ($data['start'] - $data['limit']); ?>" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <?php } ?>
+        <?php echo @$data[html]; ?>
+
+        <?php $next = ($data['count'] - $data['start']) - 5;
+                         if($next > 0 ){ ?>
+        <li>
+            <a href="/admin/gallery/index/start/<?php echo ($data['start'] + $data['limit']); ?>" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+        <?php } ?>
+    </ul>
+</nav>
+<?php } ?>

@@ -28,12 +28,144 @@ public function view_id($id){
 
     }
 
-    //Выборка всех новостей
-    public function list_news(){
-        $sql = "SELECT * FROM `news` ORDER BY `id` ASC";
-        return $this->db->query($sql);
+    //Выборка всех новостей Admin
+    public function list_news_admin($id_start = null){
+        // Результирующий массив с элементами, выбранными с учётом LIMIT:
+        $items    = array();
+
+        // Число вообще всех элементов ( без LIMIT ) по нужным критериям.
+        $allItems = 0;
+
+        // HTML - код постраничной навигации.
+        $html     = NULL;
+
+        // Количество элементов на странице.
+        // В системе оно может определяться например конфигурацией пользователя:
+        $limit    = 5;
+        $res['limit'] = $limit;
+        // Количество страничек, нужное для отображения полученного числа элементов:
+        $pageCount = 0;
+
+        // Содержит наш $params[1] -параметр из строки запроса.
+        // У первой страницы его не будет, и нужно будет вместо него подставить 0!!!
+        $start    = isset($id_start)  ? (int)$id_start    : 0 ;
+        $res['start'] = $start;
+
+
+        // Запрос для выборки целевых элементов:
+        $sql = 'SELECT           ' .
+            ' * 				 ' .
+            'FROM             ' .
+            '  `news`     ' .
+
+            'LIMIT            ' .
+            $start . ',   ' . $limit   . '
+
+             ';
+        //$sql = " SELECT * FROM `gallery` LIMIT '".$start."', '".$limit."' ";
+
+        $res['news']  = $this->db->query($sql);
+
+
+
+
+        // СОБСТВЕННО, ПОСТРАНИЧНАЯ НАВИГАЦИЯ:
+        // Получаем количество всех элементов:
+        $sql = 'SELECT         ' .
+            '  COUNT(*) AS `count` ' .
+            'FROM           ' .
+            '  `news` '
+        ;
+        $stmt  = $this->db->query($sql);
+        $allItems = $stmt[0]['count'];
+        $res['count'] =$allItems;
+
+
+
+        // Здесь округляем в большую сторону, потому что остаток
+        // от деления - кол-во страниц тоже нужно будет показать
+        // на ещё одной странице.
+        $pageCount = ceil( $allItems / $limit);
+
+        // Начинаем с нуля! Это даст нам правильные смещения для БД
+        for( $i = 0; $i < $pageCount; $i++ ) {
+            // Здесь ($i * $limit) - вычисляет нужное для каждой страницы  смещение,
+            // а ($i + 1) - для того что бы нумерация страниц начиналась с 1, а не с 0
+            @$res['html'] .= '<li><a href="/admin/news/index/start/' . ($i * $limit)  . '">' . ($i + 1)  . '</a></li>';
+            // $html .= '<li><a href="index.php?start=' . ($i * $limit)  . '">' . ($i + 1)  . '</a></li>';
+        }
+        return $res;
     }
 
+
+    //Выборка всех новостей
+    public function list_news($id_start = null){
+        // Результирующий массив с элементами, выбранными с учётом LIMIT:
+        $items    = array();
+
+        // Число вообще всех элементов ( без LIMIT ) по нужным критериям.
+        $allItems = 0;
+
+        // HTML - код постраничной навигации.
+        $html     = NULL;
+
+        // Количество элементов на странице.
+        // В системе оно может определяться например конфигурацией пользователя:
+        $limit    = 5;
+        $res['limit'] = $limit;
+        // Количество страничек, нужное для отображения полученного числа элементов:
+        $pageCount = 0;
+
+        // Содержит наш $params[1] -параметр из строки запроса.
+        // У первой страницы его не будет, и нужно будет вместо него подставить 0!!!
+        $start    = isset($id_start)  ? (int)$id_start    : 0 ;
+        $res['start'] = $start;
+
+
+        // Запрос для выборки целевых элементов:
+        $sql = 'SELECT           ' .
+            ' * 				 ' .
+            'FROM             ' .
+            '  `news`     ' .
+
+            'LIMIT            ' .
+            $start . ',   ' . $limit   . '
+
+             ';
+        //$sql = " SELECT * FROM `gallery` LIMIT '".$start."', '".$limit."' ";
+
+        $res['news']  = $this->db->query($sql);
+
+
+
+
+        // СОБСТВЕННО, ПОСТРАНИЧНАЯ НАВИГАЦИЯ:
+        // Получаем количество всех элементов:
+        $sql = 'SELECT         ' .
+            '  COUNT(*) AS `count` ' .
+            'FROM           ' .
+            '  `news` '
+        ;
+        $stmt  = $this->db->query($sql);
+        $allItems = $stmt[0]['count'];
+        $res['count'] =$allItems;
+
+
+
+        // Здесь округляем в большую сторону, потому что остаток
+        // от деления - кол-во страниц тоже нужно будет показать
+        // на ещё одной странице.
+        $pageCount = ceil( $allItems / $limit);
+
+        // Начинаем с нуля! Это даст нам правильные смещения для БД
+        for( $i = 0; $i < $pageCount; $i++ ) {
+            // Здесь ($i * $limit) - вычисляет нужное для каждой страницы  смещение,
+            // а ($i + 1) - для того что бы нумерация страниц начиналась с 1, а не с 0
+            @$res['html'] .= '<li><a href="/news/index/start/' . ($i * $limit)  . '">' . ($i + 1)  . '</a></li>';
+            // $html .= '<li><a href="index.php?start=' . ($i * $limit)  . '">' . ($i + 1)  . '</a></li>';
+        }
+        return $res;
+    }
 
 
     // Добавление новости
@@ -49,7 +181,7 @@ public function view_id($id){
 		`title`       = '".($_POST['title'])."',
 		`content_min` = '".($_POST['content_min'])."',
 		`content`     = '".($_POST['content'])."',
-		`date`        = NOW()
+		`date`        = CURDATE()
 	";
 
     return $this->db->query($sql);
