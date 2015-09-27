@@ -90,7 +90,22 @@ class ProductsController extends Controller {
 
     // Admin panel index
     public function admin_index(){
-        $this->data['products'] = $this->model->getList();
+        if(!isset($_POST['sort'])) {
+            $this->data['products'] = $this->model->getList();
+        }elseif($_POST['sort'] == 1){
+            $this->data['products'] = $this->model->getList_jaluzi();
+        }elseif($_POST['sort'] == 2){
+            $this->data['products'] = $this->model->getList_roleti();
+        }elseif($_POST['sort'] == 3){
+            $this->data['products'] = $this->model->getList_plisse();
+        }elseif($_POST['sort'] == 4){
+            $this->data['products'] = $this->model->getList_antimos();
+        }elseif($_POST['sort'] == 5){
+            $this->data['products'] = $this->model->getList_out_sys();
+        }
+
+
+
     }
 
 
