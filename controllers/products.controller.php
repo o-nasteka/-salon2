@@ -102,6 +102,8 @@ class ProductsController extends Controller {
             $this->data['products'] = $this->model->getList_antimos();
         }elseif($_POST['sort'] == 5){
             $this->data['products'] = $this->model->getList_out_sys();
+        }elseif($_POST['sort'] == 6){
+            $this->data['products'] = $this->model->getList();
         }
 
 
