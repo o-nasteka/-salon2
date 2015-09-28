@@ -17,10 +17,11 @@ class SendController extends Controller{
         if ( $_POST ){
 
             if (isset($_POST['name']) || isset($_POST['phone'])){
-                Mail::$to = "mars251@mail.ru";
-                Mail::$subject = 'Заявка с сайта';
-                Mail::$text = 'Имя:  ' . $_POST['name'] . ' ,Телефон:  ' . $_POST['phone'];
-                Mail::Send();
+                // Mail::$to = "mars251@mail.ru";
+                // Mail::$subject = 'Заявка с сайта';
+                // Mail::$text = '�?мя:  ' . $_POST['name'] . ' ,Телефон:  ' . $_POST['phone'];
+                // Mail::Send();
+                $this->model->sendEmail();
 
             }
 
