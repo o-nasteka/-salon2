@@ -41,6 +41,14 @@ class Send_m extends Model {
         return $this->db->query($sql);
     }
 
+    // Get all by Id from table messages
+    public function getById($id){
+        $id = (int)$id;
+        $sql = "select * from `messages` where `id` = '{$id}' limit 1";
+        $result = $this->db->query($sql);
+        return isset($result[0]) ? $result[0] : null;
+    }
+
 
     // Save to table messages - Заявки
     public function save($data, $id = null){
@@ -81,6 +89,7 @@ class Send_m extends Model {
 
         return $this->db->query($sql);
     }
+
 
     // Delete from table messages
     public function delete($id){

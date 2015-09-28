@@ -52,6 +52,13 @@
     </script>
     <!-- Map end-->
 
+    <script src="/js/jquery.maskedinput.js" type="text/javascript"></script>
+
+    <script>
+        jQuery(function($){
+            $("#phone").mask("(999) 999-99-99");
+        });
+    </script>
 
 
 
@@ -299,10 +306,11 @@
             <form action="/send/" method="POST">
                 <h4 class="text-center tt_up white">БЫСТРЫЙ ЗАКАЗ</h4>
                 <hr>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Имя" required />
-                <input type="text" class="form-control" id="phone" name="phone" placeholder="Телефон" required />
+                <input type="text" class="form-control" id="name" name="name" placeholder="Имя" maxlength="20" required />
+                <input type="text" class="form-control" id="phone" name="phone" placeholder="Телефон" maxlength="10" required />
                 <button type="submit" class="btn-mainf">Узнать стоимость!</button>
                 <input type="hidden" id="idItem" name="title" value="0" />
+                <!-- -->
             </form>
 
 

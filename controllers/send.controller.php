@@ -21,7 +21,7 @@ class SendController extends Controller{
         }
     }
 
-    // Admin edit messages
+    // Admin edit product
     public function admin_edit(){
 
         if ( $_POST ){
@@ -38,7 +38,7 @@ class SendController extends Controller{
 
 
         if ( isset($this->params[0]) ){
-            $this->data['products'] = $this->model->getById($this->params[0]);
+            $this->data['send'] = $this->model->getById($this->params[0]);
 
         } else {
             Session::setFlash('Wrong page id.');
