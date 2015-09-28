@@ -10,6 +10,50 @@ class Products_m extends Model {
         return $this->db->query($sql);
     }
 
+    public function getList_jaluzi(){
+        // $sql = "SELECT * FROM `categories`";
+        $sql = "SELECT * FROM `products` WHERE `parent_id` IN (2,6,10) ";
+
+        // $id = (int)$id;
+        return $this->db->query($sql);
+    }
+
+    public function getList_roleti(){
+        // $sql = "SELECT * FROM `categories`";
+        $sql = "SELECT * FROM `products` WHERE `parent_id` IN (14,21,26,32,31) ";
+
+        // $id = (int)$id;
+        return $this->db->query($sql);
+    }
+
+    public function getList_plisse(){
+        // $sql = "SELECT * FROM `categories`";
+        $sql = "SELECT * FROM `products` WHERE `parent_id` = 33 ";
+
+        // $id = (int)$id;
+        return $this->db->query($sql);
+    }
+
+    public function getList_antimos(){
+        // $sql = "SELECT * FROM `categories`";
+        $sql = "SELECT * FROM `products` WHERE `parent_id` = 38 ";
+
+        // $id = (int)$id;
+        return $this->db->query($sql);
+    }
+
+    public function getList_out_sys(){
+        // $sql = "SELECT * FROM `categories`";
+        $sql = "SELECT * FROM `products` WHERE `parent_id` = 42 ";
+
+        // $id = (int)$id;
+        return $this->db->query($sql);
+    }
+
+
+
+
+
     public function list_sub_cat($id){
         $sql = "SELECT * FROM `categories` WHERE `parent` = '{$id}' ";
         return $this->db->query($sql);
