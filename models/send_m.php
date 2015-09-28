@@ -52,7 +52,7 @@ class Send_m extends Model {
 
     // Save to table messages - Заявки
     public function save($data, $id = null){
-        if ( !isset($data['name']) || !isset($data['phone']) || !isset($data['title']) ){
+        if ( !isset($data['name']) || !isset($data['phone']) || !isset($data['title']) || !isset($data['status'])){
             return false;
         }
 
@@ -63,6 +63,7 @@ class Send_m extends Model {
         $name = $this->db->escape($data['name']);
         $phone = $this->db->escape($data['phone']);
         $title = $this->db->escape($data['title']);
+        $status = $this->db->escape($data['status']);
 
 
 
@@ -71,7 +72,8 @@ class Send_m extends Model {
                 insert into `messages`
                    set name = '{$name}',
                        phone = '{$phone}',
-                       title = '{$title}'
+                       title = '{$title}',
+                       status = '{$status}'
 
             ";
 
@@ -81,7 +83,8 @@ class Send_m extends Model {
                 update `messages`
                    set name = '{$name}',
                        phone = '{$phone}',
-                       title = '{$title}'
+                       title = '{$title}',
+                       status = '{$status}'
 
                    where `id` = {$id}
             ";

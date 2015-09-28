@@ -6,17 +6,41 @@
 <table class="table table-bordered table-striped table-hover" style="width: 100%;">
     <tr>
         <td style="width: 2%;"> <strong>№</strong> </td>
+        <td style="width: 5%;"> <strong>Дата</strong> </td>
         <td style="width: 10%;"> <strong>Имя</strong> </td>
         <td style="width: 10%;"> <strong>Телефон</strong> </td>
         <td style="width: 10%;"> <strong>Наименование</strong> </td>
-        <td style="width: 10%;"> <strong>Управление</strong> </td>
+        <td style="width: 10%;"> <strong>Статус</strong> </td>
+        <td style="width: 15%;"> <strong>Управление</strong> </td>
     </tr>
     <?php foreach($data as $item) { ?>
     <tr>
         <td><?=$item['id']?></td>
+        <td><?php echo $date = date("m.d.y"); ?></td>
         <td><?=$item['name']?></td>
         <td><?=$item['phone']?></td>
         <td><?=$item['title']?></td>
+
+        <?php
+
+        if($item['status'] == 0){?>
+           <td><?php echo "Новая";?></td>
+        <?php }
+
+        elseif($item['status'] == 1){?>
+        <td style="background-color: #ffff00"><?php echo "Подтверждена";?></td>
+        <?php }
+
+        elseif($item['status'] == 2){?>
+        <td style="background-color: #843534"><?php echo "Отмена";?></td>
+        <?php }
+
+        elseif($item['status'] == 3){?>
+        <td style="background-color: #16ff4d"><?php echo "Успешно завершена";?></td>
+        <?php }
+
+        ?>
+
         <td width="250" align="center">
             <a href="/admin/send/edit/<?=$item['id']?>"><button class="btn btn-sm btn-primary" style="padding: 5px 20px;">Редактировать</button></a>
             <a href="/admin/send/delete/<?=$item['id']?>" onclick="return confirmDelete();"><button class="btn btn-sm btn-warning" style="padding: 5px 20px;">Удалить</button></a>
