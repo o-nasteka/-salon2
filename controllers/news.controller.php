@@ -18,6 +18,12 @@ class NewsController extends Controller{
         $this->data = $this->model->list_news(@$id_start);
 
 
+        if ( $_POST ){
+            if ( $this->model->SendMsg($_POST) ){
+                Session::setFlash('Thank you! Your message was sent successfully!');
+            }
+        }
+
     }
         // выборка одной новости по id
     public function view(){
