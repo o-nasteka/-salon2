@@ -1677,3 +1677,12 @@ a.menu:after, .dropdown-toggle:after {
 	text-indent: 0;
 	color : #fff;
 }
+
+.msg {
+	border: 2px solid #1F2531;
+	background-color: #fafafa;
+	width: 450px;
+	height: 200px;
+	padding: 20px 0 0 0;
+	margin: 40px auto 120px;
+}

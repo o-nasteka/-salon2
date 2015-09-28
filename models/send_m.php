@@ -1,8 +1,8 @@
 <?php
 
-class Send extends Model {
+class Send_m extends Model {
 
-    // Send message
+    //  Send message
     public function SendMsg($data, $id = null){
         if ( !isset($data['name']) || !isset($data['phone']) ){
             return false;
