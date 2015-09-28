@@ -15,6 +15,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <link href="/css/modal.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- <script src="//code.jquery.com/jquery-1.10.2.js"></script> -->
@@ -50,6 +51,8 @@
         }
     </script>
     <!-- Map end-->
+
+
 
 
 </head>
@@ -287,36 +290,28 @@
 </div>
 <!-- Footer end-->
 
+<!-- Modal-->
+<!-- A modal with its content -->
+<section class="_semantic-content" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+    <div class="_modal-inner">
 
-<!-- Modal -->
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-    Launch demo modal
-</button>
+        <div class="_modal-content">
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-    Launch demo modal
-</button>
+                <h4 class="text-center tt_up white">БЫСТРЫЙ ЗАКАЗ</h4>
+                <hr>
+                <!-- <form action="/products/view_subcategory/" method="POST"> -->
+                <!-- <label for="name">Имя:</label> -->
+                <input type="text" class="form-control" id="name" placeholder="Имя" required />
+                <!-- <label for="name" class="fl2">Телефон:</label> -->
+                <input type="text" class="form-control" id="phone" placeholder="Телефон" required />
+                <a href="#"><button type="submit" class="btn-mainf">Узнать стоимость!</button></a>
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
         </div>
+
     </div>
-</div>
+    <!-- Use Hash-Bang to maintain scroll position when closing modal -->
+    <a href="#!" class="_modal-close" title="Закрыть окно" data-dismiss="modal">&times;</a>
+</section>
 
 <!-- Modal end -->
 

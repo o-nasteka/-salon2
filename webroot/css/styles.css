@@ -1605,3 +1605,77 @@ a.menu:after, .dropdown-toggle:after {
 .type-bg:hover {
 	/* background-color: #f1ffff !important; */
 }
+
+
+#modal {
+	z-index: 9999 !important;
+	overflow: hidden;
+
+}
+#modal hr {
+	width: 100px;
+}
+._modal-content {
+	max-height: none;
+	border-bottom: 0 !important;
+	border-color: transparent;
+
+	background-color: #122b40;
+	width: 400px;
+	height: 300px;
+	margin: 20px auto 0;
+}
+._modal-content h4 {
+	margin-top: 20px;
+}
+._semantic-content ._modal-inner {
+	width: 400px;
+    margin: 100px 0 0 -200px;
+
+	top: 50px;
+	left: 50%;
+	z-index: 20;
+	overflow-x: hidden;
+	border-radius: 0 !important;
+	background: transparent !important;
+	box-shadow: none !important;
+}
+
+._semantic-content ._modal-close {
+	margin: 0 0 0 -100px !important;
+}
+
+._modal-content #name{
+	text-align: left;
+	margin: 35px auto 0;
+	width: 250px;
+	border-radius: 0 !important;
+}
+._modal-content #phone{
+	text-align: left;
+	margin: 10px auto 0;
+	width: 250px;
+	border-radius: 0 !important;
+}
+._modal-content .btn-mainf {
+	margin: 20px 0 0 59px;
+	float: none;
+	font-size: 18px;
+	width: 250px;
+}
+
+._semantic-content ._modal-close:after {
+	content: '\00d7';
+	position: absolute;
+	top: 25px;
+	left: 50%;
+	z-index: 20;
+	margin: 110px 0 0 200px;
+	background: transparent !important;
+	border-radius: 2px;
+	padding: 2px 8px;
+	font-size: 1.8em;
+	text-decoration: none;
+	text-indent: 0;
+	color : transparent;
+}
