@@ -64,19 +64,17 @@
 
 
             <a href="/products/view_sub/<?=@$data['id']?>">
-                <div class="jal-bl" >
+                <div class="cat-bl" >
+
                     <div class="img-bl">
                         <img src="<?=$data['img_parent']?>" />
                     </div>
                     <div class="title"><?=@$data['title']?></div>
-                    <div  class="jal-in-bl">
-                        <ul>
-                            <li>Standart</li>
-                            <li>Venus</li>
-                            <li>Magnus</li>
-                            <li>от 185 грн./м2</li>
-                        </ul>
-                        <button class="btn s3-btn center-block">Посмотреть</button>
+
+                    <div class="cat-in-bl">
+                        <?=@$data['price']?>
+
+                        <button class="btn cat-btn center-block">Посмотреть</button>
                     </div>
                 </div>
             </a>

@@ -6,7 +6,7 @@ class Send_m extends Model {
 
         $mail = new PHPMailer;
 
-        $mail->CharSet = "utf-8";
+        $mail->CharSet = 'UTF-8';
         $mail->setFrom('order@salon-ss.com.ua', 'Order');
         $mail->addAddress('oleg.nasteka@gmail.com', 'Oleg Nasteka');     // Add a recipient
         // $mail->addAddress('ellen@example.com');               // Name is optional

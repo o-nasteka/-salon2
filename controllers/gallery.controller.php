@@ -34,7 +34,7 @@ class GalleryController extends Controller{
         }
 
 
-        $this->data = $this->model->list_gallery_admin(@$id_start);
+        $this->data = $this->model-> st_gallery_admin(@$id_start);
 
        // echo '<pre>';
        // print_r($this->data);

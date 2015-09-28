@@ -453,9 +453,11 @@ a.menu:after, .dropdown-toggle:after {
 	border: 0px solid #23d5d4;
 
 }
+
 .jal-bl {
 	/* background: url("../images/jal-bl.png")no-repeat center center; */
 }
+
 .jal-bl img {
 	position: absolute;
 }
@@ -477,12 +479,12 @@ a.menu:after, .dropdown-toggle:after {
 	margin: 262px 0 20px 0;
 	border: 0px solid #2c3341;
 }
+
 .jal-bl .title:hover {
 	/* text-decoration: underline; */
 	color: #23d5d4;
 }
 .jal-in-bl {
-	display: none;
 	opacity: 0;
 	width : 264px;
 	height: 232px;
@@ -495,6 +497,7 @@ a.menu:after, .dropdown-toggle:after {
 .jal-in-bl2 {
 	margin: -327px 0 0 14px;
 }
+
 .jal-in-bl ul li {
 	color: #2c3341;
 	font-size: 16px;
@@ -538,6 +541,82 @@ a.menu:after, .dropdown-toggle:after {
 	text-decoration: underline;
 }
 /*Section-3 end */
+
+/* Categories */
+.cat-bl {
+	width: 293px;
+	height: 335px;
+	padding: 0;
+	float: left;
+	margin-right: 30px;
+	margin-bottom: 0px;
+	border: 0px solid #23d5d4;
+
+}
+.cat-bl img {
+	position: absolute;
+	z-index: 8888;
+}
+.cat-bl .title {
+	text-align: center;
+	color: #2c3341;
+	font-size: 20px;
+	font-weight: 500;
+	margin: 262px 0 20px 0;
+	border: 0px solid #2c3341;
+}
+.cat-bl .title:hover {
+	/* text-decoration: underline; */
+	color: #23d5d4;
+}
+
+.cat-bl .cat-in-bl {
+	display: none;
+	margin: -295px 0 0 14px;
+	padding: 35px 0 0 0;
+	background: rgba(255,255,255, 0.8);
+	position: absolute;
+	z-index: 8888;
+	width : 264px;
+	height: 232px;
+}
+.cat-bl .cat-in-bl ul li {
+	color: #2c3341;
+	font-size: 16px;
+}
+.cat-bl:hover .cat-in-bl {
+	display: block;
+}
+.cat-bl:hover .cat-btn {
+	display: block;
+}
+.cat-bl .price {
+	background-color: #1F2531;
+	color: #fff !important;
+	width: 190px;
+	padding: 5px 10px;
+	margin-top: 10px;
+	text-align: center;
+}
+.cat-btn {
+	width: 190px;
+	height: 45px;
+	background-color: #23d5d4;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: 600;
+	border-radius: 0 !important;
+	margin: 0px 0 0 40px;
+	position: absolute;
+	z-index: 8888;
+	display: none;
+}
+.cat-btn:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+/* Categories end  */
 
 /*Section-4 */
 .section-4 {
@@ -1678,11 +1757,21 @@ a.menu:after, .dropdown-toggle:after {
 	color : #fff;
 }
 
+.send-bl {
+	width: 100%;
+	background: url("/images/send.jpg")no-repeat center;
+	background-size: cover;
+	background-attachment: fixed;
+	height: auto;
+	min-height: 600px;
+	padding-top: 100px;
+	border-bottom: 5px solid #ccc;
+}
 .msg {
 	border: 2px solid #1F2531;
 	background-color: #fafafa;
 	width: 450px;
 	height: 200px;
 	padding: 20px 0 0 0;
-	margin: 40px auto 120px;
+	margin: 20px auto;
 }
