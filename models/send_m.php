@@ -2,14 +2,48 @@
 
 class Send_m extends Model {
 
-    public function sendEmail(){
+    public function sendEmail($name, $phone, $title){
 
-        $mail = new PHPMailer();
-        $mail->From = 'order@salon-ss.com.ua';      // от кого
-        $mail->FromName = 'salon-ss';   // от кого Имя
-        $mail->AddAddress('oleg.nasteka@gmail.com', 'Олег'); // кому Ваша почта, Имя
-        $mail->IsHTML(true);        // формат письма HTML
-        $mail->Subject = "Новый заказ!";  // тема письма
+        $mail = new PHPMailer;
+
+        // $mail->SMTPDebug = 3;                               // Enable verbose debug output
+
+        // $mail->isSMTP();                                      // Set mailer to use SMTP
+        // $mail->Host = 'smtp1.example.com;smtp2.example.com';  // Specify main and backup SMTP servers
+        // $mail->SMTPAuth = true;                               // Enable SMTP authentication
+        // $mail->Username = 'user@example.com';                 // SMTP username
+        // $mail->Password = 'secret';                           // SMTP password
+        // $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+        // $mail->Port = 587;                                    // TCP port to connect to
+
+        $mail->setFrom('order@salon-ss.com.ua', 'Order');
+        $mail->addAddress('oleg.nasteka@gmail.com', 'Oleg Nasteka');     // Add a recipient
+        // $mail->addAddress('ellen@example.com');               // Name is optional
+        $mail->addReplyTo('info@salon-ss.com.ua', 'Information');
+        // $mail->addCC('cc@example.com');
+        // $mail->addBCC('bcc@example.com');
+
+        // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+        // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+        $mail->isHTML(true);                                  // Set email format to HTML
+
+        $mail->Subject = 'Новая заявка!';
+        $mail->Body    =
+
+            '<table>
+                <tr>
+                    <td style="width: 2%;"> <strong>Имя</strong> </td>
+                    <td style="width: 5%;"> <strong>Телефон</strong> </td>
+                    <td style="width: 10%;"> <strong>Наименование</strong> </td>
+                </tr>
+                <tr>
+                    <td><?=$name?></td>
+                    <td><?=$phone?></td>
+                    <td><?=$title?></td>
+                </tr>
+            </table>' ;
+
+        // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         if(!$mail->send()) {
             echo 'Message could not be sent.';
@@ -17,7 +51,6 @@ class Send_m extends Model {
         } else {
             echo 'Message has been sent';
         }
-
 
     }
 

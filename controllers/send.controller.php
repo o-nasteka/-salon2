@@ -16,18 +16,17 @@ class SendController extends Controller{
     public function index(){
         if ( $_POST ){
 
-            if (isset($_POST['name']) || isset($_POST['phone'])){
+            if ( !isset($data['name']) || !isset($data['phone']) || !isset($data['title'])){
                 // Mail::$to = "mars251@mail.ru";
                 // Mail::$subject = 'Заявка с сайта';
                 // Mail::$text = '�?мя:  ' . $_POST['name'] . ' ,Телефон:  ' . $_POST['phone'];
                 // Mail::Send();
-                $this->model->sendEmail();
+                $this->model->sendEmail($data['name'], $data['phone'], $data['title']);
 
             }
 
             if ( $this->model->SendMsg($_POST) ){
                 Session::setFlash('Thank you! Your message was sent successfully!');
-                $this->model->sendEmail();
             }
 
 
