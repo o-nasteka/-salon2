@@ -571,8 +571,9 @@ a.menu:after, .dropdown-toggle:after {
 }
 
 .cat-bl .cat-in-bl {
+	display: none;
 	margin: -250px 0 0 14px;
-	padding: 35px 0 0 0;
+	padding: 25px 0 0 0;
 	background: rgba(255,255,255, 0.8);
 	position: absolute;
 	z-index: 8888;
@@ -610,13 +611,14 @@ a.menu:after, .dropdown-toggle:after {
 }
 .price-from {
 	background-color: #1F2531;;
-	padding: 5px 10px;
+	padding: 5px;
 	color: #fff;
-	font-size: 16px;
+	font-size: 14px;
 	position: absolute;
-	margin: -85px 0 0 200px;
-	z-index: 8889;
+	margin: -75px 0 0 135px;
+	z-index: 8899;
 	text-align: center;
+	width: 150px;
 }
 /* Categories end  */
 
@@ -1451,6 +1453,17 @@ a.menu:after, .dropdown-toggle:after {
 	width: 420px;
 	min-height: 400px;
 	border: 0px solid #000;
+}
+.prod-price {
+	position: absolute;
+	background-color: #2c3341;
+	color: #fff;
+	width: 150px;
+	z-index: 8889;
+	margin: 5px 0 0 275px;
+	font-size: 14px;
+	padding: 5px;
+	text-align: center;
 }
 .order-txt-bl {
 	width: 500px;

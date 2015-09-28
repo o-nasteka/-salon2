@@ -91,7 +91,7 @@ class Products_m extends Model {
 
     // Get All SubCategory
     public function getAllCategorySub(){
-        $sql = "select * from `categories` ";
+        $sql = "select * from `categories` WHERE `id` != '1' AND `id` != '13' AND `id` != '38' AND `id` != '42' ";
         return $this->db->query($sql);
     }
 
@@ -117,6 +117,7 @@ class Products_m extends Model {
         $id = (int)$id;
         $alias = $this->db->escape($data['alias']);
         $title = $this->db->escape($data['title']);
+        $price_from = $this->db->escape($data['price_from']);
         $content_short = $this->db->escape($data['content_short']); // Краткое описание
         $content = $this->db->escape($data['content']); // Основное описание
         $gallery_img = $this->db->escape($data['gallery_img']); // Картинки слайдера
@@ -130,6 +131,7 @@ class Products_m extends Model {
                 insert into `products`
                    set alias = '{$alias}',
                        title = '{$title}',
+                       price_from = '{$price_from}',
                        content_short = '{$content_short}',
                        content = '{$content}',
                        gallery_img = '{$gallery_img}',
@@ -146,6 +148,7 @@ class Products_m extends Model {
                 update `products`
                    set alias = '{$alias}',
                        title = '{$title}',
+                       price_from = '{$price_from}',
                        content_short = '{$content_short}',
                        content = '{$content}',
                        gallery_img = '{$gallery_img}',
