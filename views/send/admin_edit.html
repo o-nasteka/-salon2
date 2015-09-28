@@ -10,11 +10,11 @@
 
     <div class="form-group">
         <label for="name">Имя</label>
-        <input type="text" id="name" name="name" value="<?=htmlspecialchars(@$data['send']['name'])?>" class="form-control" />
+        <input type="text" id="name" name="name" value="<?=htmlspecialchars(@$data['send']['name'])?>" maxlength="25" class="form-control" />
     </div>
     <div class="form-group">
         <label for="phone">Телефон</label>
-        <input type="text" id="phone" name="phone" value="<?=htmlspecialchars(@$data['send']['phone'])?>" class="form-control"  />
+        <input type="text" id="phone" name="phone" value="<?=htmlspecialchars(@$data['send']['phone'])?>" maxlength="15" class="form-control"  />
     </div>
     <div class="form-group">
         <label for="title">Наименование</label>
@@ -22,7 +22,8 @@
     </div>
     <div class="form-group">
         <label for="status">Статус</label>
-        <select id="status" name="status">
+        <select id="status" name="status" class="form-control">
+            <option value="<?=htmlspecialchars(@$data['send']['status'])?>"></option>
             <option value="0">Новая</option>
             <option value="1">Подтверждена</option>
             <option value="2">Отмена</option>
@@ -31,6 +32,8 @@
     </div>
 
     <input type="submit" class="btn btn-success" value="Сохранить">
+
+    <a href="/admin/send/"><input type="submit" class="btn btn-warning" value="Отмена"></a>
 
     <script>
         // CKEDITOR.replace( 'content_short' );
