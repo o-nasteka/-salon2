@@ -1617,9 +1617,7 @@ a.menu:after, .dropdown-toggle:after {
 }
 ._modal-content {
 	max-height: none;
-	border-bottom: 0 !important;
-	border-color: transparent;
-
+	border: 2px solid #fff !important;
 	background-color: #122b40;
 	width: 400px;
 	height: 300px;
@@ -1671,11 +1669,11 @@ a.menu:after, .dropdown-toggle:after {
 	left: 50%;
 	z-index: 20;
 	margin: 110px 0 0 200px;
-	background: transparent !important;
+	background: transparent;
 	border-radius: 2px;
 	padding: 2px 8px;
 	font-size: 1.8em;
 	text-decoration: none;
 	text-indent: 0;
-	color : transparent;
+	color : #fff;
 }

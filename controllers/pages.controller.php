@@ -28,6 +28,12 @@ class PagesController extends Controller{
         }
         */
 
+        if ( $_POST ){
+            if ( $this->model->SendMsg($_POST) ){
+                Session::setFlash('Thank you! Your message was sent successfully!');
+            }
+        }
+
     }
 
     public function view(){
