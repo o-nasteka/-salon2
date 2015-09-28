@@ -8,12 +8,19 @@
         <td style="width: 2%;"> <strong>№</strong> </td>
         <td style="width: 10%;"> <strong>Имя</strong> </td>
         <td style="width: 10%;"> <strong>Телефон</strong> </td>
+        <td style="width: 10%;"> <strong>Наименование</strong> </td>
+        <td style="width: 10%;"> <strong>Действие</strong> </td>
     </tr>
     <?php foreach($data as $item) { ?>
     <tr>
         <td><?=$item['id']?></td>
         <td><?=$item['name']?></td>
         <td><?=$item['phone']?></td>
+        <td><?=$item['title']?></td>
+        <td width="250" align="center">
+            <a href="/admin/send/edit/<?=$item['id']?>"><button class="btn btn-sm btn-primary" style="padding: 5px 20px;">Редактировать</button></a>
+            <a href="/admin/send/delete/<?=$item['id']?>" onclick="return confirmDelete();"><button class="btn btn-sm btn-warning" style="padding: 5px 20px;">Удалить</button></a>
+        </td>
     </tr>
     <?php } ?>
 </table>
