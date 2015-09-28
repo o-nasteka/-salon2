@@ -1457,6 +1457,7 @@ a.menu:after, .dropdown-toggle:after {
 .prod-price {
 	position: absolute;
 	background-color: #2c3341;
+	background-color: #23d5d4;
 	color: #fff;
 	width: 150px;
 	z-index: 8889;
