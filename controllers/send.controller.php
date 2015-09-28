@@ -21,7 +21,7 @@ class SendController extends Controller{
                 // Mail::$subject = 'Заявка с сайта';
                 // Mail::$text = '�?мя:  ' . $_POST['name'] . ' ,Телефон:  ' . $_POST['phone'];
                 // Mail::Send();
-                $this->model->sendEmail($data['name'], $data['phone'], $data['title']);
+                $this->model->sendEmail($_POST);
 
             }
 
