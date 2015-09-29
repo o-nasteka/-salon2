@@ -6,7 +6,7 @@
 <table class="table table-bordered table-striped table-hover" style="width: 100%;">
     <tr>
         <td style="width: 2%;"> <strong>№</strong> </td>
-        <td style="width: 5%;"> <strong>Дата</strong> </td>
+        <td style="width: 5%;"> <strong>Дата/Время</strong> </td>
         <td style="width: 10%;"> <strong>Имя</strong> </td>
         <td style="width: 10%;"> <strong>Телефон</strong> </td>
         <td style="width: 10%;"> <strong>Наименование</strong> </td>
@@ -16,7 +16,7 @@
     <?php foreach($data as $item) { ?>
     <tr>
         <td><?=$item['id']?></td>
-        <td><?php echo $date = date("m.d.y"); ?></td>
+        <td><?=$item['date']?></td>
         <td><?=$item['name']?></td>
         <td><?=$item['phone']?></td>
         <td><?=$item['title']?></td>

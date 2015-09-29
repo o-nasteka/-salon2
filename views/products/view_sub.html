@@ -159,10 +159,17 @@
 
         <!-- Вывод блоков подкатегорий  -->
         <?php foreach($data['sub'] as $sub_data){ ?>
+
+        <?php
+          // echo "<pre>";
+          // print_r($sub_data['price_from']);
+          // exit;
+        ?>
         <div class="type-in">
             <!-- Ссылка на все товары этой подкатегории  -->
             <a href="/products/<?=$data['contrl']?>/<?php if($data['contrl'] == 'view'){echo $sub_data['alias'];}else{echo $sub_data['id'];} ?>" >
                 <div class="type-in-bl">
+                    <div class="sub-price"><?=$sub_data['price_from']?></div>
                     <div class="type-in-img">
                         <button class="btn-in">Посмотреть!</button>
                         <img src="<?=$sub_data['img_child']?>" width="210" height=""/>
@@ -179,7 +186,7 @@
         </div>
         <?php } ?>
         <!-- -->
-        <a href="#modal" onclick="getElementById('idItem').value='<?=$header_h2?> ЗАКАЗАТЬ БЫСТРЫЙ ПРОСЧЕТ!';" class="call-modal"><button type="submit" class="btn-goods center-block">ЗАКАЗАТЬ БЫСТРЫЙ ПРОСЧЕТ!</button></a>
+        <a href="#modal" onclick="getElementById('idItem').value='<?=$header_h2?>. ЗАКАЗАТЬ БЫСТРЫЙ ПРОСЧЕТ!';" class="call-modal"><button type="submit" class="btn-goods center-block">ЗАКАЗАТЬ БЫСТРЫЙ ПРОСЧЕТ!</button></a>
     </div>
 </div><!-- Type end-->
 
@@ -366,7 +373,7 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-        <a href="contacts.html"><button class="btn btn-otz center-block">Посетить шоурум в Киеве <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></button></a>
+        <a href="/pages/view/Контакты"><button class="btn btn-otz center-block">Посетить шоурум в Киеве <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></button></a>
     </div>
 </div>
 <!-- Reviews end-->

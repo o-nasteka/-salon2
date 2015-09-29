@@ -45,20 +45,23 @@ class Send_m extends Model {
         $name = $this->db->escape($data['name']);
         $phone = $this->db->escape($data['phone']);
         $title = $this->db->escape($data['title']);
+        $date = date("Y-m-d H:i:s");
 
         if ( !$id ){ // Add new record
             $sql = "
                 insert into `messages`
                    set name = '{$name}',
                        phone = '{$phone}',
-                       title = '{$title}'
+                       title = '{$title}',
+                       date = '{$date}'
             ";
         } else { // Update existing record
             $sql = "
                 update `messages`
                    set name = '{$name}',
                        phone = '{$phone}',
-                       title = '{$title}'
+                       title = '{$title}',
+                       date = '{$date}'
                    where id = {$id}
             ";
         }
@@ -95,6 +98,7 @@ class Send_m extends Model {
         $phone = $this->db->escape($data['phone']);
         $title = $this->db->escape($data['title']);
         $status = $this->db->escape($data['status']);
+        $date = date("d.m.y");
 
 
 
@@ -104,7 +108,8 @@ class Send_m extends Model {
                    set name = '{$name}',
                        phone = '{$phone}',
                        title = '{$title}',
-                       status = '{$status}'
+                       status = '{$status}',
+                       date = '{$date}'
 
             ";
 
@@ -115,7 +120,8 @@ class Send_m extends Model {
                    set name = '{$name}',
                        phone = '{$phone}',
                        title = '{$title}',
-                       status = '{$status}'
+                       status = '{$status}',
+                       date = '{$date}'
 
                    where `id` = {$id}
             ";
