@@ -22,11 +22,14 @@ class SendController extends Controller{
                 // Mail::$text = '�?мя:  ' . $_POST['name'] . ' ,Телефон:  ' . $_POST['phone'];
                 // Mail::Send();
                 $this->model->sendEmail($_POST);
-
+                $this->model->SendMsg($_POST);
+                // echo "<pre>";
+                // print_r($_POST);
+                // exit;
             }
 
             if ( $this->model->SendMsg($_POST) ){
-                Session::setFlash('Thank you! Your message was sent successfully!');
+                // Session::setFlash('Thank you! Your message was sent successfully!');
             }
 
 

@@ -1154,6 +1154,10 @@ a.menu:after, .dropdown-toggle:after {
 #contacts .c-addr-bl .col-md-12{
 	margin-top: 10px;
 }
+.c-addr-bl .glyphicon {
+	top: 2px !important;
+	left: -5px !important;
+}
 #contacts .btn {
 	width: 306px;
 	height: 60px;
@@ -1792,5 +1796,5 @@ a.menu:after, .dropdown-toggle:after {
 	width: 450px;
 	height: 200px;
 	padding: 20px 0 0 0;
-	margin: 20px auto;
+	margin: 120px auto;
 }
