@@ -1,7 +1,7 @@
 <br>
 <br>
 <br>
-<script src="//cdn.ckeditor.com/4.5.3/standard/ckeditor.js"></script>
+<script src="/ckeditor/ckeditor.js"></script>
 
 
 <h3>Редактировать товар</h3><br/>
@@ -52,9 +52,12 @@
     <input type="submit" class="btn btn-success" value="Сохранить">
 
     <script>
-        // CKEDITOR.replace( 'content_short' );
-        // CKEDITOR.replace( 'gallery_img' );
-        // config.height = '500px';
+        CKEDITOR.replace( 'content_short' );
+        CKEDITOR.replace( 'gallery_img' );
+        CKEDITOR.replace( 'params' );
+        CKEDITOR.replace( 'colors' );
+        CKEDITOR.replace( 'type_id' );
+
     </script>
 
 </form>
