@@ -283,7 +283,7 @@ a.menu:after, .dropdown-toggle:after {
 }
 /* Section-2 */
 .section-2 {
-	background: url("../images/bg-03.png") no-repeat center center;
+	background: url("/images/bg-01.jpg") no-repeat center center;
 	background-size: cover;
 	width: 100%;
 	height: auto;
