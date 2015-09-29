@@ -40,12 +40,12 @@
         <textarea style="min-height: 150px;" id="content_min" name="content_min" class="form-control" ><?=htmlspecialchars(@$data['news']['content_min'])?></textarea>
     </div>
     <div class="form-group">
-        <label for="date_up">Дата от:</label>
-        <textarea style="min-height: 150px;" id="date_up" name="date_up" class="form-control" ><?=htmlspecialchars(@$data['news']['date_up'])?></textarea>
+        <label for="date_down">Дата от:</label>
+        <input type="text" id="date_down" name="date_down"  class="form-control" value="<?=htmlspecialchars(@$data['news']['date_down'])?>" />
     </div>
     <div class="form-group">
-        <label for="date_down">Дата до:</label>
-        <textarea style="min-height: 150px;" id="date_down" name="date_down" class="form-control" ><?=htmlspecialchars(@$data['news']['date_down'])?></textarea>
+        <label for="date_up">Дата до:</label>
+        <input type="text" id="date_up" name="date_up"  class="form-control" value="<?=htmlspecialchars(@$data['news']['date_up'])?>" />
     </div>
 
     <!--
