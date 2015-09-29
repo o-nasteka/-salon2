@@ -17,10 +17,7 @@ class SendController extends Controller{
         if ( $_POST ){
 
             if ( !isset($data['name']) || !isset($data['phone']) || !isset($data['title'])){
-                // Mail::$to = "mars251@mail.ru";
-                // Mail::$subject = 'Заявка с сайта';
-                // Mail::$text = '�?мя:  ' . $_POST['name'] . ' ,Телефон:  ' . $_POST['phone'];
-                // Mail::Send();
+
                 $this->model->sendEmail($_POST);
                 $this->model->SendMsg($_POST);
                 // echo "<pre>";
