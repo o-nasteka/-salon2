@@ -7,7 +7,7 @@
 <!-- header-in -->
 <div class="container-fluid header-in news-header" >
     <div class="w970">
-        <h2>Новости:</h2>
+        <h2>Акции и новости:</h2>
     </div>
 
     <div class="calc-in">
@@ -66,9 +66,17 @@
                     <?=$news['content_min']?>
 
                 </p>
-                <p>
-                    <?=@$news['date_down']?>  -  <?=@$news['date_up']?>
-                </p>
+                <?php
+                    if( isset($news['date_down']) && isset($news['date_up']) && ($news['date_down'] !== '') && ($news['date_up'] !== '') ){
+                    ?>
+                        <p class="promo_date">
+                            <strong>Период действия акции:</strong> <br>
+                            <?=@$news['date_down']?>  -  <?=@$news['date_up']?>
+                        </p>
+                    <?php
+                    }
+                ?>
+
             </div>
         </div>
        <br>

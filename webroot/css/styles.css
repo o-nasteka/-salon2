@@ -247,6 +247,8 @@ a.menu:after, .dropdown-toggle:after {
 }
 .sub-type {
 	width: 287px;
+	position: absolute;
+	z-index: 8899;
 }
 .sub-type li {
 	border: 1px solid #fafafa;
@@ -1352,6 +1354,15 @@ a.menu:after, .dropdown-toggle:after {
 }
 .news-bl .news-in {
 	margin-bottom: 40px !important;
+}
+.news-bl .promo_date {
+	margin-top: 30px;
+	background-color: #fff;
+	text-align: center;
+	font-size: 24px;
+	color: #2c3341;
+	padding: 20px;
+	border: 2px solid #2c3341;
 }
 /* News bl end */
 

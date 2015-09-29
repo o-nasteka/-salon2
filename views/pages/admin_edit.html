@@ -1,5 +1,9 @@
+<script src="/ckeditor/ckeditor.js"></script>
 
-<h3>Edit page</h3><br/>
+<br>
+<br>
+
+<h3>Редактор страницы</h3><br/>
 <form method="post" action="">
     <input type="hidden" name="id" value="<?=$data['page']['id']?>" />
     <div class="form-group">
@@ -20,3 +24,9 @@
     </div>
     <input type="submit" class="btn btn-success" />
 </form>
+
+<script>
+    CKEDITOR.replace( 'content' );
+    // CKEDITOR.replace( 'gallery_img' );
+    // config.height = '800px';
+</script>
