@@ -283,7 +283,7 @@ a.menu:after, .dropdown-toggle:after {
 }
 /* Section-2 */
 .section-2 {
-	background: url("/images/bg-04.jpg") no-repeat center center;
+	background: url("/images/bg-05.jpg") no-repeat center center;
 	background-size: cover;
 	width: 100%;
 	height: auto;
@@ -996,6 +996,7 @@ a.menu:after, .dropdown-toggle:after {
 }
 
 .map-title {
+	width: 456px;
 	font-size: 16px;
 	font-weight: 500;
 	color: #3d4555;
@@ -1003,7 +1004,7 @@ a.menu:after, .dropdown-toggle:after {
 	margin: -215px 0 0 440px;
 	z-index: 8888;
 	background: rgba(255,255,255, 0.6);
-	padding: 15px 20px 5px;
+	padding: 25px 15px 15px 35px;
 }
 .map-title label {
 	color: #3d4555 !important;
@@ -1187,9 +1188,9 @@ a.menu:after, .dropdown-toggle:after {
 	background-size: cover;
 }
 .header-in h2 {
-	width: 35%;
-	background: rgba(255,255,255, 0.8);
-	padding: 10px 20px;
+	width: 55%;
+	padding: 5px 40px;
+	background: rgba(255,255,255, 0.5);
 	color: #2c3341;
 	text-align: center;
 	margin: 45px auto 0;
@@ -1200,7 +1201,7 @@ a.menu:after, .dropdown-toggle:after {
 	height: auto;
 	min-height: 160px;
 	background: rgba(56,69,80, 0.6);
-	margin-top: 36px;
+	margin-top: 46px;
 	padding: 23px 0 20px 0;
 }
 .header-in .calc-in hr {
@@ -1219,7 +1220,7 @@ a.menu:after, .dropdown-toggle:after {
 	color: #fff;
 	font-weight: 300;
 	font-size: 16px;
-	margin-right: 10px;
+	margin: 10px 10px 0 0;
 }
 .header-in .lb2 {
 	margin-left: 10px;
@@ -1285,7 +1286,9 @@ a.menu:after, .dropdown-toggle:after {
 	background: url("../images/our-bg.jpg")no-repeat center #384550;
 }
 .our h2 {
-	width: 37%;
+	/* width: 37%;
+	padding: 5px 40px;
+	*/
 }
 /* our end*/
 
@@ -1368,7 +1371,7 @@ a.menu:after, .dropdown-toggle:after {
 	background: url("../images/horiz-bg.jpg")no-repeat center;
 }
 .horiz h2 {
-	width: 55%;
+	width: 75%;
 }
 
 .h-type {

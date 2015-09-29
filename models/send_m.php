@@ -9,6 +9,7 @@ class Send_m extends Model {
         $mail->CharSet = 'UTF-8';
         $mail->setFrom('order@salon-ss.com.ua', 'Order');
         $mail->addAddress('oleg.nasteka@gmail.com', 'Oleg Nasteka');     // Add a recipient
+        // $mailer->AddBCC('recipient1@domain.com', 'Первый человек');  Невидимые получатели или BCC
         // $mail->addAddress('ellen@example.com');               // Name is optional
         $mail->addReplyTo('info@salon-ss.com.ua', 'Information');
 

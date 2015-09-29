@@ -67,8 +67,8 @@ class ProductsController extends Controller {
             $this->data['sub'] = $this->model->list_prod_sub_cat($params[0]);
         }
        // echo '<pre>';
-       //print_r($this->data['sub']);
-        //exit;//
+       // print_r($this->data['sub']);
+        // exit;
 
     }
 

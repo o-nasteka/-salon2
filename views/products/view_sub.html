@@ -6,34 +6,124 @@
 
 <!-- header-in -->
 <div class="container-fluid header-in horiz" >
-    <!--  <h2> -->
-        <!-- Вывод заголовка(категории) -->
-        <?php  // foreach($data['sub'] as $sub_data){
-                // echo $sub_data['title'];
-                  // }
 
-            //  echo "<pre>";
-            // print_r($data[sub]);
-            // exit;
-        ?>
-        <br><br><br><br><br>
+
+    <!-- Вывод заголовка(категории) -->
+    <div class="w970">
+        <h2>
+            <?php
+                foreach($data['sub'] as $sub_data){
+                      // echo "<pre>";
+                       // print_r($sub_data);
+                       // exit;
+                    //
+
+            if(isset($sub_data['parent']) && ($sub_data['parent'] == 1) ){
+            $header_h2 = "Жалюзи";
+            echo $header_h2;
+                break;
+            }
+
+            elseif(isset($sub_data['id']) && ($sub_data['id'] == 1) ){
+            $header_h2 = "Горизонтальные жалюзи";
+            echo $header_h2;
+            break;
+            }
+
+            elseif(isset($sub_data['id']) && ($sub_data['id'] == 9) ){
+            $header_h2 = "Вертикальные жалюзи";
+            echo $header_h2;
+            break;
+            }
+
+            elseif(isset($sub_data['id']) && ($sub_data['id'] == 12) ){
+            $header_h2 = "Деревянные и бамбуковые жалюзи";
+            echo $header_h2;
+            break;
+            }
+
+            elseif(isset($sub_data['id']) && ($sub_data['id'] == 33) ){
+            $header_h2 = "Системы день-ночь";
+            echo $header_h2;
+                break;
+            }
+
+            elseif(isset($sub_data['parent']) && ($sub_data['parent'] == 13) ){
+            $header_h2 = "Ролеты";
+            echo $header_h2;
+            break;
+            }
+
+            elseif(isset($sub_data['id']) && ($sub_data['id'] == 17) ){
+            $header_h2 = "Системы открытого типа";
+            echo $header_h2;
+            break;
+            }
+
+            elseif(isset($sub_data['id']) && ($sub_data['id'] == 24) ){
+            $header_h2 = "Системы закрытого типа";
+            echo $header_h2;
+            break;
+            }
+
+            elseif(isset($sub_data['id']) && ($sub_data['id'] == 33) ){
+            $header_h2 = "Системы день-ночь";
+            echo $header_h2;
+            break;
+            }
+
+            elseif(isset($sub_data['id']) && ($sub_data['id'] == 37) ){
+            $header_h2 = "Римский карниз";
+            echo $header_h2;
+            break;
+            }
+
+            elseif(isset($sub_data['id']) && ($sub_data['id'] == 38) ){
+            $header_h2 = "Бамбуковые ролеты";
+            echo $header_h2;
+            break;
+            }
+
+            elseif(isset($sub_data['id']) && ($sub_data['id'] == 20) ){
+            $header_h2 = "Плиссе";
+            echo $header_h2;
+            break;
+            }
+
+            elseif(isset($sub_data['parent_id']) && ($sub_data['parent_id'] == 38) ){
+            $header_h2 = "Антимоскитные сетки";
+            echo $header_h2;
+            break;
+            }
+
+            elseif(isset($sub_data['id']) && ($sub_data['id'] == 39) ){
+            $header_h2 = "Внешние системы солнцезащиты";
+            echo $header_h2;
+            break;
+            }
+
+            }
+            ?>
+        </h2>
+    </div>
+
 
     <!--  </h2> -->
 
     <div class="calc-in">
         <div class="w970">
-            <form class="form-inline">
+            <form class="">
                 <h4 class="white text-left pull-left">Укажите размер:</h4>
                 <!-- <h4 class="white text-left pull-right">Выберите тип:</h4> -->
                 <br><br>
                 <hr class="pull-left">
                 <div class="clr"></div>
-                <div class="form-group">
-                    <label for="InputWidth">Ширина:</label>
+                <div class="form-group pull-left">
+                    <label class="pull-left" for="InputWidth">Ширина:</label>
                     <input type="text" class="form-control" id="InputWidth" placeholder="мм" >
                 </div>
-                <div class="form-group">
-                    <label for="InputHeight" class="lb2">Высота:</label>
+                <div class="form-group pull-left">
+                    <label for="InputHeight" class="pull-left lb2">Высота:</label>
                     <input type="text" class="form-control" id="InputHeight" placeholder="мм" >
                 </div>
                 <!-- <button type="submit" class="btn btn-default">Просчитать!</button> -->
@@ -89,7 +179,7 @@
         </div>
         <?php } ?>
         <!-- -->
-        <button type="submit" class="btn-goods center-block">ЗАКАЗАТЬ БЫСТРЫЙ ПРОСЧЕТ!</button>
+        <a href="#modal" onclick="getElementById('idItem').value='<?=$header_h2?> ЗАКАЗАТЬ БЫСТРЫЙ ПРОСЧЕТ!';" class="call-modal"><button type="submit" class="btn-goods center-block">ЗАКАЗАТЬ БЫСТРЫЙ ПРОСЧЕТ!</button></a>
     </div>
 </div><!-- Type end-->
 
