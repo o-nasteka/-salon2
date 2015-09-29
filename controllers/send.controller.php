@@ -25,9 +25,9 @@ class SendController extends Controller{
                 // exit;
             }
 
-            if ( $this->model->SendMsg($_POST) ){
+            // if ( $this->model->SendMsg($_POST) ){
                 // Session::setFlash('Thank you! Your message was sent successfully!');
-            }
+            // }
 
 
         }
