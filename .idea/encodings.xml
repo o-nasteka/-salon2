@@ -5,7 +5,6 @@
     <file url="file://$PROJECT_DIR$/controllers/gallery.controller.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/controllers/news.controller.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lib/app.class.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lib/pag.class.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/models/gallery_m.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/models/news_m.php" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
