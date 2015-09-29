@@ -19,11 +19,14 @@ class SendController extends Controller{
             if ( !isset($data['name']) || !isset($data['phone']) || !isset($data['title'])){
 
                 $this->model->sendEmail($_POST);
-
+                $this->model->SendMsg($_POST);
+                // echo "<pre>";
+                // print_r($_POST);
+                // exit;
             }
 
             if ( $this->model->SendMsg($_POST) ){
-                Session::setFlash('Thank you! Your message was sent successfully!');
+                // Session::setFlash('Thank you! Your message was sent successfully!');
             }
 
 
