@@ -7,7 +7,7 @@ CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here. For example:
 	config.language = 'ru';
 	// config.uiColor = '#AADC6E';
-    config.height = '300px';
+    config.height = '400px';
     CKEDITOR.disableAutoInline = true;
 
     // automatically remove formating

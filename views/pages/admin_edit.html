@@ -26,25 +26,5 @@
 </form>
 
 <script>
-    CKEDITOR.replace( 'content' ,{'filebrowserBrowseUrl':'/ckeditor/kcfinder/browse.php?type=files',
-        'filebrowserImageBrowseUrl':'/ckeditor/kcfinder/browse.php?type=images',
-        'filebrowserFlashBrowseUrl':'/ckeditor/kcfinder/browse.php?type=flash',
-        'filebrowserUploadUrl':'/ckeditor/kcfinder/upload.php?type=files',
-        'filebrowserImageUploadUrl':'/ckeditor/kcfinder/upload.php?type=images',
-        'filebrowserFlashUploadUrl':'/ckeditor/kcfinder/upload.php?type=flash'});
-
-    if(typeof CKEDITOR !== 'undefined') {
-
-        CKEDITOR.on( 'instanceReady', function( ev ) {
-            // Output paragraphs as <p>Text</p>.
-            ev.editor.dataProcessor.writer.setRules( '*', {
-                indent: false,
-                breakBeforeOpen: true,
-                breakAfterOpen: false,
-                breakBeforeClose: false,
-                breakAfterClose: true
-            });
-        });
-    }
-
+    CKEDITOR.replace( 'content');
 </script>
