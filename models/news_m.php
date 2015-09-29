@@ -236,7 +236,8 @@ public function view_id($id){
 		`title`       = '".($_POST['title'])."',
 		`content_min` = '".($_POST['content_min'])."',
 		`content`     = '".($_POST['content'])."',
-		`date`        = NOW()
+		`date_up`     = '".($_POST['date_up'])."',
+		`date_down`   = '".($_POST['date_down'])."'
 
 		WHERE `id` = ".$id."
 	";
