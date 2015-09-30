@@ -10,10 +10,10 @@ class Send_m extends Model {
         // $mail->setLanguage('ru');
         // $mail->SetLanguage("ru","phpmailer/language");
         $mail->setFrom('order@salon-ss.com.ua', 'Order');
-        $mail->Subject = 'New Order!';
+        $mail->Subject = 'Новый заказ';
 
         $mail->addAddress('oleg.nasteka@gmail.com', 'Oleg Nasteka');     // Add a recipient
-        // $mailer->AddBCC('recipient1@domain.com', '������ �������');  ��������� ���������� ��� BCC
+        // $mailer->AddBCC('oleg.nasteka@gmail.com', 'Oleg Nasteka');  Скрытая копия BCC
         // $mail->addAddress('ellen@example.com');               // Name is optional
         $mail->addReplyTo('info@salon-ss.com.ua', 'Information');
 
@@ -23,9 +23,23 @@ class Send_m extends Model {
 
 
         $mess = '
-        <strong>Name: </strong>'.$data['name'].'<br />
-        <strong>Phone: </strong>'.$data['phone'].'<br />
-        <strong>Title: </strong>'.$data['title'];
+        <h3>Новый заказ</h3>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td><strong>Имя: </strong></td>
+                    <td>'.$data['name'].'</td>
+                </tr>
+                <tr>
+                    <td><strong>Телефон: </strong></td>
+                    <td>'.$data['phone'].'</td>
+                </tr>
+                <tr>
+                    <td><strong>Наименование: </strong></td>
+                    <td>'.$data['title'].'</td>
+                </tr>
+            </tbody>
+        </table>';
 
         //
         $mail->Body=$mess;
@@ -106,6 +120,7 @@ class Send_m extends Model {
             ' * 				 ' .
             'FROM             ' .
             '  `messages`     ' .
+            'ORDER BY `id` DESC    ' . // отсротировать от последннего заказа
 
             'LIMIT            ' .
             $start . ',   ' . $limit   . '
