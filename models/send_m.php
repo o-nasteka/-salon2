@@ -7,7 +7,11 @@ class Send_m extends Model {
         $mail = new PHPMailer;
 
         $mail->CharSet = 'UTF-8';
+        // $mail->setLanguage('ru');
+        $mail->SetLanguage("ru","phpmailer/language");
         $mail->setFrom('order@salon-ss.com.ua', 'Order');
+        $mail->Subject = 'New Order!';
+
         $mail->addAddress('oleg.nasteka@gmail.com', 'Oleg Nasteka');     // Add a recipient
         // $mailer->AddBCC('recipient1@domain.com', '������ �������');  ��������� ���������� ��� BCC
         // $mail->addAddress('ellen@example.com');               // Name is optional
@@ -15,13 +19,15 @@ class Send_m extends Model {
 
         $mail->isHTML(true);                                  // Set email format to HTML
 
-        $mail->Subject = 'New Order!';
+
+
 
         $mess = '
         <strong>Name: </strong>'.$data['name'].'<br />
         <strong>Phone: </strong>'.$data['phone'].'<br />
         <strong>Title: </strong>'.$data['title'];
 
+        //
         $mail->Body=$mess;
 
         // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
@@ -60,9 +66,10 @@ class Send_m extends Model {
                 update `messages`
                    set name = '{$name}',
                        phone = '{$phone}',
-                       title = '{$title}',
-                       date = '{$date}'
+                       title = '{$title}'
+
                    where id = {$id}
+                   //
             ";
         }
 
@@ -191,8 +198,8 @@ class Send_m extends Model {
                    set name = '{$name}',
                        phone = '{$phone}',
                        title = '{$title}',
-                       status = '{$status}',
-                       date = '{$date}'
+                       status = '{$status}'
+
 
                    where `id` = {$id}
             ";
