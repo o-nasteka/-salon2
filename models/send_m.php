@@ -145,7 +145,7 @@ class Send_m extends Model {
                 @$res['html'] .= '<li><a href="/admin/send/index/start/' . ($i * $limit) . '">' . ($i + 1) . '</a></li>';
             }
         }
-
+//
         // echo '<pre>';
         // print_r($res);
         // exit;
