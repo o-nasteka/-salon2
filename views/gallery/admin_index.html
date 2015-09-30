@@ -9,7 +9,7 @@
     <tr>
         <td>ID</td>
         <td>Название</td>
-        <td>Картинка</td>
+        <td>Изображение</td>
         <td style="padding-left: 15px;">Управление</td>
 
 
@@ -33,7 +33,7 @@
 <br/>
 
 <div>
-    <a href="/admin/gallery/add/"><button class="btn btn-sm btn-success">Добавить новую картинку</button></a>
+    <a href="/admin/gallery/add/"><button class="btn btn-sm btn-success">Добавить новое изображение</button></a>
 </div>
 
 
@@ -50,7 +50,7 @@
         <?php } ?>
         <?php echo @$data[html]; ?>
 
-        <?php $next = ($data['count'] - $data['start']) - 5;
+        <?php $next = ($data['count'] - $data['start']) - $data['limit'];
                          if($next > 0 ){ ?>
         <li>
             <a href="/admin/gallery/index/start/<?php echo ($data['start'] + $data['limit']); ?>" aria-label="Next">
