@@ -22,7 +22,7 @@ class GalleryController extends Controller{
         $dir = '/uploads';
          $a = is_writable($dir);
        var_dump($a);
-
+        exit;
         $params = App::getRouter()->getParams();
         @$id = $params[1];
 
