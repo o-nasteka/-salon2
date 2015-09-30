@@ -8,6 +8,7 @@ class Send_m extends Model {
 
         $mail->CharSet = 'UTF-8';
         // $mail->setLanguage('ru');
+        $mail->SetLanguage("ru","phpmailer/language");
         $mail->setFrom('order@salon-ss.com.ua', 'Order');
         $mail->Subject = 'New Order!';
 
