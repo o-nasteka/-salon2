@@ -21,6 +21,7 @@
         <td><?=$item['phone']?></td>
         <td><?=$item['title']?></td>
 
+        <!-- Статус заказ  // Order status -->
         <?php
 
         if($item['status'] == 0){?>
@@ -40,6 +41,7 @@
         <?php }
 
         ?>
+        <!-- Статус заказ  // Order status end -->
 
         <td width="250" align="center">
             <a href="/admin/send/edit/<?=$item['id']?>"><button class="btn btn-sm btn-primary" style="padding: 5px 20px;">Редактировать</button></a>
