@@ -13,7 +13,7 @@
         <td style="width: 10%;"> <strong>Статус</strong> </td>
         <td style="width: 15%;"> <strong>Управление</strong> </td>
     </tr>
-    <?php foreach($data as $item) { ?>
+    <?php foreach($data['item'] as $item) { ?>
     <tr>
         <td><?=$item['id']?></td>
         <td><?=$item['date']?></td>
@@ -48,3 +48,30 @@
     </tr>
     <?php } ?>
 </table>
+
+<!-- pagination -->
+<?php if($data['count'] > $data['limit']) { ?>
+<nav>
+    <ul class="pagination">
+        <?php $prev = $data['start'] - $data['limit'];
+                            if($prev >= 0){ ?>
+        <li>
+            <a href="/admin/send/index/start/<?php echo ($data['start'] - $data['limit']); ?>" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <?php } ?>
+        <?php echo @$data[html]; ?>
+
+        <?php $next = ($data['count'] - $data['start']) - 5;
+                         if($next > 0 ){ ?>
+        <li>
+            <a href="/admin/send/index/start/<?php echo ($data['start'] + $data['limit']); ?>" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+        <?php } ?>
+    </ul>
+</nav>
+<?php } ?>
+<!-- pagination end -->

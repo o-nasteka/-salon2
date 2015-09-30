@@ -13,7 +13,7 @@ class Send_m extends Model {
         $mail->Subject = 'New Order!';
 
         $mail->addAddress('oleg.nasteka@gmail.com', 'Oleg Nasteka');     // Add a recipient
-        // $mailer->AddBCC('recipient1@domain.com', '������ �������');  ��������� ���������� ��� BCC
+        // $mailer->AddBCC('recipient1@domain.com', '������ �������');  ��������� ���������� ��� BCC
         // $mail->addAddress('ellen@example.com');               // Name is optional
         $mail->addReplyTo('info@salon-ss.com.ua', 'Information');
 
@@ -77,9 +77,80 @@ class Send_m extends Model {
 
     }
 
-    public function getList(){
-        $sql = "select * from `messages` where 1";
-        return $this->db->query($sql);
+    public function getList($id_start = null){
+        // Результирующий массив с элементами, выбранными с учётом LIMIT:
+        $items    = array();
+
+        // Число вообще всех элементов ( без LIMIT ) по нужным критериям.
+        $allItems = 0;
+
+        // HTML - код постраничной навигации.
+        $html     = NULL;
+
+        // Количество элементов на странице.
+        // В системе оно может определяться например конфигурацией пользователя:
+        $limit    = 3;
+        $res['limit'] = $limit;
+        // Количество страничек, нужное для отображения полученного числа элементов:
+        $pageCount = 0;
+
+        // Содержит наш $params[1] -параметр из строки запроса.
+        // У первой страницы его не будет, и нужно будет вместо него подставить 0!!!
+        $start    = isset($id_start)  ? (int)$id_start    : 0 ;
+        $res['start'] = $start;
+
+
+        // Запрос для выборки целевых элементов:
+        $sql = 'SELECT           ' .
+            ' * 				 ' .
+            'FROM             ' .
+            '  `messages`     ' .
+
+            'LIMIT            ' .
+            $start . ',   ' . $limit   . '
+
+             ';
+
+
+        $res['item']  = $this->db->query($sql);
+
+
+
+
+        // СОБСТВЕННО, ПОСТРАНИЧНАЯ НАВИГАЦИЯ:
+        // Получаем количество всех элементов:
+        $sql = 'SELECT         ' .
+            '  COUNT(*) AS `count` ' .
+            'FROM           ' .
+            '  `messages` '
+        ;
+        $stmt  = $this->db->query($sql);
+        $allItems = $stmt[0]['count'];
+        $res['count'] =$allItems;
+
+
+
+        // Здесь округляем в большую сторону, потому что остаток
+        // от деления - кол-во страниц тоже нужно будет показать
+        // на ещё одной странице.
+        $pageCount = ceil( $allItems / $limit);
+
+        // Начинаем с нуля! Это даст нам правильные смещения для БД
+        for( $i = 0; $i < $pageCount; $i++ ) {
+            // Здесь ($i * $limit) - вычисляет нужное для каждой страницы  смещение,
+            // а ($i + 1) - для того что бы нумерация страниц начиналась с 1, а не с 0
+            @$res['html'] .= '<li><a href="/admin/send/index/start/' . ($i * $limit)  . '">' . ($i + 1)  . '</a></li>';
+            // $html .= '<li><a href="index.php?start=' . ($i * $limit)  . '">' . ($i + 1)  . '</a></li>';
+        }
+
+       // echo '<pre>';
+       // print_r($res);
+       // exit;
+
+        return $res;
+
+       // $sql = "select * from `messages` where 1";
+       // return $this->db->query($sql);
     }
 
     // Get all by Id from table messages
@@ -91,7 +162,7 @@ class Send_m extends Model {
     }
 
 
-    // Save to table messages - ������
+    // Save to table messages - ������
     public function save($data, $id = null){
         if ( !isset($data['name']) || !isset($data['phone']) || !isset($data['title']) || !isset($data['status'])){
             return false;
