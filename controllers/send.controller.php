@@ -9,7 +9,18 @@ class SendController extends Controller{
     }
 
     public function admin_index(){
-        $this->data = $this->model->getList();
+        $params = App::getRouter()->getParams();
+
+
+        if(@$params[0] == 'start'){
+            $id_start = $params[1];
+        }
+        // выборка всех заявок
+        $this->data = $this->model->getList(@$id_start);
+
+       // echo '<pre>';
+       // print_r($this->data);
+       // exit;
 
     }
 
