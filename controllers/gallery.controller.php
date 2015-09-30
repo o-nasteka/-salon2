@@ -19,6 +19,10 @@ class GalleryController extends Controller{
 
 
     public function admin_index(){
+        $dir = '/uploads';
+         $a = is_writable($dir);
+       var_dump($a);
+
         $params = App::getRouter()->getParams();
         @$id = $params[1];
 
