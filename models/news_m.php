@@ -111,7 +111,7 @@ public function view_id($id){
 
         // Количество элементов на странице.
         // В системе оно может определяться например конфигурацией пользователя:
-        $limit    = 5;
+        $limit    = 4;
         $res['limit'] = $limit;
         // Количество страничек, нужное для отображения полученного числа элементов:
         $pageCount = 0;
@@ -161,8 +161,11 @@ public function view_id($id){
         for( $i = 0; $i < $pageCount; $i++ ) {
             // Здесь ($i * $limit) - вычисляет нужное для каждой страницы  смещение,
             // а ($i + 1) - для того что бы нумерация страниц начиналась с 1, а не с 0
-            @$res['html'] .= '<li><a href="/news/index/start/' . ($i * $limit)  . '">' . ($i + 1)  . '</a></li>';
-            // $html .= '<li><a href="index.php?start=' . ($i * $limit)  . '">' . ($i + 1)  . '</a></li>';
+            if($start == ($i * $limit)) {
+                @$res['html'] .= '<li class="active" ><a href="/news/index/start/' . ($i * $limit) . '">' . ($i + 1) . '<span class="sr-only">(current)</span></a></li>';
+            }else {
+                @$res['html'] .= '<li><a href="/news/index/start/' . ($i * $limit) . '">' . ($i + 1) . '</a></li>';
+            }
         }
         return $res;
     }
