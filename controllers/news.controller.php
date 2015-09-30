@@ -8,7 +8,7 @@ class NewsController extends Controller{
     }
 
     public function index(){
-        $params = App::getRouter()->getParams();
+        @$params = App::getRouter()->getParams();
 
 
         if(@$params[0] == 'start'){
