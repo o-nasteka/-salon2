@@ -88,9 +88,8 @@
         <div class="row">
             <div class="col-md-6">
 
-
+                <!-- pagination -->
                 <?php if($data['count'] > $data['limit']) { ?>
-                <!-- Pagination -->
                 <nav>
                     <ul class="pagination">
                         <?php $prev = $data['start'] - $data['limit'];
@@ -113,8 +112,8 @@
                         <?php } ?>
                     </ul>
                 </nav>
-                <!-- Pagination end -->
                 <?php } ?>
+            <!-- pagination end -->
             </div>
         </div>
 
