@@ -1862,3 +1862,8 @@ height: 164px;
 	padding: 20px 0 0 0;
 	margin: 120px auto;
 }
+
+/* for tab content in admin panel */
+.admin-products .tab-pane {
+	padding-top : 40px;
+}
