@@ -76,7 +76,7 @@ class Send_m extends Model {
         return $this->db->query($sql);
 
     }
-
+//
     public function getList($id_start = null){
         // Результирующий массив с элементами, выбранными с учётом LIMIT:
         $items    = array();
