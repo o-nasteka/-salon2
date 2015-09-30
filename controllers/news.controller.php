@@ -43,7 +43,7 @@ class NewsController extends Controller{
 
     public function admin_index(){
         $params = App::getRouter()->getParams();
-        $id = $params[1];
+        @$id = $params[1];
 
         if(@$params[0] == 'start'){
             $id_start = $params[1];
