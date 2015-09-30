@@ -1459,6 +1459,11 @@ a.menu:after, .dropdown-toggle:after {
 	overflow: hidden;
 }
 
+
+.type-a-left tr td{
+	text-align: left !important;
+	font-size: 14px !important;
+}
 /* type in */
 
 
