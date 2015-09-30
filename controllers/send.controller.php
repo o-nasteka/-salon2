@@ -14,7 +14,7 @@ class SendController extends Controller{
         if(@$params[0] == 'start'){
             $id_start = $params[1];
         }
-        // выборка всех заявок
+
         $this->data = $this->model->getList(@$id_start);
 
     }
