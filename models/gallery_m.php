@@ -73,9 +73,13 @@ class gallery_m extends Model{
         for( $i = 0; $i < $pageCount; $i++ ) {
             // Здесь ($i * $limit) - вычисляет нужное для каждой страницы  смещение,
             // а ($i + 1) - для того что бы нумерация страниц начиналась с 1, а не с 0
-            @$res['html'] .= '<li class="active" ><a href="/admin/gallery/index/start/' . ($i * $limit)  . '">' . ($i + 1)  . '<span class="sr-only">(current)</span></a></li>';
-            // $html .= '<li><a href="index.php?start=' . ($i * $limit)  . '">' . ($i + 1)  . '</a></li>';
+           if($start == ($i * $limit)) {
+               @$res['html'] .= '<li class="active" ><a href="/admin/gallery/index/start/' . ($i * $limit) . '">' . ($i + 1) . '<span class="sr-only">(current)</span></a></li>';
+           }else {
+               @$res['html'] .= '<li><a href="/admin/gallery/index/start/' . ($i * $limit) . '">' . ($i + 1) . '</a></li>';
+           }
         }
+
         return $res;
 
     // Собственно выводим на экран:
