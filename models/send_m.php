@@ -93,6 +93,7 @@ class Send_m extends Model {
                        title = '{$title}'
 
                    where id = {$id}
+                   //
             ";
         }
 
@@ -150,8 +151,8 @@ class Send_m extends Model {
                    set name = '{$name}',
                        phone = '{$phone}',
                        title = '{$title}',
-                       status = '{$status}',
-                       date = '{$date}'
+                       status = '{$status}'
+
 
                    where `id` = {$id}
             ";
