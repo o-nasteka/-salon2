@@ -79,7 +79,7 @@ class gallery_m extends Model{
                @$res['html'] .= '<li><a href="/admin/gallery/index/start/' . ($i * $limit) . '">' . ($i + 1) . '</a></li>';
            }
         }
-
+//
         return $res;
 
     // Собственно выводим на экран:
