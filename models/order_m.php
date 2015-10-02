@@ -235,5 +235,3 @@ class Order_m extends Model {
     }
 
 }
-
-// НУ ЧТО!?
