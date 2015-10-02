@@ -123,7 +123,7 @@ class gallery_m extends Model{
     public function add_gallery_image(){
 
         // Путь для загрузки файла
-         $path = ROOT.DS.'upld'.DS.'images'.DS.'our'.DS;
+         $path = ROOT.DS.'webroot'.DS.'uploads'.DS.'images'.DS.'gallery'.DS;
         //$path = ROOT.DS.'webroot'.DS.'uploads'.DS ;
         // Создаем обькт передаем путь в конструктор, и загружаем файл по указоному пути
         $img_upl_obj = new img_upload($path);
@@ -132,7 +132,7 @@ class gallery_m extends Model{
 
         unset($img_upl_obj);
         // Обрезаем до /upld
-        $path_full = stristr($path_full, "/upld");
+        $path_full = stristr($path_full, "/webroot");
        // $path_full = stristr($path_full, "/uploads");
 
 

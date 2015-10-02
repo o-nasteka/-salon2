@@ -197,7 +197,7 @@ public function view_id($id){
     public function add_news_image(){
 
         // Путь для загрузки файла
-        $path = ROOT.DS.'upld'.DS.'news'.DS.'img_min'.DS;
+        $path = ROOT.DS.'webroot'.DS.'uploads'.DS.'images'.DS.'news'.DS.'img_min'.DS;
 
         // Создаем обькт передаем путь в конструктор, и загружаем файл по указоному пути
         $img_upl_obj = new img_upload($path);
@@ -205,14 +205,14 @@ public function view_id($id){
         $path_full = $img_upl_obj->get_path_full();
 
         unset($img_upl_obj);
-        // Обрезаем до /upld
-        $path_full = stristr($path_full, "/upld");
+        // Обрезаем до /webroot
+        $path_full = stristr($path_full, "/webroot");
 
 
         $sql = "
 		INSERT INTO `news` SET
-		`img_min`       = '".($path_full)."',
-		`date`        = NOW()
+		`img_min`       = '".($path_full)."'
+
 	";
 
         if($this->db->query($sql)){
@@ -266,7 +266,7 @@ public function view_id($id){
        }
 
         // Путь для загрузки файла
-       $path = ROOT.DS.'upld'.DS.'news'.DS.'img_min'.DS;
+        $path = ROOT.DS.'webroot'.DS.'uploads'.DS.'images'.DS.'news'.DS.'img_min'.DS;
 
         // Создаем обькт передаем путь в конструктор, и загружаем файл по указоному пути
         $img_upl_obj = new img_upload($path);
@@ -274,8 +274,8 @@ public function view_id($id){
         $path_full = $img_upl_obj->get_path_full();
 
         unset($img_upl_obj);
-        // Обрезаем до /upld
-       $path_full = stristr($path_full, "/upld");
+        // Обрезаем до /webroot
+       $path_full = stristr($path_full, "/webroot");
 
         // Обновляем базу с новой картинкой
         $sql = "
