@@ -1,6 +1,6 @@
 <?php
 
-class Send_m extends Model {
+class Order_m extends Model {
 
     public function sendEmail($data){
 
