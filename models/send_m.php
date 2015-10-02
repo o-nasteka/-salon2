@@ -69,7 +69,7 @@ class Send_m extends Model {
 
         if ( !$id ){ // Add new record
             $sql = "
-                insert into `messages`
+                insert into `order`
                    set name = '{$name}',
                        phone = '{$phone}',
                        title = '{$title}',
@@ -77,7 +77,7 @@ class Send_m extends Model {
             ";
         } else { // Update existing record
             $sql = "
-                update `messages`
+                update `order`
                    set name = '{$name}',
                        phone = '{$phone}',
                        title = '{$title}'
@@ -119,7 +119,7 @@ class Send_m extends Model {
         $sql = 'SELECT           ' .
             ' * 				 ' .
             'FROM             ' .
-            '  `messages`     ' .
+            '  `order`     ' .
             'ORDER BY `id` DESC    ' . // отсротировать от последннего заказа
 
             'LIMIT            ' .
@@ -138,7 +138,7 @@ class Send_m extends Model {
         $sql = 'SELECT         ' .
             '  COUNT(*) AS `count` ' .
             'FROM           ' .
-            '  `messages` '
+            '  `order` '
         ;
         $stmt  = $this->db->query($sql);
         $allItems = $stmt[0]['count'];
@@ -167,20 +167,20 @@ class Send_m extends Model {
 
         return $res;
 
-        // $sql = "select * from `messages` where 1";
+        // $sql = "select * from `order` where 1";
         // return $this->db->query($sql);
     }
 
-    // Get all by Id from table messages
+    // Get all by Id from table order
     public function getById($id){
         $id = (int)$id;
-        $sql = "select * from `messages` where `id` = '{$id}' limit 1";
+        $sql = "select * from `order` where `id` = '{$id}' limit 1";
         $result = $this->db->query($sql);
         return isset($result[0]) ? $result[0] : null;
     }
 
 
-    // Save to table messages - ������
+    // Save to table order -
     public function save($data, $id = null){
         if ( !isset($data['name']) || !isset($data['phone']) || !isset($data['title']) || !isset($data['status'])){
             return false;
@@ -200,7 +200,7 @@ class Send_m extends Model {
 
         if ( !$id ){ // Add new record
             $sql = "
-                insert into `messages`
+                insert into `order`
                    set name = '{$name}',
                        phone = '{$phone}',
                        title = '{$title}',
@@ -212,7 +212,7 @@ class Send_m extends Model {
 
         } else { // Update existing record
             $sql = "
-                update `messages`
+                update `order`
                    set name = '{$name}',
                        phone = '{$phone}',
                        title = '{$title}',
@@ -227,10 +227,10 @@ class Send_m extends Model {
     }
 
 
-    // Delete from table messages
+    // Delete from table order
     public function delete($id){
         $id = (int)$id;
-        $sql = "delete from `messages` where `id` = {$id}";
+        $sql = "delete from `order` where `id` = {$id}";
         return $this->db->query($sql);
     }
 

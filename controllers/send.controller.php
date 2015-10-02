@@ -39,7 +39,7 @@ class SendController extends Controller{
         }
     }
 
-    // Admin edit product
+    // Admin edit order
     public function admin_edit(){
 
         if ( $_POST ){
@@ -64,7 +64,7 @@ class SendController extends Controller{
         }
     }
 
-    // Admin delete messages
+    // Admin delete order
     public function admin_delete(){
         if ( isset($this->params[0]) ){
             $result = $this->model->delete($this->params[0]);
