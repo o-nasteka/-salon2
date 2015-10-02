@@ -30,18 +30,46 @@
             <div class="form-group">
                 <label for="parent_id">Категория товара</label>
                 <select class="form-control" name="parent_id" id="parent_id" required="">
-                    <option value="<?=htmlspecialchars(@$data['products']['parent_id'])?>"></option>
-                    <option value="1">Жалюзи</option>
+                    <option selected value="<?=htmlspecialchars(@$data['products']['parent_id'])?>">
+                        if( @$data['products']['parent_id'] == 2){
+                            echo "Горизонтальные жалюзи";
+                        }
+                        elseif ( @$data['products']['parent_id'] == 6 ){
+                        echo "Вертикальные жалюз";
+                        }
+                        elseif ( @$data['products']['parent_id'] == 10 ){
+                        echo "Деревянные и бамбуковые";
+                        }
+                        elseif ( @$data['products']['parent_id'] == 14 ){
+                        echo "Системы открытого типа";
+                        }
+                        elseif ( @$data['products']['parent_id'] == 21 ){
+                        echo "Системы закрытого типа";
+                        }
+                        elseif ( @$data['products']['parent_id'] == 26 ){
+                        echo "Системы день-ночь";
+                        }
+                        elseif ( @$data['products']['parent_id'] == 31 ){
+                        echo "Римский карниз";
+                        }
+                        elseif ( @$data['products']['parent_id'] == 32 ){
+                        echo "Бамбуковые-ролеты";
+                        }
+                        elseif ( @$data['products']['parent_id'] == 38 ){
+                        echo "Антимоскитные сетки";
+                        }
+                        elseif ( @$data['products']['parent_id'] == 42 ){
+                        echo "Внешние системы солнцезащиты";
+                        }
+                    </option>
                     <option value="2">Горизонтальные жалюзи</option>
                     <option value="6">Вертикальные жалюзи</option>
                     <option value="10">Деревянные и бамбуковые</option>
-                    <option value="13">Ролеты</option>
                     <option value="14">Системы открытого типа</option>
                     <option value="21">Системы закрытого типа</option>
                     <option value="26">Системы день-ночь</option>
                     <option value="31">Римский карниз</option>
                     <option value="32">Бамбуковые-ролеты</option>
-                    <option value="33">Плиссе</option>
                     <option value="38">Антимоскитные сетки</option>
                     <option value="42">Внешние системы солнцезащиты</option>
 
