@@ -1,18 +1,17 @@
 <br>
 <br>
 <br>
-<script src="/ckeditor/ckeditor.js"></script>
-
 
 <h3>Редактировать товар</h3><br/>
-<form method="post" action="">
-    <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#data1">Данные </a></li>
-        <li><a data-toggle="tab" href="#data2">Характеристики </a></li>
-        <li><a data-toggle="tab" href="#data3">Цвет/Системы </a></li>
+<form method="post" action="" >
+    <ul class="nav nav-pills">
+        <li class="active"><a data-toggle="tab" href="#ddata1">Данные </a></li>
+        <li><a data-toggle="tab" href="#ddata2">Характеристики </a></li>
+        <li><a data-toggle="tab" href="#ddata3">Цвет/Системы </a></li>
     </ul>
-    <div class="tab-content"><!-- data1 -->
-        <div class="tab-pane fade in active" id="data1">
+    <br><br>
+    <div class="tab-content">
+        <div class="tab-pane fade in active" id="ddata1"><!-- data1 -->
             <div class="form-group">
                 <label for="alias">Alias</label>
                 <input type="text" id="alias" name="alias" value="<?=htmlspecialchars(@$data['products']['alias'])?>" class="form-control" />
@@ -36,7 +35,7 @@
             </div>
         </div>
         <!-- -->
-        <div class="tab-pane fade in active" id="data2">
+        <div class="tab-pane fade" id="ddata2">
             <div class="form-group">
                 <label for="gallery_img">Изображение(фото) товара:</label>
                 <textarea style="min-height: 500px;" id="gallery_img" name="gallery_img" class="form-control" ><?=$data['products']['gallery_img']?></textarea>
@@ -48,14 +47,14 @@
             </div>
         </div>
         <!-- -->
-        <div class="tab-pane fade in active" id="data3">
+        <div class="tab-pane fade" id="ddata3">
             <div class="form-group">
-                <label for="colors">Доступные цвета:</label>
+                <label for="colors">Цвет:</label>
                 <textarea style="min-height: 300px;" id="colors" name="colors" class="form-control" ><?=$data['products']['colors']?></textarea>
             </div>
 
             <div class="form-group">
-                <label for="type_id">Варианты систем:</label>
+                <label for="type_id">Системы:</label>
                 <textarea style="min-height: 300px;" id="type_id" name="type_id" class="form-control" ><?=$data['products']['type_id']?></textarea>
             </div>
         </div>
