@@ -25,17 +25,9 @@ class OrderController extends Controller{
             if ( !isset($data['name']) || !isset($data['phone']) || !isset($data['title'])){
 
                 $this->model->sendEmail($_POST);
-                $this->model->SendMsg($_POST);
-                // echo "<pre>";
-                // print_r($_POST);
-                // exit;
+                $this->model->SaveOrder($_POST);
+
             }
-
-            // if ( $this->model->SendMsg($_POST) ){
-                // Session::setFlash('Thank you! Your message was sent successfully!');
-            // }
-
-
         }
     }
 
@@ -56,7 +48,7 @@ class OrderController extends Controller{
 
 
         if ( isset($this->params[0]) ){
-            $this->data['send'] = $this->model->getById($this->params[0]);
+            $this->data['order'] = $this->model->getById($this->params[0]);
 
         } else {
             Session::setFlash('Wrong page id.');

@@ -55,8 +55,8 @@ class Order_m extends Model {
 
     }
 
-    //  Send message
-    public function SendMsg($data, $id = null){
+    //  Save order
+    public function SaveOrder($data, $id = null){
         if ( !isset($data['name']) || !isset($data['phone']) || !isset($data['title'])){
             return false;
         }
