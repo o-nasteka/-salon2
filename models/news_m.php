@@ -225,8 +225,8 @@ public function view_id($id){
         }
 
 
-    }
-
+}
+//
     // Редактирование новости
     public function edit_news($id){
 
