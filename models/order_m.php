@@ -155,9 +155,9 @@ class Order_m extends Model {
             // Здесь ($i * $limit) - вычисляет нужное для каждой страницы  смещение,
             // а ($i + 1) - для того что бы нумерация страниц начиналась с 1, а не с 0
             if($start == ($i * $limit)) {
-                @$res['html'] .= '<li class="active" ><a href="/admin/send/index/start/' . ($i * $limit) . '">' . ($i + 1) . '<span class="sr-only">(current)</span></a></li>';
+                @$res['html'] .= '<li class="active" ><a href="/admin/order/index/start/' . ($i * $limit) . '">' . ($i + 1) . '<span class="sr-only">(current)</span></a></li>';
             }else {
-                @$res['html'] .= '<li><a href="/admin/send/index/start/' . ($i * $limit) . '">' . ($i + 1) . '</a></li>';
+                @$res['html'] .= '<li><a href="/admin/order/index/start/' . ($i * $limit) . '">' . ($i + 1) . '</a></li>';
             }
         }
 //

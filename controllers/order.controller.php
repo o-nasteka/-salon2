@@ -51,7 +51,7 @@ class OrderController extends Controller{
             } else {
                 Session::setFlash('Error.');
             }
-            Router::redirect('/admin/send/');
+            Router::redirect('/admin/order/');
         }
 
 
@@ -60,7 +60,7 @@ class OrderController extends Controller{
 
         } else {
             Session::setFlash('Wrong page id.');
-            Router::redirect('/admin/send/');
+            Router::redirect('/admin/order/');
         }
     }
 
@@ -74,7 +74,7 @@ class OrderController extends Controller{
                 Session::setFlash('Error.');
             }
         }
-        Router::redirect('/admin/send/');
+        Router::redirect('/admin/order/');
     }
 
 }
