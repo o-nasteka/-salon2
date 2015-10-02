@@ -52,8 +52,6 @@ class Products_m extends Model {
 
 
 
-
-
     public function list_sub_cat($id){
         $sql = "SELECT * FROM `categories` WHERE `parent` = '{$id}' ";
         return $this->db->query($sql);
@@ -107,7 +105,7 @@ class Products_m extends Model {
 
     // Save to table products - Карточка товара
     public function save($data, $id = null){
-        if ( !isset($data['alias']) || !isset($data['title']) || !isset($data['content']) ){
+        if ( !isset($data['alias']) || !isset($data['title']) || !isset($data['price_from']) || !isset($data['parent_id']) || !isset($data['content_short']) ){
             return false;
         }
 
@@ -118,6 +116,7 @@ class Products_m extends Model {
         $alias = $this->db->escape($data['alias']);
         $title = $this->db->escape($data['title']);
         $price_from = $this->db->escape($data['price_from']);
+        $parent_id = $this->db->escape($data['parent_id']);
         $content_short = $this->db->escape($data['content_short']); // Краткое описание
         $content = $this->db->escape($data['content']); // Основное описание
         $gallery_img = $this->db->escape($data['gallery_img']); // Картинки слайдера
@@ -132,14 +131,13 @@ class Products_m extends Model {
                    set alias = '{$alias}',
                        title = '{$title}',
                        price_from = '{$price_from}',
+                       parent_id = '{$parent_id}',
                        content_short = '{$content_short}',
                        content = '{$content}',
                        gallery_img = '{$gallery_img}',
                        params = '{$params}',
                        colors = '{$colors}',
                        type_id = '{$type_id}'
-
-
             ";
             
 
@@ -149,6 +147,7 @@ class Products_m extends Model {
                    set alias = '{$alias}',
                        title = '{$title}',
                        price_from = '{$price_from}',
+                       parent_id = '{$parent_id}',
                        content_short = '{$content_short}',
                        content = '{$content}',
                        gallery_img = '{$gallery_img}',
