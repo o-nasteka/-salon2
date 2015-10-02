@@ -44,8 +44,8 @@
         <!-- Статус заказ  // Order status end -->
 
         <td width="250" align="center">
-            <a href="/admin/send/edit/<?=$item['id']?>"><button class="btn btn-sm btn-primary" style="padding: 5px 20px;">Редактировать</button></a>
-            <a href="/admin/send/delete/<?=$item['id']?>" onclick="return confirmDelete();"><button class="btn btn-sm btn-warning" style="padding: 5px 20px;">Удалить</button></a>
+            <a href="/admin/order/edit/<?=$item['id']?>"><button class="btn btn-sm btn-primary" style="padding: 5px 20px;">Редактировать</button></a>
+            <a href="/admin/order/delete/<?=$item['id']?>" onclick="return confirmDelete();"><button class="btn btn-sm btn-warning" style="padding: 5px 20px;">Удалить</button></a>
         </td>
     </tr>
     <?php } ?>
@@ -58,7 +58,7 @@
         <?php $prev = $data['start'] - $data['limit'];
                             if($prev >= 0){ ?>
         <li>
-            <a href="/admin/send/index/start/<?php echo ($data['start'] - $data['limit']); ?>" aria-label="Previous">
+            <a href="/admin/order/index/start/<?php echo ($data['start'] - $data['limit']); ?>" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
             </a>
         </li>
