@@ -58,8 +58,8 @@ class Products_m extends Model {
 
     }
 
-    public function add_gallery_image(){
-
+    public function add_gallery_image($id){
+        $id = (int)$id;
         // Путь для загрузки файла
         $path = ROOT.DS.'webroot'.DS.'uploads'.DS.'images'.DS.'img_prod'.DS;
         //$path = ROOT.DS.'webroot'.DS.'uploads'.DS ;
@@ -76,10 +76,10 @@ class Products_m extends Model {
 
         $sql = "
 		INSERT INTO `img_prod` SET
-		`img`       = '".($path_full)."'
+		`img`       = '".($path_full)."', `product_id` = '{$id}'
 	";
 
-        if($this->db->query($sql)){
+        $this->db->query($sql);
             /*
             // Узнать последний id
             $sql = "SELECT MAX(id) FROM `img_prod`";
@@ -88,8 +88,24 @@ class Products_m extends Model {
 
             return $max_id;
             */
-          }
 
+
+    }
+
+    // Удаление по id
+    public function del_img_prod_id($id){
+        $id = (int)$id;
+
+        $sql = " SELECT `img` FROM `img_prod` WHERE `id` = '{$id}' ";
+        $sql_tmp = $this->db->query($sql);
+        // Указываем полный путь
+        $sql_tmp = ROOT . DS . $sql_tmp[0]['img'];
+        // Удаляем файл картинки
+        unlink($sql_tmp);
+
+        $sql = " DELETE FROM `img_prod` WHERE `id` = '{$id}' ";
+
+        return $this->db->query($sql);
 
     }
 

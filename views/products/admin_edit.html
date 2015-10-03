@@ -3,7 +3,7 @@
 <br>
 
 <h3>Редактировать товар</h3><br/>
-<form method="post" action="" >
+<form method="post" action="" enctype="multipart/form-data" >
     <ul class="nav nav-pills">
         <li class="active"><a data-toggle="tab" href="#data1">Общие </a></li>
         <li><a data-toggle="tab" href="#data2">Фото товара </a></li>
@@ -113,7 +113,8 @@
                     <!--<td><strong><?=$gallery['title']?></strong></td>-->
                     <td width="250" align="center">
                         <a href="/admin/gallery/edit/<?=$gallery['id']?>"><button class="btn btn-sm btn-primary" style="padding: 5px 20px;">Редактировать</button></a>
-                        <a href="/admin/gallery/index/delete/<?=$img_prod['id']?>" onclick="return confirmDelete();"><button class="btn btn-sm btn-warning" style="padding: 5px 20px;">Удалить</button></a>
+                       <!-- <a href="/admin/products/edit/delete/<?=$img_prod['id']?>" onclick="return confirmDelete();"><button class="btn btn-sm btn-warning" style="padding: 5px 20px;">Удалить</button></a> -->
+                        <a href="/admin/products/edit/delete/<?=$img_prod['id']?>">Удалить</a>
                     </td>
 
                 </tr>
@@ -124,10 +125,7 @@
 
             <div>
                 <h3>Добавить изображение</h3><br/>
-                <form action="" method="post" enctype="multipart/form-data" >
-                    <input type="file" name="files"  >
-                    <input type="submit" name="img_upld" value="Загрузить изображение" class="btn btn-success" >
-                </form>
+                    <input type="file" name="files">
             </div>
 
         </div>

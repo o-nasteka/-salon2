@@ -130,9 +130,22 @@ class ProductsController extends Controller {
 
     // Admin edit product
     public function admin_edit(){
+        $params = App::getRouter()->getParams();
 
-        if ( isset($_POST['submit']) ){
-            
+        if(isset($params[0],$params[1]) && $params[0] == 'delete'){
+
+            $this->model->del_img_prod_id($params[1]);
+            Router::redirect($_SERVER['HTTP_REFERER']);
+        }
+
+
+        if ( $_POST ){
+            // Добавление картинки в img_prod
+            if(!empty($_FILES['files']['name'])){
+                $this->model->add_gallery_image($this->params[0]);
+                Router::redirect('/admin/products/edit/'.$this->params[0]);
+            }
+
             $id = isset($_POST['id']) ? $_POST['id'] : null;
             $result = $this->model->save($_POST, $id);
             if ( $result ){
@@ -141,14 +154,6 @@ class ProductsController extends Controller {
                 Session::setFlash('Error.');
             }
             Router::redirect('/admin/products/');
-        }
-
-        // Добавление картинки в галерею
-        if(isset($_POST['img_upld'])){
-            $this->model->add_gallery_image();
-
-            // Router::redirect('/admin/gallery/edit/'. $max_id);
-            Router::redirect('/admin/products/edit/'.$this->params[0]);
         }
 
 

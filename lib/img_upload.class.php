@@ -67,9 +67,7 @@ private function set_path($path){
 
 
 private function upload(){
-		echo '<pre>';
-		print_r($_FILES);
-		exit;
+
 	// вырезаем разширение файла с точкой
 	$this->file_ext_dot  = strrchr($_FILES['files']['name'],".");
 	   	
