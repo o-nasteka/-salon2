@@ -27,9 +27,9 @@ class Page extends Model{
         return isset($result[0]) ? $result[0] : null;
     }
 
-    // Get Level for Category Index page
-    public function getAllParentCategories(){
-        $sql = "select * from `categories` where `parent` = 0 ";
+    // Get All Categories
+    public function getAllCategories(){
+        $sql = "select * from `categories` ";
         return $this->db->query($sql);
     }
 

@@ -11,7 +11,7 @@ class PagesController extends Controller{
         $this->data['pages'] = $this->model->getList();
 
         // Get All parent Category
-        $this->data['cat'] = $this->model->getAllParentCategories();
+        $this->data['cat'] = $this->model->getAllCategories();
 
         // echo "<pre>";
         // print_r($this->data['cat']);
