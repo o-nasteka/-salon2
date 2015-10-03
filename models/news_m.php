@@ -296,6 +296,10 @@ public function view_id($id){
 
 
 
+
+
+
+
     public function save($data, $id = null){
         if ( !isset($data['name']) || !isset($data['email']) || !isset($data['message']) ){
             return false;

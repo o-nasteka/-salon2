@@ -59,39 +59,6 @@ class PagesController extends Controller{
     }
 
 
-    public function test(){
-
-        $x = 3;
-        $y = 5;
-
-
-        $text = '';
-        $text .= '<table>';
-        for($i = 1; $i <= $y; ++$i){
-            $text .= '<tr>';
-            for($i2 = 1; $i2 <=$x; ++$i2){
-                $color = 'white';
-                if($i == 2 && $i == 3){
-                    $color = 'red';
-                }elseif($i == 2 && $i2 ==4 ){
-                    $color = 'green';
-                }elseif($i == 3){
-                    $color = 'blue';
-                }
-                $text .= '<td style="background-color: '. $color .';">' . $i . ':' . $i2 . '</td>';
-
-            }
-            $text .= '</tr>';
-        }
-        $text .= '</table>';
-
-       // echo $text;
-
-        //exit;
-
-
-
-    }
 
 
 
