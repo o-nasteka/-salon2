@@ -12,7 +12,7 @@ class PagesController extends Controller{
 
         // Get All parent Category
         $this->data['cat'] = $this->model->getAllCategories();
-
+        //
         // echo "<pre>";
         // print_r($this->data['cat']);
         // exit;

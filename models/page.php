@@ -27,7 +27,7 @@ class Page extends Model{
         return isset($result[0]) ? $result[0] : null;
     }
 
-    // Get All Categories
+    //  Get All Categories
     public function getAllCategories(){
         $sql = "select * from `categories` ";
         return $this->db->query($sql);
