@@ -57,16 +57,11 @@
 
         <!-- -->
         <div class="order-main-txt">
-            <h3>Описание</h3>
-            <!-- Content -->
-            <p class="description">
-                <?=$data['products']['content']?>
-            </p>
 
-            <!-- Характеристики, Цвет, Тип системы -->
+            <!-- Описание, Цвет, Тип системы -->
             <div class="order-bl-in">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#panel1">Характеристики</a></li>
+                    <li class="active"><a data-toggle="tab" href="#panel1">Описание</a></li>
                     <li><a data-toggle="tab" href="#panel2">Цвет</a></li>
                     <li><a data-toggle="tab" href="#panel3">Системы</a></li>
 
@@ -75,6 +70,10 @@
                 <div class="tab-content">
                     <div id="panel1" class="tab-pane fade in active">
                         <div class="params-bl">
+                            <p class="description">
+                                <?=$data['products']['content']?>
+                            </p>
+                            <br>
                             <?=$data['products']['params']?>
                         </div>
                     </div>
