@@ -58,7 +58,40 @@ class Products_m extends Model {
 
     }
 
+    public function add_gallery_image(){
 
+        // Путь для загрузки файла
+        $path = ROOT.DS.'webroot'.DS.'uploads'.DS.'images'.DS.'img_prod'.DS;
+        //$path = ROOT.DS.'webroot'.DS.'uploads'.DS ;
+        // Создаем обькт передаем путь в конструктор, и загружаем файл по указоному пути
+        $img_upl_obj = new img_upload($path);
+        // Получаем полный путь и имя файла
+        $path_full = $img_upl_obj->get_path_full();
+
+        unset($img_upl_obj);
+        // Обрезаем до /webroot
+        $path_full = stristr($path_full, "/webroot");
+        // $path_full = stristr($path_full, "/uploads");
+
+
+        $sql = "
+		INSERT INTO `img_prod` SET
+		`img`       = '".($path_full)."'
+	";
+
+        if($this->db->query($sql)){
+            /*
+            // Узнать последний id
+            $sql = "SELECT MAX(id) FROM `img_prod`";
+            $tmp_sql =$this->db->query($sql);
+            $max_id = $tmp_sql[0]['MAX(id)'];
+
+            return $max_id;
+            */
+          }
+
+
+    }
 
     public function list_sub_cat($id){
         $sql = "SELECT * FROM `categories` WHERE `parent` = '{$id}' ";

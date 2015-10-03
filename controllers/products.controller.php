@@ -143,6 +143,14 @@ class ProductsController extends Controller {
             Router::redirect('/admin/products/');
         }
 
+        // Добавление картинки в галерею
+        if(isset($_POST['img_upld'])){
+            $this->model->add_gallery_image();
+
+            // Router::redirect('/admin/gallery/edit/'. $max_id);
+            Router::redirect('/admin/products/edit/'.$this->params[0]);
+        }
+
 
         if ( isset($this->params[0]) ){
             $this->data['products'] = $this->model->getById($this->params[0]);
