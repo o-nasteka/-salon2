@@ -53,6 +53,7 @@ class GalleryController extends Controller{
         //print_r($this->data['gallery']);
         //exit;
 
+        /*
         //Выгрузить картинку img_min
         if(isset($_POST['img_min_upld'])){
 
@@ -63,7 +64,7 @@ class GalleryController extends Controller{
             Router::redirect($_SERVER['HTTP_REFERER']);
             exit;
         }
-
+        */
 
         // Выполнить update
         if(isset($_POST['submit'])){

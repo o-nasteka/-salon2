@@ -131,7 +131,7 @@ class ProductsController extends Controller {
     // Admin edit product
     public function admin_edit(){
 
-        if ( $_POST ){
+        if ( isset($_POST['submit']) ){
             
             $id = isset($_POST['id']) ? $_POST['id'] : null;
             $result = $this->model->save($_POST, $id);
@@ -146,11 +146,15 @@ class ProductsController extends Controller {
 
         if ( isset($this->params[0]) ){
             $this->data['products'] = $this->model->getById($this->params[0]);
-
+            $this->data['products']['img_prod'] = $this->model->get_Img_Prod($this->params[0]);
         } else {
             Session::setFlash('Wrong page id.');
             Router::redirect('/admin/products/');
         }
+
+           // echo '<pre>';
+           // print_r($this->data['products']['img_prod']);
+           // exit;
     }
 
     // Admin delete product

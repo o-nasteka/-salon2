@@ -51,6 +51,14 @@ class Products_m extends Model {
     }
 
 
+    public function get_Img_Prod($id){
+        $id = (int)$id;
+        $sql = "SELECT * FROM `img_prod` WHERE `product_id` = '{$id}'";
+        return $this->db->query($sql);
+
+    }
+
+
 
     public function list_sub_cat($id){
         $sql = "SELECT * FROM `categories` WHERE `parent` = '{$id}' ";
