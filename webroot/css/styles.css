@@ -1364,13 +1364,7 @@ a.menu:after, .dropdown-toggle:after {
 	padding: 20px;
 	border: 2px solid #2c3341;
 }
-.promo_bl {
-	background: url("/images/corner.png")no-repeat center;
-	width: 162px;
-	height: 138px;
-	position: absolute;
-	margin: 0 0 0 288px;
-}
+
 /* News bl end */
 
 
