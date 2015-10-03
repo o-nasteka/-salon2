@@ -125,13 +125,10 @@
 
             <div>
                 <h3>Добавить изображение</h3><br/>
-                    <input type="file" name="files">
+                    <input  type="file" name="files" min="1" max="3" multiple="true">
             </div>
 
         </div>
-        <br>
-        <br>
-        <br>
         <!-- Фото товара end-->
 
         <!-- Цвет/Системы -->
@@ -168,7 +165,6 @@
     <script>
         CKEDITOR.replace( 'content_short' );
         CKEDITOR.replace( 'content' );
-        CKEDITOR.replace( 'gallery_img' );
         CKEDITOR.replace( 'colors' );
         CKEDITOR.replace( 'type_id' );
 
