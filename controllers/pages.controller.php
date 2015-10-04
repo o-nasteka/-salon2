@@ -8,6 +8,10 @@ class PagesController extends Controller{
     }
 
     public function index(){
+
+        // Get Menu
+        $this->data['menu'] = $this->model->getMenu();
+
         $this->data['pages'] = $this->model->getList();
 
         // Get All parent Category

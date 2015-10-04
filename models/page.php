@@ -11,6 +11,12 @@ class Page extends Model{
         return $this->db->query($sql);
     }
 
+    // getMenu
+    public function getMenu(){
+        $sql = "select * from `products` ";
+        return $this->db->query($sql);
+    }
+
     // GetByAlias
     public function getByAlias($alias){
         $alias = $this->db->escape($alias);
