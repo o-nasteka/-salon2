@@ -41,6 +41,9 @@ class PagesController extends Controller{
             $this->data['page'] = $this->model->getByAlias($alias);
             $this->data['cat'] = $this->model->getAllCategories();
 
+            // Get Menu
+            $this->data['menu'] = $this->model->getMenu();
+
             // echo "<pre>";
             // print_r($this->data['cat']);
             // exit;

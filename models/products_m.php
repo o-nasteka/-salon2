@@ -10,6 +10,12 @@ class Products_m extends Model {
         return $this->db->query($sql);
     }
 
+    // getMenu
+    public function getMenu(){
+        $sql = "select * from `products` ";
+        return $this->db->query($sql);
+    }
+
     public function getList_jaluzi(){
         // $sql = "SELECT * FROM `categories`";
         $sql = "SELECT * FROM `products` WHERE `parent_id` IN (2,6,10) ";

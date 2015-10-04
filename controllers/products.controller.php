@@ -12,9 +12,13 @@ class ProductsController extends Controller {
 
     public function view(){
        //Если нет параметра то редирект
-        if(!count($params = App::getRouter()->getParams())){
+        if( !count($params = App::getRouter()->getParams()) ){
             Router::redirect('/');
         }
+
+        // Get Menu
+        $this->data['menu'] = $this->model->getMenu();
+
         //Выборка по alias
         //Если есть параметр и если он не число то true иначе смотрим else
         if ( isset($params[0]) && !is_numeric($params[0]) ){
@@ -59,17 +63,24 @@ class ProductsController extends Controller {
             Router::redirect('/');
         }
 
-
         $this->data['sub'] = $this->model-> list_sub_cat($params[0]);
+
 
         if(count($this->data['sub'])){
 
             $this->data['contrl'] = 'view_sub';
+            // Get Menu
+            $this->data['menu'] = $this->model->getMenu();
         }else{
 
             $this->data['contrl'] = 'view';
             $this->data['sub'] = $this->model->list_prod_sub_cat($params[0]);
+            // Get Menu
+            $this->data['menu'] = $this->model->getMenu();
         }
+
+
+
        // echo '<pre>';
        // print_r($this->data['sub']);
         // exit;
@@ -82,6 +93,9 @@ class ProductsController extends Controller {
         if(count($params = App::getRouter()->getParams())){
             Router::redirect('/');
         }
+
+        // Get Menu
+        $this->data['menu'] = $this->model->getMenu();
 
         $this->data['sub_all'] = $this->model->getAllCategorySub();
     }

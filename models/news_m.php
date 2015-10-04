@@ -2,14 +2,20 @@
 
 class News_m extends Model {
 
-// Выборка одной новости по id
-public function view_id($id){
-    $id = (int)$id;
-    $sql = " SELECT * FROM `news` WHERE `id` = '{$id}' LIMIT 1 ";
+    // Выборка одной новости по id
+    public function view_id($id){
+        $id = (int)$id;
+        $sql = " SELECT * FROM `news` WHERE `id` = '{$id}' LIMIT 1 ";
 
-    return $this->db->query($sql);
+        return $this->db->query($sql);
 
-}
+    }
+
+    // getMenu
+    public function getMenu(){
+        $sql = "select * from `products` ";
+        return $this->db->query($sql);
+    }
 
     // Удаление по id
     public function del_news_id($id){

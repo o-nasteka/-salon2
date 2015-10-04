@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="/css/nivo/nivo-slider.css" type="text/css" media="screen" />
    <!-- <link rel="stylesheet" href="/css/nivo/style.css" type="text/css" media="screen" /> -->
 
+<!-- Top Nav -->
+<?php require('navbar.php'); ?>
 
 <!-- Blank section -->
 <div class="container-fluid blank-section">
@@ -55,15 +57,11 @@
                         Выберите тип <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu sub-type">
-                        <!-- Вывод подкатегорий  -->
-                        <?php foreach($data['sub'] as $sub_data){ ?>
-                        <li>
-                            <a href="/products/<?=$data['contrl']?>/<?php if($data['contrl'] == 'view'){echo $sub_data['alias'];}else{echo $sub_data['id'];} ?>">
-                                <?=$sub_data['title']?>
-                            </a>
-
-                        </li>
-                        <?php } ?>
+                        <li><a href="/products/view_sub/1">- Жалюзи</a></li>
+                        <li><a href="/products/view_sub/13">- Ролеты</a></li>
+                        <li><a href="/products/view_sub/33">- Плиссе</a></li>
+                        <li><a href="/products/view_sub/38">- Антимоскитные сетки</a></li>
+                        <li><a href="/products/view_sub/42">- Внешние системы солнцезащиты</a></li>
                     </ul>
                 </div>
             </form>
