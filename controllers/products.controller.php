@@ -59,6 +59,8 @@ class ProductsController extends Controller {
             Router::redirect('/');
         }
 
+        // Get Menu
+        $this->data['menu'] = $this->model->getMenu();
 
         $this->data['sub'] = $this->model-> list_sub_cat($params[0]);
 
