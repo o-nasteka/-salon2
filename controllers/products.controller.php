@@ -68,6 +68,7 @@ class ProductsController extends Controller {
         // Get Menu
         $this->data['menu'] = $this->model->getMenu();
 
+
         if(count($this->data['sub'])){
 
             $this->data['contrl'] = 'view_sub';
