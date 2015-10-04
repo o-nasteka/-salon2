@@ -13,7 +13,14 @@
                 <div class="carousel-inner" role="listbox">
 
                     <!-- Картики слайдера, добавляем из админ-панели -->
-                    <?=$data['products']['gallery_img']?>
+                    <?php foreach($data['products']['img_prod'] as $img_prod ){ ?>
+                    <?php if(!isset($a)){ echo '<div class="item active">'; $a = true; }else { echo '<div class="item">'; } ?>
+                    <img src="<?=$img_prod['img']?>" alt="Наши работы">
+                    <div class="carousel-caption">
+                        <!-- Описание фото -->
+                    </div>
+                </div>
+                    <?php } ?>
 
                 </div>
 

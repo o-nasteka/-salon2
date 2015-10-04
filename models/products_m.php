@@ -132,7 +132,7 @@ class Products_m extends Model {
         $alias = $this->db->escape($alias);
         $sql = "select * from `products` where `alias` = '{$alias}' limit 1";
 
-        return $result = $this->db->query($sql);
+        return $this->db->query($sql);
 
     }
 
