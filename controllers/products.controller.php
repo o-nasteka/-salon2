@@ -142,6 +142,20 @@ class ProductsController extends Controller {
             Router::redirect($_SERVER['HTTP_REFERER']);
         }
 
+        if(isset($params[0],$params[1]) && $params[0] == 'img_prod_list'){
+            $this->data['img_prod'] = $this->model->img_prod_view($params[1]);
+            $this->data['img_prod'] = $this->data['img_prod'][0];
+
+            return  ROOT.DS.'views'.DS.'products'.DS.prod_img_upd;
+        }
+
+
+        if(isset($params[0],$params[1]) && $params[0] == 'img_prod_upd'){
+
+            $this->model->img_prod_upd($params[1]);
+            Router::redirect($_SERVER['HTTP_REFERER']);
+        }
+
 
         if ( $_POST ){
             // Добавление картинки в img_prod

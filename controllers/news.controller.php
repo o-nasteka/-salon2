@@ -86,7 +86,7 @@ class NewsController extends Controller{
         $this->data['news'] = $this->data['news'][0];
 
 
-        //Выгрузить картинку img_min
+        //Выгрузить или обновить картинку img_min
         if(isset($_POST['img_min_upld'])){
 
             if(!$this->model-> img_min_upld($id)){
