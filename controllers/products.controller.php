@@ -12,7 +12,7 @@ class ProductsController extends Controller {
 
     public function view(){
        //Если нет параметра то редирект
-        if(!count($params = App::getRouter()->getParams())){
+        if( !count($params = App::getRouter()->getParams()) ){
             Router::redirect('/');
         }
 
