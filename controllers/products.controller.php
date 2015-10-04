@@ -65,6 +65,9 @@ class ProductsController extends Controller {
 
         $this->data['sub'] = $this->model-> list_sub_cat($params[0]);
 
+        // Get Menu
+        $this->data['menu'] = $this->model->getMenu();
+
         if(count($this->data['sub'])){
 
             $this->data['contrl'] = 'view_sub';
@@ -74,8 +77,7 @@ class ProductsController extends Controller {
             $this->data['sub'] = $this->model->list_prod_sub_cat($params[0]);
         }
 
-        // Get Menu
-        $this->data['menu'] = $this->model->getMenu();
+
 
        // echo '<pre>';
        // print_r($this->data['sub']);
