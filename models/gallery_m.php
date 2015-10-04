@@ -8,6 +8,11 @@ class gallery_m extends Model{
 
     }
 
+    // getMenu
+    public function getMenu(){
+        $sql = "select * from `products` ";
+        return $this->db->query($sql);
+    }
 
 
     public function list_gallery_admin($id_start = null){
