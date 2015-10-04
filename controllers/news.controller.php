@@ -10,6 +10,8 @@ class NewsController extends Controller{
     public function index(){
         @$params = App::getRouter()->getParams();
 
+        // Get Menu
+        $this->data['menu'] = $this->model->getMenu();
 
         if(@$params[0] == 'start'){
             $id_start = $params[1];
