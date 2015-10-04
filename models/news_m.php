@@ -11,6 +11,12 @@ class News_m extends Model {
 
     }
 
+    // getMenu
+    public function getMenu(){
+        $sql = "select * from `products` ";
+        return $this->db->query($sql);
+    }
+
     // Удаление по id
     public function del_news_id($id){
         $id = (int)$id;
