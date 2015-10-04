@@ -21,12 +21,16 @@ class ProductsController extends Controller {
 
             $alias = mb_strtolower($params[0], "UTF-8");
             $this->data['products'] = $this->model->getByAlias($alias);
+            $this->data['products'] = $this->data['products'][0];
+            $this->data['products']['img_prod'] = $this->model->get_Img_Prod($this->data['products']['id']);
 
+            /* может еще пригодится
             if(isset($this->data['products'][0])){
                 foreach($this->data['products'] as $data){
                 }
                 $this->data['products'] = $data;
             }
+            */
 
             //Если выборка из базы false то редирект
             if(empty($this->data['products'])){
