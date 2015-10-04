@@ -10,7 +10,6 @@ class Products_m extends Model {
         return $this->db->query($sql);
     }
 
-
     // getMenu
     public function getMenu(){
         $sql = "select * from `products` ";
