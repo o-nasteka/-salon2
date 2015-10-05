@@ -1167,6 +1167,15 @@ a.menu:after, .dropdown-toggle:after {
 	float: left;
 	margin: -84px 0 0 121px !important;
 }
+.partn {
+	float: left !important;
+	position: absolute;
+	margin-top: -7px;
+}
+.partn a:hover {
+	text-decoration: underline;
+	color: #fff;
+}
 /* Footer end */
 
 
