@@ -150,8 +150,9 @@ class ProductsController extends Controller {
      /* Сохранить порядок кода */
        // Обновление изображения
         if(isset($_POST['img_prod_upd'])){
+
             $this->model->img_prod_upd($_POST['id']);
-            Router::redirect($_SERVER['HTTP_REFERER']);
+            Router::redirect('/admin/products/edit/'.$_POST['id_prod']);
         }
 
         // Удаление изображениея
@@ -164,6 +165,10 @@ class ProductsController extends Controller {
         if(isset($params[0],$params[1]) && $params[0] == 'img_prod_list'){
             $this->data['img_prod'] = $this->model->img_prod_view($params[1]);
             $this->data['img_prod'] = $this->data['img_prod'][0];
+            $this->data['products_id'] = $params[2];
+           // echo '<pre>';
+           // print_r($this->data);
+           // exit;
 
             return VIEWS_PATH.DS.'products'.DS.'admin_prod_img_upd.html';
         }
