@@ -810,7 +810,7 @@ a.menu:after, .dropdown-toggle:after {
 .section-7 {
 	width: 100%;
 	height: auto;
-	min-height: 780px;
+	min-height: 770px;
 	padding-bottom: 20px;
 	background-color: #fff;
 }
@@ -824,6 +824,9 @@ a.menu:after, .dropdown-toggle:after {
 }
 
 .btn-gallery {
+	text-align: center;
+	padding-top: 10px;
+	width: 420px;
 	margin: 30px auto 0;
 	border-radius: 0 !important;
 	border: none;
@@ -833,12 +836,11 @@ a.menu:after, .dropdown-toggle:after {
 	text-transform: uppercase;
 	font-size: 20px;
 	font-weight: 600;
-	padding: 0 40px;
 }
 .btn-gallery:hover {
 	cursor : pointer;
 	text-decoration: underline;
-
+	color: #fff;
 }
 
 /*Section-7 Gallery end */
@@ -958,6 +960,7 @@ a.menu:after, .dropdown-toggle:after {
 	margin-top: 30px;
 }
 .btn-otz {
+	width: 280px;
 	background-color: transparent !important;
 	border: 2px solid #fff;
 	text-transform: uppercase;
@@ -1146,7 +1149,7 @@ a.menu:after, .dropdown-toggle:after {
 	padding: 10px 15px !important;
 }
 .foo-outsys li{
-	width: 330px !important;
+	width: 100px !important;
 }
 .outs-in {
 	border: 0px solid #fff;
