@@ -4,29 +4,17 @@
 <h3>Редактировать</h3><br/>
 
 <div class="form-group">
-    <label for="title">Картинка <!-- малого --> контента </label>
+    <label for="title">Изображение контента </label>
     <img src="<?=$data['gallery']['img']?>"  width="940" height="450" class="img-responsive" alt="Responsive image">
 </div>
-<!--
+
+<p><strong>Выберите файл для обновления изображения</strong></p>
 <form action="" method="post" enctype="multipart/form-data" >
     <input type="hidden" name="id" value="<?=$data['gallery']['id']?>" >
-    <input type="file" name="files"  >
-    <input type="submit" name="img_min_upld" value="Загрузить картинку" class="btn btn-success" >
+    <input type="file" name="files"  ><br>
+    <input type="submit" name="img_upd" value="Обновить изображение" class="btn btn-success" >
 </form>
--->
 
-<!--
-<div class="form-group">
-    <label for="title">Картинка основного контента </label>
-    <img src="<?=$data['news']['img_content']?>" class="img-responsive" alt="Responsive image">
-</div>
-
-<form action="" method="post" enctype="multipart/form-data" >
-    <input type="hidden" name="id" value="<?=$data['news']['id']?>" >
-    <input type="file" name="files"  >
-    <input type="submit" name="img_content_upld" value="Загрузить картинку" class="btn btn-success" >
-</form>
--->
 <br>
 <br>
 
@@ -36,16 +24,7 @@
         <input type="text" id="title" name="title" value="<?=htmlspecialchars(@$data['gallery']['title'])?>" class="form-control"  />
     </div>
 
-    <!--
-        <div class="form-group">
-            <label for="content">Основное описание:</label>
-            <textarea style="min-height: 300px;" id="content" name="content" class="form-control" ><?=htmlspecialchars(@$data['news']['content'])?></textarea>
-        </div>
-    -->
-
-
-
-    <input type="submit" name="submit" class="btn btn-success" />
+    <input type="submit" name="submit" value="Обновить название" class="btn btn-success" />
 
 </form>
 

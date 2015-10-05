@@ -148,22 +148,22 @@ class ProductsController extends Controller {
         $params = App::getRouter()->getParams();
 
      /* Сохранить порядок кода */
+       // Обновление изображения
         if(isset($_POST['img_prod_upd'])){
             $this->model->img_prod_upd($_POST['id']);
             Router::redirect($_SERVER['HTTP_REFERER']);
         }
 
-
+        // Удаление изображениея
         if(isset($params[0],$params[1]) && $params[0] == 'delete'){
 
             $this->model->del_img_prod_id($params[1]);
             Router::redirect($_SERVER['HTTP_REFERER']);
         }
-
+        // Вход в шаблон обновления изображения
         if(isset($params[0],$params[1]) && $params[0] == 'img_prod_list'){
             $this->data['img_prod'] = $this->model->img_prod_view($params[1]);
             $this->data['img_prod'] = $this->data['img_prod'][0];
-
 
             return VIEWS_PATH.DS.'products'.DS.'admin_prod_img_upd.html';
         }

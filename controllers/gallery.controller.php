@@ -51,18 +51,18 @@ class GalleryController extends Controller{
         //print_r($this->data['gallery']);
         //exit;
 
-        /*
-        //Выгрузить картинку img_min
-        if(isset($_POST['img_min_upld'])){
 
-            if(!$this->model-> img_min_upld($id)){
+        // Обновить картинку img_min
+        if(isset($_POST['img_upd'])){
+
+            if(!$this->model-> img_upd($id)){
                 Session::setFlash('Db not update!');
 
             }
             Router::redirect($_SERVER['HTTP_REFERER']);
             exit;
         }
-        */
+
 
         // Выполнить update
         if(isset($_POST['submit'])){

@@ -116,6 +116,40 @@ class gallery_m extends Model{
         return $this->db->query($sql);
     }
 
+    public function img_upd($id){
+        $id = (int)$id;
+
+        $sql = "SELECT `img` FROM `gallery` WHERE `id` = '{$id}' ";
+        $sql_tmp = $this->db->query($sql);
+        if($sql_tmp){
+            // Указываем полный путь
+            $sql_tmp = ROOT . DS . $sql_tmp[0]['img'];
+            // Удаляем предыдущий файл картинки
+            unlink($sql_tmp);
+        }
+
+        // Путь для загрузки файла
+        $path = ROOT.DS.'webroot'.DS.'uploads'.DS.'images'.DS.'gallery'.DS;
+
+        // Создаем обькт передаем путь в конструктор, и загружаем файл по указоному пути
+        $img_upl_obj = new img_upload($path);
+        // Получаем полный путь и имя файла
+        $path_full = $img_upl_obj->get_path_full();
+
+        unset($img_upl_obj);
+        // Обрезаем до /webroot
+        $path_full = stristr($path_full, "/webroot");
+
+        // Обновляем базу с новой картинкой
+        $sql = "
+    	UPDATE `gallery` SET
+    	`img`	= '".($path_full)."'
+    	WHERE `id`  =  ".$id." ";
+
+        return $this->db->query($sql);
+
+    }
+
     // Добавление отдельно картинки (создание новой картинки в галереи)
     public function add_gallery_image(){
 
