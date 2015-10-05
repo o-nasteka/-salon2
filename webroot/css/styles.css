@@ -983,7 +983,7 @@ a.menu:after, .dropdown-toggle:after {
 /* Footer */
 .footer {
 	width: 100%;
-	min-height: 200px;
+	min-height: 580px;
 	height: auto;
 	background-color: #2c3341;
 }
@@ -1137,6 +1137,24 @@ a.menu:after, .dropdown-toggle:after {
 	margin: 20px 0 0 0;
 }
 
+.footer .ccopy {
+	margin-top: 170px;
+}
+.foo-outsys {
+	border: 1px dashed #fff;
+	width: 330px;
+	padding: 10px 15px !important;
+}
+.foo-outsys li{
+	width: 330px !important;
+}
+.outs-in {
+	border: 0px solid #fff;
+	position: absolute;
+	width: 180px;
+	float: left;
+	margin: -84px 0 0 121px !important;
+}
 /* Footer end */
 
 
