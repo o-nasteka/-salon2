@@ -1309,7 +1309,7 @@ a.menu:after, .dropdown-toggle:after {
 }
 .our-work img {
 	width: 940px;
-	margin: 0 auto  0;
+	margin-left: 15px;
 }
 .our-work .thumbnail {
 	border: none !important;
