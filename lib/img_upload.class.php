@@ -30,6 +30,7 @@ private $array_ext = array('jpeg','jpg','gif','png');
 private $file_ext_dot;
 // Разширение без точи входящего файла
 private $file_ext;
+private $file_name;
 // Не меньше чем байт
 // private $size_down = 5000;
 // Не больше чем байт
@@ -75,9 +76,11 @@ private function upload(){
 		exit('Not correct file');
 
 	}
-	    
-	mb_internal_encoding("UTF-8");
-		
+
+	$tmp_file = $_FILES['files']['name'];
+	$pos = stripos($tmp_file,'.');
+	$this->file_name = $tmp = mb_substr($tmp_file,0,$pos,"UTF-8");
+
 	// вырезаем точку в раширении файла
 	$this->file_ext = mb_substr($this->file_ext_dot,1);
 	$this->file_ext = mb_strtolower($this->file_ext,"UTF-8");
@@ -96,10 +99,9 @@ private function upload(){
 	    	$temp = getimagesize($_FILES['files']['tmp_name']);	         
 	        // Проверяем на допустимый mime тип
 	    	if(in_array($temp['mime'],$this->array_mime)){
-					
-			     	
+
 				// Формирование пути и имени файла
-	        	$this->path_full = $this->path . $_FILES['files']['name'] . '_' . rand(10000,99999) ;
+	        	$this->path_full = $this->path . $this->file_name . '_' . rand(10000,99999) . $this->file_ext_dot;
 
 
 	        	// Выгрузить временной файл по сформировавщемуся пути $this->path_full 

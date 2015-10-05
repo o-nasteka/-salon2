@@ -27,7 +27,7 @@ class ProductsController extends Controller {
             $this->data['products'] = $this->model->getByAlias($alias);
             $this->data['products'] = $this->data['products'][0];
             $this->data['products']['img_prod'] = $this->model->get_Img_Prod($this->data['products']['id']);
-
+            html_head::set('title',$this->data['products']['title']);
             /* может еще пригодится
             if(isset($this->data['products'][0])){
                 foreach($this->data['products'] as $data){
