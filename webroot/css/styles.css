@@ -1304,9 +1304,12 @@ a.menu:after, .dropdown-toggle:after {
 	padding-bottom: 60px;
 }
 .our-work .item {
+	width: 960px;
 	border: 0px solid #000;
 }
 .our-work img {
+	width: 940px;
+	margin: 0 auto  0;
 }
 .our-work .thumbnail {
 	border: none !important;
@@ -1320,7 +1323,7 @@ a.menu:after, .dropdown-toggle:after {
 
 .our-work .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next,
 .our-work .carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev{
-	margin-top: 50px;
+	margin-top: 0px;
 }
 /* our-work end */
 

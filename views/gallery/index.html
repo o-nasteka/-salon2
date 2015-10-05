@@ -86,7 +86,11 @@
 
                     <?php foreach($data['gallery'] as $gallery ){ ?>
                 <?php if(!isset($a)){ echo '<div class="item active">'; $a = true; }else { echo '<div class="item">'; } ?>
-                    <img src="<?=$gallery['img']?>" alt="Наши работы">
+                    <div class="w960">
+                        <p class="center-block">
+                            <img src="<?=$gallery['img']?>" alt="Наши работы" width="" height="450" />
+                        </p>
+                    </div>
                     <div class="carousel-caption">
                         <!-- Описание фото -->
                     </div>
