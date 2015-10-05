@@ -26,6 +26,12 @@ CKEDITOR.editorConfig = function( config ) {
     // accept all div classes
     config.extraAllowedContent = 'div(*)';
     config.extraAllowedContent = 'span(*)';
+    config.extraAllowedContent = 'onclick(*)';
+    config.extraAllowedContent = 'a href(*)';
+
+    config.protectedSource.push( /<script[\s\S]*?script>/g ); /* script tags */
+
+    config.protectedSource.push(/<[a-z]*[a-z\s\=\"\']*><\/[\s\S][^/]*?>/g); /* all */
 
     CKEDITOR.dtd.$removeEmpty.span = 0;
 

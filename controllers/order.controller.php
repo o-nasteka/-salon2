@@ -20,6 +20,10 @@ class OrderController extends Controller{
     }
 
     public function index(){
+
+        // Get Menu
+        $this->data['menu'] = $this->model->getMenu();
+
         if ( $_POST ){
 
             if ( !isset($data['name']) || !isset($data['phone']) || !isset($data['title'])){

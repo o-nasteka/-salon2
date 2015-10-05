@@ -2,6 +2,12 @@
 
 class Order_m extends Model {
 
+    // getMenu
+    public function getMenu(){
+        $sql = "select * from `products` ";
+        return $this->db->query($sql);
+    }
+
     public function sendEmail($data){
 
         $mail = new PHPMailer;
