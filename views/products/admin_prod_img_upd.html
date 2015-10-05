@@ -10,6 +10,8 @@
 <br>
 <form action="" method="post" enctype="multipart/form-data" >
     <input type="hidden" name="id" value="<?=$data['img_prod']['id']?>" >
+    <input type="hidden" name="id_prod" value="<?=$data['products_id']?>" >
+
     <input type="file" name="files"  ><br>
     <input type="submit" name="img_prod_upd" value="Обновить изображение" class="btn btn-success" >
 </form>
