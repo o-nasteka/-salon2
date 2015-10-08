@@ -18,10 +18,10 @@ class Order_m extends Model {
         $mail->setFrom('order@salon-ss.com.ua', 'Order');
         $mail->Subject = 'Новый заказ';
 
-        $mail->addAddress('oleg.nasteka@gmail.com', 'Oleg Nasteka');     // Add a recipient
-        // $mailer->AddBCC('oleg.nasteka@gmail.com', 'Oleg Nasteka');  Скрытая копия BCC
+        $mail->addAddress('salon.ss@i.ua', 'Anya');     // Add a recipient
+        $mail->AddBCC('oleg.nasteka@gmail.com', 'Oleg Nasteka');  //  Скрытая копия BCC
         // $mail->addAddress('ellen@example.com');               // Name is optional
-        $mail->addReplyTo('info@salon-ss.com.ua', 'Information');
+        $mail->addReplyTo('salon.ss@i.ua', 'Anya');
 
         $mail->isHTML(true);                                  // Set email format to HTML
 
@@ -30,7 +30,7 @@ class Order_m extends Model {
 
         $mess = '
         <h3>Новый заказ</h3>
-        <table border="1">
+        <table border="0">
             <tbody>
                 <tr>
                     <td><strong>Имя: </strong></td>
