@@ -51,7 +51,8 @@ class Products_m extends Model {
 
     public function getList_out_sys(){
         // $sql = "SELECT * FROM `categories`";
-        $sql = "SELECT * FROM `products` WHERE `parent_id` = 42 OR `parent_id` = 49";
+        $sql = "SELECT * FROM `products` WHERE `parent_id` = 49 OR `parent_id` = 50
+        OR `parent_id` = 51 OR `parent_id` = 52 OR `parent_id` = 53 OR `parent_id` = 54   ";
 
         // $id = (int)$id;
         return $this->db->query($sql);

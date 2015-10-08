@@ -150,9 +150,11 @@
                         </a>
                     </a>
                     <ul class="dropdown-menu drop-big4">
+                        <li><a href="/products/view_sub/49">- Маркизы</a></li>
                         <?php
                         foreach($data['menu'] as $item){
-                        if( $item['parent_id'] == 42) {
+                        if( $item['parent_id'] == 50 OR $item['parent_id'] == 51 OR $item['parent_id'] == 52
+                        OR $item['parent_id'] == 53 OR $item['parent_id'] == 54){
                         ?><li><a href="/products/view/<?=$item['alias']?>"><?="- ".$item['title']?></a> <?php
                             }
                             }?>
