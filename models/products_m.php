@@ -195,7 +195,9 @@ class Products_m extends Model {
 
     // Get All SubCategory
     public function getAllCategorySub(){
-        $sql = "select * from `categories` WHERE `id` != '1' AND `id` != '13' AND `id` != '38' AND `id` != '42' ";
+        $sql = "select * from `categories` WHERE `id` != '1' AND `id` != '13'
+        AND `id` != '38' AND `id` != '42' AND `id` != '49' AND `id` != '50'
+        AND `id` != '51' AND `id` != '52' AND `id` != '53' AND `id` != '54'  ";
         return $this->db->query($sql);
     }
 
