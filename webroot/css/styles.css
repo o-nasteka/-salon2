@@ -842,7 +842,9 @@ a.menu:after, .dropdown-toggle:after {
 	text-decoration: underline;
 	color: #fff;
 }
-
+.btn-gallery2 {
+	padding-top: 5px;
+}
 /*Section-7 Gallery end */
 
 /*Section-8 */
