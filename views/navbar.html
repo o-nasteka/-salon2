@@ -35,7 +35,7 @@
                     <ul class="dropdown-menu drop-big ">
                         <li><a href="/products/view_sub/2"><span class="blue">Горизонтальные</span></a></li>
                         <?php
-                        foreach($data['menu'] as $item){
+                        foreach($menu as $item){
                         if( $item['parent_id'] == 2) {
                         ?><li><a href="/products/view/<?=$item['alias']?>"><?="- ".$item['title']?></a> <?php
                             }
@@ -43,7 +43,7 @@
 
                         <li><a href="/products/view_sub/6"><span class="blue">Вертикальные</span></a></li>
                         <?php
-                        foreach($data['menu'] as $item){
+                        foreach($menu as $item){
                         if( $item['parent_id'] == 6) {
                         ?><li><a href="/products/view/<?=$item['alias']?>"><?="- ".$item['title']?></a> <?php
                             }
@@ -51,7 +51,7 @@
 
                         <li><a href="/products/view_sub/10"><span class="blue">Деревянные и бамбуковые</span></a></li>
                         <?php
-                        foreach($data['menu'] as $item){
+                        foreach($menu as $item){
                         if( $item['parent_id'] == 10) {
                         ?><li><a href="/products/view/<?=$item['alias']?>"><?="- ".$item['title']?></a> <?php
                             }
@@ -70,35 +70,35 @@
                     <ul class="dropdown-menu drop-big2">
                         <li><a href="/products/view_sub/14"><span class="blue">Системы открытого типа</span></a></li>
                         <?php
-                        foreach($data['menu'] as $item){
+                        foreach($menu as $item){
                         if( $item['parent_id'] == 14) {
                         ?><li><a href="/products/view/<?=$item['alias']?>"><?="- ".$item['title']?></a> <?php
                             }
                             }?>
                         <li><a href="/products/view_sub/21"><span class="blue">Системы закрытого типа</span></a></li>
                         <?php
-                        foreach($data['menu'] as $item){
+                        foreach($menu as $item){
                         if( $item['parent_id'] == 21) {
                         ?><li><a href="/products/view/<?=$item['alias']?>"><?="- ".$item['title']?></a> <?php
                             }
                             }?>
                         <li><a href="/products/view_sub/26"><span class="blue">Системы день-ночь</span></a></li>
                         <?php
-                        foreach($data['menu'] as $item){
+                        foreach($menu as $item){
                         if( $item['parent_id'] == 26) {
                         ?><li><a href="/products/view/<?=$item['alias']?>"><?="- ".$item['title']?></a> <?php
                             }
                             }?>
                             <!-- -->
                         <?php
-                        foreach($data['menu'] as $item){
+                        foreach($menu as $item){
                         if( $item['parent_id'] == 31) {
                         ?><li><a href="/products/view/<?=$item['alias']?>"><?="<span class='blue'>".$item['title']?></span></a><?php
                             }
                             }?>
                             <!-- -->
                         <?php
-                        foreach($data['menu'] as $item){
+                        foreach($menu as $item){
                         if( $item['parent_id'] == 32) {
                         ?><li><a href="/products/view/<?=$item['alias']?>"><?="<span class='blue'>".$item['title']?></span></a><?php
                             }
@@ -116,7 +116,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <?php
-                        foreach($data['menu'] as $item){
+                        foreach($menu as $item){
                         if( $item['parent_id'] == 33) {
                         ?><li><a href="/products/view/<?=$item['alias']?>"><?="- ".$item['title']?></a> <?php
                             }
@@ -133,7 +133,7 @@
                     </a>
                     <ul class="dropdown-menu drop-big3">
                         <?php
-                        foreach($data['menu'] as $item){
+                        foreach($menu as $item){
                         if( $item['parent_id'] == 38) {
                         ?><li><a href="/products/view/<?=$item['alias']?>"><?="- ".$item['title']?></a> <?php
                             }
@@ -152,7 +152,7 @@
                     <ul class="dropdown-menu drop-big4">
                         <li><a href="/products/view_sub/49">- Маркизы</a></li>
                         <?php
-                        foreach($data['menu'] as $item){
+                        foreach($menu as $item){
                         if( $item['parent_id'] == 50 OR $item['parent_id'] == 51 OR $item['parent_id'] == 52
                         OR $item['parent_id'] == 53 OR $item['parent_id'] == 54){
                         ?><li><a href="/products/view/<?=$item['alias']?>"><?="- ".$item['title']?></a><?php
