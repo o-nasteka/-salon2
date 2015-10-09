@@ -8,11 +8,28 @@
 
 class NavBar {
 
+
     public static function TopMenu(){
 
-        $template_name = "navbar.html";
-        return VIEWS_PATH.DS.$template_name;
+        // Get Menu
+        $data['menu'] = self::getMenu();
 
+        // echo "<pre>";
+        // print_r($menu);
+        // exit;
+
+        $template_name = VIEWS_PATH.DS."navbar.html";
+        return require_once("$template_name");
+
+
+    }
+
+    // getMenu
+    private static function getMenu(){
+        $sql = "select * from `products` ";
+        // return App::db->query($sql);
+
+        return App::$db->query($sql);
     }
 
 }
