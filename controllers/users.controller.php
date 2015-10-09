@@ -14,8 +14,14 @@ class UsersController extends Controller{
             if ( $user && $user['is_active'] && $hash == $user['password'] ){
                 Session::set('login', $user['login']);
                 Session::set('role', $user['role']);
+
+                // Access for CKEditor file manager KCFinder
+                $_SESSION['KCFINDER'] = array();
+                $_SESSION['KCFINDER']['disabled'] = false;
             }
+
             Router::redirect('/admin/');
+
         }
     }
 

@@ -16,13 +16,14 @@
    even if you are using session configuration.
    See http://kcfinder.sunhater.com/install for setting descriptions */
 
+
 $_CONFIG = array(
 
 
 // GENERAL SETTINGS
 
     'disabled' => true,
-    'uploadURL' => "upload",
+    'uploadURL' => "/webroot/uploads/all",
     'uploadDir' => "",
     'theme' => "default",
 
@@ -120,6 +121,8 @@ $_CONFIG = array(
 
     //'_cssMinCmd' => "java -jar /path/to/yuicompressor.jar --type css {file}",
     //'_jsMinCmd' => "java -jar /path/to/yuicompressor.jar --type js {file}",
+
+
 
 );
 
