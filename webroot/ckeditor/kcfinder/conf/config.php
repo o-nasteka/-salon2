@@ -23,7 +23,7 @@ $_CONFIG = array(
 // GENERAL SETTINGS
 
     'disabled' => true,
-    'uploadURL' => "/webroot/uploads/all",
+    'uploadURL' => "/webroot/uploads/",
     'uploadDir' => "",
     'theme' => "default",
 
