@@ -23,22 +23,26 @@ In (.htaccess)
 class Img_upload{
 
 // Допустимый mime тип
-private $array_mime = array('image/gif', 'image/jpg', 'image/jpeg', 'image/png'); 
+	private $array_mime = array('image/gif', 'image/jpg', 'image/jpeg', 'image/png');
 // Допустимые расширения файлов
-private $array_ext = array('jpeg','jpg','gif','png');
+	private $array_ext = array('jpeg','jpg','gif','png');
+
+// Имя файла без разширения
+	private $file_name;
 // Разширение с точкой входящего файла
-private $file_ext_dot;
+	private $file_ext_dot;
 // Разширение без точи входящего файла
-private $file_ext;
-private $file_name;
+	private $file_ext;
+
+
 // Не меньше чем байт
 // private $size_down = 5000;
 // Не больше чем байт
-private $size_up = 5000000; 
+	private $size_up = 5000000;
 //Путь куда будет загружен файл
-private $path; 
+	private $path;
 // $path + $_FILES['files']['name'] + rand
-private $path_full; 
+	private $path_full;
 
 // Имя файла
 //private $name = $_FILES['files']['name'];
@@ -78,7 +82,7 @@ private function upload(){
 	}
 
 	$tmp_file = $_FILES['files']['name'];
-	$pos = stripos($tmp_file,'.');
+	$pos = mb_strripos($tmp_file,'.',0,'UTF-8');
 	$this->file_name = $tmp = mb_substr($tmp_file,0,$pos,"UTF-8");
 
 	// вырезаем точку в раширении файла
