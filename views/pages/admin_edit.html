@@ -25,5 +25,13 @@
 </form>
 
 <script>
-    CKEDITOR.replace( 'content');
+    CKEDITOR.replace( 'content',
+            {
+                filebrowserBrowseUrl : '/webroot/browser/browse.php',
+                filebrowserUploadUrl : '/webroot/uploads/upload.php'
+
+    }
+    );
+
+
 </script>
