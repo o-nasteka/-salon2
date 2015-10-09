@@ -2,6 +2,10 @@
 
 /* */
 
+.no {
+	display: none !important;
+}
+
 /**** Fonts ******/
 body {
 	font-family: 'Roboto', sans-serif;
