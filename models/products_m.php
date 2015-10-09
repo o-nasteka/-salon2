@@ -227,7 +227,6 @@ class Products_m extends Model {
         $parent_id = $this->db->escape($data['parent_id']);
         $content_short = $this->db->escape($data['content_short']); // Краткое описание
         $content = $this->db->escape($data['content']); // Основное описание
-        $gallery_img = $this->db->escape($data['gallery_img']); // Картинки слайдера
         $colors = $this->db->escape($data['colors']); // Цвета
         $type_id = $this->db->escape($data['type_id']); // Тип системы
 
@@ -241,9 +240,6 @@ class Products_m extends Model {
                        parent_id = '{$parent_id}',
                        content_short = '{$content_short}',
                        content = '{$content}',
-                       gallery_img = '{$gallery_img}',
-                       colors = '{$colors}',
-                       type_id = '{$type_id}'
             ";
             
 
@@ -256,7 +252,6 @@ class Products_m extends Model {
                        parent_id = '{$parent_id}',
                        content_short = '{$content_short}',
                        content = '{$content}',
-                       gallery_img = '{$gallery_img}',
                        colors = '{$colors}',
                        type_id = '{$type_id}'
 
