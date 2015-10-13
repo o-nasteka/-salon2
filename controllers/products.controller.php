@@ -27,7 +27,11 @@ class ProductsController extends Controller {
             $this->data['products'] = $this->model->getByAlias($alias);
             $this->data['products'] = $this->data['products'][0];
             $this->data['products']['img_prod'] = $this->model->get_Img_Prod($this->data['products']['id']);
+
             html_head::set('title',$this->data['products']['title']);
+            html_head::set('meta_key',$this->data['products']['meta_key']);
+            html_head::set('meta_desc',$this->data['products']['meta_desc']);
+
 
 
             /* может еще пригодится

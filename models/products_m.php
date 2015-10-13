@@ -229,7 +229,8 @@ class Products_m extends Model {
         $content = $this->db->escape($data['content']); // Основное описание
         $colors = $this->db->escape($data['colors']); // Цвета
         $type_id = $this->db->escape($data['type_id']); // Тип системы
-
+        $meta_key = $this->db->escape($data['meta_key']);
+        $meta_desc = $this->db->escape($data['meta_desc']);
 
         if ( !$id ){ // Add new record
             $sql = "
@@ -239,7 +240,8 @@ class Products_m extends Model {
                        price_from = '{$price_from}',
                        parent_id = '{$parent_id}',
                        content_short = '{$content_short}',
-                       content = '{$content}',
+                       content = '{$content}'
+
             ";
             
 
@@ -253,8 +255,9 @@ class Products_m extends Model {
                        content_short = '{$content_short}',
                        content = '{$content}',
                        colors = '{$colors}',
-                       type_id = '{$type_id}'
-
+                       type_id = '{$type_id}',
+                       meta_key = '{$meta_key}',
+                       meta_desc = '{$meta_desc}'
 
                    where `id` = {$id}
             ";
