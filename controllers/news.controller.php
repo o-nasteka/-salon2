@@ -89,14 +89,15 @@ class NewsController extends Controller{
 
 
         //Выгрузить или обновить картинку img_min
-        if(isset($_POST['img_min_upld'])){
+        if(isset($_POST['img_min_upld'])) {
+            if (!empty($_FILES['files']['name'])) {
+                if (!$this->model->img_min_upld($id)) {
+                    Session::setFlash('Db not update!');
 
-            if(!$this->model-> img_min_upld($id)){
-                Session::setFlash('Db not update!');
-
+                }
+                Router::redirect($_SERVER['HTTP_REFERER']);
+                exit;
             }
-            Router::redirect($_SERVER['HTTP_REFERER']);
-            exit;
         }
         /*
         //Выгрузить картинку img_content

@@ -54,13 +54,13 @@ class GalleryController extends Controller{
 
         // Обновить картинку img_min
         if(isset($_POST['img_upd'])){
-
-            if(!$this->model-> img_upd($id)){
-                Session::setFlash('Db not update!');
-
+            if(!empty($_FILES['files']['name'])) {
+                if (!$this->model->img_upd($id)) {
+                    Session::setFlash('Db not update!');
+                }
+                Router::redirect($_SERVER['HTTP_REFERER']);
+                exit;
             }
-            Router::redirect($_SERVER['HTTP_REFERER']);
-            exit;
         }
 
 

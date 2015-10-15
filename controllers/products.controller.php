@@ -156,9 +156,11 @@ class ProductsController extends Controller {
      /* Сохранить порядок кода */
        // Обновление изображения
         if(isset($_POST['img_prod_upd'])){
-
-            $this->model->img_prod_upd($_POST['id']);
-            Router::redirect('/admin/products/edit/'.$_POST['id_prod']);
+            if(!empty($_FILES['files']['name'])) {
+                $this->model->img_prod_upd($_POST['id']);
+                Router::redirect('/admin/products/edit/' . $_POST['id_prod']);
+            }
+           // Router::redirect('/admin/products/edit/' . $_POST['id_prod']);
         }
 
         // Удаление изображениея

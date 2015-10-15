@@ -76,8 +76,9 @@ class Img_upload{
 		// вырезаем разширение файла с точкой
 		$this->file_ext_dot  = strrchr($_FILES['files']['name'],".");
 
-		if(!$this->file_ext_dot){
-			exit('Not correct file');
+		if(!$this->file_ext_dot){ ?>
+			<p><a href="<?php echo $_SERVER['HTTP_REFERER']; ?>"><button class="btn btn-sm btn-primary" style="padding: 5px 20px;">Вернуться назад</button></a></p>
+			<?php exit('Not correct file');
 
 		}
 		// Имя файла без разширения
