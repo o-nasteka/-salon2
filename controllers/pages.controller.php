@@ -10,12 +10,14 @@ class PagesController extends Controller{
     public function index(){
 
         // Get Menu
-        $this->data['menu'] = $this->model->getMenu();
+
 
         $this->data['pages'] = $this->model->getList();
 
         // Get All parent Category
-        $this->data['cat'] = $this->model->getAllCategories();
+        $this->data_c['cat'] = $this->model->getAllCategories();
+
+        $this->data_p['price'] = $this->model->getPrice();
         //
         // echo "<pre>";
         // print_r($this->data['cat']);

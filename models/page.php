@@ -11,9 +11,9 @@ class Page extends Model{
         return $this->db->query($sql);
     }
 
-    // getMenu
-    public function getMenu(){
-        $sql = "select * from `products` ";
+    // getPrice from products
+    public function getPrice(){
+        $sql = "select `price_from` from `products` ";
         return $this->db->query($sql);
     }
 
