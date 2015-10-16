@@ -14,25 +14,12 @@ class PagesController extends Controller{
 
         $this->data['pages'] = $this->model->getList();
 
-        // Get All parent Category
+        // Get All Category (parent category for index page)
         $this->data['cat'] = $this->model->getAllCategories();
 
+        // Get id,price from products for Mosquito-Sets
         $this->data['price'] = $this->model->getPrice();
-        //
-        // echo "<pre>";
-        // print_r($this->data['cat']);
-        // exit;
 
-        /*
-        foreach($this->data['cat'] as $value) {
-            if($value['level'] == 1){
-                $this->data['child'] = $this->model->getAllChildCategories($this->data['id']);
-
-            } else if($value['level'] == 0){
-                $this->data['products'] = $this->model->getAllProducts($this->data['id']);
-            }
-        }
-        */
 
     }
 
