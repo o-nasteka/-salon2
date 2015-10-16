@@ -232,7 +232,8 @@ a.menu:after, .dropdown-toggle:after {
 	/* border: 1px solid #000; */
 }
 .drop-big2 {
-	width: 215px !important;
+	/* width: 240px !important; */
+	padding: 5px 30px;
 }
 .drop-big3 {
 	width: 260px !important;
