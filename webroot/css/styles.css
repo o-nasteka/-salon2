@@ -1435,7 +1435,7 @@ a.menu:after, .dropdown-toggle:after {
 /* type end*/
 
 /* Horizontal */
-.horiz {
+.h2-bg {
 	width: 100%;
 	background: url("../images/header/horiz-bg.jpg")no-repeat center;
 	background-size: cover;
@@ -1445,7 +1445,7 @@ a.menu:after, .dropdown-toggle:after {
 	background: url("../images/header/vert.jpg")no-repeat center;
 	background-size: cover;
 }
-.horiz h2 {
+.h2-bg h2 {
 	width: 75%;
 }
 
