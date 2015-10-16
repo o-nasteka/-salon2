@@ -156,18 +156,13 @@
                 <div class="img-bl"></div>
                 <h3 class="black">Антимоскитные сетки</h3>
                 <hr>
-                <?php
-                // echo "<pre>";
-                 // print_r($data['price']);
-                // exit;
 
-                ?>
                 <?php foreach($data['price'] as $moskito){
                     if($moskito['id'] == 29){
                        $moskito_price = $moskito['price_from']; // Получаем цену Рамочной москитной сетки
                     }
-                }
-                ?>
+                }?>
+
                 <p>
                     Просто необходимы для защиты от насекомых, тополиного пуха, падающих
                     листьев. <br><br>
@@ -176,7 +171,7 @@
                     Москитная сетка может неподвижно крепиться на окно - рамочная, или
                     монтируется роллетная москитная сетка, которая легко сматываются в короб извне окна.<br><br>
                     Основные отличия: рамочные сетки и роллетные сетки. <br>
-                    Цена: <?php echo $moskito_price; ?>
+                    Цена: <?=$moskito_price?>
                 </p>
                 <a href="/products/view_sub/38"><button type="submit" class="btn-moskit center-block">Выбрать москитную сетку <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button></a>
             </div>
