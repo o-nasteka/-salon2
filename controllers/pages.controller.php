@@ -8,10 +8,7 @@ class PagesController extends Controller{
     }
 
     public function index(){
-
-        // Get Menu
-
-
+        // Get List
         $this->data['pages'] = $this->model->getList();
 
         // Get All Category (parent category for index page)
