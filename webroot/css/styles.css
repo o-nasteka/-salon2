@@ -1445,6 +1445,21 @@ a.menu:after, .dropdown-toggle:after {
 	background: url("../images/header/vert.jpg")no-repeat center;
 	background-size: cover;
 }
+.horiz{
+	width: 100%;
+	background: url("../images/header/horiz01.jpg")no-repeat center;
+	background-size: cover;
+}
+.roll{
+	width: 100%;
+	background: url("../images/header/roll.jpg")no-repeat center;
+	background-size: cover;
+}
+.day_night{
+	width: 100%;
+	background: url("../images/header/day-night01.jpg")no-repeat center;
+	background-size: cover;
+}
 .h2-bg h2 {
 	width: 75%;
 }
