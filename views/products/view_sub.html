@@ -1,31 +1,6 @@
-<script type="text/javascript">
-    function changeHeaderClass(type){
-        if(type == 'jal'){
-            document.getElementsByClassName('h2-bg')[0].className = "container-fluid header-in jal";
-        }
-        if(type == 'vert'){
-            document.getElementsByClassName('h2-bg')[0].className = "container-fluid header-in vert";
-        }
-        if(type == 'horiz'){
-            document.getElementsByClassName('h2-bg')[0].className = "container-fluid header-in horiz";
-        }
-        if(type == 'roll'){
-            document.getElementsByClassName('h2-bg')[0].className = "container-fluid header-in roll";
-        }
-        if(type == 'day_night'){
-            document.getElementsByClassName('h2-bg')[0].className = "container-fluid header-in day_night";
-        }
-        if(type == 'plisse'){
-            document.getElementsByClassName('h2-bg')[0].className = "container-fluid header-in plisse";
-        }
-        if(type == 'mosquito'){
-            document.getElementsByClassName('h2-bg')[0].className = "container-fluid header-in mosquito";
-        }
-        if(type == 'out'){
-            document.getElementsByClassName('h2-bg')[0].className = "container-fluid header-in out";
-        }
-    }
-</script>
+
+<!-- Change header image -->
+<script src="/js/header_img.js"></script>
 
 <!-- Blank section -->
 <div class="container-fluid blank-section">
@@ -41,20 +16,17 @@
     <div class="w970">
         <h2>
             <?php
-                foreach($data['sub'] as $sub_data){
-                      // echo "<pre>";
-                       // print_r($sub_data);
-                       // exit;
-                    //
 
-            if(isset($sub_data['parent']) && ($sub_data['parent'] == 1) ){
-            $header_h2 = "Жалюзи";
-            echo "<script>changeHeaderClass('jal');</script>";
-            echo $header_h2;
-                break;
-            }
+            foreach($data['sub'] as $sub_data){
 
-            elseif(isset($sub_data['id']) && ($sub_data['id'] == 1) ){
+    if(isset($sub_data['parent']) && ($sub_data['parent'] == 1) ){
+    $header_h2 = "Жалюзи";
+    echo "<script>changeHeaderClass('jal');</script>";
+        echo $header_h2;
+        break;
+        }
+
+        elseif(isset($sub_data['id']) && ($sub_data['id'] == 1) ){
             $header_h2 = "Горизонтальные жалюзи";
             echo "<script>changeHeaderClass('horiz');</script>";
             echo $header_h2;
@@ -73,7 +45,7 @@
             echo $header_h2;
             break;
             }
-            
+
 
             elseif(isset($sub_data['parent']) && ($sub_data['parent'] == 13) ){
             $header_h2 = "Ролеты";
@@ -181,6 +153,7 @@
             }
 
             }
+
             ?>
         </h2>
     </div>
