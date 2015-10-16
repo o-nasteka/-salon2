@@ -15,9 +15,9 @@ class PagesController extends Controller{
         $this->data['pages'] = $this->model->getList();
 
         // Get All parent Category
-        $this->data_c['cat'] = $this->model->getAllCategories();
+        $this->data['cat'] = $this->model->getAllCategories();
 
-        $this->data_p['price'] = $this->model->getPrice();
+        $this->data['price'] = $this->model->getPrice();
         //
         // echo "<pre>";
         // print_r($this->data['cat']);
@@ -44,7 +44,7 @@ class PagesController extends Controller{
             $this->data['cat'] = $this->model->getAllCategories();
 
             // Get Menu
-            $this->data['menu'] = $this->model->getMenu();
+            // $this->data['menu'] = $this->model->getMenu();
 
             // echo "<pre>";
             // print_r($this->data['cat']);

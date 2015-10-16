@@ -13,7 +13,7 @@ class Page extends Model{
 
     // getPrice from products
     public function getPrice(){
-        $sql = "select `price_from` from `products` ";
+        $sql = "select `id`, `price_from` from `products` ";
         return $this->db->query($sql);
     }
 

@@ -69,12 +69,12 @@
 
             ?>
             <?php
-                foreach($data_c['cat'] as $cat){
+                foreach($data['cat'] as $cat){
                 if( $cat['parent'] == 0 ) { ?>
-                    <a href="/products/view_sub/<?=$data['id']?>">
+                    <a href="/products/view_sub/<?=$cat['id']?>">
                         <div class="jal-bl" >
                             <div class="img-bl">
-                                <img src="<?=$data['img_parent']?>" />
+                                <img src="<?=$cat['img_parent']?>" />
                                 <button class="btn s3-btn center-block">Посмотреть</button>
                             </div>
                             <div class="title"><?=@$cat['title']?></div>
@@ -156,10 +156,15 @@
                 <div class="img-bl"></div>
                 <h3 class="black">Антимоскитные сетки</h3>
                 <hr>
-                <?php echo "<pre>";print_r($data); exit; ?>
-                <?php foreach($data['menu'] as $moskito){
+                <?php
+                echo "<pre>";
+                 print_r($data['price']);
+                exit;
+
+                ?>
+                <?php foreach($data['price'] as $moskito){
                     if($moskito['id'] == 29){
-                        $moskito_price = $moskito['price_from']; // Получаем цену Рамочной москитной сетки
+                       $moskito_price = $moskito['price_from']; // Получаем цену Рамочной москитной сетки
                     }
                 }
                 ?>
@@ -171,7 +176,7 @@
                     Москитная сетка может неподвижно крепиться на окно - рамочная, или
                     монтируется роллетная москитная сетка, которая легко сматываются в короб извне окна.<br><br>
                     Основные отличия: рамочные сетки и роллетные сетки. <br>
-                    Цена: <?=$moskito_price?>
+                    Цена: <?php //echo $moskito_price; ?>
                 </p>
                 <a href="/products/view_sub/38"><button type="submit" class="btn-moskit center-block">Выбрать москитную сетку <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button></a>
             </div>
