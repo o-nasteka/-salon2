@@ -1,5 +1,8 @@
 <script type="text/javascript">
     function changeHeaderClass(type){
+        if(type == 'jal'){
+            document.getElementsByClassName('h2-bg')[0].className = "container-fluid header-in jal";
+        }
         if(type == 'vert'){
             document.getElementsByClassName('h2-bg')[0].className = "container-fluid header-in vert";
         }
@@ -11,6 +14,15 @@
         }
         if(type == 'day_night'){
             document.getElementsByClassName('h2-bg')[0].className = "container-fluid header-in day_night";
+        }
+        if(type == 'plisse'){
+            document.getElementsByClassName('h2-bg')[0].className = "container-fluid header-in plisse";
+        }
+        if(type == 'mosquito'){
+            document.getElementsByClassName('h2-bg')[0].className = "container-fluid header-in mosquito";
+        }
+        if(type == 'out'){
+            document.getElementsByClassName('h2-bg')[0].className = "container-fluid header-in out";
         }
     }
 </script>
@@ -37,6 +49,7 @@
 
             if(isset($sub_data['parent']) && ($sub_data['parent'] == 1) ){
             $header_h2 = "Жалюзи";
+            echo "<script>changeHeaderClass('jal');</script>";
             echo $header_h2;
                 break;
             }
@@ -60,12 +73,7 @@
             echo $header_h2;
             break;
             }
-
-            elseif(isset($sub_data['id']) && ($sub_data['id'] == 33) ){
-            $header_h2 = "Системы день-ночь";
-            echo $header_h2;
-                break;
-            }
+            
 
             elseif(isset($sub_data['parent']) && ($sub_data['parent'] == 13) ){
             $header_h2 = "Ролеты";
@@ -91,7 +99,7 @@
             elseif(isset($sub_data['id']) && ($sub_data['id'] == 33) ){
             $header_h2 = "Системы день-ночь";
             echo "<script>changeHeaderClass('day_night');</script>";
-            echo $header_h2;
+            echo $header_h2 ;
             break;
             }
 
@@ -111,54 +119,63 @@
 
             elseif(isset($sub_data['id']) && ($sub_data['id'] == 20) ){
             $header_h2 = "Плиссе";
+            echo "<script>changeHeaderClass('plisse');</script>";
             echo $header_h2;
             break;
             }
 
             elseif(isset($sub_data['parent_id']) && ($sub_data['parent_id'] == 38) ){
             $header_h2 = "Антимоскитные сетки";
+            echo "<script>changeHeaderClass('mosquito');</script>";
             echo $header_h2;
             break;
             }
 
             elseif(isset($sub_data['id']) && ($sub_data['id'] == 49) ){
             $header_h2 = "Внешние системы солнцезащиты";
+            echo "<script>changeHeaderClass('out');</script>";
             echo $header_h2;
             break;
             }
 
             elseif(isset($sub_data['id']) && ($sub_data['id'] == 55) ){
             $header_h2 = "Маркизы";
+            echo "<script>changeHeaderClass('out');</script>";
             echo $header_h2;
             break;
             }
 
             elseif(isset($sub_data['id']) && ($sub_data['id'] == 40) ){
             $header_h2 = "Перголы";
+            echo "<script>changeHeaderClass('out');</script>";
             echo $header_h2;
             break;
             }
 
             elseif(isset($sub_data['id']) && ($sub_data['id'] == 41) ){
             $header_h2 = "Рафшторы";
+            echo "<script>changeHeaderClass('out');</script>";
             echo $header_h2;
             break;
             }
 
             elseif(isset($sub_data['id']) && ($sub_data['id'] == 42) ){
             $header_h2 = "Рефлексоле";
+            echo "<script>changeHeaderClass('out');</script>";
             echo $header_h2;
             break;
             }
 
             elseif(isset($sub_data['id']) && ($sub_data['id'] == 43) ){
             $header_h2 = "Защитные ролеты";
+            echo "<script>changeHeaderClass('out');</script>";
             echo $header_h2;
             break;
             }
 
             elseif(isset($sub_data['id']) && ($sub_data['id'] == 44) ){
             $header_h2 = "Паруса";
+            echo "<script>changeHeaderClass('out');</script>";
             echo $header_h2;
             break;
             }

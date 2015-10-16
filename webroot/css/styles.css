@@ -1243,7 +1243,7 @@ a.menu:after, .dropdown-toggle:after {
 	background-size: cover;
 }
 .header-in h2 {
-	width: 55%;
+	width: 70%;
 	padding: 5px 40px;
 	background: rgba(255,255,255, 0.5);
 	color: #2c3341;
@@ -1440,6 +1440,11 @@ a.menu:after, .dropdown-toggle:after {
 	background: url("../images/header/horiz-bg.jpg")no-repeat center;
 	background-size: cover;
 }
+.jal{
+	width: 100%;
+	background: url("../images/header/jal01.jpg")no-repeat center;
+	background-size: cover;
+}
 .vert{
 	width: 100%;
 	background: url("../images/header/vert.jpg")no-repeat center;
@@ -1460,8 +1465,20 @@ a.menu:after, .dropdown-toggle:after {
 	background: url("../images/header/day-night01.jpg")no-repeat center;
 	background-size: cover;
 }
-.h2-bg h2 {
-	width: 75%;
+.plisse{
+	width: 100%;
+	background: url("../images/header/plisse01.jpg")no-repeat center;
+	background-size: cover;
+}
+.mosquito{
+	width: 100%;
+	background: url("../images/header/mosquito01.jpg")no-repeat center;
+	background-size: cover;
+}
+.out{
+	width: 100%;
+	background: url("../images/header/out02.jpg")no-repeat center;
+	background-size: cover;
 }
 
 .h-type {
