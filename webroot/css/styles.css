@@ -1436,7 +1436,14 @@ a.menu:after, .dropdown-toggle:after {
 
 /* Horizontal */
 .horiz {
+	width: 100%;
 	background: url("../images/horiz-bg.jpg")no-repeat center;
+	background-size: cover;
+}
+.vert{
+	width: 100%;
+	background: url("../images/header-in-bg-01.jpg")no-repeat center;
+	background-size: cover;
 }
 .horiz h2 {
 	width: 75%;
