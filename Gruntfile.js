@@ -32,7 +32,7 @@ module.exports = function(grunt) {
 
 		imageoptim: {
 			myTask: {
-				src: ['webroot/images']
+				src: ['webroot/uploads/images/news']
 			}
 		}
 
