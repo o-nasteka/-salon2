@@ -8,21 +8,9 @@
     <meta name="description" content="<?php if(html_head::get('meta_desc') == null){echo null;}else{echo html_head::get('meta_desc');} ?>">
     <meta name="keywords" content="<?php if(html_head::get('meta_key') == null){echo null;}else{echo html_head::get('meta_key');} ?>">
 
-
     <link rel='stylesheet' type='text/css' href='/css/bootstrap.min.css' />
-    <link rel='stylesheet' type='text/css' href='/css/bootstrap-image-gallery.min.css'>
-    <link rel='stylesheet' type='text/css' href='/css/styles.min.css' />
+    <link rel='stylesheet' type='text/css' href='/css/styles.css' />
 
-    <!-- <script src="//code.jquery.com/jquery-1.10.2.js"></script> -->
-    <script src="/js/libs/jquery-1.11.3.min.js"></script>
-    <script src="/js/libs/bootstrap.min.js"></script>
-
-    <script src="/js/libs/jquery-ui.min.js"></script>
-
-    <!-- Bootstrap Gallery JavaScript -->
-    <script src="/js/libs/jquery.blueimp-gallery.min.js"></script>
-    <script src="/js/libs/bootstrap-image-gallery.min.js"></script>
-    <!-- Galery end-->
 
 </head>
 <body>
@@ -225,14 +213,35 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- Google -->
+<script src="/js/google.js"></script>
+<!-- Google end-->
 
-<!-- <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
+<!-- Yandex.Metrika counter -->
+<script src="/js/yandex.js"></script>
+<noscript><div><img src="https://mc.yandex.ru/watch/32935799" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
+<!-- <script src="//code.jquery.com/jquery-1.10.2.js"></script> -->
+<script src="/js/libs/jquery-1.11.3.min.js"></script>
+<script src="/js/libs/jquery-ui.min.js"></script>
+<script src="/js/libs/bootstrap.min.js"></script>
 
+<!-- Bootstrap Gallery JavaScript -->
+<script src="/js/libs/jquery.blueimp-gallery.min.js"></script>
+<script src="/js/libs/bootstrap-image-gallery.min.js"></script>
+<!-- Galery end-->
 
-
+<script>
+    $(document).ready(function() {
+        $("head").append("<link rel='stylesheet' type='text/css' href='/css/fonts.css' />");
+        $("head").append("<link rel='stylesheet' type='text/css' href='/css/modal.css' />");
+        /* Bootstrap Gallery */
+        $("head").append("<link rel='stylesheet' href='/css/bootstrap-image-gallery.min.css'>");
+        $("head").append("<link rel='stylesheet' href='//blueimp.github.io/Gallery/css/blueimp-gallery.min.css'>");
+        /* Bootstrap Gallery end */
+    });
+</script>
 
 <!-- Map -->
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
@@ -244,22 +253,6 @@
 <script>
     jQuery(function($){
         $("#phone").mask("(999) 999-99-99");
-    });
-</script>
-
-<!-- Google -->
-<script src="/js/google.js"></script>
-<!-- Google end-->
-
-<!-- Yandex.Metrika counter -->
-<script src="/js/yandex.js"></script>
-<noscript><div><img src="https://mc.yandex.ru/watch/32935799" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-
-<script>
-    $(document).ready(function() {
-        $("head").append("<link rel='stylesheet' type='text/css' href='/css/fonts.css' />");
-        $("head").append("<link rel='stylesheet' type='text/css' href='/css/modal.css' />");
     });
 </script>
 
