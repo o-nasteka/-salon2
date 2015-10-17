@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-
+		/* Min css
 		cssmin: {
 			target: {
 				files: [{
@@ -16,16 +16,29 @@ module.exports = function(grunt) {
 				}]
 			}
 		}
+		*/
+
+		// Compressing JS
+		uglify: {
+			my_target: {
+				files: {
+					'webroot/js/libs/dest/!*.min.js': ['webroot/js/libs/jquery.maskedinput.js']
+				}
+			}
+		}
+
 
     });
 
     // 3. Тут мы указываем Grunt, что хотим использовать этот плагин
     // grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	// grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // 4. Указываем, какие задачи выполняются, когда мы вводим «grunt» в терминале
     // grunt.registerTask('default', ['concat']);
-	grunt.registerTask('default', ['cssmin']);
+	//grunt.registerTask('default', ['cssmin']);
+	grunt.registerTask('default', ['uglify']);
 
 };
 
