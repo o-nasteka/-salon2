@@ -7,51 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<?php if(html_head::get('meta_desc') == null){echo null;}else{echo html_head::get('meta_desc');} ?>">
     <meta name="keywords" content="<?php if(html_head::get('meta_key') == null){echo null;}else{echo html_head::get('meta_key');} ?>">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <style type="text/css">
-
-        .t-menu .logo {
-            background: url("/images/logo2.png")no-repeat center;
-            width: 200px;
-            height: 65px;
-            margin: 10px 0 0 0;
-            float: left;
-        }
-        .t-menu .tm {
-            padding-top: 5px;
-            float: left;
-        }
-        .t-menu .tm li {
-            display: inline-block;
-            list-style-type: none;
-            margin-left: 20px;
-            margin-top: 30px;
-        }
-        .t-menu .tm li:first-child{
-            margin-left: 0;
-        }
-        .t-menu .tm li a {
-            color: #2c3341;
-            font-size: 14px;
-            font-weight: 400;
-        }
-
-
-    </style>
-
-
-    <!-- <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300,500&subset=latin,cyrillic' rel='stylesheet' type='text/css'> -->
-
-    <!-- Bootstrap -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-
-    <link href="/css/modal.css" rel="stylesheet">
-    <link href="/css/styles.css" rel="stylesheet">
-    <link href="/css/fonts.css" rel="stylesheet">
-
-
-
+    <link rel='stylesheet' type='text/css' href='/css/bootstrap.min.css' />
+    <link rel='stylesheet' type='text/css' href='/css/styles.css' />
 
 </head>
 <body>
@@ -260,7 +218,7 @@
 <!-- <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
 <script src="/js/jquery-ui.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/js/bootstrap.min.js"></script>
+<script src="/js/lib/bootstrap.min.js"></script>
 
 <link rel="stylesheet" href="/css/bootstrap-image-gallery.min.css">
 <!-- Bootstrap Gallery JavaScript -->
@@ -378,8 +336,12 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/32935799" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 
-
-
+<script>
+    $(document).ready(function() {
+        $("head").append("<link rel='stylesheet' type='text/css' href='/css/fonts.css' />");
+        $("head").append("<link rel='stylesheet' type='text/css' href='/css/modal.css' />");
+    });
+</script>
 
 </body>
 </html>
