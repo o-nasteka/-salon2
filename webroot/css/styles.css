@@ -1085,46 +1085,6 @@ body {
 	background: url("../images/header/horiz-bg.jpg")no-repeat center;
 	background-size: cover;
 }
-.jal{
-	width: 100%;
-	background: url("../images/header/jal01.jpg")no-repeat center;
-	background-size: cover;
-}
-.vert{
-	width: 100%;
-	background: url("../images/header/vert.jpg")no-repeat center;
-	background-size: cover;
-}
-.horiz{
-	width: 100%;
-	background: url("../images/header/horiz01.jpg")no-repeat center;
-	background-size: cover;
-}
-.roll{
-	width: 100%;
-	background: url("../images/header/roll.jpg")no-repeat center;
-	background-size: cover;
-}
-.day_night{
-	width: 100%;
-	background: url("../images/header/day-night01.jpg")no-repeat center;
-	background-size: cover;
-}
-.plisse{
-	width: 100%;
-	background: url("../images/header/plisse01.jpg")no-repeat center;
-	background-size: cover;
-}
-.mosquito{
-	width: 100%;
-	background: url("../images/header/mosquito01.jpg")no-repeat center;
-	background-size: cover;
-}
-.out{
-	width: 100%;
-	background: url("../images/header/out02.jpg")no-repeat center;
-	background-size: cover;
-}
 
 .h-type {
 	width: 100%;

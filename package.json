@@ -1,0 +1,12 @@
+{
+  "name": "salon-project",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-imagemin": "^0.9.4",
+    "grunt-contrib-uglify": "^0.9.2",
+    "grunt-imageoptim": "^1.4.1"
+  }
+}
