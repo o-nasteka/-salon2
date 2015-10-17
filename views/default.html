@@ -8,8 +8,21 @@
     <meta name="description" content="<?php if(html_head::get('meta_desc') == null){echo null;}else{echo html_head::get('meta_desc');} ?>">
     <meta name="keywords" content="<?php if(html_head::get('meta_key') == null){echo null;}else{echo html_head::get('meta_key');} ?>">
 
+
     <link rel='stylesheet' type='text/css' href='/css/bootstrap.min.css' />
     <link rel='stylesheet' type='text/css' href='/css/bootstrap-image-gallery.min.css'>
+    <link rel='stylesheet' type='text/css' href='/css/styles.min.css' />
+
+    <!-- <script src="//code.jquery.com/jquery-1.10.2.js"></script> -->
+    <script src="/js/libs/jquery-1.11.3.min.js"></script>
+    <script src="/js/libs/bootstrap.min.js"></script>
+
+    <script src="/js/libs/jquery-ui.min.js"></script>
+
+    <!-- Bootstrap Gallery JavaScript -->
+    <script src="/js/libs/jquery.blueimp-gallery.min.js"></script>
+    <script src="/js/libs/bootstrap-image-gallery.min.js"></script>
+    <!-- Galery end-->
 
 </head>
 <body>
@@ -213,17 +226,13 @@
 <![endif]-->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<!-- <script src="//code.jquery.com/jquery-1.10.2.js"></script> -->
-<script src="/js/libs/jquery-1.11.3.min.js"></script>
-<!-- <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
-<script src="/js/libs/jquery-ui.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/js/libs/bootstrap.min.js"></script>
 
-<!-- Bootstrap Gallery JavaScript -->
-<script src="/js/libs/jquery.blueimp-gallery.min.js"></script>
-<script src="/js/libs/bootstrap-image-gallery.min.js"></script>
-<!-- Galery end-->
+<!-- <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+
+
+
 
 <!-- Map -->
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
@@ -251,7 +260,6 @@
     $(document).ready(function() {
         $("head").append("<link rel='stylesheet' type='text/css' href='/css/fonts.css' />");
         $("head").append("<link rel='stylesheet' type='text/css' href='/css/modal.css' />");
-        $("head").append("<link rel='stylesheet' type='text/css' href='/css/styles.min.css' />");
     });
 </script>
 
