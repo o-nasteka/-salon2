@@ -9,6 +9,7 @@
     <meta name="keywords" content="<?php if(html_head::get('meta_key') == null){echo null;}else{echo html_head::get('meta_key');} ?>">
 
     <link rel='stylesheet' type='text/css' href='/css/bootstrap.min.css' />
+    <link rel='stylesheet' type='text/css' href='/css/modal.css' />
     <link rel='stylesheet' type='text/css' href='/css/styles.min.css' />
 
 
@@ -235,7 +236,7 @@
 <script>
     $(document).ready(function() {
         $("head").append("<link rel='stylesheet' type='text/css' href='/css/fonts.css' />");
-        $("head").append("<link rel='stylesheet' type='text/css' href='/css/modal.css' />");
+        // $("head").append("<link rel='stylesheet' type='text/css' href='/css/modal.css' />");
         /* Bootstrap Gallery */
         $("head").append("<link rel='stylesheet' href='/css/bootstrap-image-gallery.min.css'>");
         $("head").append("<link rel='stylesheet' href='//blueimp.github.io/Gallery/css/blueimp-gallery.min.css'>");
