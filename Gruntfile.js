@@ -4,20 +4,20 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-		/*
+		/* */
 		// Min css
 		cssmin: {
 			target: {
 				files: [{
 					expand: true,
 					cwd: 'webroot/css',
-					src: ['styles.css', '!*.min.css'],
+					src: ['index.css', '!*.min.css'],
 					dest: 'webroot/css',
 					ext: '.min.css'
 				}]
 			}
 		}
-		*/
+		/* */
 
 		/*
 		// Compressing JS
@@ -30,26 +30,28 @@ module.exports = function(grunt) {
 		}
 		*/
 
+		/*
 		imageoptim: {
 			myTask: {
 				src: ['webroot/uploads/images/news']
 			}
 		}
+		*/
 
 
     });
 
     // 3. Тут мы указываем Grunt, что хотим использовать этот плагин
     // grunt.loadNpmTasks('grunt-contrib-concat');
-	// grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	// grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-imageoptim');
+	// grunt.loadNpmTasks('grunt-imageoptim');
 
     // 4. Указываем, какие задачи выполняются, когда мы вводим «grunt» в терминале
     // grunt.registerTask('default', ['concat']);
-	// grunt.registerTask('default', ['cssmin']);
+	grunt.registerTask('default', ['cssmin']);
 	// grunt.registerTask('default', ['uglify']);
-	grunt.registerTask('default', ['imageoptim']);
+	// grunt.registerTask('default', ['imageoptim']);
 
 };
 
