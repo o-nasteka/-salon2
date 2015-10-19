@@ -15,13 +15,14 @@ class Order_m extends Model {
         $mail->CharSet = 'UTF-8';
         // $mail->setLanguage('ru');
         // $mail->SetLanguage("ru","phpmailer/language");
-        $mail->setFrom('order@salon-ss.com.ua', 'Order');
+        $mail->setFrom('info@salon-ss.com.ua', 'Order');
         $mail->Subject = 'Новый заказ';
 
-        $mail->addAddress('salon.ss@i.ua', 'Anya');     // Add a recipient
+        $mail->addAddress('info@salon-ss.com.ua', 'Order');     // Add a recipient
+        $mail->AddBCC('salon.ss@i.ua', 'Anya');     // Add a recipient
         $mail->AddBCC('oleg.nasteka@gmail.com', 'Oleg Nasteka');  //  Скрытая копия BCC
         // $mail->addAddress('ellen@example.com');               // Name is optional
-        $mail->addReplyTo('salon.ss@i.ua', 'Anya');
+        $mail->addReplyTo('info@salon-ss.com.ua', 'Order');
 
         $mail->isHTML(true);                                  // Set email format to HTML
 
