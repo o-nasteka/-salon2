@@ -212,8 +212,7 @@ class Products_m extends Model {
 
     // Save to table products - Карточка товара
     public function save($data, $id = null){
-        if ( !isset($data['alias']) || !isset($data['title']) || !isset($data['price']) ||
-            !isset($data['unit']) || !isset($data['parent_id']) || !isset($data['content_short']) ){
+        if ( !isset($data['alias']) || !isset($data['title']) || !isset($data['parent_id']) || !isset($data['content_short']) ){
             return false;
         }
 
