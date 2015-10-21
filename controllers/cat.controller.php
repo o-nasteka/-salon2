@@ -1,6 +1,5 @@
 <?php
-class CatController extends Controller
-{
+class CatController extends Controller{
 
     public function __construct($data = array())
     {
@@ -9,7 +8,7 @@ class CatController extends Controller
     }
 
     // Admin panel index
-    public function admin_cat_index()
+    public function admin_index()
     {
         if (isset($_POST['sort'])) {
             @$_SESSION['sort'] = @$_POST['sort'];
