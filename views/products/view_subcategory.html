@@ -78,7 +78,22 @@
                     </div>
                     <div class="title"><?=@$data['title']?></div>
 
-                    <p class="price-from2"><?=@$data['price_from']?></p>
+                    <p class="price-from2">
+                        <?php // echo @$data['price_from']; ?>
+                        от
+                        <?php
+                            // Получаем текущий курс валют
+                            $ex_rate = Currency::getCurrency();
+                             foreach($ex_rate as $value){
+                                $currency = $value['rate'];
+                             }
+                            // Цена в USD
+                            $usd_price = $data['price_from'];
+                             $price = $usd_price * $currency;
+                             echo $price;
+                        ?>
+                        грн./
+                    </p>
 
                     <div class="cat-in-bl">
 

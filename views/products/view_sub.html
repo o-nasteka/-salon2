@@ -241,7 +241,7 @@
                                 $currency = $value['rate'];
                              }
                             // Цена в USD
-                            $usd_price = $data['products']['price'];
+                            $usd_price = $sub_data['price_from'];
                              $price = $usd_price * $currency;
                              echo $price;
                         ?>
