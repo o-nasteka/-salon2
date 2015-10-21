@@ -5,7 +5,7 @@ class Cat_m extends Model{
     public function getList()
     {
         // $sql = "SELECT * FROM `categories`";
-        $sql = "SELECT * FROM `categories`";
+        $sql = "SELECT * FROM `categories` where `parent` !== 0";
 
         // $id = (int)$id;
         return $this->db->query($sql);
