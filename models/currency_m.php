@@ -43,4 +43,11 @@ class Currency_m extends Model{
         return $this->db->query($sql);
     }
 
+    // Delete
+    public function delete($id){
+        $id = (int)$id;
+        $sql = "delete from `currency` where `id` = {$id}";
+        return $this->db->query($sql);
+    }
+
 }
