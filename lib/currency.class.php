@@ -1,15 +1,18 @@
 <?php
 
-class Currency{
+class Currency {
 
     protected static $ex_rates;
 
-    public static function get(){
-        return isset(self::$ex_rates) ? self::$ex_rates : null;
-    }
-
     public static function set($value){
         self::$ex_rates = $value;
+    }
+
+    // Get by Alias from table products
+    public static function getCurrency(){
+        $sql = "select * from `currency` limit 1";
+        return App::$db->query($sql);
+
     }
 
 }
