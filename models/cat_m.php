@@ -72,7 +72,7 @@ class Cat_m extends Model{
         $id = (int)$id;
         $title = $this->db->escape($data['title']);
         $price_from = $this->db->escape($data['price_from']);
-        // $parent_id = $this->db->escape($data['parent_id']);
+        $parent = $this->db->escape($data['parent']);
         $img_parent = $this->db->escape($data['img_parent']);
         $img_child = $this->db->escape($data['img_child']);
 
@@ -82,6 +82,7 @@ class Cat_m extends Model{
                 insert into `categories`
                    set title = '{$title}',
                        price_from = '{$price_from}',
+                       parent = '{$parent}',
                        img_parent = '{$img_parent}',
                        img_child = '{$img_child}'
 
@@ -93,6 +94,7 @@ class Cat_m extends Model{
                 update `categories`
                    set title = '{$title}',
                        price_from = '{$price_from}',
+                       parent = '{$parent}',
                        img_parent = '{$img_parent}',
                        img_child = '{$img_child}'
 
