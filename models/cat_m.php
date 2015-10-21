@@ -5,7 +5,7 @@ class Cat_m extends Model{
     public function getList()
     {
         // $sql = "SELECT * FROM `categories`";
-        $sql = "SELECT * FROM `categories` where `parent` !== 0";
+        $sql = "SELECT * FROM `categories`";
 
         // $id = (int)$id;
         return $this->db->query($sql);
@@ -52,6 +52,40 @@ class Cat_m extends Model{
         return $this->db->query($sql);
     }
 
+    // Save to table categories - Категория товара
+    public function save($data, $id = null){
+        if ( !isset($data['title']) || !isset($data['price_from'])  ){
+            return false;
+        }
+
+        // delete 'space';
+        $data = $this->db->trimAll_l($data);
+
+        $id = (int)$id;
+        $title = $this->db->escape($data['title']);
+        $price_from = $this->db->escape($data['price_from']);
+        // $parent_id = $this->db->escape($data['parent_id']);
+
+        if ( !$id ){ // Add new record
+            $sql = "
+                insert into `categories`
+                   set title = '{$title}',
+                       price_from = '{$price_from}'
+            ";
+
+
+        } else { // Update existing record
+            $sql = "
+                update `categories`
+                   set title = '{$title}',
+                       price_from = '{$price_from}'
+
+                   where `id` = {$id}
+            ";
+        }
+
+        return $this->db->query($sql);
+    }
 
     // Delete from table categories
     public function delete($id){

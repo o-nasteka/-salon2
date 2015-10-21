@@ -31,6 +31,22 @@ class CatController extends Controller{
 
     }
 
+    // Admin add product
+    public function admin_add(){
+        if ( $_POST ){
+
+            $result = $this->model->save($_POST);
+            if ( $result ){
+                Session::setFlash('Page was saved.');
+            } else {
+                Session::setFlash('Error.');
+            }
+            Router::redirect('/admin/cat/');
+        }
+    }
+
+
+
 }
 
 
