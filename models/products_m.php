@@ -212,7 +212,8 @@ class Products_m extends Model {
 
     // Save to table products - Карточка товара
     public function save($data, $id = null){
-        if ( !isset($data['alias']) || !isset($data['title']) || !isset($data['price_from']) || !isset($data['parent_id']) || !isset($data['content_short']) ){
+        if ( !isset($data['alias']) || !isset($data['title']) || !isset($data['price_from']) ||
+            !isset($data['unit']) || !isset($data['parent_id']) || !isset($data['content_short']) ){
             return false;
         }
 
@@ -223,6 +224,7 @@ class Products_m extends Model {
         $alias = $this->db->escape($data['alias']);
         $title = $this->db->escape($data['title']);
         $price_from = $this->db->escape($data['price_from']);
+        $unit = $this->db->escape($data['unit']);
         $parent_id = $this->db->escape($data['parent_id']);
         $content_short = $this->db->escape($data['content_short']); // Краткое описание
         $content = $this->db->escape($data['content']); // Основное описание
@@ -238,6 +240,7 @@ class Products_m extends Model {
                    set alias = '{$alias}',
                        title = '{$title}',
                        price_from = '{$price_from}',
+                       unit = '{$unit}',
                        parent_id = '{$parent_id}',
                        content_short = '{$content_short}',
                        content = '{$content}'
@@ -251,6 +254,7 @@ class Products_m extends Model {
                    set alias = '{$alias}',
                        title = '{$title}',
                        price_from = '{$price_from}',
+                       unit = '{$unit}',
                        parent_id = '{$parent_id}',
                        content_short = '{$content_short}',
                        content = '{$content}',
