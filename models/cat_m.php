@@ -62,7 +62,7 @@ class Cat_m extends Model{
 
     // Save to table categories - Категория товара
     public function save($data, $id = null){
-        if ( !isset($data['title']) || !isset($data['price_from'])  ){
+        if ( !isset($data['title']) || !isset($data['price'])  ){
             return false;
         }
 
@@ -71,7 +71,8 @@ class Cat_m extends Model{
 
         $id = (int)$id;
         $title = $this->db->escape($data['title']);
-        $price_from = $this->db->escape($data['price_from']);
+        $price = $this->db->escape($data['price']);
+        $unit = $this->db->escape($data['unit']);
         $parent = $this->db->escape($data['parent']);
         $img_parent = $this->db->escape($data['img_parent']);
         $img_child = $this->db->escape($data['img_child']);
@@ -83,7 +84,8 @@ class Cat_m extends Model{
             $sql = "
                 insert into `categories`
                    set title = '{$title}',
-                       price_from = '{$price_from}',
+                       price = '{$price}',
+                       unit = '{$unit}',
                        parent = '{$parent}'
             ";
 
@@ -92,7 +94,8 @@ class Cat_m extends Model{
             $sql = "
                 update `categories`
                    set title = '{$title}',
-                       price_from = '{$price_from}',
+                       price = '{$price}',
+                       unit = '{$unit}',
                        parent = '{$parent}',
                        img_parent = '{$img_parent}',
                        img_child = '{$img_child}',
