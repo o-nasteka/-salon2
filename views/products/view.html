@@ -4,7 +4,20 @@
         <!-- Gallery -->
         <div class="order-gallery pull-left">
             <div class="prod-price">
-                <?=$data['products']['price_from']?>
+                <?php // echo $data['products']['price_from']; ?>
+                от
+                <?php
+                    // Получаем текущий курс валют
+                    $ex_rate = Currency::getCurrency();
+                     foreach($ex_rate as $value){
+                        $currency = $value['rate'];
+                     }
+                    // Цена в USD
+                    $usd_price = $data['products']['price'];
+                     $price = $usd_price * $currency;
+                     echo $price;
+                ?>
+                грн.
             </div>
 
             <div id="carousel-products" class="carousel slide" data-ride="carousel">

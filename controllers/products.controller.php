@@ -34,6 +34,7 @@ class ProductsController extends Controller {
 
 
 
+
             /* может еще пригодится
             if(isset($this->data['products'][0])){
                 foreach($this->data['products'] as $data){

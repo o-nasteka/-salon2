@@ -1,0 +1,33 @@
+<br>
+<br>
+<br>
+
+<h3>Изменить курс валют: <?=htmlspecialchars(@$data['currency']['title'])?></h3><br/>
+    <!-- Курс валют -->
+    <?php
+    // $ex_rate = Currency::getCurrency();
+    // foreach($ex_rate as $value){
+    //    $currency = $value['rate'];
+     // }
+    ?>
+<form action="" method="post">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="currency">Курс валют:</label>
+                <input type="text" id="currency" name="currency" value="<?=htmlspecialchars(@$data['currency']['rate'])?>" class="form-control" />
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" name="id" value="<?=$data['currency']['id']?>" />
+    <input type="submit" class="btn btn-success" value="Сохранить" />
+    <a href="/admin/currency/"><input type="button" class="btn btn-primary" value="Отмена"></a>
+    <br>
+    <br>
+</form>
+
+
+
+
+
