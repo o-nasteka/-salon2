@@ -28,13 +28,13 @@
             <div class="form-group">
                 <label for="img_child">Изображение категории:</label>
                 <!-- Изображение основной категории /products/view_subcategory/ -->
-                <?php if($data['cat']['parent'] == 0 ) { ?>
+                <?php if($data['cat']['parent'] == '0' ){ ?>
                     <textarea style="min-height: 300px;" id="img_parent" name="img_parent" class="form-control" >
                         <img src="<?=$data['cat']['img_parent']?>" />
                     </textarea>
                 <?php } ?>
                 <!-- Изображение дочерней категории /products/view_sub/ -->
-                <?php if($data['cat']['parent'] > 0 ){ ?>
+                <?php if($data['cat']['parent'] > '0' ){ ?>
                     <textarea style="min-height: 300px;" id="img_child" name="img_child" class="form-control" >
                         <img src="<?=$data['cat']['img_child']?>" />
                     </textarea>
