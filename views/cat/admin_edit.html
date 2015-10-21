@@ -21,6 +21,70 @@
                 <input maxlength="30" type="text" id="price_from" name="price_from" value="<?=htmlspecialchars(@$data['cat']['price_from'])?>" class="form-control"  />
             </div>
 
+            <!-- Родительская категория -->
+            <div class="form-group">
+                <label for="parent">Родительская категория</label>
+                <select class="form-control" name="parent" id="parent" required="">
+                    <option selected value="<?=htmlspecialchars(@$data['cat']['parent'])?>">
+                        <?php
+
+                        $parent = $data['cat']['parent']; // id родительской категории
+                        $title = $data['cat']['title'];  // title категории
+
+                        if( $parent == 0){
+                            echo $title;
+                        }
+
+                        elseif( $parent == 1){
+                            echo "Жалюзи";
+                        }
+                        elseif ( $parent == 13 ){
+                            echo "Ролеты";
+                        }
+                        elseif ( $parent == 33 ){
+                            echo "Плиссе";
+                        }
+                        elseif ( $parent == 38 ){
+                            echo "Антимоскитные сетки";
+                        }
+                        elseif ( $parent == 42 ){
+                            echo "Внешние системы солнцезащиты";
+                        }
+
+                        ?>
+                    </option>
+
+                    <?php if( $parent != 1 && $parent > 0 ){ ?>
+                        <option value="1">Жалюзи</option>
+                    <?php } ?>
+                    <?php if( $parent != 13 && $parent > 0 ){ ?>
+                        <option value="13">Ролеты</option>
+                    <?php } ?>
+                    <?php if( $parent != 33 && $parent > 0 ){ ?>
+                        <option value="33">Плиссе</option>
+                    <?php } ?>
+                    <?php if( $parent != 38 && $parent > 0 ){ ?>
+                        <option value="38">Антимоскитные сетки</option>
+                    <?php } ?>
+                    <?php if( $parent != 42 && $parent > 0 ){ ?>
+                        <option value="42">Внешние системы солнцезащиты</option>
+                    <?php } ?>
+
+                        ?>
+                    <?php
+                    if( $parent == 0){ ?>
+                        <option value="0">Жалюзи</option>
+                        <option value="0">Ролеты</option>
+                        <option value="0">Плиссе</option>
+                        <option value="0">Антимоскитные сетки</option>
+                        <option value="0">Внешние системы солнцезащиты</option>
+
+                    <?php }
+                    ?>
+
+                </select>
+            </div>
+
         </div>
         <!-- -->
 
@@ -41,6 +105,8 @@
             </div>
         </div>
     </div>
+
+
 
 
     <input type="hidden" name="id" value="<?=$data['cat']['id']?>" />

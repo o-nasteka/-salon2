@@ -217,14 +217,15 @@
         </h2>
         <!-- -->
 
+        <?php
+         // echo "<pre>";
+        // print_r($data['sub']);
+        // exit;
+        ?>
+
         <!-- Вывод блоков подкатегорий  -->
         <?php foreach($data['sub'] as $sub_data){ ?>
 
-        <?php
-          // echo "<pre>";
-          // print_r($sub_data['price_from']);
-          // exit;
-        ?>
         <div class="type-in">
             <!-- Ссылка на все товары этой подкатегории  -->
             <a href="/products/<?=$data['contrl']?>/<?php if($data['contrl'] == 'view'){echo $sub_data['alias'];}else{echo $sub_data['id'];} ?>" >
@@ -232,13 +233,13 @@
                     <div class="sub-price"><?=$sub_data['price_from']?></div>
                     <div class="type-in-img">
                         <button class="btn-in">Посмотреть!</button>
-                        <img src="<?=$sub_data['img_child']?>" width="210" height=""/>
+                        <!-- <img src="<?=@$sub_data['img_child']?>" width="210" height=""/> -->
+                        <?=@$sub_data['img_child']?>
                     </div>
                     <!-- Заголовок подкатегории -->
                     <p class="title"><?=$sub_data['title']?></p>
                     <!-- Описание подкатегории -->
                     <p class="txt">
-
                         <?=@$sub_data['content_short']?>
                     </p>
                 </div>
