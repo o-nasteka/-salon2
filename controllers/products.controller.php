@@ -106,9 +106,6 @@ class ProductsController extends Controller {
 
 
 
-
-
-
     // Admin panel index
     public function admin_index(){
         if(isset($_POST['sort'])){
@@ -214,6 +211,9 @@ class ProductsController extends Controller {
            // print_r($this->data['products']['img_prod']);
            // exit;
     }
+
+
+
 
     // Admin delete product
     public function admin_delete(){
