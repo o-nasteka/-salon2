@@ -7,6 +7,7 @@
     <ul class="nav nav-pills">
         <li class="active"><a data-toggle="tab" href="#data1">Общие </a></li>
         <li><a data-toggle="tab" href="#data2">Изображение</a></li>
+        <li><a data-toggle="tab" href="#data3">Описание</a></li>
     </ul>
     <br><br>
     <div class="tab-content">
@@ -104,6 +105,28 @@
                 <!--  -->
             </div>
         </div>
+
+
+        <div class="tab-pane fade in" id="data3"><!-- data3 -->
+            <div class="form-group">
+                <!-- Описание категории /products/view_sub/ -->
+                <label for="content_short">Описание категории:</label>
+                <textarea style="min-height: 300px;" id="content_short" name="content_short" class="form-control" >
+                    <?=$data['cat']['content_short']?>
+                </textarea>
+                <!--  -->
+                <br>
+                <!-- Краткое описание при наведении мыши в разделе категории /products/view_subcategory/ -->
+                <label for="description">Описание категории <i style="font-weight: 400;">(появляется при наведении мыши)</i>:</label>
+                <textarea style="min-height: 300px;" id="description" name="description" class="form-control" >
+                    <?=$data['cat']['description']?>
+                </textarea>
+
+
+            </div>
+        </div>
+
+
     </div>
 
 
@@ -121,4 +144,6 @@
 <script>
     CKEDITOR.replace( 'img_parent' );
     CKEDITOR.replace( 'img_child' );
+    CKEDITOR.replace( 'description' );
+    CKEDITOR.replace( 'content_short' );
 </script>

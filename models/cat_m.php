@@ -75,6 +75,8 @@ class Cat_m extends Model{
         $parent = $this->db->escape($data['parent']);
         $img_parent = $this->db->escape($data['img_parent']);
         $img_child = $this->db->escape($data['img_child']);
+        $description = $this->db->escape($data['description']);
+        $content_short = $this->db->escape($data['content_short']);
 
 
         if ( !$id ){ // Add new record
@@ -82,10 +84,7 @@ class Cat_m extends Model{
                 insert into `categories`
                    set title = '{$title}',
                        price_from = '{$price_from}',
-                       parent = '{$parent}',
-                       img_parent = '{$img_parent}',
-                       img_child = '{$img_child}'
-
+                       parent = '{$parent}'
             ";
 
 
@@ -96,7 +95,9 @@ class Cat_m extends Model{
                        price_from = '{$price_from}',
                        parent = '{$parent}',
                        img_parent = '{$img_parent}',
-                       img_child = '{$img_child}'
+                       img_child = '{$img_child}',
+                       description = '{$description}',
+                       content_short = '{$content_short}'
 
                    where `id` = {$id}
             ";
