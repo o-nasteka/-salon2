@@ -12,7 +12,6 @@ class Currency {
     public static function getCurrency(){
         $sql = "select * from `currency` limit 1";
         return App::$db->query($sql);
-
     }
 
 }
