@@ -273,5 +273,6 @@ class Products_m extends Model {
         $sql = "delete from `products` where `id` = {$id}";
         return $this->db->query($sql);
     }
+
 	
 }
