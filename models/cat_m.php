@@ -73,12 +73,16 @@ class Cat_m extends Model{
         $title = $this->db->escape($data['title']);
         $price_from = $this->db->escape($data['price_from']);
         // $parent_id = $this->db->escape($data['parent_id']);
+        $img_child = $this->db->escape($data['img_child']);
+        $img_parent = $this->db->escape($data['img_parent']);
 
         if ( !$id ){ // Add new record
             $sql = "
                 insert into `categories`
                    set title = '{$title}',
-                       price_from = '{$price_from}'
+                       price_from = '{$price_from}',
+                       img_child = '{$img_child}',
+                       img_parent = '{$img_parent}'
             ";
 
 
@@ -86,7 +90,8 @@ class Cat_m extends Model{
             $sql = "
                 update `categories`
                    set title = '{$title}',
-                       price_from = '{$price_from}'
+                       price_from = '{$price_from}',
+                       img_parent = '{$img_parent}'
 
                    where `id` = {$id}
             ";

@@ -6,14 +6,14 @@
 <form method="post" action="" enctype="multipart/form-data" >
     <ul class="nav nav-pills">
         <li class="active"><a data-toggle="tab" href="#data1">Общие </a></li>
-        <li><a data-toggle="tab" href="#data2">Фото товара </a></li>
+        <li><a data-toggle="tab" href="#data2">Изображение</a></li>
     </ul>
     <br><br>
     <div class="tab-content">
         <!-- Общие -->
         <div class="tab-pane fade in active" id="data1"><!-- data1 -->
             <div class="form-group">
-                <label for="title">ЗНазвание категории</label>
+                <label for="title">Название категории</label>
                 <input type="text" id="title" name="title" value="<?=htmlspecialchars(@$data['cat']['title'])?>" class="form-control"  />
             </div>
             <div class="form-group">
@@ -25,21 +25,35 @@
         <!-- -->
 
         <div class="tab-pane fade in" id="data2"><!-- data2 -->
+            <div class="form-group">
+                <label for="img_child">Изображение категории:</label>
+                <!-- Изображение основной категории /products/view_subcategory/ -->
+                <?php if($data['cat']['parent'] == 0 ) { ?>
+                    <textarea style="min-height: 300px;" id="img_parent" name="img_parent" class="form-control" >
+                        <img src="<?=$data['cat']['img_parent']?>" />
+                    </textarea>
+                <?php } ?>
+                <!-- Изображение дочерней категории /products/view_sub/ -->
+                <?php if($data['cat']['parent'] > 0 ){ ?>
+                    <textarea style="min-height: 300px;" id="img_child" name="img_child" class="form-control" >
+                        <img src="<?=$data['cat']['img_child']?>" />
+                    </textarea>
+                <?php } ?>
+                <!-- -->
+            </div>
         </div>
     </div>
 
+
     <input type="hidden" name="id" value="<?=$data['cat']['id']?>" />
-    <input type="submit" class="btn btn-success" value="Сохранить">
+    <input type="submit" class="btn btn-success" value="Сохранить" />
+    <a href="/admin/cat/"><input type="button" class="btn btn-primary" value="Отмена"></a>
     <br>
     <br>
 
     <script>
-        /*
-        CKEDITOR.replace( 'content_short' );
-        CKEDITOR.replace( 'content' );
-        CKEDITOR.replace( 'colors' );
-        CKEDITOR.replace( 'type_id' );
-        */
+        CKEDITOR.replace( 'img_child' );
+        CKEDITOR.replace( 'img_cparent' );
     </script>
 
 </form>
