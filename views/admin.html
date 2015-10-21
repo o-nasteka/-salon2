@@ -24,7 +24,15 @@
         <div id="navbar" class="collapse navbar-collapse">
             <?php if ( Session::get('login') ) { ?>
             <ul class="nav navbar-nav">
-                <li <?php if( App::getRouter()->getController() == 'products' ) {?>class="active"<?php } ?>><a href="/admin/products/">Товары</a></li>
+                <li class="dropdown"<?php if( App::getRouter()->getController() == 'products' ) {?>class="active"<?php } ?>>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    Каталог<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/admin/products/">Товары</a></li>
+                    <li><a href="/admin/cat/">Категории</a></li>
+
+                </li>
                 <li <?php if( App::getRouter()->getController() == 'pages' ) {?>class="active"<?php } ?>><a href="/admin/pages/">Статьи</a></li>
                 <li <?php if( App::getRouter()->getController() == 'order' ) {?>class="active"<?php } ?>><a href="/admin/order/">Заявки</a></li>
                 <li <?php if( App::getRouter()->getController() == 'news' ) {?>class="active"<?php } ?>><a href="/admin/news/">Новости</a></li>
@@ -36,6 +44,13 @@
         </div>
     </div>
 </nav>
+
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        <li><a href="#">Another action</a></li>
+    </ul>
+</li>
 
 <div class="container">
 
