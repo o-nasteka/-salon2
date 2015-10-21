@@ -1,0 +1,25 @@
+
+<br>
+<br>
+
+<h3>Редактор категории</h3><br/>
+<form method="post" action="">
+    <input type="hidden" name="id" value="<?=$data['cat']['id']?>" />
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" value="<?=$data['page']['title']?>" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="content">Основное описание</label>
+        <textarea style="min-height: 300px;" name="content" id="content" class="form-control"><?=$data['page']['content']?></textarea>
+    </div>
+    <div class="form-group">
+        <label for="is_published">Publish?</label>
+        <input type="checkbox" name="is_published" id="is_published" <?php if( $data['page']['is_published'] ) { ?>checked="checked" <?php } ?> />
+    </div>
+    <input type="submit" class="btn btn-success" />
+</form>
+
+<script>
+    CKEDITOR.replace( 'content');
+</script>
