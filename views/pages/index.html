@@ -177,6 +177,14 @@
                     монтируется роллетная москитная сетка, которая легко сматываются в короб извне окна.<br><br>
                     Основные отличия: рамочные сетки и роллетные сетки. <br>
                     Цена: <?=$moskito_price?>
+                    <?php
+                        foreach($data['cat'] as $cat){
+                            if($cat['id'] == 38){
+                                echo $cat['price_from'];
+                                break;
+                            }
+                        }
+                    ?>
                 </p>
                 <a href="/products/view_sub/38"><button type="submit" class="btn-moskit center-block">Выбрать москитную сетку <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button></a>
             </div>
