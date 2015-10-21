@@ -1,6 +1,14 @@
 <?php
 class Cat_m extends Model{
 
+    // Get all by Id from table categories
+    public function getById($id){
+        $id = (int)$id;
+        $sql = "select * from `categories` where `id` = '{$id}' limit 1";
+        $result = $this->db->query($sql);
+        return isset($result[0]) ? $result[0] : null;
+    }
+
     // Get all from table categories
     public function getList()
     {
