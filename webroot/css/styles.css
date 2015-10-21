@@ -1222,7 +1222,9 @@ body {
 	border: 0px solid #000;
 	overflow: hidden;
 }
-
+.type-in-img img{
+	width: 210px !important;
+}
 .type-in-bl .btn-in {
 	position: absolute;
 	display: none;

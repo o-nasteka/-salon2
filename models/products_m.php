@@ -63,7 +63,6 @@ class Products_m extends Model {
         $id = (int)$id;
         $sql = "SELECT * FROM `img_prod` WHERE `product_id` = '{$id}'";
         return $this->db->query($sql);
-
     }
 
     public function add_gallery_image($id){
