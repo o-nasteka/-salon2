@@ -3,7 +3,7 @@
 <br>
 
 <h3>Редактировать категорию: <?=htmlspecialchars(@$data['cat']['title'])?></h3><br/>
-<form method="post" action=""  >
+<form method="post" action="">
     <ul class="nav nav-pills">
         <li class="active"><a data-toggle="tab" href="#data1">Общие </a></li>
         <li><a data-toggle="tab" href="#data2">Изображение</a></li>
@@ -26,21 +26,17 @@
 
         <div class="tab-pane fade in" id="data2"><!-- data2 -->
             <div class="form-group">
-                <label for="img_child">Изображение категории:</label>
-                <!-- Изображение основной категории /products/view_subcategory/ -->
-                <?php if($data['cat']['parent'] == 0 ){ ?>
-                    <textarea style="min-height: 300px;" id="img_parent" name="img_parent" class="form-control" >
-                        <img src="<?=$data['cat']['img_parent']?>" />
-                    </textarea>
-                    <script>CKEDITOR.replace( 'img_parent' );</script>
-                <?php } ?>
-                <!-- Изображение дочерней категории /products/view_sub/ -->
-                <?php if($data['cat']['parent'] > 0 ){ ?>
-                    <textarea style="min-height: 300px;" id="img_child" name="img_child" class="form-control" >
-                        <img src="<?=$data['cat']['img_child']?>" />
-                    </textarea>
-                    <script>CKEDITOR.replace( 'img_child' );</script>
-                <?php } ?>
+                <!-- Большое изображение категории /products/view_subcategory/ -->
+                <label for="img_child">Большое изображение категории:</label>
+                <textarea style="min-height: 300px;" id="img_parent" name="img_parent" class="form-control" >
+                    <img src="<?=$data['cat']['img_parent']?>" />
+                </textarea>
+                <br>
+                <!-- Малое изображение дочерней категории /products/view_sub/ -->
+                <label for="img_child">Малое изображение категории:</label>
+                <textarea style="min-height: 300px;" id="img_child" name="img_child" class="form-control" >
+                    <img src="<?=$data['cat']['img_child']?>" />
+                </textarea>
                 <!--  -->
             </div>
         </div>
@@ -55,3 +51,8 @@
 
 
 </form>
+
+<script>
+    CKEDITOR.replace( 'img_parent' );
+    CKEDITOR.replace( 'img_child' );
+</script>

@@ -47,16 +47,24 @@ class CatController extends Controller{
 
     // Admin edit product
     public function admin_edit(){
-        $params = App::getRouter()->getParams();
-        
+
+        if ( $_POST ){
+            $id = isset($_POST['id']) ? $_POST['id'] : null;
+            $result = $this->model->save($_POST, $id);
+            if ( $result ){
+                Session::setFlash('Page was saved.');
+            } else {
+                Session::setFlash('Error.');
+            }
+            Router::redirect('/admin/cat/');
+        }
+
         if ( isset($this->params[0]) ){
             $this->data['cat'] = $this->model->getById($this->params[0]);
-
         } else {
             Session::setFlash('Wrong page id.');
             Router::redirect('/admin/cat/');
         }
-        
     }
 
     // Admin delete product
