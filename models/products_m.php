@@ -212,7 +212,7 @@ class Products_m extends Model {
 
     // Save to table products - Карточка товара
     public function save($data, $id = null){
-        if ( !isset($data['alias']) || !isset($data['title']) || !isset($data['price_from']) ||
+        if ( !isset($data['alias']) || !isset($data['title']) || !isset($data['price']) ||
             !isset($data['unit']) || !isset($data['parent_id']) || !isset($data['content_short']) ){
             return false;
         }
@@ -223,7 +223,7 @@ class Products_m extends Model {
         $id = (int)$id;
         $alias = $this->db->escape($data['alias']);
         $title = $this->db->escape($data['title']);
-        $price_from = $this->db->escape($data['price_from']);
+        $price = $this->db->escape($data['price']);
         $unit = $this->db->escape($data['unit']);
         $parent_id = $this->db->escape($data['parent_id']);
         $content_short = $this->db->escape($data['content_short']); // Краткое описание
@@ -239,7 +239,7 @@ class Products_m extends Model {
                 insert into `products`
                    set alias = '{$alias}',
                        title = '{$title}',
-                       price_from = '{$price_from}',
+                       price = '{$price}',
                        unit = '{$unit}',
                        parent_id = '{$parent_id}',
                        content_short = '{$content_short}',
@@ -253,7 +253,7 @@ class Products_m extends Model {
                 update `products`
                    set alias = '{$alias}',
                        title = '{$title}',
-                       price_from = '{$price_from}',
+                       price = '{$price}',
                        unit = '{$unit}',
                        parent_id = '{$parent_id}',
                        content_short = '{$content_short}',
