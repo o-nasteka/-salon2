@@ -1,7 +1,33 @@
 <br>
 <br>
 <br>
-<h3>Товары</h3>
+
+
+
+<?php
+    // Получаем текущий курс валют
+    $ex_rate = Currency::getCurrency();
+    foreach($ex_rate as $value){
+        $currency = $value['rate'];
+    }
+?>
+<div class="row">
+    <div class="col-md-4 pull-left">
+        <h3>Товары</h3>
+    </div>
+    <div class="col-md-2 pull-right">
+        <table class="table table-bordered">
+            <tr>
+                <td><h4>Курс валют:</h4></td>
+            </tr>
+            <tr>
+                <td><p class="text-left"><?=$currency?></p></td>
+            </tr>
+        </table>
+
+
+    </div>
+</div>
 <br/>
 
 
