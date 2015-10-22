@@ -32,14 +32,16 @@
 <br>
 <table class="table table-bordered table-striped table-hover" style="width: 80%; border: 1px solid #ccc;">
     <tr>
-        <td>ID</td>
-        <td>Название</td>
+        <td><strong>ID</strong></td>
+        <td><strong>Название</strong></td>
+        <td><strong>Цена в USD</strong></td>
         <td style="padding-left: 15px;">Управление</td>
     </tr>
     <?php foreach($data['products'] as $products_data) { ?>
     <tr>
-        <td><strong><?=$products_data['id']?></strong></td>
-        <td><strong><?=$products_data['title']?></strong></td>
+        <td><?=$products_data['id']?></td>
+        <td><?=$products_data['title']?></td>
+        <td><?=$products_data['price']?></td>
         <td width="250" align="center">
             <a href="/admin/products/edit/<?=$products_data['id']?>"><button class="btn btn-sm btn-primary" style="padding: 5px 20px;">Редактировать</button></a>
             <a href="/admin/products/delete/<?=$products_data['id']?>" onclick="return confirmDelete();"><button class="btn btn-sm btn-warning" style="padding: 5px 20px;">Удалить</button></a>
