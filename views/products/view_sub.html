@@ -243,7 +243,7 @@
                             // Цена в USD
                             $usd_price = $sub_data['price'];
                              $price = $usd_price * $currency;
-                             echo $price;
+                             echo round($price, 2); // округление до 2х знаков
                         ?>
                         грн./<?=$sub_data['unit']?>
 
