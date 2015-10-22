@@ -33,5 +33,31 @@ class CurrencyController extends Controller{
         }
     }
 
+    // Admin add
+    public function admin_add(){
+        if ( $_POST ){
+            $result = $this->model->save($_POST);
+            if ( $result ){
+                Session::setFlash('Page was saved.');
+            } else {
+                Session::setFlash('Error.');
+            }
+            Router::redirect('/admin/currency/');
+        }
+    }
+
+    // Admin delete product
+    public function admin_delete(){
+        if ( isset($this->params[0]) ){
+            $result = $this->model->delete($this->params[0]);
+            if ( $result ){
+                Session::setFlash('Page was deleted.');
+            } else {
+                Session::setFlash('Error.');
+            }
+        }
+        Router::redirect('/admin/currency/');
+    }
+
 
 }
