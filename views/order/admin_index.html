@@ -32,6 +32,10 @@
         <td class="bg-primary"><?php echo "Подтверждена";?></td>
         <?php }
 
+        elseif($item['status'] == 4){?>
+        <td class="bg-primary"><?php echo "Просчет";?></td>
+        <?php }
+
         elseif($item['status'] == 2){?>
         <td class="bg-danger"><?php echo "Отмена";?></td>
         <?php }
