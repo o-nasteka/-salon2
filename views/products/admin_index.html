@@ -21,7 +21,7 @@
                 <td><h4>Курс валют:</h4></td>
             </tr>
             <tr>
-                <td><p class="text-left"><?=$currency?></p></td>
+                <td><p class="text-left"><?=$currency?> грн.</p></td>
             </tr>
         </table>
 
@@ -67,7 +67,7 @@
     <tr>
         <td><?=$products_data['id']?></td>
         <td><?=$products_data['title']?></td>
-        <td><?=$products_data['price']?></td>
+        <td><?=$products_data['price']?> $</td>
         <td width="250" align="center">
             <a href="/admin/products/edit/<?=$products_data['id']?>"><button class="btn btn-sm btn-primary" style="padding: 5px 20px;">Редактировать</button></a>
             <a href="/admin/products/delete/<?=$products_data['id']?>" onclick="return confirmDelete();"><button class="btn btn-sm btn-warning" style="padding: 5px 20px;">Удалить</button></a>
@@ -81,3 +81,7 @@
 <div>
     <a href="/admin/products/add/"><button class="btn btn-sm btn-success">Добавить товар</button></a>
 </div>
+
+<br>
+<br>
+<br>

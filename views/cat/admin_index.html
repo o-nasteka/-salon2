@@ -1,7 +1,33 @@
 <br>
 <br>
 <br>
-<h3>Категории</h3>
+
+
+
+<?php
+    // Получаем текущий курс валют
+    $ex_rate = Currency::getCurrency();
+    foreach($ex_rate as $value){
+        $currency = $value['rate'];
+    }
+?>
+<div class="row">
+    <div class="col-md-4 pull-left">
+        <h3>Категории</h3>
+    </div>
+    <div class="col-md-2 pull-right">
+        <table class="table table-bordered">
+            <tr>
+                <td><h4>Курс валют:</h4></td>
+            </tr>
+            <tr>
+                <td><p class="text-left"><?=$currency?> грн.</p></td>
+            </tr>
+        </table>
+
+
+    </div>
+</div>
 <br/>
 
 <form action="" method="post">
@@ -31,14 +57,16 @@
 <br>
 <table class="table table-bordered table-striped table-hover" style="width: 80%; border: 1px solid #ccc;">
     <tr>
-        <td>ID</td>
-        <td>Название</td>
-        <td style="padding-left: 15px;">Управление</td>
+        <td><strong>ID</strong></td>
+        <td><strong>Название</strong></td>
+        <td><strong>Цена в USD</strong></td>
+        <td style="padding-left: 15px;"><strong>Управление</strong></td>
     </tr>
     <?php foreach($data['cat'] as $cat_data) { ?>
     <tr>
-        <td><strong><?=$cat_data['id']?></strong></td>
-        <td><strong><?=$cat_data['title']?></strong></td>
+        <td><?=$cat_data['id']?></td>
+        <td><?=$cat_data['title']?></td>
+        <td><?=$cat_data['price']?> $</td>
         <td width="250" align="center">
             <a href="/admin/cat/edit/<?=$cat_data['id']?>"><button class="btn btn-sm btn-primary" style="padding: 5px 20px;">Редактировать</button></a>
             <a href="/admin/cat/delete/<?=$cat_data['id']?>" onclick="return confirmDelete();"><button class="btn btn-sm btn-warning" style="padding: 5px 20px;">Удалить</button></a>
@@ -48,11 +76,14 @@
 </table>
 
 <br/>
+<br/>
+<br/>
+
 
 
 <!--
 <div>
     <a href="/admin/cat/add/"><button class="btn btn-sm btn-success">Добавить категорию</button></a>
 </div>
-
+-->
 <br>
