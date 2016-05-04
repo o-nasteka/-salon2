@@ -63,7 +63,7 @@ class News_m extends Model {
             ' * 				 ' .
             'FROM             ' .
             '  `news`     ' .
-
+            'ORDER BY `id` DESC    ' . // отсротировать от последней новости
             'LIMIT            ' .
             $start . ',   ' . $limit   . '
 
@@ -136,7 +136,7 @@ class News_m extends Model {
             ' * 				 ' .
             'FROM             ' .
             '  `news`     ' .
-
+            'ORDER BY `id` DESC    ' . // отсротировать от последней новости
             'LIMIT            ' .
             $start . ',   ' . $limit   . '
 

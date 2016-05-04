@@ -4,3 +4,4 @@ node_modules
 engine.clpprj
 Gruntfile.js
 package.json
+.DS_Store

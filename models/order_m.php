@@ -20,7 +20,7 @@ class Order_m extends Model {
 
         $mail->addAddress('info@salon-ss.com.ua', 'Order');     // Add a recipient
         $mail->AddBCC('salon.ss@i.ua', 'Anya');     // Add a recipient
-        $mail->AddBCC('oleg.nasteka@gmail.com', 'Oleg Nasteka');  //  Скрытая копия BCC
+        // $mail->AddBCC('oleg.nasteka@gmail.com', 'Oleg Nasteka');  //  Скрытая копия BCC
         // $mail->addAddress('ellen@example.com');               // Name is optional
         $mail->addReplyTo('info@salon-ss.com.ua', 'Order');
 

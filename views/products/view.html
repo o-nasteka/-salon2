@@ -60,11 +60,11 @@
 
             <form action="/order/" method="POST">
                 <div class="main-form order-form">
-                    <h4 class="text-center tt_up white">БЫСТРЫЙ ЗАКАЗ</h4>
+                    <h4 class="text-center tt_up white">Быстрый заказ в один клик</h4>
                     <hr>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Имя" required />
-                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Телефон" required />
-                    <button type="submit" class="btn-mainf">Узнать стоимость!</button>
+                    <input type="text" maxlength="25" class="form-control" id="name" name="name" placeholder="Имя" required />
+                    <input type="text" maxlength="12" class="form-control" id="phone" name="phone" placeholder="Телефон" required />
+                    <button type="submit" class="btn-mainf">Оформить заказ!</button>
                     <input type="hidden" id="idItem" name="title" value="<?=$data['products']['title']?>" />
                 </div>
             </form>
